@@ -3,3 +3,18 @@ My  Mad Games, es una e-commerce basada en la venta de videojuegos de distintas 
 
 
 Bruno :  Hola soy Bruno Costales Aros, tengo 19 años y soy de la ciudad de Mar del Plata, Argentina. Estoy en el curso por iniciativa propia por que me gusta la programacion y por que gane la beca de MercadoLibre. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Hola, soy Miguel Mendez. Tengo 33 años y me anoté en el curso para adquirir nuevos skills. Este proyecto de e-commerce de videojuegos me ayudará a reencontrarme con una vieja pasión.
