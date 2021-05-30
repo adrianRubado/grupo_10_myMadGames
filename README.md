@@ -20,3 +20,14 @@ Lautaro : Hola soy Lautaro Moreyra, tengo 19 años y soy de San Francisco, Córd
 
 
 Miguel : Hola, soy Miguel Mendez. Tengo 33 años y me anoté en el curso para adquirir nuevos skills. Este proyecto de e-commerce de videojuegos me ayudará a reencontrarme con una vieja pasión.
+
+
+
+Paginas de referencia que consideramos que son lideres del mercado o simplemente nos gusto el diseño de las mismas :
+    https://juegosdigitalesargentina.com/
+    https://www.g2a.com/
+    https://www.gamestop.com/trade/
+    http://gamersforever.com.ar/
+    https://www.sasitogames.com.ar/
+    https://dixgamer.com/
+    https://www.geekspot.com.ar/
