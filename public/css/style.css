@@ -131,9 +131,7 @@ footer h4{
 
 }
 
-.container :hover{
-  box-shadow: 0 0 11px rgba(33,33,33,.2);
-}
+
 
  article {
      margin: 10px;
@@ -442,17 +440,17 @@ form.example input[type=text] {
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
-            
+
   }
   .social-footer .social-footer-icons li:last-of-type {
     margin-right: 0;
   }
-  
+
   .social-footer .social-footer-icons .fa {
     font-size: 1.3rem;
     color: #fefefe;
   }
-  
+
   .social-footer .social-footer-icons .fa:hover {
     color: #4a4a4a;
     transition: color 0.3s ease-in;
@@ -556,17 +554,17 @@ form.example input[type=text] {
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
-            
+
   }
   .social-footer .social-footer-icons li:last-of-type {
     margin-right: 0;
   }
-  
+
   .social-footer .social-footer-icons .fa {
     font-size: 1.3rem;
     color: #fefefe;
   }
-  
+
   .social-footer .social-footer-icons .fa:hover {
     color: #4a4a4a;
     transition: color 0.3s ease-in;
@@ -657,21 +655,18 @@ form.example input[type=text] {
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
-            
+
   }
   .social-footer .social-footer-icons li:last-of-type {
     margin-right: 0;
   }
-  
+
   .social-footer .social-footer-icons .fa {
     font-size: 1.3rem;
     color: #fefefe;
   }
-  
-  .social-footer .social-footer-icons .fa:hover {
-    color: #4a4a4a;
-    transition: color 0.3s ease-in;
-  }
+
+
 
 }
 
@@ -822,17 +817,17 @@ form.example input[type=text] {
     -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
             justify-content: space-between;
-            
+
   }
   .social-footer .social-footer-icons li:last-of-type {
     margin-right: 0;
   }
-  
+
   .social-footer .social-footer-icons .fa {
     font-size: 1.3rem;
     color: #fefefe;
   }
-  
+
   .social-footer .social-footer-icons .fa:hover {
     color: #4a4a4a;
     transition: color 0.3s ease-in;
@@ -1064,7 +1059,7 @@ form.example input[type=text] {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-          
+
 }
 .social-footer .social-footer-icons li:last-of-type {
   margin-right: 0;
@@ -1193,7 +1188,7 @@ height: 50px;
   .container2{
     display:flex;
   }
-  
+
 
 }
 
