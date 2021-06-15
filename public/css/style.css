@@ -368,17 +368,6 @@ form.example input[type=text] {
     .bars{
         display: none;
     }
-
-
-
-    .links{
-        display: flex;
-        flex-direction: row;
-        text-decoration: none;
-        justify-self: normal;
-        flex-wrap: wrap;
-
-    }
     .filter{
       padding: 15px ;
       background-color: #F5F5F5;
@@ -397,7 +386,7 @@ form.example input[type=text] {
 .site-footer h6
 {
   color:#fff;
-  font-size:16px;
+  font-size:14px;
   text-transform:uppercase;
   margin-top:5px;
   letter-spacing:2px
@@ -410,30 +399,6 @@ form.example input[type=text] {
 {
   color:#3366cc;
   text-decoration:none;
-}
-.footer-links
-{
-
-  padding-left:0;
-  list-style:none
-}
-.footer-links li
-{
-
-  display:block
-}
-.footer-links a
-{
-  color:white
-}
-.footer-links a:active,.footer-links a:focus,.footer-links a:hover
-{
-  color:#3366cc;
-  text-decoration:none;
-}
-.footer-links.inline li
-{
-  display:inline-block
 }
 .site-footer .social-icons
 {
@@ -453,6 +418,10 @@ form.example input[type=text] {
 {
   margin:0
 }
+.copyright-text2{
+  margin:0;
+  text-align: center;
+}
 @media (max-width:991px)
 
 {
@@ -461,6 +430,7 @@ form.example input[type=text] {
     list-style: none;
   }
   .social-footer {
+    order:-1;
     display:flex;
     padding: 1rem;
     display: -webkit-flex;
@@ -498,7 +468,7 @@ form.example input[type=text] {
 }
 .social-icons li
 {
-  display:inline-block;
+  display:flex;
   margin-bottom:4px
 }
 .social-icons li.title
@@ -512,7 +482,7 @@ form.example input[type=text] {
 .social-icons a{
   background-color:#eceeef;
   color:#818a91;
-  font-size:16px;
+  font-size:14px;
   display:inline-block;
   line-height:44px;
   width:44px;
@@ -544,10 +514,7 @@ form.example input[type=text] {
 {
   background-color:#00aced
 }
-.social-icons a.linkedin:hover
-{
-  background-color:#007bb6
-}
+
 .social-icons a.dribbble:hover
 {
   background-color:#ea4c89
@@ -570,7 +537,7 @@ form.example input[type=text] {
   }
   .site-footer .copyright-text,.site-footer .social-icons
   {
-    text-align:center
+    margin:0;
   }
   /* Social footer */
 
@@ -661,10 +628,7 @@ form.example input[type=text] {
 {
   background-color:#00aced
 }
-.social-icons a.linkedin:hover
-{
-  background-color:#007bb6
-}
+
 .social-icons a.dribbble:hover
 {
   background-color:#ea4c89
@@ -733,7 +697,7 @@ form.example input[type=text] {
 .social-icons a{
   background-color:#eceeef;
   color:#818a91;
-  font-size:16px;
+  font-size:14px;
   display:inline-block;
   line-height:44px;
   width:44px;
@@ -900,7 +864,7 @@ form.example input[type=text] {
   align-content: flex-start;
   background-color:#eceeef;
   color:#818a91;
-  font-size:16px;
+  font-size:14px;
   line-height:44px;
   width:44px;
   height:44px;
@@ -930,10 +894,6 @@ form.example input[type=text] {
 .social-icons a.twitter:hover
 {
   background-color:#00aced
-}
-.social-icons a.linkedin:hover
-{
-  background-color:#007bb6
 }
 .social-icons a.dribbble:hover
 {
@@ -1069,7 +1029,6 @@ form.example input[type=text] {
       display:flex;
       justify-content: center;
       align-content: center;
-      flex-wrap: wrap;
     }
 
 
@@ -1145,7 +1104,7 @@ font-size:13px
 .social-icons a{
 background-color:#eceeef;
 color:#818a91;
-font-size:16px;
+font-size:14px;
 display:inline-block;
 line-height:44px;
 width:44px;
@@ -1177,10 +1136,7 @@ background-color:#3f4552
 {
 background-color:#00aced
 }
-.social-icons a.linkedin:hover
-{
-background-color:#007bb6
-}
+
 .social-icons a.dribbble:hover
 {
 background-color:#ea4c89
@@ -1258,13 +1214,12 @@ height: 50px;
 {
   background-image:url('/images/posible.png');
   padding:45px 0 20px;
-  font-size:15px;
+  font-size:14px;
   line-height:24px;
   color:white;
 }
-
-
-
-
-
-
+.row{
+  display:flex;
+  justify-content: center;
+  align-content: center;
+}
