@@ -11,3 +11,7 @@ app.listen(3002,()=>{
 app.get('/',(req,res)=>{
     res.sendFile(__dirname + '/views/index.html');
 })
+
+app.get('/cart',(req,res)=>{
+    res.sendFile(__dirname + '/views/cart.html');
+})

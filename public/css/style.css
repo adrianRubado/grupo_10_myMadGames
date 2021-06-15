@@ -9,8 +9,6 @@ header{
     margin: auto;
     width: 100%;
     padding: 15px;
-
-
 }
 .boton{
   margin-left: 10px;
@@ -307,8 +305,6 @@ form.example input[type=text] {
     margin-top: 1px;
     margin-left: 15px;
     width:50px;
-
-
 }
 
 .mainNavbar ul{
@@ -619,7 +615,7 @@ form.example input[type=text] {
         max-width: 350px;
         text-align: center;
         font-size: 1.25rem;
-        font-weight: 700;
+        font-weight: 400;
         color: white;
         padding-right: 15px;
         margin-top: 18px;
@@ -748,11 +744,11 @@ form.example input[type=text] {
 
     .copy-header{
         max-width: none;
-        font-size: 1.55rem;
+
         font-weight: 400;
         margin: 0;
         color: white;
-        margin-top: 25px;
+        margin-top: 18px;
 
     }
 
