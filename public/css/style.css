@@ -131,10 +131,6 @@ footer h4{
 
 }
 
-.container :hover{
-  box-shadow: 0 0 11px rgba(33,33,33,.2);
-}
-
  article {
      margin: 10px;
      text-align: center;
