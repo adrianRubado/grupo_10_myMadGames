@@ -15,3 +15,10 @@ app.get('/',(req,res)=>{
 app.get('/carrito', (req,res)=>{
     res.sendFile(__dirname + '/views/product-cart.html')
 })
+app.get('/sign-in',(req,res)=>{
+    res.sendFile(__dirname + '/views/sign-in.html');
+})
+
+app.get('/sign-up',(req,res)=>{
+    res.sendFile(__dirname + '/views/sign-up.html');
+})
