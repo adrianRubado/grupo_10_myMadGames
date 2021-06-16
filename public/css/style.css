@@ -123,7 +123,7 @@ background-color:#ea4c89
   background-image:url('/images/posible.png');
   padding:45px 0 20px;
   font-size:14px;
-  line-height:24px;
+  height: 100%;
   color:white;
 }
 .boton{
