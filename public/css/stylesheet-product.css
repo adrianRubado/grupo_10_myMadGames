@@ -1,7 +1,49 @@
 *{
   box-sizing: border-box;
 }
+
+header{
+  background-color: #3f51b5;
+  margin: auto;
+  width: 100%;
+  padding: 15px;
+
+
+}
+.logo{
+  margin-top: 1px;
+  margin-left: 15px;
+  width:50px;
+
+
+}
+.mainNavbar ul{
+  color: white;
+  list-style-type: none;
+
+}
+
+.mainNavbar{
+  display: none;
+}
+
+.mainNavbar a{
+  text-decoration: none;
+
+}
+.dots{
+  color: white;
+  margin-top: 20px;
+  margin-right: 12px;
+}
 .encabezado-chart{
+  display: none;
+}
+.Main-topNavbar{
+  display: flex;
+  justify-content: space-between;
+}
+.copy-header{
   display: none;
 }
 
@@ -11,23 +53,23 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-bottom: solid 1px gray;  
+  border-bottom: solid 1px gray;
 }
 .portada-chart{
   width: 23%;
   padding: 0px;
-  
-  
+
+
 }
 .buttomtotal-chart{
   margin-top: 5px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  
+
 }
 .buttomtotal-chart button{
-  
+
   border-radius: 8px;
   border: solid 0.5px gray;
   background-color: #3f51b5;
@@ -39,18 +81,71 @@
 .descripcion-chart{
      display: none;
 }
+#custom-search-input {
+  margin:0;
+  margin-top: 15px;
+  padding: 0;
+  width: 66%;
+  background-color: #3f51b5;
+  opacity: 1;
+
+}
 
     @media(min-width:768px){
       .encabezado-chart{
         margin-left: 9%;
         width: 39%;
         padding-top: 10px;
-      
+
         display: flex;
         justify-content: space-between;
-        
+
         align-items: center;
       }
+      .logo{
+        justify-content: flex-start;
+        width: 50px;
+        margin-right: 15px;
+
+
+     }
+      #custom-search-input {
+        max-width: 400px;
+
+      }
+      .dots{
+        display: none;
+    }
+    .mainNavbar{
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+  }
+  .mainNavbar ul {
+      display: flex;
+      justify-content: space-between;
+
+  }
+  .mainNavbar li {
+      margin: 0 5px;
+
+  }
+      .copy-header{
+        display: block;
+        max-width: 200px;
+        text-align: center;
+        font-size: 1.10rem;
+        font-weight: 700;
+        color: white;
+       margin-right: 10px;
+        margin-top: 18px;
+    }
+      .Main-topNavbar{
+        display: flex;
+        max-width: 768px;
+        margin: auto;
+    }
     .page-chart{
         background-color:#ebebeb;
 
@@ -59,15 +154,15 @@
     .portada-chart{
         width: 13%;
         padding: 20px;
-        
-        
+
+
     }
     .juegos-chart{
         margin: 15px;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        
+
     }
     .descripcion-chart{
         display: flex;
@@ -79,11 +174,15 @@
 
         display: flex;
         justify-content: space-between;
-        
+
         align-items: center;
     }
 
 
+
+}
+
+@media (min-width:1200px){
 
 }
 

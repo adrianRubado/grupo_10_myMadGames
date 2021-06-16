@@ -13,5 +13,5 @@ app.get('/',(req,res)=>{
 })
 
 app.get('/carrito', (req,res)=>{
-    res.sendFile(__dirname + '/views/product-chart.html')
+    res.sendFile(__dirname + '/views/product-cart.html')
 })
