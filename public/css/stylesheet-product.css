@@ -1,9 +1,67 @@
 *{
   box-sizing: border-box;
 }
+header{
+  background-color: #3f51b5;
+  margin: auto;
+  width: 100%;
+  padding: 15px;
+
+
+}
 .encabezado-chart{
   display: none;
 }
+
+
+.Main-topNavbar{
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.copy-header{
+  display: none;
+}
+
+#custom-search-input {
+  margin:0;
+  margin-top: 15px;
+  padding: 0;
+  width: 66%;
+  background-color: #3f51b5;
+  opacity: 1;
+
+}
+
+.dots{
+  color: white;
+  margin-top: 20px;
+  margin-right: 12px;
+}
+
+.mainNavbar ul{
+  list-style: none;
+  margin: 0;
+  width: 1em;
+  height: 1em;
+  color: white;
+
+}
+
+.mainNavbar{
+  display: none;
+}
+
+.mainNavbar a{
+  text-decoration: none;
+  color: black;
+  display: inline-block;
+  padding: 5px 0;
+  font-size: 11px;
+}
+
+
 .menusimple{
   list-style: none;
   display:flex;
@@ -176,6 +234,43 @@ footer{
         background-color:#ebebeb;
 
     }
+    .Main-topNavbar{
+      display: flex;
+      max-width: 768px;
+      margin: auto;
+  }
+
+.copy-header{
+      display: block;
+      max-width: 350px;
+      text-align: center;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: white;
+      padding-right: 15px;
+      margin-top: 18px;
+  }
+
+.dots{
+      display: none;
+  }
+
+
+.mainNavbar{
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+  }
+  .mainNavbar ul {
+      display: flex;
+      justify-content: space-between;
+
+  }
+  .mainNavbar li {
+      margin: 0 5px;
+
+  }
 
     .portada-chart{
         width: 13%;
