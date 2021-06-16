@@ -426,9 +426,7 @@ form.example input[type=text] {
 
 .mainNavbar ul{
     list-style: none;
-    margin: 0;
-    width: 1em;
-    height: 1em;
+
     color: white;
 
 }
@@ -440,9 +438,7 @@ form.example input[type=text] {
 .mainNavbar a{
     text-decoration: none;
     color: black;
-    display: inline-block;
-    padding: 5px 0;
-    font-size: 11px;
+
 }
 
 
@@ -674,7 +670,7 @@ form.example input[type=text] {
 
 
 
-@media (min-width:968px){
+@media (min-width:768px){
 
 
 
@@ -691,9 +687,7 @@ form.example input[type=text] {
     }
 
 
-    .filter{
-        display: none;
-    }
+
     .Main-topNavbar{
         display: flex;
         max-width: 768px;
@@ -704,7 +698,7 @@ form.example input[type=text] {
         display: block;
         max-width: 350px;
         text-align: center;
-        font-size: 1.25rem;
+        font-size:  14px;
         font-weight: 700;
         color: white;
         padding-right: 15px;
@@ -749,15 +743,7 @@ form.example input[type=text] {
         margin-top: 12px;
 
       }
-      .drawer{
-          display: block;
-         text-align: left;
-          width: 10%;
 
-          background-color: #3f51b5;
-          justify-content: left;
-          color: white;
-      }
 
       .drawer li{
         font-size: 10px;
@@ -791,7 +777,7 @@ form.example input[type=text] {
     .logo{
        justify-content: flex-start;
        width: 50px;
-       margin-left: -30px;
+
 
     }
 
@@ -822,6 +808,22 @@ form.example input[type=text] {
 
 }
 
+@media (min-width: 968px){
+  .filter{
+    display: none;
+  }
+  .drawer{
+    display: block;
+   text-align: left;
+    width: 10%;
+
+    background-color: #3f51b5;
+    justify-content: left;
+    color: white;
+}
+
+}
+
 @media (min-width:1200px){
 
 
@@ -836,14 +838,7 @@ form.example input[type=text] {
 
 
 
-    .drawer{
-        display: block;
 
-        width: 10%;
-
-        background-color: #3f51b5;
-
-    }
     .drawer li{
         font-size: small;
     }
