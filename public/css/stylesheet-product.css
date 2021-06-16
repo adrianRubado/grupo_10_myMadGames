@@ -170,12 +170,15 @@ background-color:#00aced
 background-color:#ea4c89
 }
 
-.social-footer{
-  background-color: #3f51b5;
-}
 
-footer{
-  background-image: url('/public/images/')
+
+.site-footer
+{
+  background-image:url('/images/posible.png');
+  padding:45px 0 20px;
+  font-size:14px;
+  height: 100%;
+  color:white;
 }
 
 .text-justify{
