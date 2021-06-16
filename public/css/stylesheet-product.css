@@ -1,14 +1,8 @@
 *{
   box-sizing: border-box;
 }
-
-header{
-  background-color: #3f51b5;
-  margin: auto;
-  width: 100%;
-  padding: 15px;
-
-
+.encabezado-chart{
+  display: none;
 }
 .menusimple{
   list-style: none;
@@ -20,6 +14,15 @@ header{
   display:flex;
   align-content: space-between;
   margin:0 12px;
+}
+.row{
+  display:flex;
+  justify-content: center;
+  align-content: center;
+}
+.row h6{
+  color: white;
+
 }
 .social-footer {
   padding: 1rem;
@@ -109,42 +112,19 @@ background-color:#00aced
 {
 background-color:#ea4c89
 }
-.logo{
-  margin-top: 1px;
-  margin-left: 15px;
-  width:50px;
 
-
+.social-footer{
+  background-color: #3f51b5;
 }
-.mainNavbar ul{
+
+footer{
+  background-color: #3f51b5;
+}
+
+.text-justify{
   color: white;
-  list-style-type: none;
-
 }
 
-.mainNavbar{
-  display: none;
-}
-
-.mainNavbar a{
-  text-decoration: none;
-
-}
-.dots{
-  color: white;
-  margin-top: 20px;
-  margin-right: 12px;
-}
-.encabezado-chart{
-  display: none;
-}
-.Main-topNavbar{
-  display: flex;
-  justify-content: space-between;
-}
-.copy-header{
-  display: none;
-}
 
 
 .juegos-chart{
@@ -180,15 +160,6 @@ background-color:#ea4c89
 .descripcion-chart{
      display: none;
 }
-#custom-search-input {
-  margin:0;
-  margin-top: 15px;
-  padding: 0;
-  width: 66%;
-  background-color: #3f51b5;
-  opacity: 1;
-
-}
 
     @media(min-width:768px){
       .encabezado-chart{
@@ -201,50 +172,6 @@ background-color:#ea4c89
 
         align-items: center;
       }
-      .logo{
-        justify-content: flex-start;
-        width: 50px;
-        margin-right: 15px;
-
-
-     }
-      #custom-search-input {
-        max-width: 400px;
-
-      }
-      .dots{
-        display: none;
-    }
-    .mainNavbar{
-      margin-top: 25px;
-      display: flex;
-      justify-content: space-between;
-      flex-direction: row;
-  }
-  .mainNavbar ul {
-      display: flex;
-      justify-content: space-between;
-
-  }
-  .mainNavbar li {
-      margin: 0 5px;
-
-  }
-      .copy-header{
-        display: block;
-        max-width: 200px;
-        text-align: center;
-        font-size: 1.10rem;
-        font-weight: 700;
-        color: white;
-       margin-right: 10px;
-        margin-top: 18px;
-    }
-      .Main-topNavbar{
-        display: flex;
-        max-width: 768px;
-        margin: auto;
-    }
     .page-chart{
         background-color:#ebebeb;
 
@@ -280,6 +207,4 @@ background-color:#ea4c89
 
 
 }
-
-
 
