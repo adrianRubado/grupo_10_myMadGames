@@ -1,9 +1,156 @@
+*{
+    box-sizing: border-box;
+}
+
+.boton{
+    margin-left: 10px;
+    border-radius: 5px;
+    color: white;
+    font-weight: 700;
+    background-color: grey;
+  }
 
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: #ebebeb;
+    background-color: rgb(240, 239, 239);
+    margin: 0;
+    margin-top: 0;
+}
+
+header {
+    background-color: #3f51b5;
+    margin: auto;
+    width: 100%;
+    padding: 15px;
+}
+
+.copy-header{
+    display: none;
+}
+
+header p{
+    margin-left: 125px;
+}
+
+#custom-search-input {
+    margin:0;
+    margin-top: 15px;
+    padding: 0;
+    width: 66%;
+    background-color: #3f51b5;
+    opacity: 1;
 
 }
+
+.dots{
+    color: white;
+    margin-top: 20px;
+    margin-right: 12px;
+}
+
+#custom-search-input .search-query {
+    padding-right: 3px;
+    padding-right: 4px \9;
+    padding-left: 3px;
+    padding-left: 4px \9;
+    background-color: #3f51b5;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#custom-search-input button {
+    border: 0;
+    background: none;
+    /** belows styles are working good */
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: relative;
+    left: -28px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color:white;
+}
+
+.search-query:focus + button {
+    z-index: 3;
+}
+
+.topnav {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+  }
+
+  /* Style the links inside the navigation bar */
+
+
+  /* Change the color of links on hover */
+
+
+  /* Style the "active" element to highlight the current page */
+
+  /* Style the search box inside the navigation bar */
+  .topnav input[type=text] {
+    float: left;
+    padding: 3px;
+    border: none;
+    margin-top: 15px;
+    margin-left: 14px;
+
+    font-size: 14.5px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-radius: 7%;
+    width: 130px;
+    height: 25px;
+
+  }
+
+
+
+.Main-topNavbar{
+    display: flex;
+    justify-content: space-between;
+  }
+
+.mainNavbar ul{
+    list-style: none;
+    margin: 0;
+    width: 1em;
+    height: 1em;
+    color: white;
+
+}
+
+.mainNavbar{
+    display: none;
+}
+
+.mainNavbar a{
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+    padding: 5px 0;
+    font-size: 11px;
+}
+
+.logo{
+    margin-top: 1px;
+    margin-left: 15px;
+    width:50px;
+}
+
+
+
 section{
     margin: 20px;
 }
@@ -105,7 +252,7 @@ article{
     
 }
 
-@media (min-width: 1024px){
+@media (min-width: 968px){
     body{
     background-color: rgb(208, 216, 208);
     }
@@ -113,10 +260,61 @@ article{
         display: flex;
     }
     .contenedor-info {
-        width:50%;
+        width:150%;
     }
     .descripcion {
         margin: 15px;
         text-align: left;
     }
+
+    .Main-topNavbar{
+        display: flex;
+        max-width: 768px;
+        margin: auto;
+    }
+
+    .copy-header{
+        display: block;
+        max-width: 350px;
+        text-align: center;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: white;
+        padding-right: 15px;
+        margin-top: 18px;
+    }
+    .dots{
+        display: none;
+    }
+    .hamburger-button{
+        display: none;
+    }
+    .mainNavbar{
+        margin-top: 25px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+    .mainNavbar ul {
+        display: flex;
+        justify-content: space-between;
+
+    }
+    .mainNavbar li {
+        margin: 0 5px;
+
+    }
+
+    .topnav input[type=text] {
+        margin-left: 16px;
+        width: 50%;
+        margin-top: 12px;    
+    }
+
+    .logo{
+        justify-content: flex-start;
+        width: 50px;
+        margin-left: -30px;
+    }
+
 }
