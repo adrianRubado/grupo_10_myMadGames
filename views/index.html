@@ -7,6 +7,7 @@
   <title>My Mad Games</title>
 
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/normalize.css">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
@@ -21,11 +22,10 @@
 <body>
   <header>
     <div class="Main-topNavbar">
-      <img src="/images/logo1.png" width="50px" alt="sapee" class='logo'></>
-      <!-- <form class="example" action="/action_page.php" style="margin:auto;max-width:300px">
-                    <input type="text" placeholder="Search.." name="search2">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                  </form> -->
+      <a href="/">
+      <img src="/images/logo1.png" width="50px" alt="logo" class='logo'>
+    </a>
+
       <div class="copy-header">
         My Mad Games
       </div>
@@ -54,7 +54,9 @@
 
           </li>
           <li>
+            <a href="/carrito">
             <i class="fas fa-shopping-cart"></i>
+          </a>
 
           </li>
           <li>
@@ -62,8 +64,9 @@
 
           </li>
           <li>
-
+            <a href="/sign-up">
             <i class="fas fa-user"></i>
+          </a>
 
           </li>
 
@@ -105,8 +108,8 @@
         <li><input type="checkbox"> Casual</li>
         <li><input type="checkbox"> Board</li>
         <li><input type="checkbox"> Racing</li>
-        <li><input type="checkbox"> Fighting</li>
-        <li><input type="checkbox"> Shooting</li>
+        <li><input type="checkbox"> Fight</li>
+        <li><input type="checkbox"> Arcade</li>
 
       </ul>
 
@@ -119,7 +122,7 @@
 
       </article>
       <article>
-        <img src="/images/GTA.jpg" alt="hola" width="160px" class="pictures">
+        <a href="/detail"><img src="/images/GTA.jpg" alt="hola" width="160px" class="pictures"></a>
 
       </article>
       <article>
@@ -165,15 +168,6 @@
           </p>
         </div>
       </div>
-      <div class="container2">
-        <div class="row">
-          <div class="col-md-8 col-sm-6 col-xs-12">
-            <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by
-              <a class="copyright-text2" href="#">MyMadGames</a>.
-            </p>
-          </div>
-        </div>
-      </div>
       <hr>
     </div>
     <!--Social footer-->
@@ -188,7 +182,7 @@
         <li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
       </ul>
     </div>
-    
+
   </section>
   </footer>
 
