@@ -1,15 +1,38 @@
-const express = require("express")
-const app = express()
+const express = require("express");
+const methodOverride = require ('method-override');
+const createError = require('http-errors');
+const app = express() //Requerimos modulo de express para levantar nuestro servidor
+const path = require ('path');
+const morgan = require ('morgan');
+
+app.set ("view engine", "ejs") ; //Establecimos como template engine ejs
+app.set('views', path.join(__dirname, '/src/views'));
+
+app.use(methodOverride('_method'));// Requerimos el overRide para manipular los metodos PUT-DELETE
+app.use(express.urlencoded({ extended: false })); //Sirve como parseo de peticiones HTTP y facilita la forma en la que accedemos a una peticion de la misma
+app.use (express.json()); //para capturar informacion
+app.use(express.static('public'))//Establecemos como carpeta estatica
+app.use (morgan('dev')) ;
 
 
-app.use(express.static('public'))
+
+/* 
+const indexRouter = require ('./routes/');
+const detailRouter = require ('./routes/')
+const productCartRouter = require ('./routes/')
+const signInRouter = require ('./routes/')
+const signUpRouter = require ('./routes/') */
+
+
 
 app.listen(3002,()=>{
     console.log("Listening on port 3002")
 })
 
+
+
 app.get('/',(req,res)=>{
-    res.sendFile(__dirname + '/views/index.html');
+    res.render ('index', {titulo:'My Mad'})
 })
 
 app.get('/carrito', (req,res)=>{
@@ -26,3 +49,4 @@ app.get('/sign-up',(req,res)=>{
 app.get('/detail',(req,res)=>{
     res.sendFile(__dirname + '/views/detail.html');
 })
+app.use((req, res, next) => next(createError(404)));
