@@ -7,7 +7,7 @@ const indexController = {
     index: (req,res) => {
         const viewData = {
                 titulo: 'My Mad Games',
-                games: juegos
+            games: juegos
         }
         
         res.render ('index',viewData);
