@@ -117,43 +117,14 @@
 
     </div>
     <section class='container'>
-      <article>
-        <img src="/images/fifa21.jpeg" alt="hola" width="160px" class="pictures">
-
-      </article>
-      <article>
-        <a href="/detail"><img src="/images/GTA.jpg" alt="hola" width="160px" class="pictures"></a>
-
-      </article>
-      <article>
-        <img src="/images/godOfWar.jpg" alt="hola" width="160px">
-
-      </article>
-      <article>
-        <img src="/images/LOF.jpg" alt="hola" width="160px">
-
-      </article>
-      <article>
-        <img src="/images/crash.jpg" alt="hola" width="160px">
-
-      </article>
-      <article>
-        <img src="/images/demonsSouls.jpeg" alt="hola" width="160px">
-
-      </article>
-      <article>
-        <img src="/images/horizon.jpg" alt="hola" width="160px">
-
-      </article>
-      <article>
-        <img src="/images/rachet&clank.jpg" alt="hola" width="160px">
-
-      </article>
-
-
-
+      <% games.forEach(g => { %>
+        <article>
+          <a href="/detail/<%=g.id%>">
+            <img src=<%=g.image%>  alt="hola" width="160px" class="pictures">
+          </a>
+        </article>
+      <% }) %>
     </section>
-
   </div>
 
   <!-- Site footer -->
