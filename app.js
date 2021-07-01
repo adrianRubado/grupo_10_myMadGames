@@ -4,6 +4,7 @@ const createError = require('http-errors');
 const app = express() //Requerimos modulo de express para levantar nuestro servidor
 const path = require ('path');
 const morgan = require ('morgan');
+const indexRouter = require('./src/routes/index')
 
 app.set ("view engine", "ejs") ; //Establecimos como template engine ejs
 app.set('views', path.join(__dirname, '/src/views'));
@@ -16,7 +17,7 @@ app.use (morgan('dev')) ;
 
 
 
-/* 
+/*
 const indexRouter = require ('./routes/');
 const detailRouter = require ('./routes/')
 const productCartRouter = require ('./routes/')
@@ -30,10 +31,8 @@ app.listen(3002,()=>{
 })
 
 
+/*
 
-app.get('/',(req,res)=>{
-    res.render ('index', {titulo:'My Mad'})
-})
 
 app.get('/carrito', (req,res)=>{
     res.sendFile(__dirname + '/views/product-cart.html')
@@ -47,6 +46,8 @@ app.get('/sign-up',(req,res)=>{
 })
 
 app.get('/detail',(req,res)=>{
-    res.sendFile(__dirname + '/views/detail.html');
-})
+    res.sendFile(__dirname + '/src/views/detail.ejs');
+}) */
+
+app.use('/',indexRouter)
 app.use((req, res, next) => next(createError(404)));

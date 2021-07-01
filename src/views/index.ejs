@@ -27,7 +27,7 @@
     </a>
 
       <div class="copy-header">
-        <%= titulo %> 
+        <%= titulo %>
       </div>
       <div id="custom-search-input">
         <div class="input-group col-md-12">
@@ -117,12 +117,13 @@
 
     </div>
     <section class='container'>
-      <% games.forEach(g => { %>
+      <% games.forEach(element => { %>
         <article>
-          <a href="/detail/<%=g.id%>">
-            <img src=<%=g.image%>  alt="hola" width="160px" class="pictures">
+          <a href="/detail">
+            <img src = <%=element.image %>   alt="hola" width="160px" class="pictures">
           </a>
         </article>
+
       <% }) %>
     </section>
   </div>
