@@ -31,11 +31,11 @@ app.listen(3002,()=>{
 
 
 
-app.get('/',(req,res)=>{
+app.use('/',(req,res)=>{
     res.render ('index', {titulo:'My Mad'})
 })
 
-app.get('/carrito', (req,res)=>{
+app.use('/carrito', (req,res)=>{
     res.sendFile(__dirname + '/views/product-cart.html')
 })
 app.get('/sign-in',(req,res)=>{
