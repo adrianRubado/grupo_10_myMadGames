@@ -5,6 +5,10 @@ const app = express() //Requerimos modulo de express para levantar nuestro servi
 const path = require ('path');
 const morgan = require ('morgan');
 const indexRouter = require('./src/routes/index')
+const detailRouter = require('./src/routes/detail')
+const pcRouter = require('./src/routes/productCart')
+const signUpRouter = require('./src/routes/signUp')
+const signInRouter = require ('./src/routes/sigIn')
 
 app.set ("view engine", "ejs") ; //Establecimos como template engine ejs
 app.set('views', path.join(__dirname, '/src/views'));
@@ -50,4 +54,8 @@ app.get('/detail',(req,res)=>{
 }) */
 
 app.use('/',indexRouter)
+app.use('/detail',detailRouter)
+app.use('/product-cart',pcRouter)
+app.use('/sign-up',signUpRouter)
+app.use('/sign-in',signInRouter)
 app.use((req, res, next) => next(createError(404)));

@@ -1,89 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/stylesheet.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="https://kit.fontawesome.com/0e5dee2de0.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <title>Detalle del producto</title>
-</head>
+  <%- include('./partials/head.ejs')  %>
 
 <body>
-    <header>
-        <div class="Main-topNavbar">
-          <a href="/">
-          <img src="/images/logo1.png" width="50px" alt="sapee" class='logo'>
-        </a>
-          <div class="copy-header">
-            My Mad Games
-          </div>
-          <div id="custom-search-input">
-            <div class="input-group col-md-12">
-              <input type="text" class="  search-query form-control" placeholder="Search" />
-              <span class="input-group-btn">
-                <button class="btn btn-danger" type="button">
-                  <span class=" glyphicon glyphicon-search"></span>
-                </button>
-              </span>
-            </div>
-          </div>
-
-
-          <div class="dots">
-            <i class="fas fa-ellipsis-v"></i>
-          </div>
-
-
-          <nav class="mainNavbar">
-
-            <ul>
-              <li>
-                <i class="far fa-question-circle"></i>
-
-              </li>
-              <li>
-                <a href="carrito">
-                <i class="fas fa-shopping-cart"></i>
-              </a>
-
-              </li>
-              <li>
-                <i class="far fa-star"></i>
-
-              </li>
-              <li>
-                <a href="sign-up">
-                <i class="fas fa-user"></i>
-              </a>
-
-              </li>
-
-            </ul>
-          </nav>
-        </div>
-
-    </header>
+  <%- include('./partials/header.ejs')  %>
     <section>
 
         <article>
             <div class="nombre">
-                Grand Theft Auto V</div>
+                <%= game.name %> </div>
             <div class="cont-padre">
             <div class="contenedor-info">
-                <img class="gta" src="/images/gta.png" width="100%" ;>
+                <img class="gta" src =<%= game.image  %>  width="360px" ;>
 
                 <div class="iconos">
-                    <i class="fas fa-dollar-sign"><span class="tip">1361</span></i>
+                    <i class="fas fa-dollar-sign"><span class="tip"><%= game.price  %> </span></i>
                     <i class="fas fa-cart-plus chart"><a href="https://www.com"><span class="tip">Comprar</span></a></i>
 
 
@@ -98,7 +30,7 @@
             <div class="descripcion">
                 <h5>Descripcion</h5>
                 <p>
-                  Grand Theft Auto V es un videojuego de acción y aventura desarrollado por Rockstar North y publicado en 2013 por Rockstar Games. El juego se centra sobre todo en los atracos, persecuciones policiales, tiroteos y el logro de los objetivos, incluso si eso significa infringir la ley de vez en cuando. Premium Online Edition es un paquete conveniente que reúne tanto el juego básico de GTA V como Criminal Enterprise Starter Pack para ayudarte a comenzar y desarrollar tu negocio criminal de modo online mucho más rápido.
+                  <%= game.description %>
                 </p>
 
             </div>
@@ -127,12 +59,12 @@
 
         </article>
         <div class="cuadro">
-            <h4>Review</h4>
+            <h4>Trailer</h4>
 
         </div>
 
         <div class=”video-responsive”>
-            <iframe src="https://www.youtube.com/embed/QkkoHAzjnUs" title="YouTube video player" frameborder="0"
+            <iframe src =<%=game.link %>  title="YouTube video player" frameborder="0" width = "100%" height = 360px
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
         </div>
@@ -145,34 +77,7 @@
 
     </section>
 
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-6">
-            <h6>About Us</h6>
-            <p class="text-justify"> My Mad Games, es una<i> E-COMMERCE </i> basada en la venta de videojuegos de
-              distintas plataformas y relacionados. Los usuarios podran vender/canjear sus propios videojuegos, y se
-              ofrecera una suscripcion premium, con mas beneficios.
-            </p>
-          </div>
-        </div>
-        <hr>
-      </div>
-      <!--Social footer-->
-      <section class = "social-footer">
-      <div class="social-footer-left">
-        <a href="#"><img class="logoHome" src="/images/home-logo-icon-0.jpg"></a>
-      </div>
-      <div class="social-footer-icons">
-        <ul class="menusimple">
-          <li><a href="https://www.facebook.com/"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-          <li><a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-          <li><a href="https://twitter.com/?lang=en"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-        </ul>
-      </div>
-
-    </section>
-    </footer>
+    <%- include('./partials/footer.ejs')  %>
 
 
 </body>
