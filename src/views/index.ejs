@@ -119,7 +119,7 @@
     <section class='container'>
       <% games.forEach(element => { %>
         <article>
-          <a href="/detail">
+          <a href="/detail/<%= element.id %>"  >
             <img src = <%=element.image %>   alt="hola" width="160px" class="pictures">
           </a>
         </article>
