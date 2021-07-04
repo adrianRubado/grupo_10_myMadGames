@@ -4,6 +4,11 @@ const createError = require('http-errors');
 const app = express() //Requerimos modulo de express para levantar nuestro servidor
 const path = require ('path');
 const morgan = require ('morgan');
+const indexRouter = require('./src/routes/index')
+const detailRouter = require('./src/routes/detail')
+const pcRouter = require('./src/routes/productCart')
+const signUpRouter = require('./src/routes/signUp')
+const signInRouter = require ('./src/routes/sigIn')
 
 app.set ("view engine", "ejs") ; //Establecimos como template engine ejs
 app.set('views', path.join(__dirname, '/src/views'));
@@ -16,7 +21,7 @@ app.use (morgan('dev')) ;
 
 
 
-/* 
+/*
 const indexRouter = require ('./routes/');
 const detailRouter = require ('./routes/')
 const productCartRouter = require ('./routes/')
@@ -30,10 +35,14 @@ app.listen(3002,()=>{
 })
 
 
+/*
 
+<<<<<<< HEAD
 app.use('/',(req,res)=>{
     res.render ('index', {titulo:'My Mad'})
 })
+=======
+>>>>>>> 0635a2e402869c6b635c4b21d3d57af45ced319c
 
 app.use('/carrito', (req,res)=>{
     res.sendFile(__dirname + '/views/product-cart.html')
@@ -47,6 +56,12 @@ app.get('/sign-up',(req,res)=>{
 })
 
 app.get('/detail',(req,res)=>{
-    res.sendFile(__dirname + '/views/detail.html');
-})
+    res.sendFile(__dirname + '/src/views/detail.ejs');
+}) */
+
+app.use('/',indexRouter)
+app.use('/detail',detailRouter)
+app.use('/product-cart',pcRouter)
+app.use('/sign-up',signUpRouter)
+app.use('/sign-in',signInRouter)
 app.use((req, res, next) => next(createError(404)));
