@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('./partials/head.ejs')  %> 
+
+
+
+<body>
+    <%- include('./partials/header.ejs')  %>
+
+    
+    <section class="signup-general">
+        <form class="signup" method="POST">
+            <input type="text" id="id-signup"  name="name" placeholder="Nombre">
+            <input type="text" id="id-signup" name="precio" placeholder="Precio">
+            <label id="descripcion-cg"><input  type="text" id="id-signup" name="descripcion" placeholder="Descripcion"></label>
+      
+            <div class="letreo-signup">Datos</div>
+            <input type="text" id="id-signup" name="link" placeholder="http://www.linkDeReview">
+            <input type="file" id="boton-carga-cg" name="imagen" accept=".jpg, .png">
+            <div class="letreo-signup">Plataforma</div>
+            <div class="radio-signup">
+            <label>   
+                    <input type="radio" name="tipo-perfil">PC    
+            </label>
+            <label>
+                <input type="radio" name="tipo-perfil"> PS
+            </label>
+            <label>
+                <input type="radio" name="tipo-perfil"> XBOX
+            </label>
+            <label>
+                <input type="radio" name="tipo-perfil"> MULTIPLATAFORMA
+            </label>
+            <label>
+                <input type="radio" name="tipo-perfil"> OTRO
+            </label>
+             
+        </div>
+            <input type="text" id="id-signup" name="requisitos" placeholder="Requisito 1">
+            <input type="text" id="id-signup" name="requisitos" placeholder="Requisito 2">
+            <input type="text" id="id-signup" name="requisitos" placeholder="Requisito 3">
+            <input type="text" id="id-signup" name="requisitos" placeholder="Requisito 4">
+            <input type="text" id="id-signup" name="requisitos" placeholder="Requisito 5"> 
+           
+            <div class="letreo-signup">Categorias</div>
+            <div class="check-signup">
+            <label>
+                <input type="checkbox" name="tipo-intereses">Horror
+            </label>
+            <label>
+                <input type="checkbox" name="tipo-intereses">Accion
+            </label>
+            <label>
+                <input type="checkbox" name="tipo-intereses">Deportes
+            </label>
+            <label>
+                <input type="checkbox" name="tipo-intereses">Casual
+            </label>
+            <label>
+                <input type="checkbox" name="tipo-intereses">Board
+            </label>
+            <label>
+                <input type="checkbox" name="tipo-intereses">Carrera
+            </label>
+            <label>
+                <input type="checkbox" name="tipo-intereses">Lucha
+            </label>
+            <label>
+                <input type="checkbox" name="tipo-intereses">Arcade
+            </label>
+        </div>
+        <br>
+
+        <button type="submit" id="botones-formularios-cg">Postear</button>
+        <br>
+
+
+
+        </form>
+
+    </section>
+    <%- include ('./partials/footer.ejs') %>  
+</body>
