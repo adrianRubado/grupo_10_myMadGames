@@ -1,0 +1,87 @@
+#boton-enviar{
+    font-size: large;
+    height: 70px;
+    margin: center;
+    border-radius: 5px;
+    background:#1259c3 ;
+    border: none;
+    color: #ebebeb;
+}
+#boton-enviar :hover{
+    background: #0022AA;
+}
+.signup-general{
+    display: flex;
+    justify-content: center;
+
+}
+#id-signup{
+    border: none;
+    border-radius: 5px;
+    height: 4vh;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: #c0c0d4;
+}
+.signup{
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+
+    
+}
+.datos-signup{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+}
+.letreo-signup{
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.radio-signup{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    
+}
+.check-signup{
+    display: flex;
+flex-direction: column;
+height: 30vh;
+justify-content: space-between;
+}
+#boton-carga-cg{
+width: 40vw;
+height: 35px;
+border: none;
+padding: 5px;
+}
+#descripcion-cg{
+    border: none;
+    border-radius: 5px;
+    height: 20vh;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: #c0c0d4;
+
+}
+#botones-formularios-cg{
+    background-color:#c0c0d4;
+    position: relative;
+    top: 25px;
+    
+    font-size: large;
+    height: 70px;
+    margin: center;
+    border-radius: 5px;
+    border: none;
+    color: #ebebeb;
+    width: 100%;
+}
+#botones-formularios-cg:hover{
+    background-color: #1259c3;
+}
