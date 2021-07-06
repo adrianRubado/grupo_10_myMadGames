@@ -200,12 +200,21 @@ article{
     margin-bottom: 15px;
 
 }
+
+.nombre input {
+    height: 45px;
+    border: white;
+}
 .iconos{
     color: rgb(44, 40, 40);
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
 
+}
+
+.iconos input {
+    border: white;
 }
 
 .icons{

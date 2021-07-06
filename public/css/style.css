@@ -314,6 +314,16 @@ footer{
 
   }
 
+ .descripcionEdit {
+  margin-right:35px;
+  margin-top : -25px;
+  text-align: left;
+ }
+
+
+
+
+
 
   /* Style the links inside the navigation bar */
 
@@ -466,6 +476,12 @@ form.example input[type=text] {
   padding: 15px ;
   background-color: #F5F5F5;
   margin: 0,0,10px;
+}
+
+.requisitos{
+  display: flex;
+  justify-content: flex-start;
+  justify-content: space-around;
 }
 
 
