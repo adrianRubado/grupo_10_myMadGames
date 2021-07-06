@@ -7,67 +7,67 @@
 
 <body>
     <%- include('./partials/header.ejs')  %>
-
-
     <section class="signup-general">
-        <form class="signup" method="POST">
+    <form class="signup" action = "/products" method="POST" >
+
+
             <input type="text" id="id-signup"  name="name" placeholder="Nombre">
-            <input type="text" id="id-signup" name="precio" placeholder="Precio">
-            <label id="descripcion-cg"><input  type="text" id="id-signup" name="descripcion" placeholder="Descripcion"></label>
+            <input type="text" id="id-signup" name="price" placeholder="Precio">
+            <label id="descripcion-cg"><input  type="text" id="id-signup" name="description" placeholder="Descripcion"></label>
 
             <div class="letreo-signup">Datos</div>
             <input type="text" id="id-signup" name="link" placeholder="http://www.linkDeReview">
-            <input type="file" id="boton-carga-cg" name="imagen" accept=".jpg, .png">
+            <input type="file" id="boton-carga-cg" name="image" accept=".jpg, .png">
             <div class="letreo-signup">Plataforma</div>
             <div class="radio-signup">
             <label>
-                    <input type="radio" name="tipo-perfil">PC
+                    <input type="radio" name="platform">PC
             </label>
             <label>
-                <input type="radio" name="tipo-perfil"> PS
+                <input type="radio" name="platform"> PS
             </label>
             <label>
-                <input type="radio" name="tipo-perfil"> XBOX
+                <input type="radio" name="platform"> XBOX
             </label>
             <label>
-                <input type="radio" name="tipo-perfil"> MULTIPLATAFORMA
+                <input type="radio" name="platform"> MULTIPLATAFORMA
             </label>
             <label>
-                <input type="radio" name="tipo-perfil"> OTRO
+                <input type="radio" name="platform"> OTRO
             </label>
 
         </div>
-            <input type="text" id="id-signup" name="requisitos" placeholder="Requisito 1">
-            <input type="text" id="id-signup" name="requisitos" placeholder="Requisito 2">
-            <input type="text" id="id-signup" name="requisitos" placeholder="Requisito 3">
-            <input type="text" id="id-signup" name="requisitos" placeholder="Requisito 4">
-            <input type="text" id="id-signup" name="requisitos" placeholder="Requisito 5">
+            <input type="text" id="id-signup" name="requirements" placeholder="Requisito 1">
+            <input type="text" id="id-signup" name="requirements" placeholder="Requisito 2">
+            <input type="text" id="id-signup" name="requirements" placeholder="Requisito 3">
+            <input type="text" id="id-signup" name="requirements" placeholder="Requisito 4">
+            <input type="text" id="id-signup" name="requirements" placeholder="Requisito 5">
 
             <div class="letreo-signup">Categorias</div>
             <div class="check-signup">
             <label>
-                <input type="checkbox" name="tipo-intereses">Horror
+                <input type="radio" name="category">Horror
             </label>
             <label>
-                <input type="checkbox" name="tipo-intereses">Accion
+                <input type="radio" name="category">Accion
             </label>
             <label>
-                <input type="checkbox" name="tipo-intereses">Deportes
+                <input type="radio" name="category">Deportes
             </label>
             <label>
-                <input type="checkbox" name="tipo-intereses">Casual
+                <input type="radio" name="category">Casual
             </label>
             <label>
-                <input type="checkbox" name="tipo-intereses">Board
+                <input type="radio" name="category">Board
             </label>
             <label>
-                <input type="checkbox" name="tipo-intereses">Carrera
+                <input type="radio" name="category">Carrera
             </label>
             <label>
-                <input type="checkbox" name="tipo-intereses">Lucha
+                <input type="radio" name="category">Lucha
             </label>
             <label>
-                <input type="checkbox" name="tipo-intereses">Arcade
+                <input type="radio" name="category">Arcade
             </label>
         </div>
         <br>
@@ -77,8 +77,9 @@
 
 
 
-        </form>
 
+    </form>
     </section>
+
     <%- include ('./partials/footer.ejs') %>
 </body>
