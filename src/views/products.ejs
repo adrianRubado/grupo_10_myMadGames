@@ -12,7 +12,7 @@
                 <%= game.name %> </div>
             <div class="cont-padre">
             <div class="contenedor-info">
-                <img class="gta" src =<%= game.image  %>  width="360px" ;>
+                <img class="gta" src =<%= game.image  %>  width="260px" ;>
 
                 <div class="iconos">
                     <i class="fas fa-dollar-sign"><span class="tip"><%= game.price  %> </span></i>
@@ -32,6 +32,15 @@
                 <p>
                   <%= game.description %>
                 </p>
+                <div class="icons">
+                <a href= "/products/<%=game.id %>/edit "
+                    <button class="button">Editar</button>
+                </a>
+                <a href="/products/<%=game.id  %>/delete ">
+                    <button class="button button2">Eliminar</button>
+                </a>
+
+            </div>
 
             </div>
         </div>

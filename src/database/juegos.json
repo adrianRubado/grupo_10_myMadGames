@@ -13,7 +13,7 @@
      "id": 2,
      "name": "Grand Theft Auto V",
      "price": 3000,
-     "discount": 3,
+     "discount": 300,
      "category": "in-sale",
      "description": "Grand Theft Auto V es un videojuego de acción y aventura desarrollado por Rockstar North y publicado en 2013 por Rockstar Games. El juego se centra sobre todo en los atracos, persecuciones policiales, tiroteos y el logro de los objetivos, incluso si eso significa infringir la ley de vez en cuando. Premium Online Edition es un paquete conveniente que reúne tanto el juego básico de GTA V como Criminal Enterprise Starter Pack para ayudarte a comenzar y desarrollar tu negocio criminal de modo online mucho más rápido.",
      "image": "/images/GTA.jpg",
@@ -22,8 +22,8 @@
     {
      "id": 3,
      "name": "godOfWar",
-     "price": 799,
-     "discount": 25,
+     "price": 7999,
+     "discount": 2500,
      "category": "in-sale",
      "description": "God of War es la vuelta de Kratos a los videojuegos tras la trilogía original. Esta nueva entrega para PlayStation 4, si bien mantendrá varios de los ingredientes indivisibles de su jugabilidad, apostará por un nuevo comienzo para el personaje y una ambientación nórdica, ofreciéndonos una perspectiva más madura y realista de la mitología de dioses y monstruos milenarios habitual en la serie de títulos. En God of War, Kratos será un guerrero más curtido y pasivo, pues tendrá que desempeñar el rol de padre en un frío y hostil escenario, al que parece haberse retirado para olvidar su pasado.",
      "image": "/images/godOfWar.jpg",
@@ -34,7 +34,7 @@
      "name": "LOF",
      "description": "The Last of Us: Parte II es la secuela de la aventura de acción The Last of Us para PlayStation 4 a cargo de Naughty Dog y Sony protagonizada por Joel y Ellie. Cinco años después, nos espera una aventura intensa, dolorosa y cargada de emociones. Ellie y Joel vuelven en un viaje épico en la secuela del aclamado juego de los creadores de Uncharted.",
      "price": 47900,
-     "discount": 10,
+     "discount": 1000,
      "image": "/images/LOF.jpg",
      "category": "in-sale",
      "link" : "https://www.youtube.com/embed/orDRnUXu-Rw"
@@ -44,7 +44,7 @@
      "name": "crash",
      "description": "Este título se trata de una remasterización de los tres primeros juegos de la serie Crash Bandicoot lanzados en la consola PlayStation a finales de los 90, mejorados con gráficos totalmente renovados y cambios estéticos. Incluyendo Crash Bandicoot, Crash Bandicoot 2: Cortex Strikes Back y Crash Bandicoot: Warped, reviviendo todos tus momentos favoritos de Crash.",
      "price": 53000,
-     "discount": 20,
+     "discount": 1000,
      "image": "/images/crash.jpg",
      "category": "in-sale",
      "link" : "https://www.youtube.com/embed/x5K3KaL_xVI"
@@ -54,7 +54,7 @@
      "name": "demonsSouls",
      "description": "Demon's Souls representa el regreso del videojuego de acción RPG de From Software de PlayStation 3 en forma de remake a cargo de Bluepoint Games y PlayStation Studios para PlayStation 5. En la búsqueda por aumentar su poder, el rey Allant XII, monarca de Boletaria, canalizó las antiguas artes del alma y despertó a un demonio tan antiguo como el tiempo: el Anciano. Esta acción provocó que una niebla incolora se extendiera por toda la región, liberando a terroríficas criaturas hambrientas de almas humanas. Aquellos cuyas almas les fueron arrebatadas, perdieron la cordura y solo les quedó el deseo de atacar a quien aún la conserve.",
      "price": 20999,
-     "discount": 12,
+     "discount": 2000,
      "image": "/images/demonsSouls.jpeg",
      "category": "in-sale",
      "link" : "https://www.youtube.com/embed/9AyX2QqPKaY"
@@ -64,7 +64,7 @@
      "name": "horizon",
      "description": "Nominado a juego del año en 2017, Horizon Zero Dawn es un juego de acción / rol en el que los jugadores asumen el papel de Aloy que sobrevive a través de un mundo post-apocalíptico. Nuestra misión es guiar a Aloy mientras aprende a cazar criaturas y animales robóticos en la naturaleza. Aloy usa flechas, lanzas y trampas explosivas para herir y matar máquinas, jabalíes y enemigos humanos ocasionales",
      "price": 36700,
-     "discount": 5,
+     "discount": 1000,
      "image": "/images/horizon.jpg",
      "category": "in-sale",
      "link" : "https://www.youtube.com/embed/_BvZvkT5QHw"
@@ -75,7 +75,7 @@
      "name": "rachet&clank",
      "description": "Ratchet & Clank para PS4 es una aventura en 3D de acción y disparos en tercera persona con numerosas y originales armas, mezclada con plataformas y puzles. De este modo, encontramos una combinación de géneros que se alterna a buen ritmo, sin volverse una fórmula repetitiva ni una odisea monótona",
      "price": 148000,
-     "discount": 2,
+     "discount": 20000,
      "image": "/images/rachet&clank.jpg",
      "category": "in-sale",
      "link" : "https://www.youtube.com/embed/4Zf1GCFoqn0"
