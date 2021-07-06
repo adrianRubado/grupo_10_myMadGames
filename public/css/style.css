@@ -484,6 +484,10 @@ form.example input[type=text] {
   justify-content: space-around;
 }
 
+.idEditForm{
+  display: none;
+}
+
 
 
 

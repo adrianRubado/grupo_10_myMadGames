@@ -33,8 +33,14 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
         res.render('editGame',viewData);
     },
     update: (req,res) => {
+        const id = req.params.id
         const updatedProduct = req.body
-        res.send(updatedProduct)
+        const objIndex = juegos.findIndex(e => e.id == id)
+        juegos[objIndex] = updatedProduct
+        fs.writeFileSync(juegosFilePath,JSON.stringify(juegos))
+
+
+        res.redirect('/')
 
 
     },
@@ -46,6 +52,10 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
 
     get : (req,res) =>{
         res.send(juegos)
+    },
+
+    delete : (req,res) =>{
+        res.send('sape')
     }
 
 }

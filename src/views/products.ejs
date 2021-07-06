@@ -38,7 +38,7 @@
                     <button class="button">Editar</button>
                 </a>
                 <a href="/products/<%=game.id  %>/delete ">
-                    <button class="button button2">Eliminar</button>
+                    <button class="button button2" method = "DELETE">Eliminar</button>
                 </a>
 
             </div>
@@ -50,11 +50,7 @@
                     Requisitos
                 </div>
                 <div class="caracteristicas">
-                    Sistema:<span>Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1</span>
-                    Procesador:<span>Intel Core i5 3470 @ 3.2GHz (4 CPUs) / AMD X8 FX-8350 @ 4GHz (8 CPUs)</span>
-                    Almacenamiento:<span>72 GB disponibles</span>
-                    Memoria:<span>8 GB RAM</span>
-                    GPU:<span>NVIDIA GTX 660 2GB / AMD HD 7870 2GB</span>
+                    <%= game.requirements %>
                 </div>
 
             </div>

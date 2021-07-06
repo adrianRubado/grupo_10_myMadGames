@@ -8,5 +8,6 @@ router.get('/:id/',productsController.detail )
 router.get('/:id/edit',productsController.edit)
 router.put('/:id/edit',productsController.update)
 router.post('/create', productsController.post)
+router.delete('/:id/delete',productsController.delete)
 
 module.exports = router
