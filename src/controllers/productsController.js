@@ -47,6 +47,7 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
 
     post :(req,res) => {
         const newGame = req.body
+        newGame.id = juegos[juegos.length -1 ].id + 1
         res.send(newGame)
     },
 
