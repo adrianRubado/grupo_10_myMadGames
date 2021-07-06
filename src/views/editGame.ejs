@@ -5,33 +5,30 @@
 
 <body>
   <%- include('./partials/header') %>
-  <form class="editForm" method="POST" action="method=___"></form>
+  <form class="editForm" method="POST" action="/products/<%=game.id %>/edit?_method=PUT" >
 
     <article>
         <div class="nombre">
-           <input type="text" value=<%= game.name %>>
+           <input type="text" name = "name" value=<%= game.name %>>
         </div>
         <div class="cont-padre">
         <div class="contenedor-info">
             <img class="gta" src =<%= game.image  %>  width="360px" ;>
 
             <div class="iconos">
-                <i class="fas fa-dollar-sign"><span class="tip"><input type="text" value=<%= game.price %> ></span></i>
-                <i class="fas fa-percent"><span class="tip"><input type="text" value=<%= game.discount  %>></span></i>
+                <i class="fas fa-dollar-sign"><span class="tip"><input type="text" name= "price" value=<%= game.price %> ></span></i>
+                <i class="fas fa-percent"><span class="tip"><input type="text" name="discount" value=<%= game.discount  %>></span></i>
 
 
 
             </div>
-            <div class="social"><i class="fas fa-heart"></i>
-                <i class="fas fa-comment"></i>
-                <i class="fas fa-share-alt"></i>
 
-            </div>
         </div>
+        <br>
         <div class="descripcionEdit">
             <h5>Descripcion</h5>
 
-            <textarea name="textarea" rows="10" cols="50"><%= game.description %></textarea>
+            <textarea name="description" rows="10" cols="50"><%= game.description %></textarea>
 
 
 
@@ -45,7 +42,7 @@
             <div class="requisitos">
 
 
-            <textarea name="textarea" rows="10" cols="50">
+            <textarea name="requirements" rows="10" cols="50">
                 Sistema:Windows 10 64 Bit, Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1
                 Procesador:Intel Core i5 3470 @ 3.2GHz (4 CPUs) / AMD X8 FX-8350 @ 4GHz (8 CPUs)
                 Memoria:8 GB RAM
@@ -53,7 +50,7 @@
                 GPU:NVIDIA GTX 660 2GB / AMD HD 7870 2GB
             </textarea>
             <div class="iconos"> Link trailer:
-                <input type="text" value=<%= game.link %>>
+                <input type="text" name="link" value=<%= game.link %>>
 
              </div>
 

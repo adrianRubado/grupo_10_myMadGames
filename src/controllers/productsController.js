@@ -33,9 +33,10 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
         res.render('editGame',viewData);
     },
     update: (req,res) => {
+        const updatedProduct = req.body
+        res.send(updatedProduct)
 
 
-        res.send('alo');
     },
 
     post :(req,res) => {
