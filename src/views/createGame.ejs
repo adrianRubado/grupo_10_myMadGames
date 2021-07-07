@@ -8,77 +8,109 @@
 <body>
     <%- include('./partials/header.ejs')  %>
 
+<main class="mainCreate">
 
-    <section class="signup-general">
-        <form class="signup" method="POST">
-            <input type="text" id="id-signup"  name="name" placeholder="Nombre">
-            <input type="text" id="id-signup" name="precio" placeholder="Precio">
-            <label id="descripcion-cg"><input  type="text" id="id-signup" name="descripcion" placeholder="Descripcion"></label>
+    <h2 id="tituloCreate">Carga los datos de tu Juego</h2>
+   
+        <form class="signupGame" method="POST">
 
-            <div class="letreo-signup">Datos</div>
-            <input type="text" id="id-signup" name="link" placeholder="http://www.linkDeReview">
-            <input type="file" id="boton-carga-cg" name="imagen" accept=".jpg, .png">
-            <div class="letreo-signup">Plataforma</div>
-            <div class="radio-signup">
-            <label>
-                    <input type="radio" name="tipo-perfil">PC
-            </label>
-            <label>
-                <input type="radio" name="tipo-perfil"> PS
-            </label>
-            <label>
-                <input type="radio" name="tipo-perfil"> XBOX
-            </label>
-            <label>
-                <input type="radio" name="tipo-perfil"> MULTIPLATAFORMA
-            </label>
-            <label>
-                <input type="radio" name="tipo-perfil"> OTRO
-            </label>
-
+           <div class="general">
+               <div class="nomypre">
+           <label for="name">Título</label> <input type="text" id="name" class="inputCreateText"  name="name" placeholder="God of War Digital PS4">
+        
+          <label for="price">Precio </label> <input type="text" id="price" class="inputCreateText" name="price" placeholder="AR$2500"> 
         </div>
-            <input type="text" id="id-signup" name="requisitos" placeholder="Requisito 1">
-            <input type="text" id="id-signup" name="requisitos" placeholder="Requisito 2">
-            <input type="text" id="id-signup" name="requisitos" placeholder="Requisito 3">
-            <input type="text" id="id-signup" name="requisitos" placeholder="Requisito 4">
-            <input type="text" id="id-signup" name="requisitos" placeholder="Requisito 5">
+        
+             </div>
+           <div class="contdescripcion"> 
+            <div class="plataformas">
+              <div class="opciones1"> <label>
+                        <input type="radio" name="tipo-perfil" value="PC">PC
+                </label>
+                <label>
+                    <input type="radio" name="tipo-perfil" value="PS"> PS
+                </label>
+                <label>
+                    <input type="radio" name="tipo-perfil" value="XBOX"> XBOX
+                </label> </div> 
+               <div class="opciones2">
+                <label>
+                    <input type="radio" name="tipo-perfil" value="MULTIPLATAFORMA"> MULTIPLATAFORMA
+                </label>
+                <label>
+                    <input type="radio" name="tipo-perfil" value="OTRO"> OTRO
+                </label></div> 
+    
+            </div> 
+               <div class="descripcion">
+            <label for="descripcion" > Agrega una pequeña descripcion </label>
+                
+                <textarea type="textarea" rows=10 id="descripcion" name="descripcion" placeholder="Secuela de la gran saga god of war ..."></textarea>
+             </div>
+            
+           </div>
+           <div class="videoyfoto">
 
-            <div class="letreo-signup">Categorias</div>
-            <div class="check-signup">
+            <div class="videoURL">
+
+                <label for="link">URL VIDEO</label>
+            <input type="url" id="link" class="inputCreateText" name="link" placeholder="http://www.linkDeReview"></div>
+            <div class="imagenCaja">
+            <label for="imagen">Cover foto</label>
+            <input type="file" id="botonCoverPhoto" name="imagen" accept=".jpg, .png"> </div> </div>
+            <div class="reqygen">
+<div class="cajareq">
+              <label for="requisitos">Requerimientos tecnicos</label>
+            <textarea type="textarea" id="requisitos" class="inputCreateTextreq" name="requisitos" placeholder="EJ: i3 + 4gb RAM + 1GB VIDEO"></textarea>
+        </div>
+
+            <div class="generosCaja"> <h4>Generos</h4> 
+<div class="generos">
+                <div class="generosdea2">
             <label>
-                <input type="checkbox" name="tipo-intereses">Horror
+                <input type="radio" name="tipo-intereses" value="Horror">Horror
             </label>
             <label>
-                <input type="checkbox" name="tipo-intereses">Accion
-            </label>
-            <label>
-                <input type="checkbox" name="tipo-intereses">Deportes
-            </label>
-            <label>
-                <input type="checkbox" name="tipo-intereses">Casual
-            </label>
-            <label>
-                <input type="checkbox" name="tipo-intereses">Board
-            </label>
-            <label>
-                <input type="checkbox" name="tipo-intereses">Carrera
-            </label>
-            <label>
-                <input type="checkbox" name="tipo-intereses">Lucha
-            </label>
-            <label>
-                <input type="checkbox" name="tipo-intereses">Arcade
+                <input type="radio" name="tipo-intereses" value="Accion">Accion
             </label>
         </div>
+        <div class="generosdea2">
+            <label>
+                <input type="radio" class="radioin" name="tipo-intereses" value="Deportes">Deportes
+            </label>
+            <label>
+                <input type="radio" name="tipo-intereses" value="Casual" >Casual
+            </label></div>
+            <div class="generosdea2">
+            <label>
+                <input type="radio" name="tipo-intereses" value="Board">Board
+            </label>
+            <label>
+                <input type="radio" name="tipo-intereses" value="Carrera">Carrera
+            </label>
+        </div>  <div class="generosdea2">
+            <label>
+                <input type="radio" name="tipo-intereses" value="Lucha">Lucha
+            </label>
+            <label>
+                <input type="radio" name="tipo-intereses" value="Arcade">Arcade
+            </label></div>
+        </div>
+        </div>
+    </div>
         <br>
 
-        <button type="submit" id="botones-formularios-cg">Registrar juego</button>
+        <button type="submit" class="botonJuego" id="botones-formularios-cg">Registrar juego</button>
         <br>
 
 
 
         </form>
 
-    </section>
+    
+    
+    </main>
+    
+    
     <%- include ('./partials/footer.ejs') %>
 </body>
