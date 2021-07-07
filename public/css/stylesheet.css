@@ -200,6 +200,11 @@ article{
     margin-bottom: 15px;
 
 }
+
+.nombre input {
+    height: 45px;
+    border: white;
+}
 .iconos{
     color: rgb(44, 40, 40);
     display: flex;
@@ -207,6 +212,19 @@ article{
     margin-bottom: 20px;
 
 }
+
+.iconos input {
+    border: white;
+}
+
+.icons{
+    color: rgb(44, 40, 40);
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+
+}
+
 .social{
     display: flex;
     width: 25%;
