@@ -160,6 +160,7 @@ header p{
     width: 66%;
     background-color: #3f51b5;
     opacity: 1;
+    color:white;
 
 }
 
@@ -175,6 +176,7 @@ header p{
     padding-left: 3px;
     padding-left: 4px \9;
     background-color: #3f51b5;
+    color:white;
     /* IE7-8 doesn't have border-radius, so don't indent the padding */
 
     margin-bottom: 0;
@@ -363,6 +365,13 @@ h3{
     display: none;
 }
 
+.checkboxesCategorias li{
+  display:flex;
+  padding: 4px;
+}
+.checkboxesCategorias input{
+  margin: 0px 1px 13px;
+}
 
 
 .searchButton{
