@@ -6,14 +6,15 @@ flex-direction: column;
 flex-wrap: wrap;
 padding: 5px;
 margin: auto;
-width: 100vw;}
+width: 100%;}
 .signupGame{ padding: auto;
 margin: auto;
 width: 80vw;}
 
-.signup-general { display: flex; flex-direction: column; width: 50%; background-image: url("../images/posible");}
+.signup-general { display: flex; flex-direction: column; width:97%; background-image: url("../images/posible.png");}
 .inputCreateText {
     margin: auto;
+    color: white;
 height: 30px;}
 #name{ border-radius: 10px;}
 
@@ -50,7 +51,7 @@ text-align:initial;
 margin: auto;
 margin-top: 0px;}
 
-#opciones1 { display: flex;
+#opciones1 { display: flex; color: white;
 flex-direction: column;}
 #opciones2 {display: flex;
 flex-direction: column;}
@@ -74,6 +75,7 @@ text-align: center;}
 
 .inputCreateTextreq { width: 50%;
  height: 75px;
+ color: white;
 margin: auto;
 text-align: start;}
 
