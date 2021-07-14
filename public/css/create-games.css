@@ -16,9 +16,7 @@ width: 80vw;}
     margin: auto;
     color: white;
 height: 30px;}
-#name{ border-radius: 10px;
-        }
-#descripLetra { color:white;}
+#name{ border-radius: 10px;}
 
 #botonCoverPhoto {
 width: 130px;
@@ -37,17 +35,9 @@ background-color: black;
 margin-bottom: 5px;
 margin-left: 50px;}
 
-.contBoton {display: flex;
-    justify-content: center;
-margin: auto;}
-
-.generosTitulo{ color: white;}
 #tituloCreate{ margin: 3x auto 3px auto;
     text-align: center
-  ;
-color:white;}
-
-
+  ;}
 input{text-align: center;
 border-radius: 10px;}
   .signupGame {text-align: center;
@@ -61,14 +51,11 @@ text-align:initial;
 margin: auto;
 margin-top: 0px;}
 
-#opciones1 { display: flex; color: white;
+#opciones1 { display: flex; color: ;
 flex-direction: column;}
+
 #opciones2 {display: flex;
 flex-direction: column;}
-
-.signup-general { margin: 0px;
-width: 100vw ;}
-
 
 .videoyfoto { display: flex;
     flex-direction: row;
@@ -79,8 +66,7 @@ margin-bottom: 2px;}
 
 .plataformas { border: 2px solid blue;
 padding: 13px;
-border-radius: 10px 25px 0px 35px;
-color: white;}
+border-radius: 10px 25px 0px 35px;}
 
 .cajareq { display: flex;
 flex-direction: column;
@@ -114,18 +100,6 @@ margin: 5px 0px 5px 0px;}
 .videoURL { display: flex;
     flex-direction: column;}
 
-    .nomypre {color: white;}
-
-    .inputCreateText{ color:black}
-
-    .reqText { color:white;}
-
-    #requisitos { color: black;}
-
-    .labelVideo { color: white;}
-    .labelCoverFo { color: white;}
-
-
 .general { display: flex;
 flex-direction: column;
 width: 100%;
@@ -138,30 +112,25 @@ justify-content: center;
 flex-direction: column;
 text-align: center;
 justify-content: center;
-align-items: center;
-color: white;}
+align-items: center;}
 
 .generosdea2 { display: flex;
 flex-direction: column;
 margin: 2px 10px 2px 10px;
 justify-content: center;
-color: white;
 }
-
-
 
 .generos {display: flex;
 flex-direction: row;}
 
 .botonJuego { border-radius: 8px;
-             
                 height: 50px;
                 width: 150px;
              background: blue;
+            margin-left: 48%;
             font-size: 17px;}
 
-            .botonJuego:hover { background: chartreuse; 
-                margin: auto;}
+            .botonJuego:hover { background: chartreuse;}
 
             @media (max-width : 768px) {
 
