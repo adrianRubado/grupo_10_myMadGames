@@ -28,15 +28,12 @@ app.listen(3002,()=>{
 })
 
 
-<<<<<<< HEAD
+
 /*
 
-<<<<<<< HEAD
 app.use('/',(req,res)=>{
     res.render ('index', {titulo:'My Mad'})
 })
-=======
->>>>>>> 0635a2e402869c6b635c4b21d3d57af45ced319c
 
 app.use('/carrito', (req,res)=>{
     res.sendFile(__dirname + '/views/product-cart.html')
