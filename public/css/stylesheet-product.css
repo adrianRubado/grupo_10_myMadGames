@@ -227,6 +227,21 @@ background-color:#ea4c89
   margin: auto;
 }
 
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  font-size: 7px;
+
+  cursor: pointer;
+}
+
+.button2 {background-color: #f44336; /* Green */}
+
 .descripcion-chart{
      display: none;
 }
