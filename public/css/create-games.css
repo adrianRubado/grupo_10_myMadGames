@@ -28,7 +28,7 @@
     flex-direction: column;
     width: 60vw;
 
-    
+
 }
 .datos-signup{
     display: flex;
@@ -46,7 +46,7 @@
     display: flex;
     justify-content: space-around;
     width: 100%;
-    
+
 }
 .check-signup{
     display: flex;
@@ -73,7 +73,7 @@ padding: 5px;
     background-color:#c0c0d4;
     position: relative;
     top: 25px;
-    
+
     font-size: large;
     height: 70px;
     margin: center;
