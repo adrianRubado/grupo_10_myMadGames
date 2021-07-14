@@ -50,8 +50,7 @@ app.get('/detail',(req,res)=>{
     res.sendFile(__dirname + '/src/views/detail.ejs');
 }) */
 
-=======
->>>>>>> 481060e7a0e1182754fd5e70df14e9351409068c
+
 app.use('/',indexRouter)
 app.use('/products',productRouter)
 app.use('/product-cart',pcRouter)
