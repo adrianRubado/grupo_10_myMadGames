@@ -5,7 +5,9 @@
 
 <body>
   <%- include('./partials/header.ejs')  %>
-    <section>
+  <form class="editForm" method="POST" action="/products/<%=game.id %>/delete?_method=DELETE" >
+  <section>
+
 
         <article>
             <div class="nombre">
@@ -38,7 +40,7 @@
                     <button class="button">Editar</button>
                 </a>
                 <a href="/products/<%=game.id  %>/delete ">
-                    <button class="button button2" method = "DELETE">Eliminar</button>
+                    <button class="button button2" type="submit">Eliminar</button>
                 </a>
 
             </div>
@@ -75,7 +77,7 @@
         </div>
 
     </section>
-
+</form>
     <%- include('./partials/footer.ejs')  %>
 
 

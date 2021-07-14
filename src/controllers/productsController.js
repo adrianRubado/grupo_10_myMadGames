@@ -40,14 +40,15 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
         fs.writeFileSync(juegosFilePath,JSON.stringify(juegos))
 
 
-        res.redirect('/')
+        res.redirect("/products/"+id)
 
 
     },
 
     post :(req,res) => {
-
-        res.redirect ('/')
+        const newGame = req.body
+        newGame.id = juegos[juegos.length -1 ].id + 1
+        res.send(newGame)
     },
 
     get : (req,res) =>{
@@ -55,7 +56,13 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
     },
 
     delete : (req,res) =>{
-        res.send('sape')
+        const id = req.params.id
+        const juegosActualizados = juegos.filter((e) => e.id != id)
+        fs.writeFileSync(juegosFilePath,JSON.stringify(juegosActualizados,null,2))
+        const viewData = {
+            games : juegosActualizados
+        }
+        res.render('index',viewData)
     }
 
 }
