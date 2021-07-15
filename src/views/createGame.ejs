@@ -8,69 +8,70 @@
 <body>
     <%- include('./partials/header.ejs')  %>
     <section class="signup-general">
-    <form class="signup" action = "/products" method="POST" >
+
+<main class="mainCreate">
 
 <main class="mainCreate">
 
     <h2 id="tituloCreate">Carga los datos de tu Juego</h2>
-   
-        <form class="signupGame" method="POST">
+
+    <form class="signup" action = "/products" method="POST" >
 
            <div class="general">
                <div class="nomypre">
            <label for="name">Título</label> <input type="text" id="name" class="inputCreateText"  name="name" placeholder="God of War Digital PS4">
-        
-          <label for="price">Precio </label> <input type="text" id="price" class="inputCreateText" name="price" placeholder="AR$2500"> 
+
+          <label for="price">Precio </label> <input type="text" id="price" class="inputCreateText" name="price" placeholder="AR$2500">
         </div>
-        
+
              </div>
-           <div class="contdescripcion"> 
+           <div class="contdescripcion">
             <div class="plataformas">
               <div class="opciones1"> <label>
-                        <input type="radio" name="tipo-perfil" value="PC">PC
+                        <input type="radio" name="tipo-perfil" value="PC"  >PC
                 </label>
                 <label>
-                    <input type="radio" name="tipo-perfil" value="PS"> PS
+                    <input type="radio" name="tipo-perfil" value="PS" > PS
                 </label>
                 <label>
-                    <input type="radio" name="tipo-perfil" value="XBOX"> XBOX
-                </label> </div> 
+                    <input type="radio" name="tipo-perfil" value="XBOX" > XBOX
+                </label> </div>
                <div class="opciones2">
                 <label>
-                    <input type="radio" name="tipo-perfil" value="MULTIPLATAFORMA"> MULTIPLATAFORMA
+                    <input type="radio" name="tipo-perfil" value="MULTIPLATAFORMA" > MULTIPLATAFORMA
                 </label>
                 <label>
-                    <input type="radio" name="tipo-perfil" value="OTRO"> OTRO
-                </label></div> 
-    
-            </div> 
+                    <input type="radio" name="tipo-perfil" value="OTRO" > OTRO
+                </label></div>
+
+            </div>
                <div class="descripcion">
-            <label for="descripcion" > Agrega una pequeña descripcion </label>
-                
+            <label for="descripcion" id= "descripLetra"> Agrega una pequeña descripcion </label>
+
                 <textarea type="textarea" rows=10 id="descripcion" name="descripcion" placeholder="Secuela de la gran saga god of war ..."></textarea>
              </div>
-            
+
            </div>
            <div class="videoyfoto">
 
             <div class="videoURL">
 
-                <label for="link">URL VIDEO</label>
+                <label for="link" class="labelVideo">URL VIDEO</label>
             <input type="url" id="link" class="inputCreateText" name="link" placeholder="http://www.linkDeReview"></div>
             <div class="imagenCaja">
-            <label for="imagen">Cover foto</label>
+            <label for="imagen" class="labelCoverFo">Cover foto</label>
             <input type="file" id="botonCoverPhoto" name="image" accept=".jpg, .png"> </div> </div>
             <div class="reqygen">
 <div class="cajareq">
-              <label for="requisitos">Requerimientos tecnicos</label>
+              <label for="requisitos" class="reqText">Requerimientos tecnicos</label>
             <textarea type="textarea" id="requisitos" class="inputCreateTextreq" name="requisitos" placeholder="EJ: i3 + 4gb RAM + 1GB VIDEO"></textarea>
         </div>
 
-            <div class="generosCaja"> <h4>Generos</h4> 
+            <div class="generosCaja"> <h4 class="generosTitulo"> Generos</h4>
 <div class="generos">
                 <div class="generosdea2">
             <label>
-                <input type="radio" name="category" value="Horror">Horror
+                <input type="radio" name="category" value="Horror"  >Horror
             </label>
             <label>
                 <input type="radio" name="category" value="Accion">Accion
@@ -80,7 +81,9 @@
             <label>
                 <input type="radio" class="radioin" name="category" value="Deportes">Deportes
             </label>
-            <label> 
+        </div>
+        <div class="generosdea2">
+            <label>
                 <input type="radio" name="category" value="Casual" >Casual
             </label></div>
             <div class="generosdea2">
@@ -99,19 +102,26 @@
             </label></div>
         </div>
         </div>
+</div>
+        <br>
+                <div class="contBoton">  
+        <button type="submit" class="botonJuego" id="botones-formularios-cg">Registrar juego</button>
     </div>
         <br>
 
-        <button type="submit" class="botonJuego" id="botones-formularios-cg">Registrar juego</button>
-        <br>
 
 
 
 
-    
-    
+    </form>
+
     </main>
-    
-    
-    <%- include ('./partials/footer.ejs') %>
+
+</section>
+<%- include ('./partials/footer.ejs') %>
+
+
+
 </body>
+
+</html>

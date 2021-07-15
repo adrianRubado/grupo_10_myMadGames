@@ -5,6 +5,11 @@
 
 
         res.render('sign-in');
+    },
+    log: (req,res) => {
+
+
+        res.render('sign-in');
     }
 }
 
