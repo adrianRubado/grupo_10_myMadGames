@@ -4,7 +4,7 @@
     "name": "Fifa 21",
     "price": 100,
     "platform": 50,
-    "requirements" : "requirements",
+    "requirements": "requirements",
     "category": "visited",
     "description": "FIFA 21 es un videojuego de fútbol del año 2020 disponible para Microsoft Windows, PlayStation 4, Xbox One y Nintendo Switch el 9 de octubre de 2020",
     "image": "/images/fifa21.jpeg",
@@ -15,7 +15,7 @@
     "name": "Grand Theft Auto V",
     "price": 3000,
     "platform": 3,
-    "requirements" : "requirements",
+    "requirements": "requirements",
     "category": "in-sale",
     "description": "Grand Theft Auto V es un videojuego de acción y aventura desarrollado por Rockstar North y publicado en 2013 por Rockstar Games. El juego se centra sobre todo en los atracos, persecuciones policiales, tiroteos y el logro de los objetivos, incluso si eso significa infringir la ley de vez en cuando. Premium Online Edition es un paquete conveniente que reúne tanto el juego básico de GTA V como Criminal Enterprise Starter Pack para ayudarte a comenzar y desarrollar tu negocio criminal de modo online mucho más rápido.",
     "image": "/images/GTA.jpg",
@@ -27,9 +27,20 @@
     "description": "Demon's Souls representa el regreso del videojuego de acción RPG de From Software de PlayStation 3 en forma de remake a cargo de Bluepoint Games y PlayStation Studios para PlayStation 5. En la búsqueda por aumentar su poder, el rey Allant XII, monarca de Boletaria, canalizó las antiguas artes del alma y despertó a un demonio tan antiguo como el tiempo: el Anciano. Esta acción provocó que una niebla incolora se extendiera por toda la región, liberando a terroríficas criaturas hambrientas de almas humanas. Aquellos cuyas almas les fueron arrebatadas, perdieron la cordura y solo les quedó el deseo de atacar a quien aún la conserve.",
     "price": 20999,
     "platform": 12,
-    "requirements" : "requirements",
+    "requirements": "requirements",
     "image": "/images/demonsSouls.jpeg",
     "category": "in-sale",
     "link": "https://www.youtube.com/embed/9AyX2QqPKaY"
+  },
+  {
+    "name": "The last of Us",
+    "price": "9000",
+    "platform": "PS",
+    "description": "The Last of Us es un videojuego de acción-aventura y horror de supervivencia desarrollado por la compañía estadounidense Naughty Dog y distribuido por Sony Computer Entertainment para la consola PlayStation 3 en 2013.",
+    "link": "https://www.youtube.com/embed/z1OESz4zpLs?controls=0",
+    "requirements": "Juegon",
+    "category": "Accion",
+    "id": 7,
+    "image": "/images/44437-the-last-of-us.jpg"
   }
 ]
