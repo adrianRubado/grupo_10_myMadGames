@@ -51,8 +51,10 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
         newGame.image = "/images/" + req.file.originalname
         juegos.push(newGame)
         fs.writeFileSync(juegosFilePath,JSON.stringify(juegos,null,2))
-
-        res.send(juegos)
+        const viewData = {
+            games : juegos
+        }
+        res.render('index',viewData)
     },
 
     get : (req,res) =>{

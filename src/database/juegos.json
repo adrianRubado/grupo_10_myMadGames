@@ -31,16 +31,5 @@
     "image": "/images/demonsSouls.jpeg",
     "category": "in-sale",
     "link": "https://www.youtube.com/embed/9AyX2QqPKaY"
-  },
-  {
-    "name": "The last of Us",
-    "price": "9000",
-    "platform": "PS",
-    "description": "The Last of Us es un videojuego de acción-aventura y horror de supervivencia desarrollado por la compañía estadounidense Naughty Dog y distribuido por Sony Computer Entertainment para la consola PlayStation 3 en 2013.",
-    "link": "https://www.youtube.com/embed/z1OESz4zpLs?controls=0",
-    "requirements": "Juegon",
-    "category": "Accion",
-    "id": 7,
-    "image": "/images/44437-the-last-of-us.jpg"
   }
 ]
