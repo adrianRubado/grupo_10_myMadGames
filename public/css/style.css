@@ -12,6 +12,8 @@ header{
 
 
 }
+
+
 .menusimple{
   list-style: none;
   display:flex;
@@ -138,6 +140,10 @@ background-color:#ea4c89
     width: 100%;
     height: 100%;
 
+}
+.mySlides{
+  width: 100%;
+  height: 10%;
 }
 
 .copy-header{
@@ -456,7 +462,7 @@ form.example input[type=text] {
 
 .estrenos{
   text-align: center;
-  background-color: rgb(243, 242, 242);
+
   margin-bottom: 0;
   font-weight: 700;
 }
