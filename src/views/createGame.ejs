@@ -9,12 +9,13 @@
     <%- include('./partials/header.ejs')  %>
     <section class="signup-general">
 
+<main class="mainCreate">
 
 <main class="mainCreate">
 
-    <h2 id="tituloCreate">Alta de juego</h2>
+    <h2 id="tituloCreate">Carga los datos de tu Juego</h2>
 
-    <form class="signup" action="/products" enctype="multipart/form-data" method="POST">
+    <form class="signup" action = "/products" method="POST" >
 
            <div class="general">
                <div class="nomypre">
@@ -27,27 +28,27 @@
            <div class="contdescripcion">
             <div class="plataformas">
               <div class="opciones1"> <label>
-                        <input type="radio" name="platform" value="PC"  >PC
+                        <input type="radio" name="tipo-perfil" value="PC"  >PC
                 </label>
                 <label>
-                    <input type="radio" name="platform" value="PS" > PS
+                    <input type="radio" name="tipo-perfil" value="PS" > PS
                 </label>
                 <label>
-                    <input type="radio" name="platform" value="XBOX" > XBOX
+                    <input type="radio" name="tipo-perfil" value="XBOX" > XBOX
                 </label> </div>
                <div class="opciones2">
                 <label>
-                    <input type="radio" name="platform" value="MULTIPLATAFORMA" > MULTIPLATAFORMA
+                    <input type="radio" name="tipo-perfil" value="MULTIPLATAFORMA" > MULTIPLATAFORMA
                 </label>
                 <label>
-                    <input type="radio" name="platform" value="OTRO" > OTRO
+                    <input type="radio" name="tipo-perfil" value="OTRO" > OTRO
                 </label></div>
 
             </div>
                <div class="descripcion">
             <label for="descripcion" id= "descripLetra"> Agrega una pequeña descripcion </label>
 
-                <textarea type="textarea" rows=10 id="descripcion" name="description" placeholder="Secuela de la gran saga god of war ..."></textarea>
+                <textarea type="textarea" rows=10 id="descripcion" name="descripcion" placeholder="Secuela de la gran saga god of war ..."></textarea>
              </div>
 
            </div>
@@ -63,7 +64,7 @@
             <div class="reqygen">
 <div class="cajareq">
               <label for="requisitos" class="reqText">Requerimientos tecnicos</label>
-            <textarea type="textarea" id="requisitos" class="inputCreateTextreq" name="requirements" placeholder="EJ: i3 + 4gb RAM + 1GB VIDEO"></textarea>
+            <textarea type="textarea" id="requisitos" class="inputCreateTextreq" name="requisitos" placeholder="EJ: i3 + 4gb RAM + 1GB VIDEO"></textarea>
         </div>
 
             <div class="generosCaja"> <h4 class="generosTitulo"> Generos</h4>
@@ -80,6 +81,8 @@
             <label>
                 <input type="radio" class="radioin" name="category" value="Deportes">Deportes
             </label>
+        </div>
+        <div class="generosdea2">
             <label>
                 <input type="radio" name="category" value="Casual" >Casual
             </label></div>
@@ -101,7 +104,7 @@
         </div>
 </div>
         <br>
-                <div class="contBoton">
+                <div class="contBoton">  
         <button type="submit" class="botonJuego" id="botones-formularios-cg">Registrar juego</button>
     </div>
         <br>

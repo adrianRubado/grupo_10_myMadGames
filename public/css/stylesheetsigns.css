@@ -191,101 +191,73 @@
 width: 100%;
 height: 15%;}
 
-#mainSign {display: flex;
-  background-color: #e2eaf2;
+
+
+
+
+
+
+
+
+
+
+
+
+
+#mainSignUp { height: 800vh; 
   width: 100%;
-  height: 100%;}
+               display: flex; 
+               flex-direction: column;}
+
+#mainSignIn { height: 500px;
+                width: 100%; 
+               display: flex;
+                flex-direction: column;
+                background-image: url("/images/blue.jpg") 
+                ;
+                background-size: 100%;
+                   
+              }
 
 
-  .cuadradoCentral {
-    display: flex;
-    flex-direction: column;
-    width: 420px;
-    height: 300px;
-    background-color: white;
-  margin: auto;
-padding: 25px;
-border-radius: 5px;}
+.contenedorTitulosSignIn { color: black;
+  text-align: center;
+  width: 100%;
+  padding: 1px;
+margin: 30px auto 3px auto;}
 
+.contenedorFormularioSignIn {margin:auto;
+                              display: flex;
+                            flex-direction: column;
+                          align-items: center;
+                          text-align: center;
+                          background-color: rgba(253, 253, 253, 0.6);
+                          height: 75%;
+                          width: 30%;
+                          
+                        }          
 
-.tituloFormulario {margin: auto;
-padding: 1px;
-font-size: 15px;
-margin-top: 0;
-margin-bottom: 2px;
-margin: auto;
-font-family: "Roboto";}
+                      .contenedorInputSignIn { margin:25px auto 25px auto;}
 
-h1 { margin: 2px;
-  font-family: "Roboto";}
+                      .contenedorBotonSubSignIn { display: flex; flex-direction: column; text-align: center; margin: auto; justify-content: space-between; align-items: center;}
 
-p { margin: 0px;
-    padding: 1px;
-  margin-bottom: 5px;
-  font-family: "Roboto";}
+                    .botonSignIn {  margin-top:-15px;
+                                    height: 35px;
+                                  width: 50px;
+                           margin-bottom: 15px;                             background-color: transparent;
+                            border-color: transparent;}
+                      
 
-.formulario { display: flex;
-flex-direction: column;
-margin: 0px auto;}
-
-.divParrafo { margin:auto;
-padding: 1px;}
-
-#email { margin: 2px;
-         border-radius: 0px;
-        padding: 5px;}
-
-        #name {margin: 2px;
-        border-radius: 0px;
-      padding: 5px;}
-
-         #password { margin: 2px;
-          border-radius: 0px;
-          padding: 5px;}
-
-          #submit { margin: 2px;
-          border-radius: 5px;
-          padding: 5px;
-        color: white;
-      background-color: #47525e;
-      font-family: "Roboto";}
-
-          #submit:hover
-           { margin: 2px;
-          border-radius: 5px;
-          padding: 5px;
-        color:black ;
-      background-color:white;
-      font-family: "Roboto";}
-
-  input { height: 20px;
-  margin: 5px;
-border: 2px solid grey;}
-
-input:hover {border:2px solid aquamarine;}
-
-input:focus { background-color: aquamarine;
-  border: 2px solid grey;}
-
-          .forgotPass { margin: auto;
-           margin-top: 2px;
-          padding: 3px;
-        font-size: 10px;
-      font-family: "Roboto";}
-
-          .forgotPass:hover {
-            margin: auto;
-          margin-top: 0px;
-          color: black;
-        padding: 3px;
-        font-size: 13px;
-        font-family: "Roboto";}
+              .forgotPass { color: darkblue;}
 
           #footer {display: block;
             height: 15%;
             background-color: #47525e;}
 
-@media(min-width: 768px){
+            
+
+
+
   .Main-topNavbar{
     display: flex;
     max-width: 768px;
@@ -328,4 +300,4 @@ input:focus { background-color: aquamarine;
 
 }
 
-}
+

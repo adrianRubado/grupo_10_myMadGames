@@ -154,14 +154,13 @@ color: white;
 flex-direction: row;}
 
 .botonJuego { border-radius: 8px;
-
+             
                 height: 50px;
                 width: 150px;
              background: blue;
-             color: white;
             font-size: 17px;}
 
-            .botonJuego:hover { background: chartreuse; color: black;
+            .botonJuego:hover { background: chartreuse; 
                 margin: auto;}
 
             @media (max-width : 768px) {
@@ -197,3 +196,4 @@ flex-direction: row;}
                         margin-bottom: 5px;
                         }
             }
+
