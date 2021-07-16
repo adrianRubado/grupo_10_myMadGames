@@ -9,21 +9,21 @@ var storage = multer.diskStorage({
       cb(null, path.join(__dirname,'../../public/images'))
     },
     filename: function (req, file, cb) {
-      const uniqueSuffix = file.originalname + Date.now() + '-' + Math.round(Math.random() * 1E9)
+      const uniqueSuffix = file.originalname
       cb(null,uniqueSuffix)
     }
   })
 
- /*  var upload = multer({ storage})
-  ,upload.single('image')
- */
+  var upload = multer({ storage})
+
+
 
 router.get('/',productsController.get)
 router.get ('/create', productsController.create)
 router.get('/:id/',productsController.detail )
 router.get('/:id/edit',productsController.edit)
 router.put('/:id/edit',productsController.update)
-router.post('/', productsController.post)
+router.post('/',upload.single('image'), productsController.post)
 router.delete('/:id/delete',productsController.delete)
 
 module.exports = router
