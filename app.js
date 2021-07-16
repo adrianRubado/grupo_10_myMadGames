@@ -4,11 +4,11 @@ const createError = require('http-errors');
 const app = express() //Requerimos modulo de express para levantar nuestro servidor
 const path = require ('path');
 const morgan = require ('morgan');
-const indexRouter = require('./src/routes/index')
+const indexRouter = require('./src/routes/indexRouter')
 const productRouter = require('./src/routes/productsRouter')
-const pcRouter = require('./src/routes/productCart')
-const signUpRouter = require('./src/routes/signUp')
-const signInRouter = require ('./src/routes/sigIn')
+const pcRouter = require('./src/routes/productCartRouter')
+const signUpRouter = require('./src/routes/signUpRouter')
+const signInRouter = require ('./src/routes/sigInRouter')
 
 
 app.set ("view engine", "ejs") ; //Establecimos como template engine ejs
@@ -28,15 +28,9 @@ app.listen(3002,()=>{
 })
 
 
-<<<<<<< HEAD
+
 /*
 
-<<<<<<< HEAD
-app.use('/',(req,res)=>{
-    res.render ('index', {titulo:'My Mad'})
-})
-=======
->>>>>>> 0635a2e402869c6b635c4b21d3d57af45ced319c
 
 app.use('/carrito', (req,res)=>{
     res.sendFile(__dirname + '/views/product-cart.html')
@@ -53,8 +47,7 @@ app.get('/detail',(req,res)=>{
     res.sendFile(__dirname + '/src/views/detail.ejs');
 }) */
 
-=======
->>>>>>> 481060e7a0e1182754fd5e70df14e9351409068c
+
 app.use('/',indexRouter)
 app.use('/products',productRouter)
 app.use('/product-cart',pcRouter)

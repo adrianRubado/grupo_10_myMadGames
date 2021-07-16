@@ -3,98 +3,48 @@
 
 <%- include('./partials/head.ejs') %>
 
-<body>
+  <body>
 
-  <header >
-  <div class="Main-topNavbar">
-      <a href="/">
-      <img src="/images/logo1.png" width="50px" alt="logo" class='logo'>
-    </a>
-      <div class="copy-header">
-        My Mad Games
-      </div>
-      <div id="custom-search-input">
-        <div class="input-group col-md-12">
-          <input type="text" class="  search-query form-control" placeholder="Search" />
-          <span class="input-group-btn">
-            <button class="btn btn-danger" type="button">
-              <span class=" glyphicon glyphicon-search"></span>
-            </button>
-          </span>
+    <%- include('./partials/header.ejs') %>
+
+      <main id="mainSign">
+
+
+        <div class=cuadradoCentral>
+
+
+          <div class=tituloFormulario>
+            <h1> Sign In </h1>
+          </div>
+
+
+          <div class=divParrafo>
+            <p>Ingrese sus datos para iniciar sesión </p>
+
+          </div>
+
+          <form class="formulario">
+            <input type="email" id="email" name="email" placeholder="Email"> </input>
+            <input type="password" id="password" name="password" placeholder="Password"> </input>
+
+            <button type="submit" id="submit"> Sign In</button>
+
+          </form>
+
+          <a class="forgotPass" href="asdsad">Forgot your password?</a>
+
+
+
+
+
+
         </div>
-      </div>
 
 
-      <div class="dots">
-        <i class="fas fa-ellipsis-v"></i>
-      </div>
+      </main>
 
 
-      <nav class="mainNavbar">
-
-        <ul>
-          <li>
-            <i class="far fa-question-circle"></i>
-
-          </li>
-          <li>
-            <a href="/carrito">
-            <i class="fas fa-shopping-cart"></i>
-          </a>
-          </li>
-          <li>
-            <i class="far fa-star"></i>
-
-          </li>
-          <li>
-            <a href="/sign-in">
-            <i class="fas fa-user"></i>
-          </a>
-          </li>
-
-        </ul>
-      </nav>
-    </div>
-
-  </header>
-
-  <main id="mainSign">
-
-
-    <div class=cuadradoCentral>
-
-
-      <div class=tituloFormulario>
-        <h1> Sign In </h1>
-      </div>
-
-
-      <div class=divParrafo>
-        <p>Ingrese sus datos para iniciar sesión </p>
-
-      </div>
-
-      <form class="formulario">
-        <input type="email" id="email" name="email" placeholder="Email"> </input>
-        <input type="password" id="password" name="password" placeholder="Password"> </input>
-
-        <button type="submit" id="submit"> Sign In</button>
-
-      </form>
-
-      <a class="forgotPass" href="asdsad">Forgot your password?</a>
-
-
-
-
-
-    </div>
-
-
-  </main>
-
-  <%- include('./partials/footer.ejs') %>
-
-</body>
+      <%- include('./partials/footer.ejs') %>
+  </body>
 
 </html>
