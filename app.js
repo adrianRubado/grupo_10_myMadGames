@@ -4,11 +4,11 @@ const createError = require('http-errors');
 const app = express() //Requerimos modulo de express para levantar nuestro servidor
 const path = require ('path');
 const morgan = require ('morgan');
-const indexRouter = require('./src/routes/index')
+const indexRouter = require('./src/routes/indexRouter')
 const productRouter = require('./src/routes/productsRouter')
-const pcRouter = require('./src/routes/productCart')
-const signUpRouter = require('./src/routes/signUp')
-const signInRouter = require ('./src/routes/sigIn')
+const pcRouter = require('./src/routes/productCartRouter')
+const signUpRouter = require('./src/routes/signUpRouter')
+const signInRouter = require ('./src/routes/sigInRouter')
 
 
 app.set ("view engine", "ejs") ; //Establecimos como template engine ejs
@@ -31,9 +31,12 @@ app.listen(3002,()=>{
 
 /*
 
+<<<<<<< HEAD
 app.use('/',(req,res)=>{
     res.render ('index', {titulo:'My Mad'})
 })
+=======
+>>>>>>> main
 
 app.use('/carrito', (req,res)=>{
     res.sendFile(__dirname + '/views/product-cart.html')
