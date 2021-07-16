@@ -7,7 +7,7 @@
 
  <%- include('./partials/header.ejs')  %>
 
-  <main id="mainSign">
+  <main id="mainSignUp">
 
 
     <div class=cuadradoCentral>
@@ -24,12 +24,46 @@
       </div>
 
       <form class="formulario">
-        <input type="name" id="name" name="name" placeholder="Enter your name ">
-        <label for="avatar"> Ingrese su imagen de perfil/avatar</label>
-        <input type="file" id="avatar" name= "avatar" >
+        <input type="name" id="name" name="first-name" placeholder="First Name ">
+        <input type="name" id="name" name="second-name" placeholder="Second Name ">
+        
         <input type="email" id="email" name="email" placeholder="Your Email"> </input>
         <input type="password" id="password" name="password" placeholder="Password"> </input>
         <input type="password" id="password" name="password" placeholder="New Password"> </input>
+        
+
+
+        <label>
+          <input type="radio" name="category" value="Horror"  >Horror
+      </label>
+      
+      <label>
+          <input type="radio" name="category" value="Accion">Accion
+      </label>
+  
+ 
+      <label>
+          <input type="radio" class="radioin" name="category" value="Deportes">Deportes
+      </label>
+  
+ 
+      <label>
+          <input type="radio" name="category" value="Casual" >Casual
+      </label></div>
+      
+      <label>
+          <input type="radio" name="category" value="Board">Board
+      </label>
+      <label>
+          <input type="radio" name="category" value="Carrera">Carrera
+      </label>
+  
+      <label>
+          <input type="radio" name="category" value="Lucha">Lucha
+      </label>
+      <label>
+          <input type="radio" name="category" value="Arcade">Arcade
+      </label>
 
         <button type="submit" id="submit"> Sign up</button>
 
