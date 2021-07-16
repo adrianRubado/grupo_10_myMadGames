@@ -1,0 +1,165 @@
+.meta-edit-game{
+    display: none;
+}
+.titulo-edit-game{
+    
+    height: 5vh;
+    display: flex;
+  justify-content: center;
+  
+  
+
+}
+input {
+    border: 2px solid #3f51b5;
+}
+.p-edit-game{
+    color: rebeccapurple;
+    padding: 2px;
+}
+.textarea-edit-game{
+    border: 2px solid #3f51b5;
+
+}
+.textarea-editt-game{
+
+    border: 2px solid #3f51b5;
+}
+.embebido-edit-game{
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+    font-weight: bold;
+
+}
+.embebido-edit-game input{
+    padding: 5px;
+    margin:5px;
+}
+.box-edit-game{
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+}
+.portada-edit-game{
+    display: flex;
+    justify-content: center;
+    
+    
+}
+.face-edit-game{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.imagen-edit-game{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width:80vw;
+  
+}
+.descripcion-edit-game{
+    height: 10vh;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    }
+    .descripcion-referencial-editt-game{
+        padding: 10px;
+        
+    }
+    .descripcion-referencial-editt-game h5{
+        padding: 5px;
+        font-weight: bold;
+        font-size: large;
+        
+    } 
+
+.descripcion-referencial-edit-game{
+
+    padding: 10px;
+
+}
+.descripcion-referencial-edit-game h5 {
+    padding: 5px;
+    font-weight: bold;
+    font-size: large;
+
+}
+#botones-formularios-edit-game{
+    height: 10vh;
+    border-radius: 5px;
+    border: 2px #3f51b5 solid;
+
+}
+#botones-formularios-edit-game:hover{
+    border: none;
+    background: #3f51b5;
+
+}
+@media (min-width: 768px) {
+    .titulo-edit-game{
+        justify-content: flex-start;
+        width: 20vw;
+    }
+    .imagen-edit-game{
+        justify-content: flex-start;
+        width: 35vw;
+        height: 30vh;
+
+        
+    box-shadow: 0px 0px 10px rgb(100 100 100);;
+    }
+    .portada-edit-game{
+        justify-content: flex-start;
+        margin-left: 20px;
+    }
+    .descripcion-edit-game{
+        flex-direction: row;
+       width: 50vw;
+       flex-wrap: wrap;
+
+    }
+    .descripcion-edit-game label {
+        
+        align-items: center;
+        display: flex;
+        width: 25vw;
+        justify-content: space-between;
+        
+    
+    }
+    .descripcion-edit-game input{
+        height: 7vh;
+        width:15vw ;
+        
+        
+    }
+    .textarea-edit-game{
+        position: absolute;
+        bottom: 400px;
+        left: 50vw;
+    }
+    .descripcion-referencial-edit-game h5{
+        position: absolute;
+        bottom: 630px;
+        left: 50vw;
+
+    }
+    .link-edit-game{
+        height:30vh ;
+        width: 40vw;
+    }
+
+    .requisitos-video-edit-game {
+        display: flex;
+        justify-content: space-around;
+    }
+    .p-edit-game{
+        min-width: 28vw;
+    }
+    
+
+}
+    
