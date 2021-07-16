@@ -3,85 +3,114 @@
 
 <%- include('./partials/head.ejs') %>
 
-<body>
+  <body>
 
- <%- include('./partials/header.ejs')  %>
+    <%- include('./partials/header.ejs') %>
 
-  <main id="mainSignUp">
-
-
-    <div class=cuadradoCentral>
+      <main id="mainSignUp">
+        <form action="/" method="POST" class="formularioSignUp">
 
 
-      <div class=tituloFormulario>
-        <h1> Sign up </h1>
-      </div>
+          <div class="contenedorTitulosSignUp">
 
+            <div class=tituloFormulario>
 
-      <div class=divParrafo>
-        <p>Ingrese sus datos para registrarse como usuario nuevo </p>
-
-      </div>
-
-      <form class="formulario">
-        <input type="name" id="name" name="first-name" placeholder="First Name ">
-        <input type="name" id="name" name="second-name" placeholder="Second Name ">
-        
-        <input type="email" id="email" name="email" placeholder="Your Email"> </input>
-        <input type="password" id="password" name="password" placeholder="Password"> </input>
-        <input type="password" id="password" name="password" placeholder="New Password"> </input>
-        
-
-
-        <label>
-          <input type="radio" name="category" value="Horror"  >Horror
-      </label>
-      
-      <label>
-          <input type="radio" name="category" value="Accion">Accion
-      </label>
-  
- 
-      <label>
-          <input type="radio" class="radioin" name="category" value="Deportes">Deportes
-      </label>
-  
- 
-      <label>
-          <input type="radio" name="category" value="Casual" >Casual
-      </label></div>
-      
-      <label>
-          <input type="radio" name="category" value="Board">Board
-      </label>
-      <label>
-          <input type="radio" name="category" value="Carrera">Carrera
-      </label>
-  
-      <label>
-          <input type="radio" name="category" value="Lucha">Lucha
-      </label>
-      <label>
-          <input type="radio" name="category" value="Arcade">Arcade
-      </label>
-
-        <button type="submit" id="submit"> Sign up</button>
-
-      </form>
-
-      <a class="forgotPass" href="asdsad">Forgot your password?</a>
+              <h1> Sign up </h1>
+            </div>
 
 
 
+            <div class=divParrafo>
+
+              <p>Ingrese sus datos para registrarse como usuario nuevo </p>
+
+            </div>
+          </div>
 
 
-    </div>
+          <div class="contenedorInputsSignInuno">
 
+            <div class="contenedorNombresSignUp">
 
-  </main>
+              <label for="first-name" class="labelSignUp"> Nombre
+                <input type="name" id="first-name" name="first-name" placeholder="First Name "></label>
 
-  <%- include('./partials/footer.ejs')  %>
+              <label for="last-name" class="labelSignUp">Apellido
+                <input type="name" id="last-name" name="last-name" placeholder="Last Name "></label>
 
-</body>
+            </div>
+
+            <div class="contenedorPassyMail">
+
+              <label for="password" class="labelSignUp"> Contraseña
+
+                <input type="password" id="password" name="password" placeholder="Password"> </input></label>
+
+              <label for="email" class="labelSignUp">Email
+
+                <input type="email" id="email" name="email" placeholder="Your Email"> </input></label>
+            </div>
+
+            <div class="contenedorBdyGeneros">
+            <div class="contenedorBday">
+
+              <label for="bday" >Fecha De Nacimiento
+
+                <input type="date" id="bday" name="bday"> </input></label>
+
+            </div>
+
+          
+
+          
+               <div class="generosIn">
+                 <h5>Genero Favorito</h5>
+              <div class="generostres">
+                <label >
+              <input type="radio" name="category" value="Horror">Horror
+            </label>
+
+            <label>
+              <input type="radio" name="category" value="Accion">Accion
+            </label>
+          
+             
+            <label>
+              <input type="radio" class="radioin" name="category" value="Deportes">Deportes
+            </label></div>
+          
+            <div class="generostres">
+          <label>
+            <label>
+              <input type="radio" name="category" value="Casual">Casual
+            </label>
+          
+
+          <label>
+            <input type="radio" name="category" value="Board">Board
+          </label>
+          <label>
+            <input type="radio" name="category" value="Carrera">Carrera
+          </label></div>
+          <div class="generostres">
+          <label>
+            <input type="radio" name="category" value="Lucha">Lucha
+          </label>
+          <label>
+            <input type="radio" name="category" value="Arcade">Arcade
+          </label></div>
+          </div>
+          
+       
+        </div> </div>
+          <button type="submit" id="submit" class="botonSignUp"> <img src="/images/logo1.png" width="45px" height="45px"/></button>
+                
+        </form>
+
+      </main>
+
+      <%- include('./partials/footer.ejs') %>
+
+  </body>
 
 </html>
