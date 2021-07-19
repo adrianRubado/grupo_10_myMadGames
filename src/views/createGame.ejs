@@ -13,9 +13,15 @@
 
 <main class="mainCreate">
 
+<<<<<<< HEAD
     <h2 id="tituloCreate">Carga los datos de tu Juego</h2>
 
     <form class="signup" action = "/products" method="POST" >
+=======
+    <h2 id="tituloCreate">Alta de juego</h2>
+
+    <form class="signup" action="/products" enctype="multipart/form-data" method="POST">
+>>>>>>> matias-dev
 
            <div class="general">
                <div class="nomypre">
@@ -28,6 +34,7 @@
            <div class="contdescripcion">
             <div class="plataformas">
               <div class="opciones1"> <label>
+<<<<<<< HEAD
                         <input type="radio" name="tipo-perfil" value="PC"  >PC
                 </label>
                 <label>
@@ -42,13 +49,33 @@
                 </label>
                 <label>
                     <input type="radio" name="tipo-perfil" value="OTRO" > OTRO
+=======
+                        <input type="radio" name="platform" value="PC"  >PC
+                </label>
+                <label>
+                    <input type="radio" name="platform" value="PS" > PS
+                </label>
+                <label>
+                    <input type="radio" name="platform" value="XBOX" > XBOX
+                </label> </div>
+               <div class="opciones2">
+                <label>
+                    <input type="radio" name="platform" value="MULTIPLATAFORMA" > MULTIPLATAFORMA
+                </label>
+                <label>
+                    <input type="radio" name="platform" value="OTRO" > OTRO
+>>>>>>> matias-dev
                 </label></div>
 
             </div>
                <div class="descripcion">
             <label for="descripcion" id= "descripLetra"> Agrega una pequeña descripcion </label>
 
+<<<<<<< HEAD
                 <textarea type="textarea" rows=10 id="descripcion" name="descripcion" placeholder="Secuela de la gran saga god of war ..."></textarea>
+=======
+                <textarea type="textarea" rows=10 id="descripcion" name="description" placeholder="Secuela de la gran saga god of war ..."></textarea>
+>>>>>>> matias-dev
              </div>
 
            </div>
@@ -64,7 +91,11 @@
             <div class="reqygen">
 <div class="cajareq">
               <label for="requisitos" class="reqText">Requerimientos tecnicos</label>
+<<<<<<< HEAD
             <textarea type="textarea" id="requisitos" class="inputCreateTextreq" name="requisitos" placeholder="EJ: i3 + 4gb RAM + 1GB VIDEO"></textarea>
+=======
+            <textarea type="textarea" id="requisitos" class="inputCreateTextreq" name="requirements" placeholder="EJ: i3 + 4gb RAM + 1GB VIDEO"></textarea>
+>>>>>>> matias-dev
         </div>
 
             <div class="generosCaja"> <h4 class="generosTitulo"> Generos</h4>
@@ -104,7 +135,11 @@
         </div>
 </div>
         <br>
+<<<<<<< HEAD
                 <div class="contBoton">  
+=======
+                <div class="contBoton">
+>>>>>>> matias-dev
         <button type="submit" class="botonJuego" id="botones-formularios-cg">Registrar juego</button>
     </div>
         <br>
