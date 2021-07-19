@@ -154,15 +154,6 @@ color: white;
 flex-direction: row;}
 
 .botonJuego { border-radius: 8px;
-<<<<<<< HEAD
-             
-                height: 50px;
-                width: 150px;
-             background: blue;
-            font-size: 17px;}
-
-            .botonJuego:hover { background: chartreuse; 
-=======
 
                 height: 50px;
                 width: 150px;
@@ -171,7 +162,6 @@ flex-direction: row;}
             font-size: 17px;}
 
             .botonJuego:hover { background: chartreuse; color: black;
->>>>>>> matias-dev
                 margin: auto;}
 
             @media (max-width : 768px) {
@@ -207,7 +197,3 @@ flex-direction: row;}
                         margin-bottom: 5px;
                         }
             }
-<<<<<<< HEAD
-
-=======
->>>>>>> matias-dev
