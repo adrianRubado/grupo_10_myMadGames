@@ -1,0 +1,113 @@
+[
+  {
+    "first-name": "bruno",
+    "last-name": "diaz",
+    "password": "$2a$10$EBFn5pUiFbe//R1hBm.ZiOmvpXa.q71UezRrskhiAI4J3ryrMStim",
+    "email": "costalesbruno@gmail.com",
+    "bday": "2000-10-18",
+    "avatar": "//www.gravatar.com/avatar/a998e606eec0a4714ac4802bd8f5e2a5?s=200&r=pg&d=mm",
+    "id": 1
+  },
+  {
+    "first-name": "bruno",
+    "last-name": "diaz",
+    "password": "$2a$10$Csm.bQ.QPdUDw9HHPcyut.X3Cw5oFfIJNXWiYpx7BfsQi3d2WzeWy",
+    "email": "adrianrubado19@gmail.com",
+    "bday": "2000-10-04",
+    "avatar": "//www.gravatar.com/avatar/73e04e9dbb8657d523b841d80ecb6edd?s=200&r=pg&d=mm",
+    "id": 2
+  },
+  {
+    "first-name": "lucas",
+    "last-name": "liuic",
+    "password": "$2a$10$nAi5mZBt60JC.Fzhmtlz6.b56RpA1Yq7T87w6XOysiipDTq.YJj7O",
+    "email": "brunocostales@gmail.com",
+    "bday": "2000-01-11",
+    "avatar": "http://www.gravatar.com/avatar/6552938439e29a9f3d4dc9854b3d46f2?s=100",
+    "id": 3
+  },
+  {
+    "first-name": "lucas",
+    "last-name": "liuic",
+    "password": "$2a$10$n6nVNR2C9voGt2DU6HWyj.1eFo1pF5APTaPRpsyTpxKXQXaTzaqo6",
+    "email": "fwfwf2@gmail.com",
+    "bday": "2000-01-05",
+    "avatar": "http://www.gravatar.com/avatar/93e9084aa289b7f1f5e4ab6716a56c3b?s=100",
+    "id": 4
+  },
+  {
+    "first-name": "bruno20",
+    "last-name": "costales",
+    "password": "$2a$10$AziOMB.Cg1CqvYeHnY4pg.nW96QjhKpyJjD6lj66nDlzWXwAFlSrS",
+    "email": "costalesbruno@gmail.com",
+    "bday": "2000-05-16",
+    "avatar": "http://www.gravatar.com/avatar/a998e606eec0a4714ac4802bd8f5e2a5?s=100",
+    "id": 5
+  },
+  {
+    "first-name": "bruno20",
+    "last-name": "costales",
+    "password": "$2a$10$GfLbTlyBQdhHJyvp2N924ufYakSFBZH6K7/vexOU8yySQsHO/Eno2",
+    "email": "costalesbruno@gmail.com",
+    "bday": "2000-05-16",
+    "avatar": "http://www.gravatar.com/avatar/a998e606eec0a4714ac4802bd8f5e2a5?s=100",
+    "id": 6
+  },
+  {
+    "email": "costalesbruno@gmail.com",
+    "password": "$2a$10$Cs7kcS6aTZ2VhASI0yKz5ueujXrVIRI39Gk5gn0tbaWxyfXAVy7UO",
+    "avatar": "http://www.gravatar.com/avatar/a998e606eec0a4714ac4802bd8f5e2a5?s=100",
+    "id": 7
+  },
+  {
+    "email": "costalesbruno@gmail.com",
+    "password": "$2a$10$GaCcZefyYsqKA8.WGfma5eRsiAO/KB07MNvcutJvh1eqFFuZw6Q5C",
+    "avatar": "http://www.gravatar.com/avatar/a998e606eec0a4714ac4802bd8f5e2a5?s=100",
+    "id": 8
+  },
+  {
+    "first-name": "intento1",
+    "last-name": "ere",
+    "password": "$2a$10$joZA8Nz3.KkuTCRMxZHpxerap2YkXqZZs14RvEz1rGgRWq6TyM66y",
+    "email": "intento1@gmail.com",
+    "bday": "2002-12-31",
+    "avatar": "http://www.gravatar.com/avatar/37a43ea5cd3c571763d89fdce2a768b1?s=100",
+    "id": 9
+  },
+  {
+    "first-name": "adrian",
+    "last-name": "dh",
+    "password": "$2a$10$mJLHDybQwNmkIKY5jgLX0Ohdcg1fjop7Sns9nMSj2C9Np930s8ifi",
+    "email": "adriangh@gmail.com",
+    "bday": "2000-06-20",
+    "avatar": "http://www.gravatar.com/avatar/83292dc1cbff410d99d2b72844eb1a89?s=100",
+    "id": 10
+  },
+  {
+    "first-name": "intento2",
+    "last-name": "int",
+    "password": "$2a$10$5XKjCFeUZ4upCVCrohu.Oe52cazEuMzuGhTXLD/Wia1oIqewB0W0C",
+    "email": "intento2@gmail.com",
+    "bday": "2002-12-31",
+    "avatar": "http://www.gravatar.com/avatar/386f279ac5a5b3fbc5b16713f047a0e4?s=100",
+    "id": 11
+  },
+  {
+    "first-name": "intento2",
+    "last-name": "int",
+    "password": "$2a$10$KZbA8oCn0X1v1EOsJB/6u.IUSPsvautFW4v8yHaj4RdHcdQ0iI4CC",
+    "email": "intento2@gmail.com",
+    "bday": "2002-12-31",
+    "avatar": "http://www.gravatar.com/avatar/386f279ac5a5b3fbc5b16713f047a0e4?s=100",
+    "id": 12
+  },
+  {
+    "first-name": "intento2",
+    "last-name": "int",
+    "password": "$2a$10$5.OlBMz1vlyoQpq.abMBBOiOKQgVlKTb2bGvrT./wAX4/ovTgdK6G",
+    "email": "intento2@gmail.com",
+    "bday": "2002-12-31",
+    "avatar": "http://www.gravatar.com/avatar/386f279ac5a5b3fbc5b16713f047a0e4?s=100",
+    "id": 13
+  }
+]
