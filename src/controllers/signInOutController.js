@@ -70,6 +70,13 @@ const config = require('config');
         /* res.render('sign-in') */
 
 
+    },
+
+    profile : (req,res) =>{
+        res.render ('profile')
+        
+
+
     }
 }
 

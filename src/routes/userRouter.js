@@ -36,5 +36,6 @@ router.post ('/login', [
 
  router.post('/logout',auth,signInController.logout)
 
+router.get ('/me', signInController.profile)
 
 module.exports = router
