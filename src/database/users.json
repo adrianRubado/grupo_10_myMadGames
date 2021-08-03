@@ -11,10 +11,19 @@
   {
     "first-name": "Adrian",
     "last-name": "Rubado",
-    "password": "$2a$10$txOastrEINJme.fp7WlfouMZa6ynyANDWrG3dp8SoFbwSAK3Du6Y.",
+    "password": "$2a$10$HsMpIk3gaww/afBM1vpzfedGLIP3Ns.LI27l2I3.ZfRMLv4Rmu73q",
     "email": "adrianrubado19@gmail.com",
-    "bday": "1995-01-17",
-    "avatar": "http://www.gravatar.com/avatar/73e04e9dbb8657d523b841d80ecb6edd?s=100",
-    "id": 2
+    "bday": "2002-12-31",
+    "id": 2,
+    "image": "/images/Blue_Argentine_Ford_Fairlane.jpg"
+  },
+  {
+    "first-name": "Another due",
+    "last-name": "last name",
+    "password": "$2a$10$gFjgGNNVYAegYL7spAWWOe14sHaeErVqq5wV.F0ub7iAOHUmUgTAa",
+    "email": "aarubado@baufest.com",
+    "bday": "2002-12-29",
+    "id": 3,
+    "image": "/images/wp2953107-playstation-buttons-wallpaper.jpg"
   }
 ]

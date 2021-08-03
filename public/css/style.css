@@ -13,6 +13,10 @@ header{
 
 }
 
+.roundImage{
+  border-radius:100%;
+}
+
 
 .menusimple{
   list-style: none;

@@ -4,18 +4,25 @@ const signUpController = require ('../controllers/signUpController') ;
 const signInController = require ('../controllers/signInOutController') ;
 const {check}= require ('express-validator') ;
 const auth = require('../middleware/auth')
+const multer = require('multer')
+const path = require('path')
 
 
+var storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+      cb(null, path.join(__dirname,'../../public/images'))
+    },
+    filename: function (req, file, cb) {
+      const uniqueSuffix = file.originalname
+      cb(null,uniqueSuffix)
+    }
+  })
+
+  var upload = multer({ storage})
 
 router.get ('/sign-up', signUpController.signUp) ;
 
-router.post ('/sign-up', [
-    check('first-name').not().isEmpty().withMessage ('Debes completar el Nombre') ,
-    check('last-name').not().isEmpty().withMessage ('Debes completar el apellido'),
-    check('password').isLength({min:5}).withMessage('La contraseña debe contar con mas de 8 caracteres'),
-    check('email').isEmail()
-
- ], signUpController.createUser);
+router.post ('/sign-up',upload.single('image'), signUpController.createUser);
 
 
 router.get ('/login', signInController.signIn) ;
