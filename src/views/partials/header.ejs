@@ -57,13 +57,17 @@
           </a>
 
           </li>
+          <% if (locals.user) { %>
+            <li>
+              <a href="/">
+              <img src= <%= locals.user.avatar  %>    alt="" width = 20px>
+            </a>
+            </li>
+            <% } %>
 
-          <li>
-            <img src="http://www.gravatar.com/avatar/a2c99c01f934fc7979681b24952dc568?s=100" alt="" width="15">
 
-          </a>
 
-          </li>
+
 
 
 

@@ -6,7 +6,7 @@ module.exports = function (req,res,next){
     console.log(token)
 
     if(!token){
-         res.render('sign-in')
+         res.redirect('/user/login')
     }
     try{
         const decoded = jwt.verify(token,'jwSecret')

@@ -39,17 +39,16 @@ const config = require('config');
                 id:user.id
             }
         }
+
          jwt.sign(payload,'jwSecret',(err,token)=>{
             if(err) {
                 console.error(err.message)
             }
              res.cookie('token',token, {httpOnly : true})
-             const viewData = {
-                titulo: 'My Mad Games',
-                games: juegos,
-                avatar : user.gravatar
-        }
-            res.render('index',viewData)})
+
+            req.session.user = user; // Deberiamos borrar la password de acá
+            res.locals.user = req.session.user;
+            res.redirect('/')})
 
         }catch(err){
             res.status(500).json({errors : 'Server error'})
@@ -66,11 +65,8 @@ const config = require('config');
 
    logout : (req,res) =>{
         res.clearCookie("token");
-        const viewData = {
-            titulo: 'My Mad Games',
-            games: juegos
-    }
-        res.render('index',viewData)
+
+        res.redirect('/user/login')
         /* res.render('sign-in') */
 
 

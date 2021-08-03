@@ -5,6 +5,7 @@ const app = express() //Requerimos modulo de express para levantar nuestro servi
 const path = require ('path');
 const morgan = require ('morgan');
 const cookieParser = require('cookie-parser')
+const session = require('express-session')
 const indexRouter = require('./src/routes/indexRouter')
 const productRouter = require('./src/routes/productsRouter')
 const pcRouter = require('./src/routes/productCartRouter')
@@ -17,6 +18,7 @@ app.set ("view engine", "ejs") ; //Establecimos como template engine ejs
 app.set('views', path.join(__dirname, '/src/views'));
 
 app.use(cookieParser())
+app.use(session({ secret: "Shh, secreto", resave: false, saveUninitialized: false }));
 app.use(methodOverride('_method'));// Requerimos el overRide para manipular los metodos PUT-DELETE
 app.use(express.urlencoded({ extended: false })); //Sirve como parseo de peticiones HTTP y facilita la forma en la que accedemos a una peticion de la misma
 app.use (express.json()); //para capturar informacion

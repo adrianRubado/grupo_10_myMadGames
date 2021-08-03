@@ -14,13 +14,13 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
         const viewData = {
                 game: detalle
         }
-
+        res.locals.user = req.session.user
         res.render ('products',viewData);
     },
 
     create: (req,res) => {
 
-
+        res.locals.user = req.session.user
         res.render('createGame');
     },
     edit: (req,res) => {
@@ -29,7 +29,7 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
         const viewData = {
                 game: detalle
         }
-
+        res.locals.user = req.session.user
         res.render('editGame',viewData);
     },
     update: (req,res) => {
@@ -39,7 +39,7 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
         juegos[objIndex] = updatedProduct
         fs.writeFileSync(juegosFilePath,JSON.stringify(juegos))
 
-
+        res.locals.user = req.session.user
         res.redirect("/products/"+id)
 
 
@@ -54,6 +54,7 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
         const viewData = {
             games : juegos
         }
+        res.locals.user = req.session.user
         res.render('index',viewData)
     },
 
@@ -68,6 +69,7 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
         const viewData = {
             games : juegosActualizados
         }
+        res.locals.user = req.session.user
         res.render('index',viewData)
     }
 
