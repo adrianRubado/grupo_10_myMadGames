@@ -396,6 +396,38 @@ article{
   }
 
 
+.container1{
+    color:#3f51b5;
+    font-style: bold;
+    padding: 15px;
+    border-bottom: 0.5px solid black;
+    text-align: center;
+}
+
+.dataAccount{
+    display: block;
+    text-align: center;
+}
+
+.container2{
+    padding: 15px;
+    text-align: left;
+}
+
+.container3{
+    padding: 15px;
+    text-align: left;
+}
+
+.tienda{
+    padding:1px;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #3f51b5;
+    max-width: 60%;
+}
+
 @media (min-width: 768px){
     body{
     background-color: rgb(208, 216, 208);
@@ -455,6 +487,25 @@ article{
         margin-top: 12px;
     }
 
+    .container1{
+        text-align: left;
+    }
 
+    .dataAccount{
+        display: flex;
+        flex-wrap: nowrap;
+        text-align: left;
+    }
 
+    .container2{
+        width: 30%;
+    }
+    
+    .container3{
+        width: 70%;
+    }
+
+    .tienda{
+        max-width: 70%;
+    }
 }
