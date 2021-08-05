@@ -192,6 +192,7 @@ width: 100%;
 height: 15%;}
 
 
+/* HASTA ACA ES EL HEADER */
 
 
 
@@ -201,22 +202,76 @@ height: 15%;}
 
 
 
+#mainSignUp { height: 100vh;
+  width: 100vw;
+ display: flex;
+  flex-direction: column;
+  background-image: url("/images/blue.jpg")
+  ;
+  background-size: 100%;}
+
+  .contenedorTitulosSignUp {display: flex;
+  flex-direction: column; align-items: center;}
+
+  .contenedorNombresSignUp { display: flex; flex-direction: row;
+     align-items: center;
+      justify-content: space-between;
+       width: 90%; margin: 5px auto;}
+  .contenedorPassyMail {display: flex; flex-direction: row;
+     align-items: center;
+     justify-content: space-between;
+      width: 90%;
+      margin: 15px auto;}
+  .contendorBday {display: flex;
+     flex-direction: row;
+      flex-wrap: nowrap;
+         width: 50%;
+        ;}
+
+        .contenedorBdyGeneros {display: flex;
+        flex-direction: row;
+
+    align-items: center;}
+
+        .generosIn { display: flex; flex-direction: column; margin: auto;
+           align-items: center;
+          justify-content: space-between;
+        background-color: #fff;
+        border: 3px solid black;
+      border-radius: 10px;
+    margin: auto 25px auto auto;}
+        .generosIn h5 { color: rgb(45, 90, 236);
+         font-weight: bold;
+        font-size: large;}
+        .botonSignUp {  margin-top:5px;
+          height: 35px;
+        width: 50px;
+ margin-bottom: 15px;
+ background-color: transparent;
+  border-color: transparent;}
+
+  .contenedorInputsSignInuno { display: flex; flex-direction: column; flex-wrap: wrap; justify-content: space-between; width: 70%;}
+
+               .formularioSignUp { margin:auto;
+                display: flex;
+              flex-direction: column;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 5%;
+            background-color: rgba(253, 253, 253, 0.6);
+            height: 75%;
+            width: 75%;}
 
 
-
-#mainSignUp { height: 800vh; 
-  width: 100%;
-               display: flex; 
-               flex-direction: column;}
-
-#mainSignIn { height: 500px;
-                width: 100%; 
+#mainSignIn { height: 100vh;
+                width: 100%;
                display: flex;
                 flex-direction: column;
-                background-image: url("/images/blue.jpg") 
+                background-image: url("/images/blue.jpg")
                 ;
                 background-size: 100%;
-                   
+
               }
 
 
@@ -231,22 +286,31 @@ margin: 30px auto 3px auto;}
                             flex-direction: column;
                           align-items: center;
                           text-align: center;
+                          padding: 5px;
                           background-color: rgba(253, 253, 253, 0.6);
                           height: 75%;
-                          width: 30%;
-                          
-                        }          
+                          width: 75%;
 
-                      .contenedorInputSignIn { margin:25px auto 25px auto;}
+                        }
+
+                      .contenedorInputSignIn {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        justify-content: space-between;
+                        margin:25px auto 25px auto;}
 
                       .contenedorBotonSubSignIn { display: flex; flex-direction: column; text-align: center; margin: auto; justify-content: space-between; align-items: center;}
+
+                         .inputEmail  { width: 65%;}
+                         .inputPassword { width: 65%;}
 
                     .botonSignIn {  margin-top:-15px;
                                     height: 35px;
                                   width: 50px;
                            margin-bottom: 15px;                             background-color: transparent;
                             border-color: transparent;}
-                      
+
 
               .forgotPass { color: darkblue;}
 
@@ -254,7 +318,7 @@ margin: 30px auto 3px auto;}
             height: 15%;
             background-color: #47525e;}
 
-            
+
 
 
 
@@ -300,4 +364,29 @@ margin: 30px auto 3px auto;}
 
 }
 
+@media (max-width : 768px) {
 
+  .contenedorNombresSignUp {display: flex;
+  flex-direction: column;}
+  .contenedorPassyMail {display: flex;
+  flex-direction: column;}
+  .contendorBday {display: flex;
+  flex-direction: column;}
+  .contenedorBdyGeneros {display: flex;
+  flex-direction: column;}
+  .contenedorInputSignIn {display: flex;
+  flex-direction: column;
+  align-items: center;}
+  .formularioSignUp {height: 100%;
+  width: 100%;
+justify-content: center;
+align-items: center;
+text-align: center;}
+  .generosIn { width: 100%;
+  }
+  .labelSignUp {display: flex;
+  flex-direction: column;}
+
+
+
+}
