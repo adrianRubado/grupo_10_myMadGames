@@ -46,5 +46,6 @@ router.post ('/login', [
 
  router.get('/profile',authMiddleware,profileController.profile)
 
+router.get ('/me', signInController.profile)
 
 module.exports = router

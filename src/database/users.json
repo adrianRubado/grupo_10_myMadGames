@@ -27,31 +27,12 @@
     "image": "/images/wp2953107-playstation-buttons-wallpaper.jpg"
   },
   {
-    "first-name": "Matías",
-    "last-name": "Dalceggio",
-    "password": "$2a$10$7Qh1LRpQ7SHSUgvNKtl5o.AIPQPhrl.KoMfFsEzhUOFI22Jf0EAv2",
-    "email": "matiasdalceggio@gmail.com",
-    "bday": "1998-06-18",
+    "first-name": "Miguel",
+    "last-name": "Mendez",
+    "password": "$2a$10$9Y46vipfqKtwuVqHtnN9DODZ.l3IsXUCxkLdjCL6sIXwyL3s7rhJu",
+    "email": "miguel@dh.com",
+    "bday": "1978-12-31",
     "id": 4,
-    "image": "/images/wp2175944-blue-light-wallpapers.jpg"
-  },
-  {
-    "first-name": "Adrian",
-    "last-name": "Rubado",
-    "password": "$2a$10$7YH7c5l4kMMAd1j9sOR1quq3Odknb3UZSQxqQ8wPCKfh.cqEKDc9y",
-    "email": "adrianrubadoo19@gmail.com",
-    "bday": "2002-10-09",
-    "id": 5,
-    "image": "/images/Blue_Argentine_Ford_Fairlane.jpg",
-    "role": "admin"
-  },
-  {
-    "first-name": "hola",
-    "last-name": "hola",
-    "password": "$2a$10$F3i25BLAa/ny1lvRgBRmE.EZ6d.QghE.eT4sbsJQMu/yb1GK.CKfG",
-    "email": "hola@hotmail.com",
-    "bday": "2002-12-31",
-    "id": 6,
-    "image": "/images/wp2953107-playstation-buttons-wallpaper.jpg"
+    "image": "/images/20190908_171357.jpg"
   }
 ]
