@@ -7,3 +7,13 @@ Uno de los puntos que nos parecieron mas importantes es la distribución y el di
 Sprint 2 :
 
 Con respecto al sprint anterior, creemos que tendríamos que empezar a  organizarnos mejor, distribuir mejor los tiempos y trabajos individuales para que de esta forma todos trabajemos todo el proyecto y sea mas fluido el desarrollo en el transcurso del sprint. Es decir que un apoyo en conjunto conlleva mejores resultados. Por otro lado, seguir haciendo las mismas reuniones recurrentes y metodología de comunicación. Además que no es un dato poco relevante, la química del grupo en pos a  aceptar nuevas y diferentes ideas entre nosotros. Mas llegando a lo ultimo, dejar de llegar a ultimo momento  con algun tipo de tarea pendiente.
+
+Sprint 3:
+
+Excelente sprint.
+
+
+
+Sprint 4 :
+
+Bueno como retro para el sprint anterior, creemos que tendriamos que mejorar los tiempos de entrega de las tareas, las cuales nos dividimos . Sumado a un mayor compromiso  y participacion. Debemos reunirnos mas con todos los integrantes y ser mas organizados. Para continuar haciendo, mantener el contacto y mantener la velocidad de trabajo ya que esta misma nos permite la entrega prospera del sprint.  Hacer menos materiales individuales, ya que el beneficio de estos sprints es la resolucion de los mismos para asentar conceptos. Por ultimo debemos dejar de ser desordenados y mejorar nuestro desempeño con la plataforma git, ya que con ello permite una mejora en la sincronizacion en el trabajo.

@@ -7,7 +7,6 @@ const path = require ('path') ;
 
     carrito: (req,res) => {
 
-
         res.render('product-cart');
     }
 }
