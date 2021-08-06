@@ -27,7 +27,7 @@
 
         <ul>
           <li>
-            <a href="/sign-in">
+            <a href="/user/login">
             <i class="far fa-question-circle"></i>
           </a>
           </li>
@@ -42,16 +42,36 @@
               <i class="fas fa-plus"></i>
             </a>
           </li>
+          <form method="post" action="/user/logout">
           <li>
-            <i class="far fa-star"></i>
+            <a href="/user/logout">
+            <button type="submit" class="far fa-star"></button>
 
+          </a>
           </li>
+        </form>
+
           <li>
-            <a href="/sign-up">
+            <a href="/user/sign-up">
             <i class="fas fa-user"></i>
           </a>
 
           </li>
+          <% if (locals.user) { %>
+            <li>
+              <a href="/">
+              <img src= <%= locals.user.image  %> class = 'roundImage'    alt="" width = 30px>
+            </a>
+            </li>
+            <% } %>
+
+
+
+
+
+
+
+
 
         </ul>
       </nav>

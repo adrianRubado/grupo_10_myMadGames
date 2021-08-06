@@ -20,16 +20,5 @@
     "description": "Grand Theft Auto V es un juego de acción y aventura desarrollado por Rockstar North y publicado en 2013 por Rockstar Games. El juego se centra sobre todo en los atracos, persecuciones policiales, tiroteos y el logro de los objetivos, incluso si eso significa infringir la ley de vez en cuando. Premium Online Edition es un paquete conveniente que reúne tanto el juego básico de GTA V como Criminal Enterprise Starter Pack para ayudarte a comenzar y desarrollar tu negocio criminal de modo online mucho más rápido.",
     "requirements": "                                                                requirements\r\n        \r\n            \r\n        \r\n            \r\n        \r\n            \r\n        \r\n            ",
     "link": "https://www.youtube.com/embed/QkkoHAzjnUs"
-  },
-  {
-    "name": "Last of Us",
-    "price": "10000",
-    "platform": "PS",
-    "description": "juegon",
-    "link": "https://www.youtube.com/embed/eaW0tYpxyp0",
-    "requirements": "-",
-    "category": "Accion",
-    "id": "21",
-    "image": "/images/44437-the-last-of-us.jpg"
   }
 ]

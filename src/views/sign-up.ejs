@@ -8,7 +8,7 @@
     <%- include('./partials/header.ejs') %>
 
       <main id="mainSignUp">
-        <form action="/" method="POST" class="formularioSignUp" >
+        <form action="/user/sign-up" enctype="multipart/form-data" method="POST" class="formularioSignUp">
 
 
           <div class="contenedorTitulosSignUp">
@@ -56,12 +56,14 @@
 
               <label for="bday" >Fecha De Nacimiento
 
-                <input type="date" id="bday" name="bday"> </input></label>
+                <input type="date" id="bday" name="bday" min="1930-01-01" max="2003-01-01"> </input></label>
 
             </div>
+            <label for="imagen" class="labelSignUp">Cover foto</label>
+            <input type="file" id="botonCoverPhoto" name="image" accept=".jpg, .png"> </div>
 
 
-          <button type="submit" id="submit" class="botonSignUp"> <img src="/images/logo1.png" width="45px" height="45px"/></button>
+          <button type="submit"  class="botonSignUp"> <img src="/images/logo1.png" width="45px" height="45px" textalign = 'center'/></button>
 
         </form>
 
