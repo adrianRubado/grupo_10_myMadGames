@@ -10,7 +10,8 @@ const indexRouter = require('./src/routes/indexRouter')
 const productRouter = require('./src/routes/productsRouter')
 const pcRouter = require('./src/routes/productCartRouter')
 const userRouter = require('./src/routes/userRouter')
-
+const persistSessionMiddleware = require('./src/middleware/persistSessionMiddleware')
+const logged = require('./src/middleware/loggedMiddleware')
 
 
 
@@ -25,7 +26,9 @@ app.use (express.json()); //para capturar informacion
 app.use(express.static('public'))//Establecemos como carpeta estatica
 app.use (morgan('dev')) ;
 
-
+ // middleware para persistir session a traves de toda la app
+app.use(persistSessionMiddleware)
+app.use(logged)
 
 
 app.listen(3002,()=>{

@@ -17,35 +17,42 @@ const signUpController = {
 
         res.render('sign-up');
     },
-    createUser: (req,res) => {
-        [
-            check('first-name').not().isEmpty().withMessage ('Debes completar el Nombre') ,
-            check('last-name').not().isEmpty().withMessage ('Debes completar el apellido'),
-            check('password').isLength({min:5}).withMessage('La contraseña debe contar con mas de 8 caracteres'),
-            check('email').isEmail()
 
-         ]
-         const errors =validationResult(req)
+    createUser: (req,res) => {
+
+         const errors = validationResult(req)
          if (!errors.isEmpty()){
 
             return res.status(400).json({errors:errors.array()}) ;
          }
+
+
+
+
+
+         const email= req.body.email;
+         const user = userr.find((e =>e.email == email))
+
+         if(user){
+            res.status(400).json({errors : {message : 'User already exists'}})
+         }
+
+         const newUser = req.body
+
+
+
          const newpassword = bcrypt.hashSync(req.body.password,10) ;
-         const user= req.body;
+         newUser.password = newpassword;
 
-
-
-
-         user.password =newpassword;
 
          if(userr.lenght == 0){
-             user.id=1
+             newUser.id=1
          }else{
 
-         user.id =userr[userr.length - 1].id + 1
+         newUser.id =userr[userr.length - 1].id + 1
         }
-        user.image = "/images/" + req.file.originalname
-         userr.push(user)
+        newUser.image = "/images/" + req.file.originalname
+         userr.push(newUser)
          fs.writeFileSync(userFilePath,JSON.stringify(userr,null,2))
 
         const viewData = {

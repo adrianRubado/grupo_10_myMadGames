@@ -7,7 +7,6 @@ const path = require ('path') ;
 
     carrito: (req,res) => {
 
-        res.locals.user = req.session.user
         res.render('product-cart');
     }
 }

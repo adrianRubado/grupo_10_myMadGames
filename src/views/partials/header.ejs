@@ -27,11 +27,6 @@
 
         <ul>
           <li>
-            <a href="/user/login">
-            <i class="far fa-question-circle"></i>
-          </a>
-          </li>
-          <li>
             <a href="/product-cart">
             <i class="fas fa-shopping-cart"></i>
           </a>
@@ -50,17 +45,29 @@
           </a>
           </li>
         </form>
-
+        <% if (!locals.logged) { %>
           <li>
             <a href="/user/sign-up">
             <i class="fas fa-user"></i>
           </a>
 
           </li>
-          <% if (locals.user) { %>
+          <li>
+            <a href="/user/login">
+            <i class="far fa-question-circle"></i>
+          </a>
+          </li>
+        <% } %>
+
+          <% if (locals.image) { %>
             <li>
+<<<<<<< HEAD
               <a href="/user/me">
               <img src= <%= locals.user.image  %> class = 'roundImage'    alt="" width = 30px>
+=======
+              <a href="/">
+              <img src= <%= locals.image  %> class = 'roundImage'    alt="" width = 30px>
+>>>>>>> main
             </a>
             </li>
             <% } %>

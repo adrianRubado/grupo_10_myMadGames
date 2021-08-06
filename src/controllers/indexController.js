@@ -12,7 +12,7 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
                 games: juegos
         }
 
-        res.locals.user = req.session.user
+      
         res.render ('index',viewData);
     }
 }

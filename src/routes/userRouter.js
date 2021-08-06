@@ -1,11 +1,13 @@
 const express = require ('express') ;
 const router = express.Router () ;
 const signUpController = require ('../controllers/signUpController') ;
-const signInController = require ('../controllers/signInOutController') ;
+const signInOutController = require ('../controllers/signInOutController') ;
+const profileController = require('../controllers/profileController')
 const {check}= require ('express-validator') ;
-const auth = require('../middleware/auth')
 const multer = require('multer')
 const path = require('path')
+const guestMiddleware = require('../middleware/guestMiddleware')
+const authMiddleware = require('../middleware/authMiddleware')
 
 
 var storage = multer.diskStorage({
@@ -20,21 +22,29 @@ var storage = multer.diskStorage({
 
   var upload = multer({ storage})
 
-router.get ('/sign-up', signUpController.signUp) ;
+router.get ('/sign-up',guestMiddleware, signUpController.signUp) ;
 
-router.post ('/sign-up',upload.single('image'), signUpController.createUser);
+router.post ('/sign-up',upload.single('image'),[
+  check('first-name').not().isEmpty().withMessage ('Debes completar el Nombre') ,
+  check('last-name').not().isEmpty().withMessage ('Debes completar el apellido'),
+  check('password').isLength({min:5}).withMessage('La contraseña debe contar con mas de 8 caracteres'),
+  check('email').isEmail()
+
+], signUpController.createUser);
 
 
-router.get ('/login', signInController.signIn) ;
+router.get ('/login',guestMiddleware, signInOutController.signIn) ;
 router.post ('/login', [
 
     check('email', 'Please include a valid email').isEmail(),
     check('password', 'The password is required').exists()
 
 
- ], signInController.log);
+ ], signInOutController.log);
 
- router.post('/logout',auth,signInController.logout)
+ router.post('/logout',signInOutController.logout)
+
+ router.get('/profile',authMiddleware,profileController.profile)
 
 router.get ('/me', signInController.profile)
 
