@@ -44,7 +44,7 @@ const config = require('config');
             if(err) {
                 console.error(err.message)
             }
-             res.cookie('token',token, {httpOnly : true})
+             res.cookie('token',token, {httpsOnly : true, secure : true})
 
             req.session.user = user; // Deberiamos borrar la password de acá
             res.locals.user = req.session.user;
