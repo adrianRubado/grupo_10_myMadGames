@@ -9,7 +9,7 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
     profile: (req,res) => {
 
 
-        res.send('sapeeee')
+        res.send('ya estas logueado')
     }
 }
 

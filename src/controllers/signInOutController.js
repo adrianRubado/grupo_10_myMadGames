@@ -18,20 +18,29 @@ const config = require('config');
 
         res.render('sign-in');
     },
-    log: async (req,res) => {
-        try{
-          const user =  userr.find(e=>e.email == req.body.email);
-        if(!user){
-            res.render('sign-in',{errors: {message:'Invalid Credentials'} })
+    log:  (req,res) => {
+       try{
+          const user = userr.find(e=>e.email == req.body.email);
+        if(user){
+            const oldpassword = user.password ;
+            const ismatch = bcrypt.compareSync(req.body.password, oldpassword)
+            if(ismatch){
+                if(req.body.persist){
+                    res.cookie('persistSession', user.email, {maxAge:(1000 * 60) * 20})
+                }
+                delete user.password
+                req.session.user = user;
+                res.redirect('/')
+            }
+
 
 
         }
-        const oldpassword = user.password ;
-        const ismatch = await bcrypt.compareSync(req.body.password, oldpassword)
+        res.render('sign-in',{errors: {message:'Invalid Credentials'} })
 
-        if(!ismatch){
-            res.render('sign-in',{errors: {message:'Invalid Credentials'} })
-        }
+
+
+
 
       /*  const payload = {
             user:{
@@ -48,12 +57,7 @@ const config = require('config');
             }) */
            // Deberiamos borrar la password de acá
 
-            if(req.body.persist){
-                res.cookie('persistSession', user.id, {maxAge:500000})
-            }
-            delete user.password
-            req.session.user = user;
-            res.redirect('/')
+
 
         }catch(err){
             res.status(500).json({errors : 'Server error'})
