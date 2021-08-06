@@ -15,11 +15,13 @@ var storage = multer.diskStorage({
   })
 
   var upload = multer({ storage})
+  const authMiddleware = require('../middleware/authMiddleware')
+  const adminMiddleware = require('../middleware/adminMiddleware')
 
 
 
 router.get('/',productsController.get)
-router.get ('/create', productsController.create)
+router.get ('/create',[authMiddleware,adminMiddleware], productsController.create)
 router.get('/:id/',productsController.detail )
 router.get('/:id/edit',productsController.edit)
 router.put('/:id/edit',productsController.update)
