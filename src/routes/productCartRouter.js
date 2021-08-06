@@ -1,9 +1,10 @@
 const express = require ('express') ;
 const router = express.Router () ;
-const pcController = require ('../controllers/productCartController') ;
-const auth = require('../middleware/auth')
+const pcController = require ('../controllers/productCartController');
+const authMiddleware = require('../middleware/authMiddleware')
 
-router.get('/', pcController.carrito) ;
+
+router.get('/',authMiddleware, pcController.carrito) ;
 
 
 module.exports = router

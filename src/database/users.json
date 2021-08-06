@@ -34,5 +34,15 @@
     "bday": "1998-06-18",
     "id": 4,
     "image": "/images/wp2175944-blue-light-wallpapers.jpg"
+  },
+  {
+    "first-name": "Adrian",
+    "last-name": "Rubado",
+    "password": "$2a$10$7YH7c5l4kMMAd1j9sOR1quq3Odknb3UZSQxqQ8wPCKfh.cqEKDc9y",
+    "email": "adrianrubadoo19@gmail.com",
+    "bday": "2002-10-09",
+    "id": 5,
+    "image": "/images/Blue_Argentine_Ford_Fairlane.jpg",
+    "role" : "admin"
   }
 ]

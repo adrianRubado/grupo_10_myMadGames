@@ -10,8 +10,8 @@ const indexRouter = require('./src/routes/indexRouter')
 const productRouter = require('./src/routes/productsRouter')
 const pcRouter = require('./src/routes/productCartRouter')
 const userRouter = require('./src/routes/userRouter')
-const localSession = require('./src/middleware/localSessionMiddleware') 
-var persistSessionMiddleware = require('./src/middleware/persistSessionMiddleware')
+const persistSessionMiddleware = require('./src/middleware/persistSessionMiddleware')
+const logged = require('./src/middleware/loggedMiddleware')
 
 
 app.set ("view engine", "ejs") ; //Establecimos como template engine ejs
@@ -24,8 +24,9 @@ app.use(express.urlencoded({ extended: false })); //Sirve como parseo de peticio
 app.use (express.json()); //para capturar informacion
 app.use(express.static('public'))//Establecemos como carpeta estatica
 app.use (morgan('dev')) ;
-//app.use(localSession)
-app.use(persistSessionMiddleware) // middleware para persistir session a traves de toda la app
+
+app.use(logged) // middleware para persistir session a traves de toda la app
+
 
 
 app.listen(3002,()=>{

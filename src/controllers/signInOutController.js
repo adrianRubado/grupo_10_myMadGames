@@ -18,20 +18,19 @@ const config = require('config');
 
         res.render('sign-in');
     },
-    log: (req,res) => {
+    log: async (req,res) => {
         try{
-          const user = userr.find(e=>e.email == req.body.email) ;
-          const oldpassword = user.password ;
-          const ismatch = bcrypt.compareSync(req.body.password, oldpassword)
-
-
+          const user =  userr.find(e=>e.email == req.body.email);
         if(!user){
-            res.status (400).json ({errors: {message:'Invalid Credentials'} }) ;
+            res.render('sign-in',{errors: {message:'Invalid Credentials'} })
+
 
         }
+        const oldpassword = user.password ;
+        const ismatch = await bcrypt.compareSync(req.body.password, oldpassword)
 
         if(!ismatch){
-            res.status (400).json ({errors: {message:'Invalid Credentials'} }) ;
+            res.render('sign-in',{errors: {message:'Invalid Credentials'} })
         }
 
       /*  const payload = {
@@ -47,12 +46,13 @@ const config = require('config');
              res.cookie('token',token, {httpOnly : true})
 
             }) */
-           req.session.user = user; // Deberiamos borrar la password de acá
-           res.locals = req.session.user
-            
-            if(req.body.persist != undefined){ 
+           // Deberiamos borrar la password de acá
+
+            if(req.body.persist){
                 res.cookie('persistSession', user.id, {maxAge:500000})
             }
+            delete user.password
+            req.session.user = user;
             res.redirect('/')
 
         }catch(err){
@@ -71,8 +71,8 @@ const config = require('config');
    logout : (req,res) =>{
         // res.clearCookie("token");
         res.clearCookie("persistSession");
-        req.session.destroy() 
-        res.redirect('/user/login')
+        req.session.destroy()
+        res.redirect('/')
         /* res.render('sign-in') */
 
 

@@ -32,7 +32,14 @@
 
               <input type="password" id="password" name="password" placeholder="Contraseña" class="inputPassword"> </input>
 
+
             </div>
+            <% if (locals.errors && errors.message) { %>
+
+              <div class = 'textWarning'>
+               <%= errors.message %>
+              </div>
+             <% } %>
 
                          <div class="contenedorBotonSubSignIn">  <button type="submit" id="submit" class="botonSignIn" >  <img src="/images/logo1.png" width="45px" height="45px"/></button>
 
@@ -47,5 +54,7 @@
       <%- include('./partials/footer.ejs') %>
 
   </body>
+
+
 
 </html>
