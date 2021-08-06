@@ -4,23 +4,31 @@ const createError = require('http-errors');
 const app = express() //Requerimos modulo de express para levantar nuestro servidor
 const path = require ('path');
 const morgan = require ('morgan');
+const cookieParser = require('cookie-parser')
+const session = require('express-session')
 const indexRouter = require('./src/routes/indexRouter')
 const productRouter = require('./src/routes/productsRouter')
 const pcRouter = require('./src/routes/productCartRouter')
-const signUpRouter = require('./src/routes/signUpRouter')
-const signInRouter = require ('./src/routes/sigInRouter')
+const userRouter = require('./src/routes/userRouter')
+const persistSessionMiddleware = require('./src/middleware/persistSessionMiddleware')
+const logged = require('./src/middleware/loggedMiddleware')
+
 
 
 app.set ("view engine", "ejs") ; //Establecimos como template engine ejs
 app.set('views', path.join(__dirname, '/src/views'));
 
+app.use(cookieParser())
+app.use(session({ secret: "Shh, secreto", resave: false, saveUninitialized: false }));
 app.use(methodOverride('_method'));// Requerimos el overRide para manipular los metodos PUT-DELETE
 app.use(express.urlencoded({ extended: false })); //Sirve como parseo de peticiones HTTP y facilita la forma en la que accedemos a una peticion de la misma
 app.use (express.json()); //para capturar informacion
 app.use(express.static('public'))//Establecemos como carpeta estatica
 app.use (morgan('dev')) ;
 
-
+ // middleware para persistir session a traves de toda la app
+app.use(persistSessionMiddleware)
+app.use(logged)
 
 
 app.listen(3002,()=>{
@@ -51,7 +59,7 @@ app.get('/detail',(req,res)=>{
 app.use('/',indexRouter)
 app.use('/products',productRouter)
 app.use('/product-cart',pcRouter)
-app.use('/sign-up',signUpRouter)
-app.use('/sign-in',signInRouter)
+app.use('/user',userRouter)
+
 
 app.use((req, res, next) => next(createError(404)));

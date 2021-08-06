@@ -12,6 +12,15 @@ header{
 
 
 }
+.textWarning{
+  font-size: small;
+  color: red;
+  margin-left: 75%;
+}
+
+.roundImage{
+  border-radius:100%;
+}
 
 
 .menusimple{
