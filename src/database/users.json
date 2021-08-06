@@ -1,7 +1,7 @@
 [
   {
-    "first-name": "bruno",
-    "last-name": "diaz",
+    "firstName": "bruno",
+    "lastName": "diaz",
     "password": "$2a$10$EBFn5pUiFbe//R1hBm.ZiOmvpXa.q71UezRrskhiAI4J3ryrMStim",
     "email": "costalesbruno@gmail.com",
     "bday": "2000-10-18",
@@ -9,8 +9,8 @@
     "id": 1
   },
   {
-    "first-name": "Adrian",
-    "last-name": "Rubado",
+    "firstName": "Adrian",
+    "lastName": "Rubado",
     "password": "$2a$10$HsMpIk3gaww/afBM1vpzfedGLIP3Ns.LI27l2I3.ZfRMLv4Rmu73q",
     "email": "adrianrubado19@gmail.com",
     "bday": "2002-12-31",
@@ -18,8 +18,8 @@
     "image": "/images/Blue_Argentine_Ford_Fairlane.jpg"
   },
   {
-    "first-name": "Another due",
-    "last-name": "last name",
+    "firstName": "Another due",
+    "lastName": "last name",
     "password": "$2a$10$gFjgGNNVYAegYL7spAWWOe14sHaeErVqq5wV.F0ub7iAOHUmUgTAa",
     "email": "aarubado@baufest.com",
     "bday": "2002-12-29",
@@ -27,17 +27,8 @@
     "image": "/images/wp2953107-playstation-buttons-wallpaper.jpg"
   },
   {
-<<<<<<< HEAD
-    "first-name": "Miguel",
-    "last-name": "Mendez",
-    "password": "$2a$10$9Y46vipfqKtwuVqHtnN9DODZ.l3IsXUCxkLdjCL6sIXwyL3s7rhJu",
-    "email": "miguel@dh.com",
-    "bday": "1978-12-31",
-    "id": 4,
-    "image": "/images/20190908_171357.jpg"
-=======
-    "first-name": "Matías",
-    "last-name": "Dalceggio",
+    "firstName": "Matías",
+    "lastName": "Dalceggio",
     "password": "$2a$10$7Qh1LRpQ7SHSUgvNKtl5o.AIPQPhrl.KoMfFsEzhUOFI22Jf0EAv2",
     "email": "matiasdalceggio@gmail.com",
     "bday": "1998-06-18",
@@ -45,8 +36,8 @@
     "image": "/images/wp2175944-blue-light-wallpapers.jpg"
   },
   {
-    "first-name": "Adrian",
-    "last-name": "Rubado",
+    "firstName": "Adrian",
+    "lastName": "Rubado",
     "password": "$2a$10$7YH7c5l4kMMAd1j9sOR1quq3Odknb3UZSQxqQ8wPCKfh.cqEKDc9y",
     "email": "adrianrubadoo19@gmail.com",
     "bday": "2002-10-09",
@@ -55,13 +46,12 @@
     "role": "admin"
   },
   {
-    "first-name": "hola",
-    "last-name": "hola",
+    "firstName": "hola",
+    "lastName": "hola",
     "password": "$2a$10$F3i25BLAa/ny1lvRgBRmE.EZ6d.QghE.eT4sbsJQMu/yb1GK.CKfG",
     "email": "hola@hotmail.com",
     "bday": "2002-12-31",
     "id": 6,
     "image": "/images/wp2953107-playstation-buttons-wallpaper.jpg"
->>>>>>> main
   }
 ]
