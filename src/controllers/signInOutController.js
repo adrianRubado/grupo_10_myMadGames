@@ -19,24 +19,35 @@ const config = require('config');
         res.render('sign-in');
     },
     log:  (req,res) => {
-       try{
+        const errors = validationResult(req)
+        if (!errors.isEmpty()){
+
+           return res.status(400).json({errors:errors.array()}) ;
+        }
+
+
+      /*  try{ */
           const user = userr.find(e=>e.email == req.body.email);
         if(user){
             const oldpassword = user.password ;
+            console.log(user)
+            console.log(req.body.password)
+            console.log(oldpassword)
             const ismatch = bcrypt.compareSync(req.body.password, oldpassword)
             if(ismatch){
                 if(req.body.persist){
                     res.cookie('persistSession', user.email, {maxAge:(1000 * 60) * 20})
                 }
-                delete user.password
+
+                /* delete user.password */
                 req.session.user = user;
-                res.redirect('/')
+                return res.redirect('/')
             }
 
 
 
         }
-        res.render('sign-in',{errors: {message:'Invalid Credentials'} })
+        return res.render('sign-in',{errors: {message:'Invalid Credentials'} })
 
 
 
@@ -59,9 +70,9 @@ const config = require('config');
 
 
 
-        }catch(err){
+       /*  }catch(err){ */
             res.status(500).json({errors : 'Server error'})
-        }
+        /* } */
 
         /* const viewData={
             games:juegos
@@ -74,9 +85,15 @@ const config = require('config');
 
    logout : (req,res) =>{
         // res.clearCookie("token");
-        res.clearCookie("persistSession");
+        if(req.cookies.persistSession){
+            res.clearCookie("persistSession");
+        }
+
         req.session.destroy()
-        res.redirect('/')
+        const viewData = {
+            games : juegos
+        }
+        return res.redirect('/')
         /* res.render('sign-in') */
 
 

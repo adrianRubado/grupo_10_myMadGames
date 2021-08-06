@@ -14,6 +14,7 @@ const persistSessionMiddleware = require('./src/middleware/persistSessionMiddlew
 const logged = require('./src/middleware/loggedMiddleware')
 
 
+
 app.set ("view engine", "ejs") ; //Establecimos como template engine ejs
 app.set('views', path.join(__dirname, '/src/views'));
 
@@ -25,8 +26,9 @@ app.use (express.json()); //para capturar informacion
 app.use(express.static('public'))//Establecemos como carpeta estatica
 app.use (morgan('dev')) ;
 
-app.use(logged) // middleware para persistir session a traves de toda la app
-
+ // middleware para persistir session a traves de toda la app
+app.use(persistSessionMiddleware)
+app.use(logged)
 
 
 app.listen(3002,()=>{

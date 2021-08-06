@@ -10,6 +10,7 @@ function persistSess (req, res, next) {
     {
         const user = users.find(e=>e.email == req.cookies.persistSession);
         req.session.user = user;
+
     }
     next()};
 
