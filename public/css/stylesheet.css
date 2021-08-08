@@ -416,6 +416,7 @@ article{
     font-size:14px;
     height: 100%;
     color:white;
+    background-size: cover;
   }
 
   .text-justify{
@@ -453,8 +454,10 @@ article{
     border-radius: 5px;
     background-color: #3f51b5;
     max-width: 60%;
+    margin-left: 20%;
+    margin-top:5%
+   
 }
-
 @media (min-width: 768px){
     body{
     background-color: rgb(208, 216, 208);
@@ -498,6 +501,9 @@ article{
     .mainNavbar li {
         margin: 0 5px;
 
+    }
+    .sectionContainer{
+        height: 53vh;
     }
 
     .topnav input[type=text] {
