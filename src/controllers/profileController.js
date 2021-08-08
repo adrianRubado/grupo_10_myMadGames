@@ -7,9 +7,7 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
  const profileController = {
 
     profile: (req,res) => {
-
-
-        res.send('ya estas logueado')
+        res.render('profile')
     }
 }
 
