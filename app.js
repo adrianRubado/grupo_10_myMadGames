@@ -39,12 +39,6 @@ app.listen(3002,()=>{
 
 /*
 
-<<<<<<< HEAD
-app.use('/',(req,res)=>{
-    res.render ('index', {titulo:'My Mad'})
-})
-=======
->>>>>>> main
 
 app.use('/carrito', (req,res)=>{
     res.sendFile(__dirname + '/views/product-cart.html')
