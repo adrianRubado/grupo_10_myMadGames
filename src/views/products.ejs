@@ -13,39 +13,34 @@
             <div class="nombre">
                 <%= game.name %> </div>
             <div class="cont-padre">
-            <div class="contenedor-info">
-                <img class="gta" src =<%= game.image  %>  width="300px" ;>
-
-                <div class="iconos">
-                    <i class="fas fa-dollar-sign"><span class="tip"><%= game.price  %> </span></i>
-                    <i class="fas fa-percent"><span class="tip"><%= game.discount  %>$ off </span></i>
-                    <i class="fas fa-cart-plus chart"><a href="https://www.com"><span class="tip">Comprar</span></a></i>
-
-
-
+                <div class="contenedor-info">
+                    <img class="gta" src =<%= game.image  %>  width="400px" ;>
+                    <div class="social"><i class="fas fa-heart"></i>
+                        <i class="fas fa-comment"></i>
+                        <i class="fas fa-share-alt"></i>
+                    </div>
                 </div>
-                <div class="social"><i class="fas fa-heart"></i>
-                    <i class="fas fa-comment"></i>
-                    <i class="fas fa-share-alt"></i>
-
-                </div>
-            </div>
-            <div class="descripcion">
-                <h5>Descripcion</h5>
-                <p>
+                <div class="descripcion">
+                    <h5>Descripcion</h5>
+                <p class = "pContainerDescriptionGame">
                   <%= game.description %>
                 </p>
                 <div class="icons">
-                <a href= "/products/<%=game.id %>/edit "
+                <a href= "/products/<%=game.id %>/edit ">
                     <button class="button">Editar</button>
                 </a>
                 <a href="/products/<%=game.id  %>/delete ">
                     <button class="button button2" type="submit">Eliminar</button>
                 </a>
 
-            </div>
+                </div>
 
-            </div>
+                </div>
+        </div>
+        <div class="iconos">
+            <i class="fas fa-dollar-sign"><span class="tip"><%= game.price  %> </span></i>
+            <i class="fas fa-percent"><span class="tip"><%= game.discount  %>$ off </span></i>
+            <i class="fas fa-cart-plus chart"><a href="https://www.com"><span class="tip">Comprar</span></a></i>
         </div>
             <div class="cuadro">
                 <div>
@@ -60,8 +55,9 @@
 
         </article>
         <div class="cuadro">
-            <h4>Trailer</h4>
-
+            <div class = "containerTrailer">
+                <span>Trailer</span>
+            </div>
         </div>
 
         <div class=”video-responsive”>

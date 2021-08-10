@@ -36,6 +36,26 @@ app.listen(3002,()=>{
 })
 
 
+
+/*
+
+
+app.use('/carrito', (req,res)=>{
+    res.sendFile(__dirname + '/views/product-cart.html')
+})
+app.get('/sign-in',(req,res)=>{
+    res.sendFile(__dirname + '/views/sign-in.html');
+})
+
+app.get('/sign-up',(req,res)=>{
+    res.sendFile(__dirname + '/views/sign-up.html');
+})
+
+app.get('/detail',(req,res)=>{
+    res.sendFile(__dirname + '/src/views/detail.ejs');
+}) */
+
+
 app.use('/',indexRouter)
 app.use('/products',productRouter)
 app.use('/product-cart',pcRouter)

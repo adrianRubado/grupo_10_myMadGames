@@ -9,7 +9,7 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
     index: (req,res) => {
         const viewData = {
                 titulo: 'My Mad Games',
-                games: juegos
+            games: juegos
         }
 
       
