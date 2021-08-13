@@ -1,0 +1,1 @@
+const Fav = (sequelize, DataType) => { }

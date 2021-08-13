@@ -1,0 +1,1 @@
+const UserPurchase = (sequelize, DataType) => { }
