@@ -1,6 +1,6 @@
-module.exports = (sequelize, DataTypes) => { 
+module.exports = (sequelize, DataTypes) => {
 
-    let cols = { id: { type: DataTypes.INTEGER,
+    let cols = { game_id: { type: DataTypes.INTEGER,
                        autoincrement: true,
                        primarykey:true},
                  image:{type:dataTypes.STRING},
@@ -23,5 +23,24 @@ module.exports = (sequelize, DataTypes) => {
     let config = {tablename: "Games"}
 
     const Game = sequelize.define("Games", cols, config);
+
+    Game.associate = (models)=>{
+        Game.belongsToMany(models.User,{
+            as : 'userCart',
+            through : 'Carts',
+            foreignKey : 'game_id',
+            otherKey : 'user_id'
+        }),
+        Game.belongsTo(models.Genre,{
+            as : 'Genre',
+            foreignKey : 'genre_id'
+
+        }),
+        Game.belongsTo(models.Platform,{
+            as : 'Platform',
+            foreignKey : 'platform_id'
+
+        })
+    }
     return Game;
 }

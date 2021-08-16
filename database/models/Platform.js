@@ -1,6 +1,6 @@
-module.exports = (sequelize, dataTypes) => { 
+module.exports = (sequelize, dataTypes) => {
 
-let cols = {id:{type: dataTypes.INTEGER, 
+let cols = {platform_id:{type: dataTypes.INTEGER,
                 primarykey: true,
                 autoincrement: true},
             name:{type:dataTypes.STRING,
@@ -10,5 +10,12 @@ let cols = {id:{type: dataTypes.INTEGER,
 let config = {tablename:"Platforms"}
 
         const Platform = sequelize.define("Platforms", cols, config);
-        return Platform 
+
+        Platform.associate((models)=>{
+            Platform.hasMany(models.Games,{
+                as : 'Games',
+
+            })
+        })
+        return Platform
 };

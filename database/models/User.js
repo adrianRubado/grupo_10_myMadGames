@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    let cols = { id: { type: dataTypes.INTEGER,
+    let cols = { user_id: { type: dataTypes.INTEGER,
                        primarykey: true,
                        autoincrement: true},
                  first_name: {type: dataTypes.STRING,
@@ -14,7 +14,7 @@ module.exports = (sequelize, dataTypes) => {
                  bday:{type: dataTypes.DATE,
                               allowNull:false },
                  image:{type:dataTypes.STRING},
-                 
+
                 rol:{type:dataTypes.INTEGER},
             created_at:{type: dataTypes.DATE},
             updated_at:{type:dataTypes.DATE}  } ;
@@ -23,6 +23,14 @@ module.exports = (sequelize, dataTypes) => {
  };
 
                 const User = sequelize.define("Users", cols, config);
+                User.associate = (models)=>{
+                    User.belongsToMany(models.Game,{
+                        as : 'userCart',
+                        through : 'Carts',
+                        foreignKey : 'user_id',
+                        otherKey : 'game_id'
+                    })
+                }
                 return User;
                 // assosiate
 
