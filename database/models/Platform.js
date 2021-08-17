@@ -13,11 +13,11 @@ let config = {tableName:"Platforms"}
 
         const Platform = sequelize.define("Platforms", cols, config);
 
-        Platform.associate((models)=>{
+        Platform.associate = (models)=>{
             Platform.hasMany(models.Games,{
                 as : 'Games',
 
             })
-        })
+        }
         return Platform
 };

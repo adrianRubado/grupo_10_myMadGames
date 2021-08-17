@@ -39,9 +39,6 @@ let cols = {
           // associates 
 
 
-
-
-
          return Purchase;
 
 
