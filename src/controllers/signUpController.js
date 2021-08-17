@@ -3,7 +3,7 @@ const path = require ('path');
 const {check,validationResult} = require('express-validator');
 const userFilePath = path.join(__dirname, '../database/users.json');
 const userr = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
-const bcrypt= require ('bcryptjs') ;
+const bcrypt= require ('bcryptjs');
 
 
 
