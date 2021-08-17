@@ -1,8 +1,8 @@
 module.exports = (sequelize, dataTypes) => {
 
     let cols = { user_id: { type: dataTypes.INTEGER,
-                       primarykey: true,
-                       autoincrement: true},
+                       primaryKey: true,
+                       autoIncrement: true},
                  first_name: {type: dataTypes.STRING,
                               allowNull: false },
                  last_name: {type: dataTypes.STRING,

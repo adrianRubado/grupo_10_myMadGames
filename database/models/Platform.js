@@ -1,13 +1,15 @@
 module.exports = (sequelize, dataTypes) => {
 
 let cols = {platform_id:{type: dataTypes.INTEGER,
-                primarykey: true,
-                autoincrement: true},
-            name:{type:dataTypes.STRING,
-                  allowNull: false},
+                primaryKey: true,
+                autoIncrement: true},
+                name:{type:dataTypes.STRING,
+                 allowNull: false},
             created_at:{type: dataTypes.DATE},
             updated_at:{type: dataTypes.DATE}};
-let config = {tablename:"Platforms"}
+
+
+let config = {tableName:"Platforms"}
 
         const Platform = sequelize.define("Platforms", cols, config);
 

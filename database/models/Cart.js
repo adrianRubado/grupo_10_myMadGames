@@ -1,12 +1,16 @@
 module.exports = (sequelize, DataTypes) => { 
 
     let cols = { id: { type: DataTypes.INTEGER,
-                       autoincrement: true,
-                       primarykey:true},
-                 id_user: { type: DataTypes.INTEGER,
-                            allowNull: false},
-                 id_game: { type: DataTypes.INTEGER,
-                            allowNull: false},
+                       autoIncrement: true,
+                       primaryKey:true},
+                 user_id: { type: DataTypes.INTEGER,
+                            allowNull: false, 
+                            references: {model: User,
+                                key: "user_id"}},
+                 game_id: { type: DataTypes.INTEGER,
+                            allowNull: false,
+                            references: {model: Game,
+                                key: "game_id"}},
                  quantity: { type: DataTypes.INTEGER,
                             allowNull: false},
                  price: {type: DataTypes.DECIMAL,
@@ -15,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
                  updated_at: { type: DataTypes.DATE}
                 };
 
-    let config = {tablename: "Carts"}
+    let config = {tableName: "Carts"}
 
     const Cart = sequelize.define("Carts", cols, config);
     return Cart;

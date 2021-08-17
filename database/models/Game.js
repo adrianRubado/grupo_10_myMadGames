@@ -1,17 +1,30 @@
+const Genre = require("./Genre");
+const Platform = require("./Platform");
+
 module.exports = (sequelize, DataTypes) => {
 
     let cols = { game_id: { type: DataTypes.INTEGER,
-                       autoincrement: true,
-                       primarykey:true},
+                       autoIncrement: true,
+                       primaryKey:true},
                  image:{type:dataTypes.STRING},
-                 id_genre: { type: DataTypes.INTEGER,
-                            allowNull: false},
+
+                 genre_id: { type: DataTypes.INTEGER,
+                            allowNull: false,
+                            references: {model: Genre, 
+                                key: "genre_id"}
+                            },
+
                  name: { type: DataTypes.STRING,
                                 allowNull: false},
                  price: {type: DataTypes.DECIMAL,
                             allowNull: false}, // PRICE ES UNA MULTIPLICACIÓN X QTY
-                 id_platform: { type: DataTypes.INTEGER,
-                                allowNull: false},
+
+                 platform_id: { type: DataTypes.INTEGER,
+                                allowNull: false,
+                                references: {model: Platform,
+                                    key: "platform_id"}
+                                },
+
                  release: {type: DataTypes.INTEGER }, //INTEGER PORQUE ES UN AÑO
                  created_at: { type: DataTypes.DATE },
                  updated_at: { type: DataTypes.DATE },
@@ -20,7 +33,7 @@ module.exports = (sequelize, DataTypes) => {
                  link: { type: DataTypes.STRING }
                 };
 
-    let config = {tablename: "Games"}
+    let config = {tableName: "Games"}
 
     const Game = sequelize.define("Games", cols, config);
 
