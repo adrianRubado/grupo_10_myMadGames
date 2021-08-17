@@ -30,10 +30,10 @@ module.exports = (sequelize, dataTypes) => {
                         as : 'userCart',
                         through : 'Carts',
                         foreignKey : 'user_id',
-                        otherKey : 'game_id'
+                        otherKey : 'cart_id'
                     })
                 }
                 return User;
-                // assosiate
+            
 
  }

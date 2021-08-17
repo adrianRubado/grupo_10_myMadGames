@@ -4,7 +4,7 @@ const Game = require("./Game")
 
 module.exports = (sequelize, DataTypes) => { 
 
-    let cols = { id: { type: DataTypes.INTEGER,
+    let cols = { cart_id: { type: DataTypes.INTEGER,
                        autoIncrement: true,
                        primaryKey:true},
                        

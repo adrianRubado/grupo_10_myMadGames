@@ -40,9 +40,9 @@ module.exports = (sequelize, DataTypes) => {
     Game.associate = (models)=>{
         Game.belongsToMany(models.User,{
             as : 'userCart',
-            through : 'Carts',
+            through : 'Carts', 
             foreignKey : 'game_id',
-            otherKey : 'user_id'
+            otherKey : 'cart_id' 
         }),
         Game.belongsTo(models.Genre,{
             as : 'Genre',
