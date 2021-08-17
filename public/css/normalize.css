@@ -271,6 +271,7 @@
   [type="radio"] {
     box-sizing: border-box; /* 1 */
     padding: 0; /* 2 */
+    margin: 0px 1px 13px;
   }
 
   /**

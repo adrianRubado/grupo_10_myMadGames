@@ -18,41 +18,61 @@ const config = require('config');
 
         res.render('sign-in');
     },
-    log: (req,res) => {
-        try{
-          const user = userr.find(e=>e.email == req.body.email) ;
-          const oldpassword = user.password ;
-          const ismatch = bcrypt.compareSync(req.body.password, oldpassword)
+    log:  (req,res) => {
+        const errors = validationResult(req)
+        if (!errors.isEmpty()){
 
-
-        if(!user){
-            res.status (400).json ({errors: {message:'Invalid Credentials'} }) ;
-
+           return res.status(400).json({errors:errors.array()}) ;
         }
 
-        if(!ismatch){
-            res.status (400).json ({errors: {message:'Invalid Credentials'} }) ;
-        }
 
-        const payload = {
+      /*  try{ */
+          const user = userr.find(e=>e.email == req.body.email);
+        if(user){
+            const oldpassword = user.password ;
+            console.log(user)
+            console.log(req.body.password)
+            console.log(oldpassword)
+            const ismatch = bcrypt.compareSync(req.body.password, oldpassword)
+            if(ismatch){
+                if(req.body.persist){
+                    res.cookie('persistSession', user.email, {maxAge:(1000 * 60) * 20})
+                }
+
+                /* delete user.password */
+                req.session.user = user;
+                return res.redirect('/')
+            }
+
+
+
+        }
+        return res.render('sign-in',{errors: {message:'Invalid Credentials'} })
+
+
+
+
+
+      /*  const payload = {
             user:{
                 id:user.id
             }
         }
 
-         jwt.sign(payload,'jwSecret',(err,token)=>{
+         /* jwt.sign(payload,'jwSecret',(err,token)=>{
             if(err) {
                 console.error(err.message)
             }
              res.cookie('token',token, {httpsOnly : true, secure : true})
 
-            req.session.user = user; // Deberiamos borrar la password de acá
-            res.locals.user = req.session.user;
-            res.redirect('/')})
+            }) */
+           // Deberiamos borrar la password de acá
 
-        }catch(err){
+
+
+       /*  }catch(err){ */
             res.status(500).json({errors : 'Server error'})
-        }
+        /* } */
 
         /* const viewData={
             games:juegos
@@ -64,10 +84,24 @@ const config = require('config');
    },
 
    logout : (req,res) =>{
-        res.clearCookie("token");
+        // res.clearCookie("token");
+        if(req.cookies.persistSession){
+            res.clearCookie("persistSession");
+        }
 
-        res.redirect('/user/login')
+        req.session.destroy()
+        const viewData = {
+            games : juegos
+        }
+        return res.redirect('/')
         /* res.render('sign-in') */
+
+
+    },
+
+    profile : (req,res) =>{
+        res.render ('profile')
+        
 
 
     }

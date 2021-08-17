@@ -10,7 +10,8 @@ const indexRouter = require('./src/routes/indexRouter')
 const productRouter = require('./src/routes/productsRouter')
 const pcRouter = require('./src/routes/productCartRouter')
 const userRouter = require('./src/routes/userRouter')
-
+const persistSessionMiddleware = require('./src/middleware/persistSessionMiddleware')
+const logged = require('./src/middleware/loggedMiddleware')
 
 
 
@@ -25,12 +26,34 @@ app.use (express.json()); //para capturar informacion
 app.use(express.static('public'))//Establecemos como carpeta estatica
 app.use (morgan('dev')) ;
 
-
+ // middleware para persistir session a traves de toda la app
+app.use(persistSessionMiddleware)
+app.use(logged)
 
 
 app.listen(3002,()=>{
     console.log("Listening on port 3002")
 })
+
+
+
+/*
+
+
+app.use('/carrito', (req,res)=>{
+    res.sendFile(__dirname + '/views/product-cart.html')
+})
+app.get('/sign-in',(req,res)=>{
+    res.sendFile(__dirname + '/views/sign-in.html');
+})
+
+app.get('/sign-up',(req,res)=>{
+    res.sendFile(__dirname + '/views/sign-up.html');
+})
+
+app.get('/detail',(req,res)=>{
+    res.sendFile(__dirname + '/src/views/detail.ejs');
+}) */
 
 
 app.use('/',indexRouter)

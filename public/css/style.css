@@ -12,6 +12,14 @@ header{
 
 
 }
+.textWarning{
+  font-size: 15px;
+  color: red;
+ width: 100%;
+ background-color: rgb(211, 211, 211);
+ display: inline;
+ margin: 1px auto 1px auto;
+}
 
 .roundImage{
   border-radius:100%;
@@ -171,6 +179,7 @@ header p{
     background-color: #3f51b5;
     color: white;
     opacity: 1;
+    color:white;
 
 }
 
@@ -187,6 +196,7 @@ header p{
     padding-left: 3px;
     padding-left: 4px \9;
     background-color: #3f51b5;
+    color:white;
     /* IE7-8 doesn't have border-radius, so don't indent the padding */
 
     margin-bottom: 0;
@@ -385,6 +395,13 @@ h3{
     display: none;
 }
 
+.checkboxesCategorias li{
+  display:flex;
+  padding: 4px;
+}
+.checkboxesCategorias input{
+  margin: 0px 1px 13px;
+}
 
 
 .searchButton{

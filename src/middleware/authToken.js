@@ -5,7 +5,7 @@ module.exports = function (req,res,next){
     const token = req.cookies.token
     console.log(token)
 
-    if(!token){
+    if(!token ){
          res.redirect('/user/login')
     }
     try{

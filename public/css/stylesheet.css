@@ -210,6 +210,8 @@ article{
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+    width: 33%;
+    height: 15vh;
 
 }
 
@@ -220,34 +222,42 @@ article{
 .icons{
     color: rgb(44, 40, 40);
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     margin-bottom: 20px;
-
 }
 
 .social{
     display: flex;
-    width: 25%;
+    width: 15%;
     justify-content: space-between;
     color: rgb(111, 111, 218);
+    height: 50%;
 
 }
 .gta{
     margin-bottom: 10px;
     background-color: gray;
     box-shadow: 0px 0px 10px rgb(100,100,100);
+    display:flex;
+    width:60%
 }
+
 .chart{
     color:rgb(33, 33, 112)
 }
+.cont-padre {
+    display: flex;
+}
 
 .cuadro{
-    border-radius: 10px;
+   /* border-radius: 10px; */
     text-align: center;
     font-size: 18px;
     margin-top: 10px;
-    border: black 1px solid;
+    /*border: black 1px solid; */
     margin-bottom: 10px;
+    width: 100%;
+    margin-right: 0px;
 }
 
 .video-responsive {
@@ -270,7 +280,7 @@ article{
 
 .caracteristicas{
     font-size: 15px;
-    border-top: black 1px solid;
+    /*border-top: black 1px solid;*/
     text-align: left;
 }
 
@@ -375,12 +385,29 @@ article{
   background-color:#ea4c89
   }
 
+  .descripcion {
+    margin: 15px;
+    text-align: left;
+    width:40%;
+}
   .logoHome{
     width: 50px;
     height: 50px;
   }
+.divContenedorTotal .social{
+    display:flex;
 
+}
+.contenedor-info{
+    display:flex;
+    flex-direction: row;
+    width: 60%
 
+}
+.social{
+    display:flex;
+    flex-direction: column;
+}
 
   .site-footer
   {
@@ -389,6 +416,7 @@ article{
     font-size:14px;
     height: 100%;
     color:white;
+    background-size:cover;
   }
 
   .text-justify{
@@ -396,20 +424,44 @@ article{
   }
 
 
+.container1{
+    color:#3f51b5;
+    font-style: bold;
+    padding: 15px;
+    border-bottom: 0.5px solid black;
+    text-align: center;
+}
+
+.dataAccount{
+    display: block;
+    text-align: center;
+}
+
+.container2{
+    padding: 15px;
+    text-align: left;
+}
+
+.container3{
+    padding: 15px;
+    text-align: left;
+}
+
+.tienda{
+    padding:1px;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #3f51b5;
+    max-width: 60%;
+    margin-top:5%
+   
+}
 @media (min-width: 768px){
     body{
     background-color: rgb(208, 216, 208);
     }
-    .cont-padre {
-        display: flex;
-    }
-    .contenedor-info {
-        width:150%;
-    }
-    .descripcion {
-        margin: 15px;
-        text-align: left;
-    }
+
 
     .Main-topNavbar{
         display: flex;
@@ -448,6 +500,9 @@ article{
         margin: 0 5px;
 
     }
+    .sectionContainer{
+        height: 55vh;
+    }
 
     .topnav input[type=text] {
         margin-left: 16px;
@@ -455,6 +510,25 @@ article{
         margin-top: 12px;
     }
 
+    .container1{
+        text-align: left;
+    }
 
+    .dataAccount{
+        display: flex;
+        flex-wrap: nowrap;
+        text-align: left;
+    }
 
+    .container2{
+        width: 30%;
+    }
+    
+    .container3{
+        width: 70%;
+    }
+
+    .tienda{
+        max-width: 70%;
+    }
 }
