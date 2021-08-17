@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
                  image:{type:dataTypes.STRING,
                         defaultValue: null},
 
-                rol:{type:dataTypes.INTEGER},
+                role:{type:dataTypes.INTEGER},
             created_at:{type: dataTypes.DATE},
             updated_at:{type:dataTypes.DATE}  } ;
 
@@ -34,10 +34,10 @@ module.exports = (sequelize, dataTypes) => {
                     }),
                 User.hasMany(models.Purchase,{
                     as:'purchases'
-                    
+
                 })
                 }
                 return User;
-            
+
 
  }
