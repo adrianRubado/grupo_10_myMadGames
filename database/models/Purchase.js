@@ -33,6 +33,15 @@ let cols = {
 
         const Purchase =  sequelize.define("Purchase", cols, config);
 
+
+
+
+          // associates 
+
+
+
+
+
          return Purchase;
 
 

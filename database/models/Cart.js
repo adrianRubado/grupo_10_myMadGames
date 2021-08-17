@@ -1,16 +1,23 @@
+const User = require("./User");
+const Game = require("./Game")
+
+
 module.exports = (sequelize, DataTypes) => { 
 
     let cols = { id: { type: DataTypes.INTEGER,
                        autoIncrement: true,
                        primaryKey:true},
+                       
                  user_id: { type: DataTypes.INTEGER,
                             allowNull: false, 
                             references: {model: User,
-                                key: "user_id"}},
+                                key: "user_id"}
+                            },
                  game_id: { type: DataTypes.INTEGER,
                             allowNull: false,
                             references: {model: Game,
-                                key: "game_id"}},
+                                key: "game_id"}
+                            },
                  quantity: { type: DataTypes.INTEGER,
                             allowNull: false},
                  price: {type: DataTypes.DECIMAL,

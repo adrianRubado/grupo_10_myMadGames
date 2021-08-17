@@ -13,16 +13,18 @@ module.exports = (sequelize, dataTypes) => {
                             allowNull: false},
                  bday:{type: dataTypes.DATE,
                               allowNull:false },
-                 image:{type:dataTypes.STRING},
+                 image:{type:dataTypes.STRING,
+                        defaultValue: null},
 
                 rol:{type:dataTypes.INTEGER},
             created_at:{type: dataTypes.DATE},
             updated_at:{type:dataTypes.DATE}  } ;
 
-    let config = { tableName:"Users"
- };
+    let config = { tableName:"Users"};
 
                 const User = sequelize.define("Users", cols, config);
+
+
                 User.associate = (models)=>{
                     User.belongsToMany(models.Game,{
                         as : 'userCart',
