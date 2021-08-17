@@ -30,8 +30,12 @@ module.exports = (sequelize, dataTypes) => {
                         as : 'userCart',
                         through : 'Carts',
                         foreignKey : 'user_id',
-                        otherKey : 'cart_id'
-                    })
+                        otherKey : 'game_id'
+                    }),
+                User.hasMany(models.Purchase,{
+                    as:'purchases'
+                    
+                })
                 }
                 return User;
             

@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
             as : 'userCart',
             through : 'Carts', 
             foreignKey : 'game_id',
-            otherKey : 'cart_id' 
+            otherKey : 'user_id' 
         }),
         Game.belongsTo(models.Genre,{
             as : 'Genre',

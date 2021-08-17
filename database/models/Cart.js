@@ -29,5 +29,6 @@ module.exports = (sequelize, DataTypes) => {
     let config = {tableName: "Carts"}
 
     const Cart = sequelize.define("Carts", cols, config);
+    
     return Cart;
 }
