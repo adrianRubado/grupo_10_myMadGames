@@ -13,9 +13,12 @@ header{
 
 }
 .textWarning{
-  font-size: small;
+  font-size: 15px;
   color: red;
-  margin-left: 75%;
+ width: 100%;
+ background-color: rgb(211, 211, 211);
+ display: inline;
+ margin: 1px auto 1px auto;
 }
 
 .roundImage{
@@ -147,7 +150,7 @@ background-color:#ea4c89
 
 .slideShow{
     width: 100%;
-    height: 100%;
+    height: 65%;
 
 }
 .mySlides{
