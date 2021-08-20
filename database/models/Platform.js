@@ -4,7 +4,8 @@ let cols = {platform_id:{type: dataTypes.INTEGER,
                 primaryKey: true,
                 autoIncrement: true},
                 name:{type:dataTypes.STRING,
-                 allowNull: false},
+                 allowNull: false,
+                 unique: true},
             created_at:{type: dataTypes.DATE},
             updated_at:{type: dataTypes.DATE}};
 

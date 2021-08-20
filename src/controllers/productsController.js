@@ -1,5 +1,5 @@
 const fs = require ('fs') ;
-const path = require ('path') ;
+const path = require ('path');
 const juegosFilePath = path.join(__dirname, '../database/games.json');
 const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
 
@@ -14,13 +14,13 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
         const viewData = {
                 game: detalle
         }
-      
+
         res.render ('products',viewData);
     },
 
     create: (req,res) => {
 
-      
+
         res.render('createGame');
     },
     edit: (req,res) => {
@@ -29,7 +29,7 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
         const viewData = {
                 game: detalle
         }
-       
+
         res.render('editGame',viewData);
     },
     update: (req,res) => {
@@ -39,7 +39,7 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
         juegos[objIndex] = updatedProduct
         fs.writeFileSync(juegosFilePath,JSON.stringify(juegos))
 
-      
+
         res.redirect("/products/"+id)
 
 
@@ -54,7 +54,7 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
         const viewData = {
             games : juegos
         }
-        
+
         res.render('index',viewData)
     },
 
@@ -69,7 +69,7 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
         const viewData = {
             games : juegosActualizados
         }
-        
+
         res.render('index',viewData)
     }
 

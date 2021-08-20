@@ -4,7 +4,8 @@ module.exports = (sequelize, DataTypes) => {
                        autoIncrement: true,
                        primaryKey:true},
                  name: { type: DataTypes.STRING,
-                         allowNull: false},
+                         allowNull: false,
+                         unique: true},
                  created_at: { type: DataTypes.DATE},
                  updated_at: { type: DataTypes.DATE}
                 };
