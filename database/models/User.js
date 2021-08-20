@@ -17,13 +17,9 @@ module.exports = (sequelize, dataTypes) => {
                  image:{type:dataTypes.STRING,
                         defaultValue: null},
 
-<<<<<<< HEAD
-                role:{type:dataTypes.INTEGER},
-=======
                 role_id:{type:dataTypes.INTEGER,
                     model: Role,
                     key: "role_id"},
->>>>>>> e7869ebca7381abe3e1909aa4ada73057a3ab897
             created_at:{type: dataTypes.DATE},
             updated_at:{type:dataTypes.DATE}  } ;
 
@@ -41,15 +37,11 @@ module.exports = (sequelize, dataTypes) => {
                     }),
                 User.hasMany(models.Purchase,{
                     as:'purchases'
-<<<<<<< HEAD
 
-=======
-                    
                 }),
                 User.belongsTo(models.Role,{
                     as:"role",
                     foreignKey: "role_id"
->>>>>>> e7869ebca7381abe3e1909aa4ada73057a3ab897
                 })
                 }
                 return User;
