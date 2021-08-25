@@ -1,8 +1,9 @@
 const fs = require ('fs') ;
-const path = require ('path') ;
+const path = require ('path');
 const juegosFilePath = path.join(__dirname, '../database/games.json');
 const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
 
+let db = require("../../database/models");
 
 
 
@@ -11,16 +12,26 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
     detail: (req,res) => {
         const id = req.params.id
         const detalle = juegos.find((e) => e.id == id)
+        
+        //     en detalle iría esto const detalle = db.Game.findByPk(id);
         const viewData = {
                 game: detalle
         }
-      
+
         res.render ('products',viewData);
     },
 
     create: (req,res) => {
 
-      
+        // aca hay que hacer db.Genre.findAll() // pero hay que cambiar si o si el ejs, como nos habia comentado Juan
+        // alguno tiene que cambiar los campos de genero y hacerle un forEach de los datos que dejo mas abajo y comparte el controlador a la vista
+
+        // db.Genre.findAll()
+        // .then( function(genres){ 
+        //    res.render("createGame", {genres :genres})
+        //   })
+
+
         res.render('createGame');
     },
     edit: (req,res) => {
@@ -29,7 +40,7 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
         const viewData = {
                 game: detalle
         }
-       
+
         res.render('editGame',viewData);
     },
     update: (req,res) => {
@@ -39,7 +50,7 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
         juegos[objIndex] = updatedProduct
         fs.writeFileSync(juegosFilePath,JSON.stringify(juegos))
 
-      
+
         res.redirect("/products/"+id)
 
 
@@ -54,11 +65,13 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
         const viewData = {
             games : juegos
         }
-        
+
         res.render('index',viewData)
     },
 
     get : (req,res) =>{
+
+        // aca lo mismo find all de db.Games 
         res.send(juegos)
     },
 
@@ -69,7 +82,7 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
         const viewData = {
             games : juegosActualizados
         }
-        
+
         res.render('index',viewData)
     }
 

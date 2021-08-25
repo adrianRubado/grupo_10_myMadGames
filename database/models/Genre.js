@@ -4,17 +4,18 @@ module.exports = (sequelize, DataTypes) => {
                        autoIncrement: true,
                        primaryKey:true},
                  name: { type: DataTypes.STRING,
-                         allowNull: false},
+                         allowNull: false,
+                         unique: true},
                  created_at: { type: DataTypes.DATE},
                  updated_at: { type: DataTypes.DATE}
                 };
 
     let config = {tableName: "Genres"}
 
-    const Genre = sequelize.define("Genres", cols, config);
+    const Genre = sequelize.define("Genre", cols, config);
     
     Genre.associate = (models)=>{
-        Genre.hasMany(models.Games,{
+        Genre.hasMany(models.Game,{
             as : 'Games',
         })
     }
