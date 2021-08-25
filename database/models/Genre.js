@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
 
     let config = {tableName: "Genres"}
 
-    const Genre = sequelize.define("Genres", cols, config);
+    const Genre = sequelize.define("Genre", cols, config);
     
     Genre.associate = (models)=>{
         Genre.hasMany(models.Game,{

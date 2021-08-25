@@ -18,14 +18,15 @@ module.exports = (sequelize, dataTypes) => {
                         defaultValue: null},
 
                 role_id:{type:dataTypes.INTEGER,
-                    model: Role,
-                    key: "role_id"},
+                  //  model: Role,
+                   // key: "role_id"
+                },
             created_at:{type: dataTypes.DATE},
             updated_at:{type:dataTypes.DATE}  } ;
 
     let config = { tableName:"Users"};
 
-                const User = sequelize.define("Users", cols, config);
+                const User = sequelize.define("User", cols, config);
 
 
                 User.associate = (models)=>{

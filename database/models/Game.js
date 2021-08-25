@@ -6,12 +6,12 @@ module.exports = (sequelize, DataTypes) => {
     let cols = { game_id: { type: DataTypes.INTEGER,
                        autoIncrement: true,
                        primaryKey:true},
-                 image:{type:dataTypes.STRING},
+                 image:{type: DataTypes.STRING},
 
                  genre_id: { type: DataTypes.INTEGER,
                             allowNull: false,
-                            references: {model: Genre, 
-                                key: "genre_id"}
+                           // references: {model: Genre, 
+                               // key: "genre_id"}
                             },
 
                  name: { type: DataTypes.STRING,
@@ -21,8 +21,8 @@ module.exports = (sequelize, DataTypes) => {
 
                  platform_id: { type: DataTypes.INTEGER,
                                 allowNull: false,
-                                references: {model: Platform,
-                                    key: "platform_id"}
+                               // references: {model: Platform,
+                                   // key: "platform_id"}
                                 },
 
                  release: {type: DataTypes.INTEGER }, //INTEGER PORQUE ES UN AÑO
@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
 
     let config = {tableName: "Games"}
 
-    const Game = sequelize.define("Games", cols, config);
+    const Game = sequelize.define("Game", cols, config);
 
     Game.associate = (models)=>{
         Game.belongsToMany(models.User,{
