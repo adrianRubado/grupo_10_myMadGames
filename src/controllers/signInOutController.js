@@ -1,10 +1,11 @@
 const fs= require('fs') ;
 const path = require ('path');
 const {validationResult} = require('express-validator');
-const userFilePath = path.join(__dirname, '../database/users.json');
+/* const userFilePath = path.join(__dirname, '../database/users.json');
 const juegosFilePath = path.join(__dirname, '../database/games.json');
 const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
-const userr = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
+const userr = JSON.parse(fs.readFileSync(userFilePath, 'utf-8')); */
+const db = require('../../database/models')
 const bcrypt= require ('bcryptjs') ;
 const jwt = require('jsonwebtoken');
 const config = require('config');
@@ -101,7 +102,7 @@ const config = require('config');
 
     profile : (req,res) =>{
         res.render ('profile')
-        
+
 
 
     }
