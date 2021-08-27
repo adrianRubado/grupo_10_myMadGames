@@ -12,10 +12,10 @@ let cols = {platform_id:{type: dataTypes.INTEGER,
 
 let config = {tableName:"Platforms"}
 
-        const Platform = sequelize.define("Platforms", cols, config);
+        const Platform = sequelize.define("Platform", cols, config);
 
         Platform.associate = (models)=>{
-            Platform.hasMany(models.Games,{
+            Platform.hasMany(models.Game,{
                 as : 'Games',
 
             })

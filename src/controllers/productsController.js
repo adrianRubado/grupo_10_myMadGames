@@ -1,76 +1,113 @@
-const fs = require ('fs') ;
-const path = require ('path');
-const juegosFilePath = path.join(__dirname, '../database/games.json');
-const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
+const fs = require('fs');
+const path = require('path');
+/* const juegosFilePath = path.join(__dirname, '../database/games.json');
+const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8')); */
+
+const db = require("../../database/models");
 
 
 
+const productsController = {
 
- const productsController = {
-
-    detail: (req,res) => {
+    detail:async(req, res) => {
         const id = req.params.id
-        const detalle = juegos.find((e) => e.id == id)
+
+        const detail =  await db.Game.findByPk(id) ;
+
+
+
         const viewData = {
-                game: detalle
+            game: detail
         }
 
-        res.render ('products',viewData);
+       return res.render('products', viewData);
     },
 
-    create: (req,res) => {
-
-
-        res.render('createGame');
-    },
-    edit: (req,res) => {
-        const id = req.params.id
-        const detalle = juegos.find((e) => e.id == id)
+    create: async (req, res) => {
+        const genres = db.Genre.findAll()
         const viewData = {
-                game: detalle
+            genres : genres
         }
 
-        res.render('editGame',viewData);
+        res.render('createGame',viewData);
     },
-    update: (req,res) => {
+    edit:async(req, res) => {
         const id = req.params.id
-        const updatedProduct = req.body
-        const objIndex = juegos.findIndex(e => e.id == id)
-        juegos[objIndex] = updatedProduct
-        fs.writeFileSync(juegosFilePath,JSON.stringify(juegos))
-
-
-        res.redirect("/products/"+id)
-
-
-    },
-
-    post :(req,res) => {
-        const newGame = req.body
-        newGame.id = juegos[juegos.length -1 ].id + 1
-        newGame.image = "/images/" + req.file.originalname
-        juegos.push(newGame)
-        fs.writeFileSync(juegosFilePath,JSON.stringify(juegos,null,2))
+        const detail =  await db.Product.findByPk(id) ;
         const viewData = {
-            games : juegos
+            game: detail
         }
 
-        res.render('index',viewData)
+       return  res.render('editGame', viewData);
     },
-
-    get : (req,res) =>{
-        res.send(juegos)
-    },
-
-    delete : (req,res) =>{
+    update:async (req, res) => {
         const id = req.params.id
-        const juegosActualizados = juegos.filter((e) => e.id != id)
-        fs.writeFileSync(juegosFilePath,JSON.stringify(juegosActualizados,null,2))
+
+       await db.Game.update({
+            name: req.body.name,
+            price: req.body.price,
+            platform: req.body.price,
+            description: req.body.description,
+            link: req.body.link,
+            image: req.body.image,
+            requirements: req.body.requirements,
+            genre: req.body.category
+        },{
+            where:{
+                id:req.params.id
+            }}
+        )
+
+
+
+
+       return  res.redirect("/products/" + id)
+
+
+    },
+
+    post: async(req, res) => {
+
+       await db.Game.create({
+            name: req.body.name,
+            price: req.body.price,
+            platform: req.body.price,
+            description: req.body.description,
+            link: req.body.link,
+            image: req.body.image,
+            requirements: req.body.requirements,
+            genre: req.body.category
+        })
+      const games = await db.games.findall()
         const viewData = {
-            games : juegosActualizados
+            games: games
         }
 
-        res.render('index',viewData)
+        return res.render('index', viewData)
+    },
+
+    get:async(req, res) => {
+       const games= await db.Game.findAll()
+
+
+        return res.json(games)
+    },
+
+    delete: (req, res) => {
+        const id = req.params.id
+
+        await db.Game.destroy({
+         where:{
+             id:req.params.id
+         }
+        })
+        const updatedGames = await db.games.findall()
+
+        const viewData = {
+            games: updatedGames
+        }
+
+       return res.render('index', viewData)
     }
 
 }

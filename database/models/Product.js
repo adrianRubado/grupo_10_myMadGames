@@ -1,5 +1,4 @@
-const Purchase = require("./Purchase");
-const Game = require('./Game')
+
 module.exports = (sequelize, DataTypes) => {
 
     let cols = {
@@ -11,19 +10,19 @@ module.exports = (sequelize, DataTypes) => {
         purchase_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            references: {
-                model: Purchase,
-                key: "purchase_id"
-            }
+          //  references: {
+              //  model: Purchase,
+              //  key: "purchase_id"
+           // }
 
         },
         game_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
-            references: {
-                model: Game,
-                key: "game_id"
-            }
+          //  references: {
+              //  model: Game,
+              //  key: "game_id"
+          //  }
         },
         quantity: {
             type: DataTypes.INTEGER,
@@ -38,7 +37,7 @@ module.exports = (sequelize, DataTypes) => {
         updated_at: { type: DataTypes.DATE }
     }
     let config = {tableName:"Products"}
-    const Product = sequelize.define('Products',cols, config);
+    const Product = sequelize.define('Product',cols, config);
     Product.associate = function(models){
         Product.belongsTo(models.Purchase,{
             as:'purchase',

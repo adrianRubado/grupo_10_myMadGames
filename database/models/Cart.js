@@ -1,6 +1,3 @@
-const User = require("./User");
-const Game = require("./Game")
-
 
 module.exports = (sequelize, DataTypes) => { 
 
@@ -10,13 +7,13 @@ module.exports = (sequelize, DataTypes) => {
                        
                  user_id: { type: DataTypes.INTEGER,
                             allowNull: false, 
-                            references: {model: User,
-                                key: "user_id"}
+                            //references: {model: User,
+                              //  key: "user_id"}
                             },
                  game_id: { type: DataTypes.INTEGER,
                             allowNull: false,
-                            references: {model: Game,
-                                key: "game_id"}
+                           // references: {model: Game,
+                               // key: "game_id"}
                             },
                  quantity: { type: DataTypes.INTEGER,
                             allowNull: false},
@@ -28,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
 
     let config = {tableName: "Carts"}
 
-    const Cart = sequelize.define("Carts", cols, config);
+    const Cart = sequelize.define("Cart", cols, config);
     
     return Cart;
 }

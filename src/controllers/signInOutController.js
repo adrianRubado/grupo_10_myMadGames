@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const fs= require('fs') ;
 const path = require ('path');
 const {validationResult} = require('express-validator');
@@ -7,103 +8,90 @@ const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
 const userr = JSON.parse(fs.readFileSync(userFilePath, 'utf-8')); */
 const db = require('../../database/models')
 const bcrypt= require ('bcryptjs') ;
+=======
+const fs = require('fs');
+const path = require('path');
+const { validationResult } = require('express-validator');
+const bcrypt = require('bcryptjs');
+>>>>>>> matias-dev
 const jwt = require('jsonwebtoken');
 const config = require('config');
+const db = require('../../database/models');
 
 
 
- const signInController = {
 
-    signIn: (req,res) => {
+const signInController = {
+
+    signIn: (req, res) => {
 
 
         res.render('sign-in');
     },
-    log:  (req,res) => {
+    log: async (req, res) => {
         const errors = validationResult(req)
-        if (!errors.isEmpty()){
+        if (!errors.isEmpty()) {
 
-           return res.status(400).json({errors:errors.array()}) ;
+            return res.status(400).json({ errors: errors.array() });
         }
 
 
-      /*  try{ */
-          const user = userr.find(e=>e.email == req.body.email);
-        if(user){
-            const oldpassword = user.password ;
-            console.log(user)
-            console.log(req.body.password)
-            console.log(oldpassword)
-            const ismatch = bcrypt.compareSync(req.body.password, oldpassword)
-            if(ismatch){
-                if(req.body.persist){
-                    res.cookie('persistSession', user.email, {maxAge:(1000 * 60) * 20})
+        try {
+            const user = db.User.findAll({
+                limit: 1,
+                where: {
+                    email: req.body.email
                 }
 
-                /* delete user.password */
-                req.session.user = user;
-                return res.redirect('/')
+            })
+
+            if (user) {
+                const password = user.password;
+                const ismatch = bcrypt.compareSync(req.body.password, password)
+                if (ismatch) {
+                    if (req.body.persist) {
+                        res.cookie('persistSession', user.email, { maxAge: (1000 * 60) * 20 })
+                    }
+
+
+                    req.session.user = user;
+                    return res.redirect('/')
+                }
+
+
+
             }
+            return res.render('sign-in', { errors: { message: 'Invalid Credentials' } })
 
-
-
+        } catch (err) {
+            res.status(500).json({ errors: 'Server error' })
         }
-        return res.render('sign-in',{errors: {message:'Invalid Credentials'} })
-
-
-
-
-
-      /*  const payload = {
-            user:{
-                id:user.id
-            }
-        }
-
-         /* jwt.sign(payload,'jwSecret',(err,token)=>{
-            if(err) {
-                console.error(err.message)
-            }
-             res.cookie('token',token, {httpsOnly : true, secure : true})
-
-            }) */
-           // Deberiamos borrar la password de acá
-
-
-
-       /*  }catch(err){ */
-            res.status(500).json({errors : 'Server error'})
-        /* } */
-
-        /* const viewData={
-            games:juegos
-        }
-        res.render('index',viewData); */
-
-
-
-   },
-
-   logout : (req,res) =>{
-        // res.clearCookie("token");
-        if(req.cookies.persistSession){
-            res.clearCookie("persistSession");
-        }
-
-        req.session.destroy()
-        const viewData = {
-            games : juegos
-        }
-        return res.redirect('/')
-        /* res.render('sign-in') */
 
 
     },
 
+    logout: (req, res) => {
+
+        if (req.cookies.persistSession) {
+            res.clearCookie("persistSession");
+        }
+
+        req.session.destroy()
+
+        return res.redirect('/')
+
+
+    },
+
+<<<<<<< HEAD
     profile : (req,res) =>{
         res.render ('profile')
 
 
+=======
+    profile: (req, res) => {
+        res.render('profile')
+>>>>>>> matias-dev
 
     }
 }

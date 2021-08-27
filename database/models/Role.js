@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
     const Role = sequelize.define("Role", cols, config);
     
     Role.associate = (models)=>{
-        Role.hasMany(models.Users,{
+        Role.hasMany(models.User,{
             as : 'role_id',
         })
     }
