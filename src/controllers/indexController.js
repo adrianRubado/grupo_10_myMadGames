@@ -11,15 +11,15 @@ const db = require("../../database/models");
         const viewData = {
 
                 titulo: 'My Mad Games',
-            games: juegos ,  
-            genres:generos
+            games: games ,
+            genres:genres
         }
-        
 
-        
-    
 
-      
+
+
+
+
         res.render ('index',viewData);
     }
 }
