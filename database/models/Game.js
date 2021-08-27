@@ -10,25 +10,23 @@ module.exports = (sequelize, DataTypes) => {
 
                  genre_id: { type: DataTypes.INTEGER,
                             allowNull: false,
-                           // references: {model: Genre, 
-                               // key: "genre_id"}
+                           
                             },
 
                  name: { type: DataTypes.STRING,
                                 allowNull: false},
                  price: {type: DataTypes.DECIMAL,
-                            allowNull: false}, // PRICE ES UNA MULTIPLICACIÓN X QTY
+                            allowNull: false},
 
                  platform_id: { type: DataTypes.INTEGER,
                                 allowNull: false,
-                               // references: {model: Platform,
-                                   // key: "platform_id"}
+                               
                                 },
 
-                 release: {type: DataTypes.INTEGER }, //INTEGER PORQUE ES UN AÑO
+                 release: {type: DataTypes.INTEGER }, 
                  created_at: { type: DataTypes.DATE },
                  updated_at: { type: DataTypes.DATE },
-                 descripcion: { type: DataTypes.STRING },
+                 description: { type: DataTypes.STRING },
                  requirements: { type: DataTypes.STRING },
                  link: { type: DataTypes.STRING }
                 };
