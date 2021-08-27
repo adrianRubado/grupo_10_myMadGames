@@ -11,27 +11,31 @@ const productsController = {
 
     detail:async(req, res) => {
         const id = req.params.id
-        
-        const detalle =  await db.Game.findByPk(id) ;
+
+        const detail =  await db.Game.findByPk(id) ;
 
 
 
         const viewData = {
-            game: detalle
+            game: detail
         }
 
        return res.render('products', viewData);
     },
 
     create: async (req, res) => {
-       
-        res.render('createGame');
+        const genres = db.Genre.findAll()
+        const viewData = {
+            genres : genres
+        }
+
+        res.render('createGame',viewData);
     },
     edit:async(req, res) => {
         const id = req.params.id
-        const detalle =  await db.Product.findByPk(id) ;
+        const detail =  await db.Product.findByPk(id) ;
         const viewData = {
-            game: detalle
+            game: detail
         }
 
        return  res.render('editGame', viewData);
@@ -43,7 +47,7 @@ const productsController = {
             name: req.body.name,
             price: req.body.price,
             platform: req.body.price,
-            description: req.body.description, 
+            description: req.body.description,
             link: req.body.link,
             image: req.body.image,
             requirements: req.body.requirements,
@@ -63,44 +67,44 @@ const productsController = {
     },
 
     post: async(req, res) => {
-        
+
        await db.Game.create({
             name: req.body.name,
             price: req.body.price,
             platform: req.body.price,
-            description: req.body.description, 
+            description: req.body.description,
             link: req.body.link,
             image: req.body.image,
             requirements: req.body.requirements,
             genre: req.body.category
         })
-      const juegos = await db.games.findall()
+      const games = await db.games.findall()
         const viewData = {
-            games: juegos
+            games: games
         }
 
         return res.render('index', viewData)
     },
 
     get:async(req, res) => {
-       const juegos= await db.Game.findAll()
+       const games= await db.Game.findAll()
 
-        
-        return res.json(juegos)
+
+        return res.json(games)
     },
 
     delete: (req, res) => {
         const id = req.params.id
-      
+
         await db.Game.destroy({
          where:{
              id:req.params.id
          }
         })
-        const juegosActualizados = await db.games.findall()
-        
+        const updatedGames = await db.games.findall()
+
         const viewData = {
-            games: juegosActualizados
+            games: updatedGames
         }
 
        return res.render('index', viewData)
