@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
 
                  genre_id: { type: DataTypes.INTEGER,
                             allowNull: false,
-                           
+
                             },
 
                  name: { type: DataTypes.STRING,
@@ -20,35 +20,35 @@ module.exports = (sequelize, DataTypes) => {
 
                  platform_id: { type: DataTypes.INTEGER,
                                 allowNull: false,
-                               
+
                                 },
 
-                 release: {type: DataTypes.INTEGER }, 
-                 created_at: { type: DataTypes.DATE },
-                 updated_at: { type: DataTypes.DATE },
+                 release_year: {type: DataTypes.INTEGER },
+                 /* created_at: { type: DataTypes.DATE },
+                 updated_at: { type: DataTypes.DATE }, */
                  description: { type: DataTypes.STRING },
                  requirements: { type: DataTypes.STRING },
                  link: { type: DataTypes.STRING }
                 };
 
-    let config = {tableName: "Games"}
+    let config = {tableName: "Games",timestamps: false}
 
     const Game = sequelize.define("Game", cols, config);
 
     Game.associate = (models)=>{
         Game.belongsToMany(models.User,{
             as : 'userCart',
-            through : 'Carts', 
+            through : 'Carts',
             foreignKey : 'game_id',
-            otherKey : 'user_id' 
+            otherKey : 'user_id'
         }),
         Game.belongsTo(models.Genre,{
-            as : 'Genre',
+            as : 'gameGenre',
             foreignKey : 'genre_id'
 
         }),
         Game.belongsTo(models.Platform,{
-            as : 'Platform',
+            as : 'gamePlatform',
             foreignKey : 'platform_id'
 
         })

@@ -78,7 +78,7 @@ const productsController = {
             requirements: req.body.requirements,
             genre: req.body.category
         })
-      const games = await db.games.findall()
+      const games = await db.games.findAll()
         const viewData = {
             games: games
         }
@@ -93,7 +93,7 @@ const productsController = {
         return res.json(games)
     },
 
-    delete: (req, res) => {
+    delete: async (req, res) => {
         const id = req.params.id
 
         await db.Game.destroy({
@@ -101,7 +101,7 @@ const productsController = {
              id:req.params.id
          }
         })
-        const updatedGames = await db.games.findall()
+        const updatedGames = await db.games.findAll()
 
         const viewData = {
             games: updatedGames

@@ -6,11 +6,12 @@ const db = require("../../database/models");
  const indexController = {
 
     index: async(req,res) => {
-        const genres = await db.Genre.findAll()
-        const games = await db.Game.findall()
+        try {
+        const genres = [await db.Genre.findAll()]
+        const games = await db.Game.findAll()
         const viewData = {
 
-                titulo: 'My Mad Games',
+            titulo: 'My Mad Games',
             games: games ,
             genres:genres
         }
@@ -21,6 +22,10 @@ const db = require("../../database/models");
 
 
         res.render ('index',viewData);
+        } catch (error) {
+            res.json({errors : error.message})
+
+        }
     }
 }
 

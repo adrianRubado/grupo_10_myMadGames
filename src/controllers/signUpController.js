@@ -17,7 +17,7 @@ const signUpController = {
         res.render('sign-up');
     },
 
-    createUser: (req,res) => {
+    createUser: async (req,res) => {
 
          const errors = validationResult(req)
          if (!errors.isEmpty()){
@@ -25,7 +25,7 @@ const signUpController = {
             return res.status(400).json({errors:errors.array()}) ;
          }
 
-         const user = db.User.findAll({
+         const user = await db.User.findAll({
             limit: 1,
             where: {
                 email: req.body.email
