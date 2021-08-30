@@ -7,7 +7,7 @@ const db = require("../../database/models");
 
     index: async(req,res) => {
         try {
-        const genres = [await db.Genre.findAll()]
+        const genres = await db.Genre.findAll()
         const games = await db.Game.findAll()
         const viewData = {
 
