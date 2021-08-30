@@ -1,14 +1,19 @@
 const path = require("path")
 const fs = require("fs")
-const userFilePath = path.join(__dirname, '../database/users.json');
-const users = JSON.parse(fs.readFileSync(userFilePath, 'utf-8'));
+const db = require('../../database/models') ;
 
 
-function persistSess (req, res, next) {
+async function persistSess  (req, res, next)  {
     if (req.cookies.persistSession  && !req.session.user)
 
     {
-        const user = users.find(e=>e.email == req.cookies.persistSession);
+
+        const user = await db.User.findAll({
+            limit:1,
+            where:{
+                email:req.body.email
+            }
+        });
         req.session.user = user;
 
     }

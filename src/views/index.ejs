@@ -31,14 +31,20 @@
     <div class="drawer">
       <h3 align="left" class="w3-bar-item">Categories</h3>
       <ul class = "checkboxesCategorias"style="list-style-type:none;">
-        <li><input type="checkbox"> Horror</li>
+
+        <% genres.forEach(g=>{ %>
+          <li><input type = "checkbox"><%= g.name  %> </li>
+          <% }) %>
+
+
+        <!-- <li><input type="checkbox"> Horror</li>
         <li><input type="checkbox"> Action</li>
         <li><input type="checkbox"> Sports</li>
         <li><input type="checkbox"> Casual</li>
         <li><input type="checkbox"> Board</li>
         <li><input type="checkbox"> Racing</li>
         <li><input type="checkbox"> Fight</li>
-        <li><input type="checkbox"> Arcade</li>
+        <li><input type="checkbox"> Arcade</li>-->
 
       </ul>
 

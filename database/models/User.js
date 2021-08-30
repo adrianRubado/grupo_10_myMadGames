@@ -10,19 +10,23 @@ module.exports = (sequelize, dataTypes) => {
                  password: {type: dataTypes.STRING,
                             allowNull: false},
                  email: {type: dataTypes.STRING,
-                            allowNull: false},
+                            allowNull: false,
+                        unique: true},
                  bday:{type: dataTypes.DATE,
                               allowNull:false },
                  image:{type:dataTypes.STRING,
                         defaultValue: null},
 
-                role:{type:dataTypes.INTEGER},
+                role_id:{type:dataTypes.INTEGER,
+                  //  model: Role,
+                   // key: "role_id"
+                },
             created_at:{type: dataTypes.DATE},
             updated_at:{type:dataTypes.DATE}  } ;
 
     let config = { tableName:"Users"};
 
-                const User = sequelize.define("Users", cols, config);
+                const User = sequelize.define("User", cols, config);
 
 
                 User.associate = (models)=>{
@@ -35,6 +39,10 @@ module.exports = (sequelize, dataTypes) => {
                 User.hasMany(models.Purchase,{
                     as:'purchases'
 
+                }),
+                User.belongsTo(models.Role,{
+                    as:"role",
+                    foreignKey: "role_id"
                 })
                 }
                 return User;

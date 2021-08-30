@@ -1,19 +1,31 @@
 const fs = require ('fs') ;
 const path = require ('path') ;
-const juegosFilePath = path.join(__dirname, '../database/games.json');
-const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8'));
+const db = require("../../database/models");
 
 
  const indexController = {
 
-    index: (req,res) => {
+    index: async(req,res) => {
+        try {
+        const genres = await db.Genre.findAll()
+        const games = await db.Game.findAll()
         const viewData = {
-                titulo: 'My Mad Games',
-            games: juegos
+
+            titulo: 'My Mad Games',
+            games: games ,
+            genres:genres
         }
 
-      
+
+
+
+
+
         res.render ('index',viewData);
+        } catch (error) {
+            res.json({errors : error.message})
+
+        }
     }
 }
 
