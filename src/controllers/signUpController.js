@@ -45,7 +45,7 @@ const signUpController = {
                email: req.body.email,
                bday: req.body.bday,
                image: "/images/" + req.file.originalname,
-               RoleId: '2'
+               RoleId: '1'
 
            })
 

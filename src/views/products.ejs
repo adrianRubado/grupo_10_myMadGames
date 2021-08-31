@@ -5,7 +5,7 @@
 
 <body>
   <%- include('./partials/header.ejs')  %>
-  <form class="editForm" method="POST" action="/products/<%=game.id %>/delete?_method=DELETE" >
+
   <section>
 
 
@@ -25,22 +25,36 @@
                 <p class = "pContainerDescriptionGame">
                   <%= game.description %>
                 </p>
-                <div class="icons">
-                <a href= "/products/<%=game.id %>/edit " class="button">
-                     Editar
-                </a>
-                <a href="/products/<%=game.id  %>/delete ">
-                    <button class="button button2" type="submit">Eliminar</button>
-                </a>
+                <% if (locals.user && locals.user.RoleId == 2) { %>
+                    <div class="icons">
+                        <a href= "/products/<%=game.id %>/edit " class="button">
+                             Editar
+                        </a>
+                        <form class="editForm" method="POST" action="/products/<%=game.id %>/delete?_method=DELETE" >
+                        <a href="/products/<%=game.id  %>/delete ">
+                            <button class="button button2" type="submit">Eliminar</button>
+                        </a>
+                        </form>
+                        </div>
 
-                </div>
+                <% } %>
+
+
+
 
                 </div>
         </div>
         <div class="iconos">
             <i class="fas fa-dollar-sign"><span class="tip"><%= game.price  %> </span></i>
-            <i class="fas fa-percent"><span class="tip"><%= game.discount  %>$ off </span></i>
-            <i class="fas fa-cart-plus chart"><a href="https://www.com"><span class="tip">Comprar</span></a></i>
+            <i class="fas fa-percent"><span class="tip">Comprar </span></i>
+            <i class="fas fa-cart-plus chart"><form method="POST" action="/product-cart/"  >
+                <li>
+                  <a></a>
+                  <button type="submit" name = 'add' value = <%=[locals.user.id,game.id,7,game.price]%> >Agregar al carrito</button>
+
+
+                </li>
+              </form></i>
         </div>
             <div class="cuadro">
                 <div>
@@ -73,7 +87,7 @@
         </div>
 
     </section>
-</form>
+
     <%- include('./partials/footer.ejs')  %>
 
 

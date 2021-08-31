@@ -9,7 +9,7 @@ const db = require("../../database/models");
         try {
         const genres = await db.Genre.findAll()
         const games = await db.Game.findAll()
-        console.log(games)
+
         const viewData = {
 
             titulo: 'My Mad Games',
