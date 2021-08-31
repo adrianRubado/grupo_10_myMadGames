@@ -116,9 +116,11 @@ const productsController = {
          }
         })
         const updatedGames = await db.Game.findAll()
+        const genres = await db.Genre.findAll()
 
         const viewData = {
-            games: updatedGames
+            games: updatedGames,
+            genres : genres
         }
 
        return res.render('index', viewData)
