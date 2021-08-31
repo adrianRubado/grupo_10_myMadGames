@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
 
-    let cols = { role_id: { type: DataTypes.INTEGER,
+    let cols = { id: { type: DataTypes.INTEGER,
                        autoIncrement: true,
                        primaryKey:true},
                  name: {type:DataTypes.STRING},

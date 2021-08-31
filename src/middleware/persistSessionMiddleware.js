@@ -8,8 +8,7 @@ async function persistSess  (req, res, next)  {
 
     {
 
-        const user = await db.User.findAll({
-            limit:1,
+        const user = await db.User.One({
             where:{
                 email:req.body.email
             }

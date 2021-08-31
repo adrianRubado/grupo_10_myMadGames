@@ -1,6 +1,6 @@
 module.exports = (sequelize, dataTypes) => {
 
-    let cols = { user_id: { type: dataTypes.INTEGER,
+    let cols = { id: { type: dataTypes.INTEGER,
                        primaryKey: true,
                        autoIncrement: true},
                  first_name: {type: dataTypes.STRING,
@@ -17,14 +17,15 @@ module.exports = (sequelize, dataTypes) => {
                  image:{type:dataTypes.STRING,
                         defaultValue: null},
 
-                role_id:{type:dataTypes.INTEGER,
+                RoleId:{type:dataTypes.INTEGER,
                   //  model: Role,
-                   // key: "role_id"
-                },
-            created_at:{type: dataTypes.DATE},
-            updated_at:{type:dataTypes.DATE}  } ;
 
-    let config = { tableName:"Users"};
+                   // key: "role_id"
+                }/* ,
+            created_at:{type: dataTypes.DATE},
+            updated_at:{type:dataTypes.DATE} */  } ;
+
+    let config = { tableName:"Users",timestamps : false};
 
                 const User = sequelize.define("User", cols, config);
 
@@ -42,7 +43,7 @@ module.exports = (sequelize, dataTypes) => {
                 }),
                 User.belongsTo(models.Role,{
                     as:"role",
-                    foreignKey: "role_id"
+                    foreignKey: "RoleId"
                 })
                 }
                 return User;

@@ -3,12 +3,12 @@ const Platform = require("./Platform");
 
 module.exports = (sequelize, DataTypes) => {
 
-    let cols = { game_id: { type: DataTypes.INTEGER,
+    let cols = { id: { type: DataTypes.INTEGER,
                        autoIncrement: true,
                        primaryKey:true},
                  image:{type: DataTypes.STRING},
 
-                 genre_id: { type: DataTypes.INTEGER,
+                 GenreId: { type: DataTypes.INTEGER,
                             allowNull: false,
 
                             },
@@ -18,8 +18,8 @@ module.exports = (sequelize, DataTypes) => {
                  price: {type: DataTypes.DECIMAL,
                             allowNull: false},
 
-                 platform_id: { type: DataTypes.INTEGER,
-                                allowNull: false,
+                 PlatformId : { type: DataTypes.INTEGER,
+
 
                                 },
 
@@ -44,12 +44,12 @@ module.exports = (sequelize, DataTypes) => {
         }),
         Game.belongsTo(models.Genre,{
             as : 'gameGenre',
-            foreignKey : 'genre_id'
+            foreignKey : 'genreId'
 
         }),
         Game.belongsTo(models.Platform,{
             as : 'gamePlatform',
-            foreignKey : 'platform_id'
+            foreignKey : 'platformId'
 
         })
     }

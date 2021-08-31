@@ -25,8 +25,8 @@ var storage = multer.diskStorage({
 router.get ('/sign-up',guestMiddleware, signUpController.signUp) ;
 
 router.post ('/sign-up',upload.single('image'),[
-  check('first-name').not().isEmpty().withMessage ('Debes completar el Nombre') ,
-  check('last-name').not().isEmpty().withMessage ('Debes completar el apellido'),
+  check('firstName').not().isEmpty().withMessage ('Debes completar el Nombre') ,
+  check('lastName').not().isEmpty().withMessage ('Debes completar el apellido'),
   check('password').isLength({min:5}).withMessage('La contraseña debe contar con mas de 8 caracteres'),
   check('email').isEmail()
 
