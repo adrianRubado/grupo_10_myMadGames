@@ -4,9 +4,36 @@ const db = require('../../database/models')
 
  const pcController = {
 
-    carrito: (req,res) => {
+    carrito: async(req,res) => {
+        const cart = await db.Cart.findAll({
+            where: {
+                UserId : req.session.user.id,
 
-        res.render('product-cart');
+            }
+
+        })
+        const games = []
+        if(cart.length>=1){
+            for(let i = 0; i < cart.length;i++){
+                let g = await db.Game.findOne({
+                    where :{
+                        id : cart[i].GameId
+                    }
+                })
+
+                games.push(g)
+            }
+            const viewData = {
+                cart : cart,
+                games : games
+
+            }
+
+            return res.render('product-cart',viewData)
+        }
+
+
+
     },
     addItem : async (req,res) =>{
         const itemToAdd = req.body.add.split(',')
@@ -39,7 +66,7 @@ const db = require('../../database/models')
         })
     }
 
-
+    res.redirect(`/products/${parseInt(itemToAdd[1])}`)
     }
 }
 
