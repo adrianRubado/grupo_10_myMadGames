@@ -25,6 +25,7 @@ router.get ('/create',[authMiddleware,adminMiddleware], productsController.creat
 router.get('/:id/',productsController.detail )
 router.get('/:id/edit',[authMiddleware,adminMiddleware], productsController.edit)
 router.put('/:id/edit',[authMiddleware,adminMiddleware] ,productsController.update)
+router.post('/favorites',authMiddleware,productsController.addFavorite)
 router.post('/',upload.single('image'), productsController.post)
 router.delete('/:id/delete', [authMiddleware,adminMiddleware], productsController.delete)
 

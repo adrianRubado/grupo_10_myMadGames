@@ -109,6 +109,8 @@ const productsController = {
         return res.json(games)
     },
 
+
+
     delete: async (req, res) => {
         await db.Game.destroy({
          where:{
@@ -124,6 +126,35 @@ const productsController = {
         }
 
        return res.render('index', viewData)
+    },
+
+    addFavorite : async (req,res) => {
+        const itemToAdd = req.body.fav.split(',')
+        const alreadyExists = await db.Fav.findOne({
+            where: {
+                UserId: parseInt(itemToAdd[0]),
+                GameId : parseInt(itemToAdd[1])
+            }
+
+        })
+        console.log(alreadyExists)
+
+        if(alreadyExists) {
+            await alreadyExists.destroy()
+            res.redirect(`/products/${parseInt(itemToAdd[1])}`)
+
+        }else{
+            await db.Fav.create({
+                UserId: parseInt(itemToAdd[0]),
+                GameId: parseInt(itemToAdd[1]),
+
+
+            })
+            res.redirect(`/products/${parseInt(itemToAdd[1])}`)
+        }
+
+
+
     }
 
 }
