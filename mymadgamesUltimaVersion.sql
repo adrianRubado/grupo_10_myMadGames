@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 31, 2021 at 02:18 AM
+-- Generation Time: Sep 06, 2021 at 01:23 AM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -28,14 +28,25 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `carts` (
-  `cart_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `game_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
+  `UserId` int(11) NOT NULL,
+  `GameId` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
   `price` double NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `carts`
+--
+
+INSERT INTO `carts` (`id`, `UserId`, `GameId`, `quantity`, `price`, `created_at`, `updated_at`) VALUES
+(3, 21, 5, 14, 126000, '2021-08-31 13:48:41', '2021-08-31 13:48:41'),
+(6, 21, 14, 7, 42000, '2021-09-01 03:52:24', '2021-09-01 03:52:24'),
+(7, 18, 15, 7, 49000, '2021-09-01 04:09:00', '2021-09-01 04:09:00'),
+(8, 18, 5, 7, 63000, '2021-09-01 04:09:15', '2021-09-01 04:09:15'),
+(9, 21, 15, 7, 49000, '2021-09-04 03:15:31', '2021-09-04 03:15:31');
 
 -- --------------------------------------------------------
 
@@ -44,12 +55,20 @@ CREATE TABLE `carts` (
 --
 
 CREATE TABLE `favs` (
-  `fav_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `game_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
+  `UserId` int(11) NOT NULL,
+  `GameId` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `favs`
+--
+
+INSERT INTO `favs` (`id`, `UserId`, `GameId`, `created_at`, `updated_at`) VALUES
+(3, 21, 13, '2021-09-04 03:06:15', '2021-09-04 03:06:15'),
+(8, 21, 5, '2021-09-04 03:15:18', '2021-09-04 03:15:18');
 
 -- --------------------------------------------------------
 
@@ -78,11 +97,10 @@ CREATE TABLE `games` (
 
 INSERT INTO `games` (`id`, `image`, `genreId`, `name`, `price`, `platformId`, `release_year`, `requirements`, `description`, `link`, `created_at`, `updated_at`) VALUES
 (5, '/images/44437-the-last-of-us.jpg', 2, 'The last of Us 2', 9000, 3, 0000, 'N/A', 'The Last of Us Part 2 nos pone en el papel de Ellie algunos años después del final de la primera entrega. Seguiremos una historia con mucho sentimiento de furia, llorar en los primeros 30 minutos de juego fue algo que solo pasó en su precuela. Ahora nos enojaremos, haciendo que la vida cobre un valor desechable.', 'https://www.youtube.com/embed/orDRnUXu-Rw', '2021-08-30 23:47:22', '2021-08-30 23:47:22'),
-(6, '/images/godOfWar.jpg', 2, 'God of war', 6000, 3, 0000, 'N/A', 'God of War es una obra maestra, en que cada aspecto individual del juego se combina para completar una aventura violenta, conmovedora e inolvidable, cuya ambientación nórdica nos ha conquistado. Su único punto débil es esa sensación de que lo mejor está por llegar en próximas entregas.', 'https://www.youtube.com/embed/rjJy9XGGEhM', '2021-08-30 23:48:34', '2021-08-30 23:48:34'),
-(7, '/images/GTA.jpg', 2, 'GTAV', 5000, 5, 0000, 'Procesador: Intel Core 2 Quad CPU Q6600 a 2,40 GHz (4 CPUs)/AMD Phenom 9850 Quad-Core Processor (4 CPUs) a 2.5GHz. Memoria: 4 GB. Tarjeta de vídeo: NVIDIA 9800 GT 1GB/AMD HD 4870 1GB (DX 10, 10.1, 11)', 'Grand Theft Auto V, es uno de los juegos que mejor aprovechan el potencial de PS3 y Xbox 360, gracias al cambio de personajes, el nivel gráfico del juego no alcanza lo visto en The Last Of Us, sin embargo, busca aprovechar cada componente y nos muestra una concepción de Los Ángeles hermosa, con juegos de luces en los diferentes puntos del día, con un cielo lleno de estrellas o una lluvia con rayos en todo su esplendor, ya mencionamos los vastos lugares del Condado de Blaine, los árboles, vegetación, el mar desde la arena o buceando, la gente de Rockstar North no escatimó en detalles.', 'https://www.youtube.com/embed/_UB5hpk0iqg', '2021-08-30 23:54:38', '2021-08-30 23:54:38'),
-(8, '/images/horizon.jpg', 2, 'Horizon', 6000, 3, 0000, '', 'Este juego para mi tiene una historia muy buena, mecánicas grandiosas, criaturas extrañas y misteriosas, un mundo muy grande (algunos mundos grandes pueden ser repetitivos en los juegos y este juego tiene algunas partes repetitivas) y unas misiones secundarias que te van a enganchar un buen tiempo a este juego.', 'https://www.youtube.com/embed/HrxIRk3q-ck', '2021-08-31 00:03:17', '2021-08-31 00:03:17'),
-(9, '/images/daysGone.jpg', 1, 'daysGone', 8000, 3, 0000, 'N/A', 'Days Gone es un videojuego de acción-aventura y horror de supervivencia, desarrollado por el estudio SIE Bend Studio y publicado por Sony Interactive Entertainment para PlayStation 4 y Microsoft Windows. Fue lanzado en PlayStation 4 el 26 de abril del año 2019 y el 18 de mayo de 2021 para Microsoft Windows.', 'https://www.youtube.com/embed/D3_EFHlDBFg', '2021-08-31 00:05:01', '2021-08-31 00:05:01'),
-(10, '/images/rachet&clank.jpg', 8, 'Ratchet & Clank', 11000, 3, 0000, 'N/A', 'El veredicto. Ratchet & Clank: Una dimensión aparte es una secuela continuista, que repite la fórmula ganadora del juego original pero potencia y mejora sus virtudes. Una salvajada a nivel visual y divertido en todo momento, que solo patina a la hora de hacer interesantes añadidos como sus grandes mapas.', 'https://www.youtube.com/embed/IJNapbBHoFY', '2021-08-31 00:08:18', '2021-08-31 00:08:18');
+(13, '/images/GTA.jpg', 2, 'GTAV', 2400, 5, 0000, 'Operating System: Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1.\r\nProcessor: Intel Core 2 Quad CPU Q6600 @ 2.40GHz (4 CPUs) / AMD Phenom 9850 Quad-Core Processor (4 CPUs) @ 2.5', 'For me, Grand Theft Auto V’s extraordinary scope is summed up in two favourite moments. One is from a mid-game mission in which I flew a plane into another plane, fought the crew, hijacked the thing, and then parachuted out and watched it crash into the sea to escape death at the hands of incoming military fighter jets. Another time, whilst driving around in an off-road buggy, I got distracted by something that looked like a path up one of the San Andreas mountains. Turns out it was a path, and I spent 15 minutes following to the summit, where I nearly ran over a group of hikers. “Typical!” one of them yelled at me, as if he nearly gets run over by a rogue ATV on top of a mountain every time he goes on a hike.', 'https://www.youtube.com/embed/_UB5hpk0iqg', '2021-09-01 02:21:36', '2021-09-01 02:21:36'),
+(14, '/images/godOfWar.jpg', 2, 'God of war', 6000, 3, 0000, '', 'His vengeance against the gods of Olympus far behind him, Kratos now lives as a man in the lands of Norse Gods and monsters. It is in this harsh, unforgiving world that he must fight to survive… and teach his son to do the same. As mentor and protector to a son determined to earn his respect, Kratos is faced with an unexpected opportunity to master the rage that has long defined him. Questioning the dark lineage he’s passed on to his son, he hopes to make amends for the shortcomings of his past. Set within the untamed forests, mountains, and realms of Norse lore, God of War features a distinctly new setting with its own pantheon of creatures, monsters, and gods.', 'https://www.youtube.com/embed/x_MtcOznfM4', '2021-09-01 02:23:35', '2021-09-01 02:23:35'),
+(15, '/images/daysGone.jpg', 1, 'Days Gone', 7000, 3, 0000, '', 'Days Gone is a fun post-apocalyptic road trip simulator, but the things it does well are ultimately overwhelmed by the dreary story, repetitive missions, sluggish controls, and lifeless world. It\'s great seeing more PlayStation exclusives coming to PC, and long may that continue. But if Days Gone hadn\'t made the transition, I don\'t think it would have been a great loss for the platform. Look, just play Avalanche\'s Mad Max game from 2015 instead. It does everything Days Gone does, but with a sense of humour, a wasteland that\'s actually worth exploring, and you get to be the road warrior Max R', 'https://www.youtube.com/embed/D3_EFHlDBFg', '2021-09-01 02:26:42', '2021-09-01 02:26:42'),
+(16, '/images/fifa21.jpeg', 3, 'Fifa 21 ', 4000, 5, 0000, 'CPU: Athlon X4 880K / Core i3-6100 or better.\r\nRAM: 8 GB.\r\nOS: Windows 7/8.1/10 64-Bit.\r\nVIDEO CARD: Radeon HD 7850 or better/GeForce GTX 660 or better.\r\nPIXEL SHADER: 5.0.\r\nVERTEX SHADER: 5.0.\r\nFREE ', 'FIFA 21 on the new generation consoles is a largely familiar experience. There are no gameplay tweaks or improvements to talk about, but it does look marginally better due to a new lighting system and more realistic player models. There’s a heightened sense of atmosphere with crowds brought to life in more detail and contextual animations of making fans and players feel less like soulless AI and more like humans.\r\n\r\nNone of this changes how you play, though and is pretty much a superficial upgrade on the more powerful machines. That’s a bit of a disappointment, considering the revisions 2K made to NBA 2K21 in its new-generation version. Also, considering the lack of changes it’s annoying that there’s no cross-generational play; you’re able to carry your Volta and FUT progress over to PS5 and Series X/S, but if you have a group of friends you enjoy playing with and you all haven’t been able to get your hands on a new console yet there’s no way to join them without going back to the old version. Overall, FIFA 21 on the new generation isn’t the leap that many would have been hoping for and are left waiting until next to see what EA can achieve with the power of these consoles.', 'https://www.youtube.com/embed/p08CpE5Tzak', '2021-09-01 02:28:47', '2021-09-01 02:28:47');
 
 -- --------------------------------------------------------
 
@@ -222,17 +240,17 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `password`, `email`, `bday
 -- Indexes for table `carts`
 --
 ALTER TABLE `carts`
-  ADD PRIMARY KEY (`cart_id`),
-  ADD KEY `user/cart` (`user_id`),
-  ADD KEY `game/cart` (`game_id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user/cart` (`UserId`),
+  ADD KEY `game/cart` (`GameId`);
 
 --
 -- Indexes for table `favs`
 --
 ALTER TABLE `favs`
-  ADD PRIMARY KEY (`fav_id`),
-  ADD KEY `user/favs` (`user_id`),
-  ADD KEY `user/games` (`game_id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user/favs` (`UserId`),
+  ADD KEY `user/games` (`GameId`);
 
 --
 -- Indexes for table `games`
@@ -291,19 +309,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `favs`
 --
 ALTER TABLE `favs`
-  MODIFY `fav_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `games`
 --
 ALTER TABLE `games`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `genres`
@@ -349,15 +367,15 @@ ALTER TABLE `users`
 -- Constraints for table `carts`
 --
 ALTER TABLE `carts`
-  ADD CONSTRAINT `game/cart` FOREIGN KEY (`game_id`) REFERENCES `games` (`id`),
-  ADD CONSTRAINT `user/cart` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `game/cart` FOREIGN KEY (`GameId`) REFERENCES `games` (`id`),
+  ADD CONSTRAINT `user/cart` FOREIGN KEY (`UserId`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `favs`
 --
 ALTER TABLE `favs`
-  ADD CONSTRAINT `user/favs` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `user/games` FOREIGN KEY (`game_id`) REFERENCES `games` (`id`);
+  ADD CONSTRAINT `user/favs` FOREIGN KEY (`UserId`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `user/games` FOREIGN KEY (`GameId`) REFERENCES `games` (`id`);
 
 --
 -- Constraints for table `games`
