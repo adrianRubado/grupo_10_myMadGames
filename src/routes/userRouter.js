@@ -20,7 +20,19 @@ var storage = multer.diskStorage({
     }
   })
 
-  var upload = multer({ storage})
+  var upload = multer({ //multer settings
+    storage: storage,
+    fileFilter: function (req, file, callback) {
+        var ext = path.extname(file.originalname);
+        if(ext !== '.png' && ext !== '.jpg' && ext !== '.gif' && ext !== '.jpeg') {
+            return callback(new Error('Only images are allowed'))
+        }
+        callback(null, true)
+    },
+    limits:{
+        fileSize: 1024 * 1024
+    }
+})
 
 router.get ('/sign-up',guestMiddleware, signUpController.signUp) ;
 
