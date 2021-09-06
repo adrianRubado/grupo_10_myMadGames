@@ -13,62 +13,30 @@
 
       <a>Favoritos <i class="fas fa-star"></i></a>
     </div>
-    <div class="juegos-chart">
 
-      <img src="/images/Bf1.jpg" class="portada-chart">
-      <div class="descripcion-chart">
-        Descripciones
+
+    <% for( let i = 0; i < cart.length; i++ ) { %>
+      <div class="juegos-chart">
+        <img src= <%=games[i].image  %> class="portada-chart" width = 1000px>
+        <div class="descripcion-chart">
+          <%=games[i].name  %>
+        </div>
+
+        <i class="far fa-star"></i>
+        <i class="fas fa-trash"></i>
+        <i class="fas fa-plus"></i>
+        <p><%=cart[i].quantity  %></p>
+        <i class="fas fa-minus"></i>
+        <div><%=cart[i].price  %></div>
+
+
       </div>
 
-      <i class="far fa-star"></i>
-      <i class="fas fa-trash"></i>
-      <i class="fas fa-plus"></i>
-      <i class="fas fa-minus"></i>
-      <div>$xxxxx</div>
+    <% } %>
 
 
 
-    </div>
-    <div class="juegos-chart">
-      <img src="/images/Bf2.jpg" class="portada-chart">
-      <div class="descripcion-chart">
-        Descripciones
-      </div>
 
-      <i class="far fa-star"></i>
-      <i class="fas fa-trash"></i>
-      <i class="fas fa-plus"></i>
-      <i class="fas fa-minus"></i>
-      <div>$xxxxx</div>
-
-
-    </div>
-    <div class="juegos-chart">
-      <img src="/images/Bf3.jpg" class="portada-chart">
-      <div class="descripcion-chart">
-        Descripciones
-      </div>
-
-      <i class="far fa-star"></i>
-      <i class="fas fa-trash"></i>
-      <i class="fas fa-plus"></i>
-      <i class="fas fa-minus"></i>
-      <div>$xxxxx</div>
-    </div>
-    <div class="juegos-chart">
-      <img src="/images/Bf4.jpg" class="portada-chart">
-      <div class="descripcion-chart">
-        Descripciones
-      </div>
-
-      <i class="far fa-star"></i>
-      <i class="fas fa-trash"></i>
-      <i class="fas fa-plus"></i>
-      <i class="fas fa-minus"></i>
-      <div>$xxxxx</div>
-
-    </div>
-    </div>
 
 
   </section>

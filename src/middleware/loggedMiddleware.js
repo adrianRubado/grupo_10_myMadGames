@@ -4,6 +4,7 @@ module.exports = function (req,res,next){
     if(req.session && req.session.user){
         res.locals.logged = true
         res.locals.image = req.session.user.image
+        res.locals.user = req.session.user
 
     }
     next()

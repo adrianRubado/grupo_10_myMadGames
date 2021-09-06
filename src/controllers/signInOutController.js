@@ -25,16 +25,15 @@ const signInController = {
 
 
         try {
-            const user = db.User.findAll({
-                limit: 1,
+            const user = await db.User.findOne({
                 where: {
                     email: req.body.email
                 }
 
             })
-
             if (user) {
                 const password = user.password;
+
                 const ismatch = bcrypt.compareSync(req.body.password, password)
                 if (ismatch) {
                     if (req.body.persist) {

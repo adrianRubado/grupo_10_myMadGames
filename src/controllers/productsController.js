@@ -33,7 +33,7 @@ const productsController = {
     },
     edit:async(req, res) => {
         const id = req.params.id
-        const detail =  await db.Product.findByPk(id) ;
+        const detail =  await db.Game.findByPk(id) ;
         const viewData = {
             game: detail
         }
@@ -68,19 +68,35 @@ const productsController = {
 
     post: async(req, res) => {
 
-       await db.Game.create({
+        const genre = await db.Genre.findOne({
+            where: {
+                name: req.body.genre
+            }
+
+        })
+
+        const platform = await db.Platform.findOne({
+            where: {
+                name: req.body.platform
+            }
+
+        })
+
+        await db.Game.create({
             name: req.body.name,
             price: req.body.price,
-            platform: req.body.price,
+            PlatformId: platform.id,
             description: req.body.description,
             link: req.body.link,
-            image: req.body.image,
+            image: "/images/" + req.file.originalname,
             requirements: req.body.requirements,
-            genre: req.body.category
+            GenreId: genre.id
         })
-      const games = await db.games.findAll()
+      const games = await db.Game.findAll()
+      const genres = await db.Genre.findAll()
         const viewData = {
-            games: games
+            games: games,
+            genres : genres
         }
 
         return res.render('index', viewData)
@@ -93,21 +109,52 @@ const productsController = {
         return res.json(games)
     },
 
-    delete: async (req, res) => {
-        const id = req.params.id
 
+
+    delete: async (req, res) => {
         await db.Game.destroy({
          where:{
              id:req.params.id
          }
         })
-        const updatedGames = await db.games.findAll()
+        const updatedGames = await db.Game.findAll()
+        const genres = await db.Genre.findAll()
 
         const viewData = {
-            games: updatedGames
+            games: updatedGames,
+            genres : genres
         }
 
        return res.render('index', viewData)
+    },
+
+    addFavorite : async (req,res) => {
+        const itemToAdd = req.body.fav.split(',')
+        const alreadyExists = await db.Fav.findOne({
+            where: {
+                UserId: parseInt(itemToAdd[0]),
+                GameId : parseInt(itemToAdd[1])
+            }
+
+        })
+        console.log(alreadyExists)
+
+        if(alreadyExists) {
+            await alreadyExists.destroy()
+            res.redirect(`/products/${parseInt(itemToAdd[1])}`)
+
+        }else{
+            await db.Fav.create({
+                UserId: parseInt(itemToAdd[0]),
+                GameId: parseInt(itemToAdd[1]),
+
+
+            })
+            res.redirect(`/products/${parseInt(itemToAdd[1])}`)
+        }
+
+
+
     }
 
 }

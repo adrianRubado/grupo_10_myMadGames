@@ -31,12 +31,12 @@ module.exports = (sequelize, DataTypes) => {
         price:{
             type:DataTypes.NUMBER,
             allowNull: false
-        },
+        }/* ,
 
         created_at: { type: DataTypes.DATE },
-        updated_at: { type: DataTypes.DATE }
+        updated_at: { type: DataTypes.DATE } */
     }
-    let config = {tableName:"Products"}
+    let config = {tableName:"Products",timestamps : false}
     const Product = sequelize.define('Product',cols, config);
     Product.associate = function(models){
         Product.belongsTo(models.Purchase,{

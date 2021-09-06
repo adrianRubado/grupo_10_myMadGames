@@ -1,13 +1,72 @@
-const fs = require ('fs') ;
-const path = require ('path') ;
+const db = require('../../database/models')
 
 
 
  const pcController = {
 
-    carrito: (req,res) => {
+    carrito: async(req,res) => {
+        const cart = await db.Cart.findAll({
+            where: {
+                UserId : req.session.user.id,
 
-        res.render('product-cart');
+            }
+
+        })
+        const games = []
+        if(cart.length>=1){
+            for(let i = 0; i < cart.length;i++){
+                let g = await db.Game.findOne({
+                    where :{
+                        id : cart[i].GameId
+                    }
+                })
+
+                games.push(g)
+            }
+            const viewData = {
+                cart : cart,
+                games : games
+
+            }
+
+            return res.render('product-cart',viewData)
+        }
+
+
+
+    },
+    addItem : async (req,res) =>{
+        const itemToAdd = req.body.add.split(',')
+
+        const alreadyExists = await db.Cart.findOne({
+            where: {
+                UserId: parseInt(itemToAdd[0]),
+                GameId : parseInt(itemToAdd[1])
+            }
+
+        })
+
+        if(alreadyExists){
+            await db.Cart.update({
+                quantity: alreadyExists.quantity + parseInt(itemToAdd[2]),
+                price: alreadyExists.price + (parseInt(itemToAdd[3]) * parseInt(itemToAdd[2]))
+
+            },{
+                where:{
+                    id:alreadyExists.id
+                }})
+        }else{
+
+        await db.Cart.create({
+            UserId: parseInt(itemToAdd[0]),
+            GameId: parseInt(itemToAdd[1]),
+            quantity: parseInt(itemToAdd[2]),
+            price: parseInt(itemToAdd[3] * parseInt(itemToAdd[2]))
+
+        })
+    }
+
+    res.redirect(`/products/${parseInt(itemToAdd[1])}`)
     }
 }
 

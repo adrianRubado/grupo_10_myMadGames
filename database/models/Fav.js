@@ -1,23 +1,23 @@
-module.exports = (sequelize, DataTypes) => { 
+module.exports = (sequelize, DataTypes) => {
 
-    let cols = { fav_id: { type: DataTypes.INTEGER,
+    let cols = { id: { type: DataTypes.INTEGER,
                        autoIncrement: true,
                        primaryKey:true},
-                 user_id: { type: DataTypes.INTEGER,
+                 UserId: { type: DataTypes.INTEGER,
                             allowNull: false//,
                           //  references: { model: User,
                               //  key: "user_id"}
                             },
-                 game_id: { type: DataTypes.INTEGER,
-                            allowNull: false, 
+                 GameId: { type: DataTypes.INTEGER,
+                            allowNull: false,
                             //references: {model: Game,
                                 //key: "game_id"}
-                            },
+                            }/* ,
                  created_at: { type: DataTypes.DATE},
-                 updated_at: { type: DataTypes.DATE}
+                 updated_at: { type: DataTypes.DATE} */
                 };
 
-    let config = {tableName: "Favs"}
+    let config = {tableName: "Favs",timestamps : false}
 
     const Fav = sequelize.define("Fav", cols, config);
     return Fav;

@@ -19,37 +19,42 @@ const signUpController = {
 
     createUser: async (req,res) => {
 
-         const errors = validationResult(req)
-         if (!errors.isEmpty()){
+        try {
+            const errors = validationResult(req)
+            if (!errors.isEmpty()){
 
-            return res.status(400).json({errors:errors.array()}) ;
-         }
-
-         const user = await db.User.findAll({
-            limit: 1,
-            where: {
-                email: req.body.email
+               return res.status(400).json({errors:errors.array()}) ;
             }
 
-        })
+            const user = await db.User.findOne({
+               where: {
+                   email: req.body.email
+               }
 
-         if(user){
-            res.status(400).json({errors : {message : 'User already exists'}})
-         }
-         const password = bcrypt.hashSync(req.body.password,10) ;
+           })
 
-        await db.User.create({
-            first_name: req.body.firstName,
-            last_name: req.body.lastName,
-            password: password,
-            email: req.body.email,
-            bday: req.body.bday,
-            image: "/images/" + req.file.originalname,
-            role_id: 1
+            if(user){
+               res.send(user)
+            }
+            const password = bcrypt.hashSync(req.body.password,10) ;
 
-        })
+           await db.User.create({
+               first_name: req.body.firstName,
+               last_name: req.body.lastName,
+               password: password,
+               email: req.body.email,
+               bday: req.body.bday,
+               image: "/images/" + req.file.originalname,
+               RoleId: '1'
 
-      return res.redirect('/user/login/')
+           })
+
+         return res.redirect('/user/login/')
+
+        } catch (error) {
+            return res.status(500).json({error : error.message})
+
+        }
 
 
     }

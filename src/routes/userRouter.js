@@ -25,18 +25,29 @@ var storage = multer.diskStorage({
 router.get ('/sign-up',guestMiddleware, signUpController.signUp) ;
 
 router.post ('/sign-up',upload.single('image'),[
-  check('first-name').not().isEmpty().withMessage ('Debes completar el Nombre') ,
-  check('last-name').not().isEmpty().withMessage ('Debes completar el apellido'),
-  check('password').isLength({min:5}).withMessage('La contraseña debe contar con mas de 8 caracteres'),
-  check('email').isEmail()
+  check('firstName').not().isEmpty().withMessage ('Debes completar el Nombre') ,
+  check('firstName').isLength({min :2}).withMessage ('El nombre debe contener minimo 2 caracteres'),
+
+  check('lastName').not().isEmpty().withMessage ('Debes completar el apellido'),
+  check('lastName').isLength({min :2}).withMessage ('El apellido debe contener minimo 2 caracteres'),
+
+  check('password').not().isEmpty().withMessage ('Debes completar la password') ,
+  check("password").matches(/^(?=.\d)(?=.[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/, "i"),
+
+  check('email').not().isEmpty().withMessage ('Debes completar el email'),
+  check('email').isEmail(),
+
+
 
 ], signUpController.createUser);
 
 
 router.get ('/login',guestMiddleware, signInOutController.signIn) ;
 router.post ('/login', [
-
+    check('email').not().isEmpty().withMessage ('Debes completar el email'),
     check('email', 'Please include a valid email').isEmail(),
+
+
     check('password', 'The password is required').exists()
 
 
