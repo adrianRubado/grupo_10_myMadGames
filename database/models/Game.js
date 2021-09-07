@@ -28,7 +28,8 @@ module.exports = (sequelize, DataTypes) => {
                  updated_at: { type: DataTypes.DATE }, */
                  description: { type: DataTypes.STRING },
                  requirements: { type: DataTypes.STRING },
-                 link: { type: DataTypes.STRING }
+                 link: { type: DataTypes.STRING },
+                 category : {type : DataTypes.INTEGER}
                 };
 
     let config = {tableName: "Games",timestamps: false}
