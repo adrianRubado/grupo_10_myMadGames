@@ -28,16 +28,16 @@
 
 
   <div class='main'>
-    <div class="drawer">
+    <!-- <div class="drawer">
       <h3 align="left" class="w3-bar-item">Categories</h3>
       <ul class = "checkboxesCategorias"style="list-style-type:none;">
 
         <% genres.forEach(g=>{ %>
-          <li><input type = "checkbox"><%= g.name  %> </li>
+          <li><input type = "checkbox"> <%= g.name  %> </li>
           <% }) %>
 
 
-        <!-- <li><input type="checkbox"> Horror</li>
+         <li><input type="checkbox"> Horror</li>
         <li><input type="checkbox"> Action</li>
         <li><input type="checkbox"> Sports</li>
         <li><input type="checkbox"> Casual</li>
@@ -51,17 +51,48 @@
 
 
     </div>
+
+
     <section class='container'>
-      <% games.forEach(element => { %>
+      <% games.filter(g => g.category == 2).forEach(element => { %>
         <article>
           <a href="/products/<%= element.id %>"  >
-            <img src = <%=element.image %>   alt="hola" width="160px" class="pictures">
+            <img src = <%=element.image %>   alt="hola" width="220px" class="pictures">
+            <h4 class = 'descrip'><%= element.name  %> </h4>
           </a>
         </article>
 
       <% }) %>
     </section>
+
+
   </div>
+  <br>
+  <br>
+  <br>
+  <h3 class = 'mp'><b>Elegi pagar y recibir el pedido sin moverte de tu casa</b></h3>
+  <div class ='mercadoPago'>
+
+  </div>
+
+
+  <br>
+  <br>
+  <br>
+
+  <h4 class='estrenos'>Recomendados</h4>
+
+  <section class='container'>
+    <% games.filter(g => g.category == 1).forEach(element => { %>
+      <article>
+        <a href="/products/<%= element.id %>"  >
+          <img src = <%=element.image %>   alt="hola" width="220px" class="pictures">
+          <h4 class = 'descrip'><%= element.name  %> </h4>
+        </a>
+      </article>
+
+    <% }) %>
+  </section>
 
   <!-- Site footer -->
  <%- include ('./partials/footer.ejs') %>
@@ -81,7 +112,7 @@
       myIndex++;
       if (myIndex > x.length) { myIndex = 1 }
       x[myIndex - 1].style.display = "block";
-      setTimeout(carousel, 5000); // Change image every 2 seconds
+      setTimeout(carousel, 5000); // Change image every 5 seconds
     }
   </script>
 
