@@ -1,0 +1,54 @@
+* { box-sizing: border-box;}
+
+
+.filter_navbar { display: flex; 
+    flex-direction: row;
+
+ justify-content: space-between;} 
+    
+    li {list-style: none;
+    margin: 5px;}
+
+    .games-conteiner { display: flex;
+     flex-direction: column; 
+    padding: 5px;}
+    
+
+    .individual-game-container{ margin: auto;}
+
+    .filters-Check-Box { display: none;}
+
+
+@media (min-width:768px){    .filters-Check-Box { display: flex; flex-direction: column;}
+
+.main-search { display: flex;
+ flex-direction: row;}
+    .button_filter {display: none; }
+
+    .price_Filter { display: flex;
+    flex-direction: column;
+    padding: 5px 15px 5px 15px ;
+
+width: auto;}
+
+.games-conteiner { display: flex;
+                    flex-direction: row;
+                    padding: 5%; 
+                    flex-wrap: wrap;
+                
+                      }
+.individual-game-container { width: 20%;
+ height: 35%; margin: 5px;
+ border: 2px solid black;}
+
+    .filter_navbar { display: flex;
+     flex-direction: column;
+     justify-content: start;
+     padding: 30px;
+     background-color: rgba(187, 196, 187, 0.967);
+     border-right: 4px solid blue;
+    
+    width: 20vw;}
+
+
+} 

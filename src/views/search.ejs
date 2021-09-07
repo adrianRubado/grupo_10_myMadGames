@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('./partials/head')  %>
+
+<body>
+  <%- include('./partials/header') %>
+<div class="main-search">
+
+<div class="filter_navbar"> 
+
+
+  <div class="price_Filter"> 
+    <label for="priceRange"> Price</label>
+    <input type="range" name="priceRange"> </div>
+    <button class="button_filter">Filtro
+      <i class="fas fa-filter"></i></button>
+<div class="filters-Check-Box"> 
+  
+<ul>  
+  <%genres.forEach(element => {%> <li> <input type="checkbox"   class="genreToCheck"><%= element.name %></input></li>     
+    <% }) %>
+
+</ul>  
+
+<ul> 
+
+  <%platform.forEach(element => {%> <li> <input type="checkbox"  class="platformToCheck"><%= element.name %></input></li>     
+  <% }) %>
+
+</ul>
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div class="games-conteiner">   
+
+  <%games.forEach(element => {%> 
+    
+    <div class="individual-game-container"> 
+
+    <h3> <%= element.name%></h3>
+    
+      <img src = <%=element.image %>   alt="game" width="160px"  class="pictures">
+    <h4>$<%= element.price %> </h4>
+   </div>   
+  <% }) %>
+
+
+</div>
+
+</div>
+
+<%- include ('./partials/footer.ejs') %>
+
+
+</body>
+  </html>
+
+
+  
