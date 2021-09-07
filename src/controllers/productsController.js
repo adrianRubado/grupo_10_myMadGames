@@ -88,6 +88,7 @@ const productsController = {
             PlatformId: platform.id,
             description: req.body.description,
             link: req.body.link,
+            category : 2,
             image: "/images/" + req.file.originalname,
             requirements: req.body.requirements,
             GenreId: genre.id

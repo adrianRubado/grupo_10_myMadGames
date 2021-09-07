@@ -26,15 +26,10 @@
       <nav class="mainNavbar">
 
         <ul>
-          <li>
-            <a href="/product-cart">
-            <i class="fas fa-shopping-cart"></i>
-          </a>
 
-          </li>
           <li>
             <a href="/products/create">
-              <i class="fas fa-plus"></i>
+              <i class="fas fa-plus" data-toggle="tooltip" data-placement="top" title="create game"></i></i>
             </a>
           </li>
           <form method="post" action="/user/logout">
@@ -66,7 +61,12 @@
             </a>
             </li>
             <% } %>
+            <li>
+              <a href="/product-cart">
+              <i class="fas fa-shopping-cart"></i>
+            </a>
 
+            </li>
 
 
 
