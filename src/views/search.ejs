@@ -3,11 +3,13 @@
 
 <%- include ('./partials/head')  %>
 
-<body>
+<body class="body-search">
   <%- include('./partials/header') %>
 <div class="main-search">
 
 <div class="filter_navbar"> 
+
+  <h2>Filtrar Juegos</h2>
 
 
   <div class="price_Filter"> 
@@ -40,16 +42,25 @@
 </div>
 
 <div class="games-conteiner">   
-
   <%games.forEach(element => {%> 
+  <article class="individual-game-container">
+  
     
-    <div class="individual-game-container"> 
+     
 
-    <h3> <%= element.name%></h3>
+    <h3 class="game-name"> <%= element.name%></h3>
     
-      <img src = <%=element.image %>   alt="game" width="160px"  class="pictures">
-    <h4>$<%= element.price %> </h4>
-   </div>   
+    
+      <img src = <%=element.image %>   alt="game" width="160px"  class="image-game-cover">
+
+<div class="cont-price-buttons">  
+    <h4 class="game-price">$<%= element.price %> </h4>
+
+    <div class="buttons-article-container">
+    <i class="fas fa-shopping-cart">Agregar</i><br> <a class="buy-button-search" >Comprar</a>
+  </div>
+  </div>
+  </article>  
   <% }) %>
 
 
