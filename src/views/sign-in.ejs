@@ -19,14 +19,14 @@
 
 
 
-          <form action="/user/login" method="POST">
+          <form action="/user/login" method="POST" id="formularioSignIn">
             <% if (locals.errors) { %>
 
               <div class = 'textWarning'>
                <%= errors.message %>
               </div>
              <% } %>
-            <div class="contenedorInputSignIn">
+            <div class="contenedorInputSignIn"> 
            
 
               <label for="email"> Email </label>
@@ -50,12 +50,17 @@
            <div class="contRecordameSignIn"> <input type="checkbox"  name="persist" > <label for="recordame" class="recordameLabel"><p>Recordame</p> </label></div>
           </div>
             <a class="forgotPass" href="asdsad">Forgot your password?</a>
+
+            <div>
+              <ul class="errors-signin"></ul>
+            </div>
           </form>
         </div>
 
       </main>
 
       <%- include('./partials/footer.ejs') %>
+      <script src="../validations/signin-scripts.js"></script>
 
   </body>
 
