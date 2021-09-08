@@ -13,18 +13,31 @@
      flex-direction: column; 
      
     padding: 5px;}
+
+    .game-price { margin-right: 100%;}
+
+
+    .cont-price-buttons { }
     
     .cont-buy-buttons { display: flex;
                       flex-direction: row;}
     .buy-button-search { font-size: 16px;
                         color: blue;
+                        margin: auto;
+                       
                        font-style: italic;}
+
+                       .buttons-article-container{ display: flex;
+                     flex-direction: row; 
+                    justify-content: center;}
+
+                       .cart-article-search { font-size: 16px;}
 
     .image-game-cover { height: 70%; margin: auto;
     border-radius: 5px;}
     
 
-    .individual-game-container{ margin: auto;}
+    .individual-game-container{ margin: auto; }
 
     .filters-Check-Box { display: none;}
 
