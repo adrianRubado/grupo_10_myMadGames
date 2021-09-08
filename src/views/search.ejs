@@ -32,7 +32,7 @@
 
 </ul>
 
-<button type="submit" id="submit" class="botonSignIn" >  <img src="/images/logo1.png" width="45px" height="45px"/></button>
+<button type="submit" id="submit" class="botonSignIn" >  <img src="/images/logo1.png" width="45px" height="45px"/> Buscar</button>
 </div>
 
 
@@ -42,8 +42,11 @@
 
 
 </div>
-
+<div class="main-Search">
+<h1 id="title-search">My Mad Games</h1>
 <div class="games-conteiner">   
+
+
   <%games.forEach(element => {%> 
   <article class="individual-game-container">
   
@@ -68,11 +71,12 @@
 
 
 </div>
-
+</div>
 </div>
 
 <%- include ('./partials/footer.ejs') %>
 
+<script src ="/js/search-page.js"></script>
 
 </body>
   </html>
