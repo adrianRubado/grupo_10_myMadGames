@@ -4,7 +4,7 @@ window.addEventListener('load',function(){
 
 //Primero capturamos el formulario a trabajar
 
-let formsSignup =document.forms('formularioSignup');
+let formsSignup =document.querySelector('formularioSignup');
 
 
 //Definimos un array con los errores a reflejar
@@ -13,15 +13,16 @@ let formsSignup =document.forms('formularioSignup');
 let errors =[] ;
 
 formsSignup.addEventListener('submit', async function(e){
-    
+
 
     const firstName = document.querySelector('#first-name');
     const lastName = document.querySelector('#last-name');
     const password = document.querySelector('#password');
     const email = document.querySelector ('#email');
-    fetch ('http://localhost:3002/sign-up/check') ;
+    /* fetch ('http://localhost:3002/sign-up/check') ; */
     const birthDay = document.querySelector ('#bday');
-    const fileImage = document.querySelector('#botonCoverPhoto');                           //Definimos el acceso a cada uno de los campos de los formularios
+    const fileImage = document.querySelector('#botonCoverPhoto');
+    console.log(firstName)                           //Definimos el acceso a cada uno de los campos de los formularios
 
 //Nombre
     if(firstName.value ==''){
@@ -29,7 +30,7 @@ formsSignup.addEventListener('submit', async function(e){
     }
     if((firstName.value.length < 2)){
 
-        errors.push ('El Nombre contiene menos de dos caracteres') ;                                
+        errors.push ('El Nombre contiene menos de dos caracteres') ;
 
     }
 
@@ -39,11 +40,11 @@ formsSignup.addEventListener('submit', async function(e){
     }
     if((lastName.value.length < 2)){
 
-        errors.push ('El Apellido contiene menos de dos caracteres') ;                                
+        errors.push ('El Apellido contiene menos de dos caracteres') ;
 
     }
 
-//Email 
+//Email
 
     if(email.value == '') {
         errors.push ('El Email está vacío');
@@ -53,10 +54,10 @@ formsSignup.addEventListener('submit', async function(e){
         errors.push ('El email es invalido') ;
     }
 
-    
+
     /* if (email) */
 
- 
+
 
 
  //Contraseña
@@ -79,7 +80,7 @@ if(!password.value.match(/[a-z]/)) {
 if (!password.match(/([!,%,&,@,#,$,^,*,?,_,~])/)){                                                          //Expresion regular para caracteres
     errors.push ('La contraseña debe poseer al menos un caracter especial') ;
 }
-    
+
 //Imagen
 var fileExt = /(.jpg|.png)$/i;
 
@@ -89,21 +90,21 @@ var fileExt = /(.jpg|.png)$/i;
     if(fileImage.value =='') {
         errors.push ('Este campo es obligatorio')
     }
-    
+
     if(errors.length > 0) {
 
         e.preventDefault() ;                                 //En caso de que haya errores, rechazamos la peticion por dafult del Submit
         let errorsList = document.querySelector ('.errors-signup')
-        for (let i = 0 ; i < errors.length ;i++) {                                
+        for (let i = 0 ; i < errors.length ;i++) {
             errorsList.innerHTML +='<li>' + errors[i] + '</li>' ;              //Recorremos el array de errores ppara hacer un listado de ellos en el ul de errors-signup
-            
+
         }
         errorsList.style.color ('red') ; //Definimos el color rojo
 
     }
 
 
-    
+
 
 })
 
