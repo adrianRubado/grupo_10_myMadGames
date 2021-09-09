@@ -22,7 +22,7 @@ formsSignup.addEventListener('submit', async function(e){
     /* fetch ('http://localhost:3002/sign-up/check') ; */
     const birthDay = document.querySelector ('#bday');
     const fileImage = document.querySelector('#botonCoverPhoto');
-    console.log(firstName)                           //Definimos el acceso a cada uno de los campos de los formularios
+                        //Definimos el acceso a cada uno de los campos de los formularios
 
 //Nombre
     if(firstName.value ==''){
