@@ -14,6 +14,8 @@
      
     padding: 5px;}
 
+    .game-name { box-sizing: border-box; font-weight: bolder; font-size: 17px; color: rgba(89, 89, 90, 0.96); }
+
     .game-price { margin-right: 80%; font-weight: bolder;}
 
   
