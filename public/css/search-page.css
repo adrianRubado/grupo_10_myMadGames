@@ -1,45 +1,45 @@
 * { box-sizing: border-box;}
 
 
-.filter_navbar { display: flex; 
+.filter_navbar { display: flex;
     flex-direction: row;
     background-color: rgb(214, 214, 214) ;
 
- justify-content: center;} 
-    
+ justify-content: center;}
+
     li {list-style: none;
     margin: 5px;}
 
     .filterTitle { margin: 1px auto 1px 5px;}
 
     .games-conteiner { display: flex;
-     flex-direction: column; 
-     
+     flex-direction: column;
+
     padding: 5px;}
 
     .game-name { box-sizing: border-box; font-weight: bolder; font-size: 17px; color: rgba(89, 89, 90, 0.96); }
 
-    .game-price { margin-right: 80%; font-weight: bolder;}
+    .game-price { font-weight: bolder; color: cornflowerblue;}
 
-  
 
-   .image-containe { padding: 0px auto;  
+
+   .image-containe { padding: 0px auto;
     border-radius: 50%;
 }
    .image-containe:hover { background-color: rgba(172, 92, 96, 0.405);}
 
 
-    
+
     .cont-buy-buttons { display: flex;
                       flex-direction: row;}
     .buy-button-search { font-size: 16px;
                         color: blue;
                         margin: auto;
-                       
+
                        font-style: italic;}
 
                        .buttons-article-container{ display: flex;
-                     flex-direction: row; 
+                     flex-direction: row;
                      margin: auto;
                     justify-content: center;}
 
@@ -50,26 +50,26 @@
 height: 200px;
 box-sizing: border-box;
     border-radius: 10px;}
-    
+
 
     .individual-game-container{ margin: none;  background-color:rgba(253, 253, 253, 0.008) }
 
- 
-    
+
+
 
     .filters-Check-Box { display: none;}
     .main-search{ display: flex; flex-direction: column;}
-@media (min-width:768px){   
-   
+@media (min-width:768px){
+
     #title-search { font-family: cursive; display: block; text-align: center;
     margin: 45px auto;
 }
-    
-    
+
+
     .filters-Check-Box { display: flex; flex-direction: row; align-items: center; box-sizing: content-box; flex-wrap: wrap;}
 
 .main-search { display: flex;
-   
+
  flex-direction: row;
  ;}
     .button_filter {display: none; }
@@ -84,12 +84,12 @@ width: auto;}
                     flex-direction: row;
                     justify-content: space-between;
                     align-items: center;
-                    padding: 5%; 
+                    padding: 5%;
                     margin: 0px auto;
                     padding-top: 10px;
-                    
+
                     flex-wrap: wrap;
-                
+
                       }
 .individual-game-container { width: 20%;
     box-sizing: border-box;
@@ -112,9 +112,9 @@ width: auto;}
      justify-content: start;
      padding: 30px;
      background-color: #2195f354;
-     
-    
+
+
     width: 20vw;}
 
 
-} 
+}

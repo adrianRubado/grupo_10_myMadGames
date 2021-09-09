@@ -4,15 +4,15 @@ window.addEventListener('load',function(){
 
 //Primero capturamos el formulario a trabajar
 
-let formsSignup =document.querySelector('formularioSignup');
+let formsSignup = document.querySelector(".formularioSignUp");
 
-
+alert('daaaaaaa')
 //Definimos un array con los errores a reflejar
 
 
 let errors =[] ;
 
-formsSignup.addEventListener('submit', async function(e){
+formsSignup.addEventListener('submit', function(e){
 
 
     const firstName = document.querySelector('#first-name');
@@ -103,16 +103,6 @@ var fileExt = /(.jpg|.png)$/i;
 
     }
 
-
-
-
 })
-
-
-
-
-
-
-
 
 })
