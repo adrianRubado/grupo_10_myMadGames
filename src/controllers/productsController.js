@@ -156,6 +156,17 @@ const productsController = {
 
 
 
+    } , search: async (req, res) => { 
+             
+      const games = await db.Game.findAll();
+      const genres = await db.Genre.findAll(); 
+      const consoles = await db.Platform.findAll();
+
+      viewData = { games : games, 
+                   genres: genres,
+                platform: consoles};
+         res.render("search" , viewData)
+
     }
 
 }
