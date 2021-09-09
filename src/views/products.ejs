@@ -14,9 +14,9 @@
                 <%= game.name %> </div>
             <div class="cont-padre">
                 <div class="contenedor-info">
-                    <img class="gta" src =<%= game.image  %>  width="400px" ;>
+                    <img class="image" src =<%= game.image  %>   ;>
                     <div class="social">
-                        <<form method="POST" action="/products/favorites">
+                        <form method="POST" action="/products/favorites">
                             <li>
 
                               <button type="submit" class="far fa-heart" name = 'fav' value =<%=[locals.user.id,game.id]%> ></button>
