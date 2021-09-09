@@ -48,6 +48,7 @@
 
 
   <%games.forEach(element => {%> 
+   
   <article class="individual-game-container">
   
     
@@ -55,9 +56,9 @@
 
     <h3 class="game-name"> <%= element.name%></h3>
     
-    
+     <div class="image-containe">
       <img src = <%=element.image %>   alt="game" width="160px"  class="image-game-cover">
-
+</div>
 <div class="cont-price-buttons">  
     <h4 class="game-price">$<%= element.price %> </h4>
   
