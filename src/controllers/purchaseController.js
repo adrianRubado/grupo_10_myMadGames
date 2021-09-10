@@ -9,7 +9,7 @@ const purchaseController = {
         const viewData = {
 
             titulo: 'My Mad Games',
-            games: games ,
+            g: games[6] ,
             genres:genres
         }
 

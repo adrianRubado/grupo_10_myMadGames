@@ -22,7 +22,21 @@ header{
 .item-detail{
 
   background-color: white;
+  display: flex;
+  justify-content: flex-start;
 
+
+}
+
+.purchase-game-detail{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: 32%;
+}
+
+.purchase-game-detail h5{
+  text-align: center;
 }
 
 .item-purchase{
@@ -67,6 +81,13 @@ header{
   font-size: medium;
   font-weight: 700;
   color: rgb(4, 167, 4);
+}
+
+.purchase-image{
+  padding-top: 8px;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
 }
 
 .dolar{
