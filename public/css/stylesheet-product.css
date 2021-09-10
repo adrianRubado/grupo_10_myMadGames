@@ -213,8 +213,13 @@ background-color:#ea4c89
   flex-direction: column;
   justify-content: flex-end;
   text-align: center;
-  margin: auto
+  margin: auto;
+  background-color: rgb(224, 224, 224);
 
+}
+
+.otroColor{
+  background-color: white;
 }
 .buttomtotal-chart button{
 

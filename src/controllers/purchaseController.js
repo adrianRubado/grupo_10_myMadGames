@@ -3,14 +3,38 @@ const purchaseController = {
 
     purchase: async(req,res) => {
         try {
-        const genres = await db.Genre.findAll()
-        const games = await db.Game.findAll()
+        const games = []
+        let g = null
+        let cantidad = 0
+        let precio = 0
+        const cart = await db.Cart.findAll({
+            where : {
+                UserId : req.session.user.id
+            }
+        })
+
+
+        for(let i = 0; i< cart.length; i++){
+            g = await db.Game.findOne({
+                where : {
+                    id : cart[i].GameId
+                }
+            })
+            games.push(g)
+            cantidad += cart[i].quantity
+            precio += g.price
+        }
+
+
+        console.log(games)
+        console.log(cart)
 
         const viewData = {
 
-            titulo: 'My Mad Games',
-            g: games[6] ,
-            genres:genres
+            cart : cart,
+            games : games,
+            quantity : cantidad,
+            price : precio
         }
 
 
