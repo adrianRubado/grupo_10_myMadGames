@@ -250,9 +250,22 @@ height: 15%;}
  margin-bottom: 15px;
  margin: auto;
  background-color: transparent;
-  border-color: transparent;}
+  border-color: transparent;
+  transition: all  1.5s;
 
-  .contenedorInputsSignInuno { display: flex; flex-direction: column; flex-wrap: wrap; justify-content: space-between; width: 70%;}
+}
+
+  .botonSignUp:hover{
+    transform: rotate(720deg);
+
+  }
+
+  .contenedorInputsSignInuno { 
+    display: flex; 
+    flex-direction: column;
+     flex-wrap: wrap; 
+     justify-content: space-between; 
+     width: 70%;}
 
                .formularioSignUp { margin:auto;
                 display: flex;
@@ -264,6 +277,59 @@ height: 15%;}
             background-color: rgba(253, 253, 253, 0.6);
             height: 75%;
             width: 75%;}
+
+            .formularySignup{
+              margin: auto;
+              justify-content: center;
+              align-items: center;
+              width: 20vw;
+            }
+            
+            .formularySignup div{
+              margin-bottom: 10px;
+              padding-bottom: 20px;                  /* ESTO CAMBIA EN FUNCION A LOS ERRORES */
+              position: relative;
+            }
+            .formularySignup label {
+              display: inline-block;
+              margin-bottom: 5px;
+            }
+            .formularySignup div input{
+              border: 2px  solid  rgb(45, 90, 236);
+              
+              display: block;
+              width: 100%;
+            }                                                                     /* Aca son las implementaciones js */
+            .formularySignup .succes div input{
+              border:  2px solid #2ecc71;
+            }
+            .formularySignup .error div input{                           
+              border:  2px solid #e7412e;
+            }
+            .formularySignup .succes .fa-check-circle {
+              visibility: visible;
+               color:#2ecc71;
+             }
+             .formularySignup .error .fa-exlamation-circle {
+               visibility: visible;
+              color: #e7412e;
+            }
+            .formularySignup div i{
+              position: absolute;
+              bottom: 45px;
+              right: 15px;
+              visibility: hidden;
+
+            }
+            .formularySignup small {
+              visibility: hidden;
+            }
+            .formularySignup small .errormsg{
+              color: #e7412e;
+              visibility: visible;
+
+            }
+            
 
 
 #mainSignIn { height: 100vh;
