@@ -18,8 +18,6 @@ formsSignup.addEventListener("submit", function(e){
 
     let errors =[] ;
     const firstName = document.querySelector('#first-name');
-    console.log(firstName)
-    e.preventDefault() ;
 
     const lastName = document.querySelector('#last-name');
     const password = document.querySelector('#password');

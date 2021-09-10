@@ -13,6 +13,62 @@ header{
 
 }
 
+.purchase{
+  background-color: rgb(224, 224, 224);
+  display: flex;
+  justify-content: space-between;
+}
+
+.item-detail{
+
+  background-color: white;
+
+}
+
+.item-purchase{
+  width: 800px;
+  margin-left: 10%;
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+}
+
+.side-details{
+  background-color: white;
+
+}
+
+.side-panel{
+  width: 25%;
+  height: 600px;
+
+  margin-right: 10%;
+  background-color: white;
+}
+
+.llega{
+  font-size: medium;
+  padding-top: 15px;
+  text-align: left;
+  font-weight: 700;
+
+}
+
+.cuando-llega{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+}
+
+.envio{
+  display: flex;
+  flex-direction: column;
+}
+
+.free{
+  font-size: medium;
+  font-weight: 700;
+  color: rgb(4, 167, 4);
+}
+
 .dolar{
   margin-left: 32%;
   margin-top: 8%;
