@@ -9,6 +9,16 @@
     text-align: center;
   }
 
+.opciones{
+  text-align: left;
+}
+
+.iconitoDeUbicacion{
+ margin-right: 100%;
+}
+
+
+
   .cuando-llega{
     display: flex;
     justify-content: space-between;
@@ -39,6 +49,8 @@
     text-align: center;
     border-bottom: 1px solid grey
   }
+
+
 
 
 
@@ -89,12 +101,12 @@
   .side-panel{
 
     width: 25%;
-    max-width: 800px;
+    max-width: 1600px;
     height: 50vh;
 
     margin-right: 10%;
     background-color: white;
-    margin-top: 3%;
+    margin-top: 19%;
   }
 
   .llega{
@@ -144,3 +156,15 @@
   }
 
 }
+
+.envioo{
+  background-color: rgb(224, 224, 224);
+  border: none;
+  box-shadow: none;
+}
+
+.azul{
+  color: rgb(79, 79, 245);
+  font-weight: 700;
+}
+

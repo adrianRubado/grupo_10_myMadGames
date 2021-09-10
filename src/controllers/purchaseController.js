@@ -26,9 +26,6 @@ const purchaseController = {
         }
 
 
-        console.log(games)
-        console.log(cart)
-
         const viewData = {
 
             cart : cart,
