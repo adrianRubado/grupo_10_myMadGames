@@ -13,14 +13,24 @@ header{
 
 }
 
+.abonar{
+  margin-left: 10px;
+  text-align: center;
+  font-weight: 700;
+}
+
 
 
 
 
 .dolar{
-  margin-left: 32%;
-  margin-top: 8%;
+  margin-left: 48.5%;
+  margin-top: 4.5%;
+  width: 7vw;
+  max-height: 15vh;
 }
+
+
 
 .pictures{
   max-height: 80%;
@@ -28,13 +38,21 @@ header{
 
 .mercadoPago{
   background-color:rgba(0, 0, 0, 0.1);
-  height: 400px;
-  width: 100%;
+
+}
+
+.mercadoPagoDetalle{
+  display: flex;
+  flex-direction: column ;
+  justify-content: space-between;
+
 }
 
 .mp{
+  margin-top: 5%;
   text-align: center;
-  font-size: 35px;
+  width: 20vw;
+  margin-left: 42%;
 }
 
 .descrip {font-size: 16px;
@@ -779,6 +797,32 @@ justify-content: center;}
   width: 50px;
   height: 50px;
 }
+
+.mercadoPagoDetalle{
+  display: flex;
+  flex-direction: row ;
+  justify-content: space-around;
+
+}
+
+.mercadoPago{
+  background-color:rgba(0, 0, 0, 0.1);
+
+}
+.mp{
+  margin-top:0px;
+  width: 20vw;
+  margin-right: 42%;
+}
+
+.dolar{
+  margin-left: 52%;
+  margin-top: 4.5%;
+  width: 7vw;
+  max-height: 15vh;
+}
+
+
 
 
 
