@@ -144,7 +144,7 @@ window.addEventListener("load" , function (){
 
     const name = document.querySelector("#first-name"); 
 
-    name.addEventListener("change", function(event){ 
+    name.addEventListener("keyup", function(event){ 
 
        if (name.value.length <= 3) { 
 
@@ -163,7 +163,7 @@ window.addEventListener("load" , function (){
      })
      const lastName = document.querySelector("#last-name"); 
 
-    lastName.addEventListener("change", function(event){ 
+    lastName.addEventListener("keyup", function(event){ 
  
         if (lastName.value.length <= 3) { 
  
@@ -183,7 +183,7 @@ window.addEventListener("load" , function (){
 
       const password = document.querySelector("#password"); 
 
-    password.addEventListener("change", function(event){ 
+    password.addEventListener("keyup", function(event){ 
  
         if (password.value.length <= 3) { 
  
@@ -199,7 +199,7 @@ window.addEventListener("load" , function (){
 
          const email = document.querySelector("#email"); 
 
-         email.addEventListener("change", function(event){ 
+         email.addEventListener("keyup", function(event){ 
  
         if (email.value.length <= 3) { 
  
