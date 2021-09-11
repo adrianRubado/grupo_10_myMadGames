@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('./partials/head') %>
+
+    <body>
+
+        <%- include('./partials/header') %>
+
+            <main class='purchase'>
+
+                <section class = 'purchase-item'>
+                    <article class=item-purchase>
+
+
+                        <div class='cuando-llega'>
+                            <ul>
+                                <li><label>
+                        <input type="radio" name="payment" value="MP"  >Mercado pago
+                                </label></li>
+                                <li><label>
+                                    <input type="radio" name="payment" value="Efe"  >Efectivo
+                                            </label></li>
+                            </ul>
+
+                        </div>
+
+
+                    </article>
+
+
+
+
+                </section>
+
+                <section class='side-panel panel2'>
+                    <div class='side-details'>
+                        <p class='resumen'>Resumen de compra</p>
+                        <br>
+                        <div class='resumen-container'>
+
+
+                            <p class='resumen-detalle'>Productos(<%=quantity %>)</p>
+                            <p class = 'total-purchase'>
+                                $<%= price %>
+                            </p>
+                        </div>
+
+                        <div class='resumen-container'>
+
+
+                            <p class='resumen-detalle'>Envio</p>
+                            <p class ='total-purchase'>
+                               Gratis
+                            </p>
+                        </div>
+
+                        <br>
+                        <br>
+                        <div class='resumen-container fondi'>
+
+
+                            <p class='resumen-detalle'>Total</p>
+                            <p class = 'total-purchase'>
+                                $<%= price %>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <div class="buttomtotal-chart">
+                <a href='/purchase-detail'>
+                    <button>Continuar</button>
+                </a>
+            </div>
+
+
+    </body>
+    <%- include ('./partials/footer.ejs') %>
+
+</html>

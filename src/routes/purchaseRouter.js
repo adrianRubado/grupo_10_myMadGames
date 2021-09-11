@@ -6,6 +6,7 @@ const authMiddleware = require('../middleware/authMiddleware')
 
 
 router.get ('/',authMiddleware, purchaseController.purchase) ;
+router.get('/payment',authMiddleware,purchaseController.payment)
 
 
 module.exports = router
