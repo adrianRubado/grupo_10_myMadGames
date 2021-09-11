@@ -156,7 +156,7 @@ window.addEventListener("load" , function (){
        
         name.style.border = "5px solid orange "
        } else if(name.value.length>6) { 
-        name.style.border = "5px solid green "}
+        name.style.border = "5px solid #7bfc7b "}
 
 
 
@@ -175,7 +175,7 @@ window.addEventListener("load" , function (){
         
          lastName.style.border = "5px solid orange "
         } else if(lastName.value.length>6) { 
-         lastName.style.border = "5px solid green "}
+         lastName.style.border = "5px solid #7bfc7b"}
  
  
  
@@ -195,7 +195,7 @@ window.addEventListener("load" , function (){
         
             password.style.border = "5px solid orange "
         } else if(password.value.length>6) { 
-            password.style.border = "5px solid green "}
+            password.style.border = "5px solid #7bfc7b "}
 
          const email = document.querySelector("#email"); 
 
@@ -209,9 +209,9 @@ window.addEventListener("load" , function (){
  
  
         
-            email.style.border = "5px solid orange "
+            email.style.border = "5px solid orange"
         } else if(email.value.length>6) { 
-            email.style.border = "5px solid green "}
+            email.style.border = "5px solid #7bfc7b"}
  
  
  
