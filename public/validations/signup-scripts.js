@@ -137,6 +137,101 @@ function setSuccesFor(input){
 })
 
 
+// cambio de color al completar form
+
+window.addEventListener("load" , function (){
+
+
+    const name = document.querySelector("#first-name"); 
+
+    name.addEventListener("keyup", function(event){ 
+
+       if (name.value.length <= 3) { 
+
+          name.style.border = "5px solid red "
+
+       }else if((name.value.length <= 6) && (name.value.length>= 3)) { 
+
+
+       
+        name.style.border = "5px solid orange "
+       } else if(name.value.length>6) { 
+        name.style.border = "5px solid #7bfc7b "}
+
+
+
+     })
+     const lastName = document.querySelector("#last-name"); 
+
+    lastName.addEventListener("keyup", function(event){ 
+ 
+        if (lastName.value.length <= 3) { 
+ 
+           lastName.style.border = "5px solid red "
+ 
+        }else if((lastName.value.length <= 6) && (lastName.value.length>= 3)) { 
+ 
+ 
+        
+         lastName.style.border = "5px solid orange "
+        } else if(lastName.value.length>6) { 
+         lastName.style.border = "5px solid #7bfc7b"}
+ 
+ 
+ 
+      })
+
+      const password = document.querySelector("#password"); 
+
+    password.addEventListener("keyup", function(event){ 
+ 
+        if (password.value.length <= 3) { 
+ 
+            password.style.border = "5px solid red "
+ 
+        }else if((password.value.length <= 6) && (password.value.length>= 3)) { 
+ 
+ 
+        
+            password.style.border = "5px solid orange "
+        } else if(password.value.length>6) { 
+            password.style.border = "5px solid #7bfc7b "}
+
+         const email = document.querySelector("#email"); 
+
+         email.addEventListener("keyup", function(event){ 
+ 
+        if (email.value.length <= 3) { 
+ 
+            email.style.border = "5px solid red "
+ 
+        }else if((email.value.length <= 6) && (email.value.length>= 3)) { 
+ 
+ 
+        
+            email.style.border = "5px solid orange"
+        } else if(email.value.length>6) { 
+            email.style.border = "5px solid #7bfc7b"}
+ 
+ 
+ 
+      })
+ 
+ 
+ 
+ 
+      })
+ 
+ 
+
+
+
+
+
+
+} )
+
+
 
 
 
