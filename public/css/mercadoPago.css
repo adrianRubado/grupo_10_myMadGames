@@ -1,0 +1,39 @@
+body{
+    height: 100%;
+}
+
+.success{
+
+    background-color: rgb(85, 182, 85);
+
+}
+
+.failure{
+    background-color: rgb(219, 54, 4);
+}
+
+.pending{
+    background-color: rgb(206, 192, 6);
+}
+
+
+.success p {
+    font-size: xx-large;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+}
+
+.failure p {
+    font-size: large;
+    font-weight: 700;
+    color: white;
+    text-align: center;
+}
+
+.pending p {
+    font-size: large;
+    font-weight: 700;
+    color: black;
+    text-align: center;
+}

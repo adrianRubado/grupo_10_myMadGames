@@ -1,4 +1,5 @@
 const db = require("../../database/models");
+const mercadopago = require ('mercadopago');
 const purchaseController = {
 
     purchase: async(req,res) => {
@@ -22,7 +23,8 @@ const purchaseController = {
             })
             games.push(g)
             cantidad += cart[i].quantity
-            precio += g.price
+            precio += 1
+            console.log(precio)
         }
 
 
@@ -49,6 +51,7 @@ const purchaseController = {
     payment : async(req,res) =>{
         try {
             const games = []
+            const detail = []
             let g = null
             let cantidad = 0
             let precio = 0
@@ -66,9 +69,18 @@ const purchaseController = {
                     }
                 })
                 games.push(g)
+                let d = {
+                    title : g.name,
+                    unit_price : 1,
+                    quantity : 1
+
+                }
+                detail.push(d)
                 cantidad += cart[i].quantity
-                precio += g.price
+                precio += 1
             }
+
+
 
 
             const viewData = {
@@ -76,8 +88,13 @@ const purchaseController = {
                 cart : cart,
                 games : games,
                 quantity : cantidad,
-                price : precio
+                price : precio,
+
             }
+
+            req.session.purchaseDetail = detail
+
+            console.log(detail)
 
 
 
@@ -89,7 +106,59 @@ const purchaseController = {
                 res.json({errors : error.message})
 
             }
+    },
+
+    pay : (req,res) =>{
+        const payment = req.body.payment
+        if(payment === 'MP'){
+            res.redirect("/purchase-detail/checkout");
+        }
+
+        if(payment === 'Efe'){
+            res.send('sape')
+        }
+
+
+
+
+
+
+    },
+
+    checkout :  (req,res) =>{
+
+         mercadopago.configure({
+            access_token: process.env.ACCESS_TOKEN,
+
+          });
+
+          let preference = {
+            items: req.session.purchaseDetail,
+                // ...
+                "back_urls": {
+                      "success": "http://localhost:3002/mp/success",
+                      "failure": "http://localhost:3002/mp/failure",
+                      "pending": "http://localhost:3002/mp/pending"
+                  },
+                  "auto_return": "approved",
+                // ...
+
+          };
+
+          mercadopago.preferences.create(preference)
+          .then(function(r){
+         res.redirect(r.response.sandbox_init_point)
+
+
+
+
+          }).catch(function(error){
+            console.log(error);
+          });
     }
+
+
+
 }
 
 

@@ -6,7 +6,7 @@
     <body>
 
         <%- include('./partials/header') %>
-
+        <form action="/purchase-detail/payment" method="POST">
             <main class='purchase'>
 
                 <section class = 'purchase-item'>
@@ -68,12 +68,12 @@
                     </div>
                 </section>
             </main>
-
             <div class="buttomtotal-chart">
-                <a href='/purchase-detail'>
-                    <button>Continuar</button>
+                <a href='/purchase-detail/payment'>
+                    <button type = 'submit'>Continuar</button>
                 </a>
             </div>
+        </form>
 
 
     </body>
