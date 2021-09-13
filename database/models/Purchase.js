@@ -4,7 +4,7 @@ const Game = require("./game")
 module.exports = (sequelize, DataTypes) => {
 
 let cols = {
-              purchase_id : { type: DataTypes.INTEGER,
+              id : { type: DataTypes.INTEGER,
                 autoIncrement: true,
                   primaryKey:true},
 
@@ -23,7 +23,7 @@ let cols = {
              };
 
 
-        let config = {tableName: "Purchase"};
+        let config = {tableName: "Purchases",timestamps : false};
 
         const Purchase =  sequelize.define("Purchase", cols, config);
         Purchase.associate=function (models) {

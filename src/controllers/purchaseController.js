@@ -23,8 +23,8 @@ const purchaseController = {
             })
             games.push(g)
             cantidad += cart[i].quantity
-            precio += 1
-            console.log(precio)
+            precio += g.price * cart[i].quantity
+
         }
 
 
@@ -71,13 +71,14 @@ const purchaseController = {
                 games.push(g)
                 let d = {
                     title : g.name,
-                    unit_price : 1,
-                    quantity : 1
+                    unit_price : g.price,
+                    quantity : cart[i].quantity,
+                    id : g.id
 
                 }
                 detail.push(d)
                 cantidad += cart[i].quantity
-                precio += 1
+                precio += g.price * cart[i].quantity
             }
 
 
@@ -93,6 +94,7 @@ const purchaseController = {
             }
 
             req.session.purchaseDetail = detail
+            req.session.total = precio
 
             console.log(detail)
 

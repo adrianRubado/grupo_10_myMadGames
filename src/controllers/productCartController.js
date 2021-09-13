@@ -30,6 +30,14 @@ const db = require('../../database/models')
             }
 
             return res.render('product-cart',viewData)
+        }else{
+
+            const viewData = {
+                cart : cart,
+                games : []
+
+            }
+            return res.render('product-cart',viewData)
         }
 
 
@@ -67,6 +75,10 @@ const db = require('../../database/models')
     }
 
     res.redirect(`/products/${parseInt(itemToAdd[1])}`)
+    },
+
+    update : (req,res) =>{
+
     }
 }
 

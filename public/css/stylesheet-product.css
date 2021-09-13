@@ -9,6 +9,44 @@ header{
 
 
 }
+
+.mas{
+  margin-bottom: 10px;
+  color: black;
+  background-color: rgb(209, 209, 8) ;
+}
+
+.menos{
+  margin-bottom: 10px;
+  color: white;
+  background-color: red;
+}
+
+.number{
+  font-weight: 600;
+}
+
+.price{
+
+}
+
+
+
+.cantidadCart{
+  padding-top: 15px;
+  border: 1px solid grey;
+  display: flex;
+  width: 15%;
+  justify-content: space-evenly;
+}
+
+.empty-cart{
+  margin: auto;
+  font-weight: 800;
+  font-style: oblique;
+  color: rgb(110, 109, 109);
+  font-size: large;
+}
 .logo{
   margin-top: 1px;
   margin-left: 15px;

@@ -1,13 +1,33 @@
 const db = require('../../database/models')
+const productsController = require('./productsController')
 
 const mpController = {
 
     success: async(req,res) => {
+
+
+
         const purchase = await db.Purchase.create({
             UserId : req.session.user.id,
             status : 'Llega el lunes',
-            total : 'totti'
+            total : req.session.total
         })
+
+        const products = req.session.purchaseDetail
+        for(let i = 0;i<products.length;i++){
+            await db.Product.create({
+                PurchaseId : purchase.id,
+                GameId : products[i].id,
+                quantity : products[i].quantity,
+                price : products[i].unit_price
+
+            })
+        }
+
+        delete req.session.total
+        delete req.session.purchaseDetail
+
+
 
 
         await db.Cart.destroy({
