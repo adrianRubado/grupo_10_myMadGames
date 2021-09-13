@@ -10,7 +10,7 @@ const mpController = {
 },
     failure : (req,res) =>{
         const viewData = {
-            message : 'Error de pago con el mensaje "Rechazado" o "Su banco ha rechazado el intento de autorizar su tarjeta',
+            message : 'Error de pago con el mensaje "Rechazado"',
             color : 'failure'
         }
         res.render('mercadopago',viewData)
