@@ -10,7 +10,7 @@ window.addEventListener('load', function () {
     //Definimos un array con los errores a reflejar
 
 
-    let errors = [];
+    let count = 0;
 
 
 
@@ -26,13 +26,19 @@ window.addEventListener('load', function () {
 
 
 
-    formsSignup.addEventListener('submit', function (e){
-        e.preventDefault();
+    formsSignup.addEventListener('submit',  function (e){
+        
+       
 
         control();
-    })
+        
+        console.log(count) ;
+        if (count > 0) {
+            e.preventDefault();    
+        }
+    
 
-        function control()   {
+        async function control()   {
             
             const firstNameValue = firstName.value.trim();
             const lastNameValue = lastName.value.trim();
@@ -42,6 +48,7 @@ window.addEventListener('load', function () {
             const bdayValue = birthDay.value;
     
             function setErrorsFor(input, msg) {
+                 count +=1
                 const formular = input.parentElement;
                 const small = formular.querySelector('small');
                 
@@ -84,9 +91,6 @@ window.addEventListener('load', function () {
              }
 
 
-             function isEmaill(email) {
-                return /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(email)
-             }
 
 
              if(emailValue===''){
@@ -110,20 +114,10 @@ window.addEventListener('load', function () {
              }else {
                  setSuccesFor(password)
              }
-        
-        
-        
-        
-        
-        
-        }
-
-        email.addEventListener('change', async function (e) {
-            
-            const data = {
-              email: email.value
-            }
-            try {
+             try {
+                const data = {
+                    email: email.value
+                  }
                 const res = await axios.post('http://localhost:3002/user/sign-up/check', {data});
                 const emailrepeat = (res.data.error);
 
@@ -135,6 +129,8 @@ window.addEventListener('load', function () {
                     div.classList.add ('error');
                     let small=email.parentElement.querySelector('small')
                     small.innerHTML ='Este email ya se encuentra en uso';
+                    small.style.visibility='visible'
+                    small.style.color ='red'
                     
                     
    
@@ -146,6 +142,63 @@ window.addEventListener('load', function () {
                     div.classList.add ('success');
                     let small = email.parentElement.querySelector('small');
                     small.innerHTML ='';
+                    small.style.visibility = 'hidden' ;
+                    
+                    
+                    
+                    
+                }
+                
+            } catch (error) {
+                console.log(error.message)
+                
+            }
+
+            
+
+        
+        
+        
+        
+        
+        
+        }
+        
+
+    })
+
+        email.addEventListener('change', async function (e) {
+            
+            
+            try {
+                const data = {
+                    email: email.value
+                  }
+                const res = await axios.post('http://localhost:3002/user/sign-up/check', {data});
+                const emailrepeat = (res.data.error);
+
+                if (emailrepeat){
+
+                    let div =email.parentElement;
+                    div.querySelector('.form-controle');
+                    div.classList.remove ('success');
+                    div.classList.add ('error');
+                    let small=email.parentElement.querySelector('small')
+                    small.innerHTML ='Este email ya se encuentra en uso';
+                    small.style.visibility='visible'
+                    small.style.color ='red'
+                    
+                    
+   
+   
+                }else{
+                    let div =email.parentElement;
+                    div.querySelector('.form-controle');
+                    div.classList.remove('error');
+                    div.classList.add ('success');
+                    let small = email.parentElement.querySelector('small');
+                    small.innerHTML ='';
+                    small.style.visibility = 'hidden' ;
                     
                     
                     
