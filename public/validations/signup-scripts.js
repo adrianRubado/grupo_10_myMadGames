@@ -31,20 +31,22 @@ function setErrorsFor(input,msg){
     const formular=input.parentElement;
     const small =formular.querySelector('small');
     small.innerText = msg;
-    formular.className= 'formularySignup error';
-
-    
+    small.style.visibility = 'visible';
+    small.style.color ='#e7412e';
+    formular.classList.add= 'formularySignup error'; 
 }
+
 function setSuccesFor(input){ 
     const formular=input.parentElement;
     const small =formular.querySelector('small');
-   
-    formular.className= 'formularySignup succes';
+    small.style.visibility = 'hidden'
+    formular.classList.remove= 'formularySignup error';
+    formular.classList.add= 'formularySignup succes';
 
     
 }
 
-    if(firstName.value.trim() ===''){
+    if(firstName.value ==''){
        setErrorsFor(firstName,'El usuario está vacio')
     }else{
         setSuccesFor(firstName)
@@ -58,7 +60,7 @@ function setSuccesFor(input){
     }
 
 //Apellido
-    if(lastName.value.trim ==''){
+    if(lastName.value ==''){
         setErrorsFor (lastName,'El Apellido está vacío');
     }else{
         setSuccesFor(lastName) ;

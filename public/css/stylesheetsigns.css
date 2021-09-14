@@ -300,10 +300,10 @@ height: 15%;}
               display: block;
               width: 100%;
             }                                                                     /* Aca son las implementaciones js */
-            .formularySignup .succes div input{
+            .formularySignup .succes {
               border:  2px solid #2ecc71;
             }
-            .formularySignup .error div input{                           
+            .formularySignup .error {                           
               border:  2px solid #e7412e;
             }
             .formularySignup .succes .fa-check-circle {
