@@ -1,5 +1,7 @@
 
-
+*{
+  box-sizing: border-box;
+}
 
 
   .copy-header{
@@ -285,46 +287,46 @@ height: 15%;}
               width: 20vw;
             }
             
-            .formularySignup div{
+            .form-controle{
               margin-bottom: 10px;
               padding-bottom: 20px;                  /* ESTO CAMBIA EN FUNCION A LOS ERRORES */
-              position: relative;
+              height: auto;
             }
-            .formularySignup label {
+            .form-controle label {
               display: inline-block;
               margin-bottom: 5px;
             }
-            .formularySignup div input{
+            .form-controle  input{
               border: 2px  solid  rgb(45, 90, 236);
               
               display: block;
               width: 100%;
             }                                                                     /* Aca son las implementaciones js */
-            .formularySignup .succes {
+            .form-controle.success input {
               border:  2px solid #2ecc71;
             }
-            .formularySignup .error {                           
+            .form-controle.error input {                           
               border:  2px solid #e7412e;
             }
-            .formularySignup .succes .fa-check-circle {
+            .form-controle.success i.fa-check-circle {
               visibility: visible;
                color:#2ecc71;
              }
-             .formularySignup .error .fa-exlamation-circle {
+             .form-controle.error i.fa-exclamation-circle {
                visibility: visible;
               color: #e7412e;
             }
-            .formularySignup div i{
-              position: absolute;
-              bottom: 45px;
-              right: 15px;
+            .form-controle  i{
+              position: relative;
+              bottom: 22px;
+              left: 142px;
               visibility: hidden;
 
             }
-            .formularySignup small {
+            .form-controle small {
               visibility: hidden;
             }
-            .formularySignup small .errormsg{
+            .form-controle.error small {
               color: #e7412e;
               visibility: visible;
 
