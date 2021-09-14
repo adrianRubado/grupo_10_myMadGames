@@ -117,6 +117,49 @@ window.addEventListener('load', function () {
         
         
         }
+
+        email.addEventListener('change', async function (e) {
+            
+            const data = {
+              email: email.value
+            }
+            try {
+                const res = await axios.post('http://localhost:3002/user/sign-up/check', {data});
+                const emailrepeat = (res.data.error);
+
+                if (emailrepeat){
+
+                    let div =email.parentElement;
+                    div.querySelector('.form-controle');
+                    div.classList.remove ('success');
+                    div.classList.add ('error');
+                    let small=email.parentElement.querySelector('small')
+                    small.innerHTML ='Este email ya se encuentra en uso';
+                    
+                    
+   
+   
+                }else{
+                    let div =email.parentElement;
+                    div.querySelector('.form-controle');
+                    div.classList.remove('error');
+                    div.classList.add ('success');
+                    let small = email.parentElement.querySelector('small');
+                    small.innerHTML ='';
+                    
+                    
+                    
+                    
+                }
+                
+            } catch (error) {
+                console.log(error.message)
+                
+            }
+
+           
+
+        })
         
         
 
