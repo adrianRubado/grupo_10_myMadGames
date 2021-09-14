@@ -77,7 +77,25 @@ const db = require('../../database/models')
     res.redirect(`/products/${parseInt(itemToAdd[1])}`)
     },
 
-    update : (req,res) =>{
+    update : async (req,res) =>{
+        const {gameId,price,quantity,userId} = req.body.data
+
+       try {
+        await db.Cart.update({
+            UserId : userId,
+            GameId : gameId,
+            quantity : quantity,
+            price : price
+
+        },{
+            where:{
+                UserId :userId
+            }})
+        res.status(200).json('cart updated')
+       } catch (error) {
+        res.status(500).send('Server Error')
+       }
+
 
     }
 }

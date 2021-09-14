@@ -26,9 +26,14 @@ header{
   font-weight: 600;
 }
 
-.price{
-
+.gameId{
+  display : none
 }
+
+.userId{
+  display : none
+}
+
 
 
 
@@ -232,7 +237,7 @@ background-color:#ea4c89
 
 
 
-.juegos-chart{
+.juegosChart{
   padding: 15px;
   display: flex;
   justify-content: space-around;
@@ -354,7 +359,7 @@ background-color:#ea4c89
 
 
     }
-    .juegos-chart{
+    .juegosChart{
         margin: 15px;
         display: flex;
         justify-content: space-around;
