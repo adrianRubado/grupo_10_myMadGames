@@ -54,12 +54,13 @@
         </div>
         <div class="iconos">
             <i class="fas fa-dollar-sign"><span class="tip"><%= game.price  %> </span></i>
-            <!-- <i class="fas fa-shopping-bag"><span class="tip">- 1 + <br> Comprar </span></i> -->
+            
             
             <div class="container99">
-                <button class="voton quitar">quitar</button>
-                <span id="valor">0</span>
-                <button class="voton agregar">agregar</button>
+                <button class="voton quitar">-</button>
+                <span id="valor">1</span>
+                <button class="voton agregar">+</button>
+                <i class="fas fa-shopping-bag"><span class="tip"></span></i>
                 <h4>Comprar</h4>
             </div>
 
@@ -106,7 +107,7 @@
 
     <%- include('./partials/footer.ejs')  %>
 
-<script src="../../public/js/counter.js"></script>
+<script src="../js/counter.js"></script>
 </body>
 
 </html>

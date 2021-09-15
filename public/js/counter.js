@@ -1,7 +1,7 @@
 window.addEventListener ("load", function() {
 
 console.log('hola')
-let contador = 0;
+let contador = 1;
 
 const valor = document.querySelector('#valor');
 
@@ -12,8 +12,8 @@ botones.forEach(boton => {
         
         const estilos = e.currentTarget.classList;
 
-        if (estilos.contains('quitar')) {
-            contador--;
+                if (estilos.contains('quitar')) {
+            if (contador>1){contador--;}
         } 
         else if (estilos.contains('agregar')) {
             contador++;
