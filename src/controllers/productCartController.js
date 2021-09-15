@@ -89,7 +89,8 @@ const db = require('../../database/models')
 
         },{
             where:{
-                UserId :userId
+                UserId :userId,
+                GameId : gameId
             }})
         res.status(200).json('cart updated')
        } catch (error) {
