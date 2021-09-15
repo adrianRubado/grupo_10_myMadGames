@@ -12,8 +12,10 @@ botones.forEach(boton => {
         
         const estilos = e.currentTarget.classList;
 
-                if (estilos.contains('quitar')) {
-            if (contador>1){contador--;}
+        if (estilos.contains('quitar')) {
+            if (contador > 1){
+                    contador--;
+                }
         } 
         else if (estilos.contains('agregar')) {
             contador++;
