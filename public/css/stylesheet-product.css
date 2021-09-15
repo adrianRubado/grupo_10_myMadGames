@@ -9,6 +9,49 @@ header{
 
 
 }
+
+.mas{
+  margin-bottom: 10px;
+  color: black;
+  background-color: rgb(209, 209, 8) ;
+}
+
+.menos{
+  margin-bottom: 10px;
+  color: white;
+  background-color: red;
+}
+
+.number{
+  font-weight: 600;
+}
+
+.gameId{
+  display : none
+}
+
+.userId{
+  display : none
+}
+
+
+
+
+.cantidadCart{
+  padding-top: 15px;
+  border: 1px solid grey;
+  display: flex;
+  width: 15%;
+  justify-content: space-evenly;
+}
+
+.empty-cart{
+  margin: auto;
+  font-weight: 800;
+  font-style: oblique;
+  color: rgb(110, 109, 109);
+  font-size: large;
+}
 .logo{
   margin-top: 1px;
   margin-left: 15px;
@@ -194,7 +237,7 @@ background-color:#ea4c89
 
 
 
-.juegos-chart{
+.juegosChart{
   padding: 15px;
   display: flex;
   justify-content: space-around;
@@ -213,8 +256,13 @@ background-color:#ea4c89
   flex-direction: column;
   justify-content: flex-end;
   text-align: center;
-  margin: auto
+  margin: auto;
+  background-color: rgb(224, 224, 224);
 
+}
+
+.otroColor{
+  background-color: white;
 }
 .buttomtotal-chart button{
 
@@ -315,7 +363,7 @@ background-color:#ea4c89
 
 
     }
-    .juegos-chart{
+    .juegosChart{
         margin: 15px;
         display: flex;
         justify-content: space-around;

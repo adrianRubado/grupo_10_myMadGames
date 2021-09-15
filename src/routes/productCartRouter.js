@@ -5,6 +5,7 @@ const authMiddleware = require('../middleware/authMiddleware')
 
 
 router.get('/',authMiddleware, pcController.carrito) ;
+router.put('/',authMiddleware,pcController.update)
 router.post('/',authMiddleware,pcController.addItem)
 
 

@@ -28,40 +28,62 @@
           </div>
 
 
-          <div class="contenedorInputsSignInuno">
+          <div class="formularySignup">
 
-            <div class="contenedorNombresSignUp">
+          <div class="form-controle">
 
-              <label for="first-name" class="labelSignUp"> Nombre
-                <input type="name" id="first-name" name="firstName" placeholder="First Name "></label>
+          <label for="first-name" > Nombre</label>
+                <input type="name" id="first-name" name="firstName" placeholder="Nombre ">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
 
-              <label for="last-name" class="labelSignUp">Apellido
-                <input type="name" id="last-name" name="lastName" placeholder="Last Name "></label>
+              <div class="form-controle">
 
+              <label for="last-name error" >Apellido</label>
+                <input type="name" id="last-name" name="lastName" placeholder="Last Name ">
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+              </div>
+
+
+            <div class="form-controle">
+
+              <label for="password" > Contraseña</label>
+                <input type="password" id="password" name="password" placeholder="Password"> </input>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
+
+              </div>
+
+              <div class="form-controle">
+
+              <label for="email" >Email</label>
+
+                <input type="email" id="email" name="email" placeholder="Your Email"> </input>
+                <i class="fas fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <small>Error message</small>
             </div>
 
-            <div class="contenedorPassyMail">
+            <div class="form-controle">
+              <label for="bday" >Fecha De Nacimiento</label>
+                <input type="date" id="bday" name="bday" min="1930-01-01" max="2003-01-01"> </input>
+              </div>
 
-              <label for="email" class="labelSignUp">Email
+            <div class="form-controle">
+            <label for="imagen" >Cover foto</label>
+            <input type="file" id="botonCoverPhoto" name="image" accept=".jpg, .png">
+            <i class="fas fa-check-circle"></i>
+            <i class="fas fa-exclamation-circle"></i>
+            <small>Error message</small>
+          </div>
 
-              <input type="email" id="email" name="email" placeholder="Your Email"> </input></label>
+        </div>
 
-              <label for="password" class="labelSignUp"> Contraseña
-
-              <input type="password" id="password" name="password" placeholder="Password"> </input></label>
-
-            </div>
-
-            <div class="contenedorBdyGeneros">
-            <div class="contenedorBday">
-
-              <label for="bday" >Fecha De Nacimiento
-
-                <input type="date" id="bday" name="bday" min="1930-01-01" max="2003-01-01"> </input></label>
-
-            </div>
-            <label for="imagen" class="labelSignUp">Cover foto</label>
-            <input type="file" id="botonCoverPhoto" name="image" accept=".jpg, .png"> </div>
 
 
           <button type="submit"  class="botonSignUp"> <img src="/images/logo1.png" width="45px" height="45px" textalign = 'center'/></button>
@@ -71,6 +93,17 @@
       </main>
 
       <%- include('./partials/footer.ejs') %>
+      <div >
+        <ul class="errors-signup">
+
+        </ul>
+        <!-- errrors -->
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script src="/validations/signup-scripts.js">
+
+
+      </script>
 
   </body>
 

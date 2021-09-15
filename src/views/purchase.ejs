@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('./partials/head') %>
+
+    <body>
+
+        <%- include('./partials/header') %>
+            <main class='purchase'>
+                <section class = 'purchase-item'>
+                    <h3 class = 'opciones'>Opciones de envio a </h3>
+                    <article class='item-purchase envioo' >
+
+                        <img src="/images/location.png" alt="iconitoDeUbicacion" width="40px" class='iconitoDeUbicacion'>
+                        <div class='cuando-llega'>
+
+                            <p class='llega'>Moldes 1234</p>
+                            <div class='envio'>
+                                <p class='free azul'>editar domicilio</p>
+                                <p>Unico envio disponible</p>
+                            </div>
+                        </div>
+
+
+                        </div>
+                    </article>
+                    <br>
+                    <br>
+                    <% for( let i=0; i < cart.length; i++ ) { %>
+                        <article class=item-purchase>
+
+
+                            <div class='cuando-llega'>
+                                <p class='llega'>Llega hoy</p>
+                                <div class='envio'>
+                                    <p class='free'>gratis</p>
+                                    <p>Unico envio disponible</p>
+                                </div>
+                            </div>
+
+                            <div class='item-detail'>
+                                <img src=<%=games[i].image %> class = 'purchase-image'>
+                                <div class='purchase-game-detail'>
+                                    <h5>
+                                        <%= games[i].name %>
+                                    </h5>
+                                    <p>cantidad : <%= cart[i].quantity %>
+                                    </p>
+                                    <p>$ <%= games[i].price %> c/u </p>
+                                </div>
+                            </div>
+                        </article>
+                        <br>
+                        <% } %>
+
+
+
+
+                </section>
+
+                <section class=side-panel>
+                    <div class='side-details'>
+                        <p class='resumen'>Resumen de compra</p>
+                        <br>
+                        <div class='resumen-container'>
+
+
+                            <p class='resumen-detalle'>Productos(<%=quantity %>)</p>
+                            <p class = 'total-purchase'>
+                                $<%= price %>
+                            </p>
+                        </div>
+
+                        <div class='resumen-container'>
+
+
+                            <p class='resumen-detalle'>Envio</p>
+                            <p class ='total-purchase'>
+                               Gratis
+                            </p>
+                        </div>
+
+                        <br>
+                        <br>
+                        <div class='resumen-container fondi'>
+
+
+                            <p class='resumen-detalle'>Total</p>
+                            <p class = 'total-purchase'>
+                                $<%= price %>
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <div class="buttomtotal-chart">
+                <a href='/purchase-detail/payment'>
+                    <button>Continuar</button>
+                </a>
+            </div>
+
+
+    </body>
+    <%- include ('./partials/footer.ejs') %>
+
+</html>

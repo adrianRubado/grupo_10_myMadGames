@@ -15,7 +15,7 @@
 
     <h2 id="tituloCreate">Alta de juego</h2>
 
-    <form class="signup" action="/products" enctype="multipart/form-data" method="POST">
+    <form class="signup" id="formularioCreateGame" action="/products" enctype="multipart/form-data" method="POST">
 
            <div class="general">
                <div class="nomypre">
@@ -108,6 +108,7 @@
         <button type="submit" class="botonJuego" id="botones-formularios-cg">Registrar juego</button>
     </div>
         <br>
+        <ul class="errors-createGame"></ul>
 
 
 
@@ -121,7 +122,7 @@
 <%- include ('./partials/footer.ejs') %>
 
 
-
+<script src="../validations/createGame-scripts.js"></script>
 </body>
 
 </html>

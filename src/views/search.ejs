@@ -7,27 +7,27 @@
   <%- include('./partials/header') %>
 <div class="main-search">
 
-<div class="filter_navbar"> 
+<div class="filter_navbar">
 
   <h2 class="filterTitle">Filtrar Juegos</h2>
 
 
-  <div class="price_Filter"> 
+  <div class="price_Filter">
     <label for="priceRange"> Price</label>
     <input type="range" name="priceRange"> </div>
     <button class="button_filter">Filtro
       <i class="fas fa-filter"></i></button>
-<div class="filters-Check-Box"> 
-  
-<ul>  
-  <%genres.forEach(element => {%> <li> <input type="checkbox"   class="genreToCheck"><%= element.name %></input></li>     
+<div class="filters-Check-Box">
+
+<ul>
+  <%genres.forEach(element => {%> <li> <input type="checkbox"   class="genreToCheck"><%= element.name %></input></li>
     <% }) %>
 
-</ul>  
+</ul>
 
-<ul> 
+<ul>
 
-  <%platform.forEach(element => {%> <li> <input type="checkbox"  class="platformToCheck"><%= element.name %></input></li>     
+  <%platform.forEach(element => {%> <li> <input type="checkbox"  class="platformToCheck"><%= element.name %></input></li>
   <% }) %>
 
 </ul>
@@ -44,30 +44,32 @@
 </div>
 <div class="main-Search">
 <h1 id="title-search">My Mad Games</h1>
-<div class="games-conteiner">   
+<div class="games-conteiner">
 
 
-  <%games.forEach(element => {%> 
-   
+  <%games.forEach(element => {%>
+
   <article class="individual-game-container">
-  
-    
-     
 
-    <h3 class="game-name"> <%= element.name%></h3>
-    
+
+
+
+
+
      <div class="image-containe">
-      <img src = <%=element.image %>   alt="game" width="160px"  class="image-game-cover">
+      <a href="/products/<%=element.id%>"> <img src = <%=element.image %>   alt="game" width="160px"  class="image-game-cover"></a>
 </div>
-<div class="cont-price-buttons">  
+<div class="cont-price-buttons">
+   <a href="/products/<%=element.id%>"> <h3 class="game-name"> <%= element.name%></h3></a>
     <h4 class="game-price">$<%= element.price %> </h4>
-  
 
-    <div class="buttons-article-container">
+
+    <!-- <div class="buttons-article-container">
     <a buy-button-search><i class="fas fa-shopping-cart cart-article-search">Agregar</i> </a><br> <a class="buy-button-search" >Comprar</a>
+  </div> -->
   </div>
-  </div>
-  </article>  
+  </article>
+
   <% }) %>
 
 
@@ -83,4 +85,3 @@
   </html>
 
 
-  
