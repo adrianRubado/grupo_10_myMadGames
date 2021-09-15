@@ -1,3 +1,5 @@
+window.addEventListener ("load", function() {
+
 console.log('hola')
 let contador = 0;
 
@@ -19,4 +21,4 @@ botones.forEach(boton => {
         valor.textContent = contador;
     })
 })
-
+})
