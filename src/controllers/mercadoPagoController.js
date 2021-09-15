@@ -38,7 +38,7 @@ const mpController = {
 
         const viewData = {
             message : 'Gracias por su compra!!',
-            color : 'success'
+            color : 'successs'
 
         }
         res.render('mercadopago',viewData)
