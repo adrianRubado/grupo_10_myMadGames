@@ -12,7 +12,7 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(240, 239, 239);
+    background-color: rgb(214, 214, 214);
     margin: 0;
     margin-top: 0;
 }
@@ -453,7 +453,7 @@ article{
 }
 @media (min-width: 768px){
     body{
-    background-color: rgb(208, 216, 208);
+    background-color: rgb(214, 214, 214);
     }
 
 
