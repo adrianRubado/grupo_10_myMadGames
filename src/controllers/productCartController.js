@@ -7,7 +7,7 @@ const db = require('../../database/models')
     carrito: async(req,res) => {
         const cart = await db.Cart.findAll({
             where: {
-                UserId : req.session.user.id,
+                UserId : req.session.user.id
 
             }
 
