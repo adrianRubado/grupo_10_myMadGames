@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2021 at 10:09 PM
+-- Generation Time: Sep 15, 2021 at 08:52 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -42,11 +42,10 @@ CREATE TABLE `carts` (
 --
 
 INSERT INTO `carts` (`id`, `UserId`, `GameId`, `quantity`, `price`, `created_at`, `updated_at`) VALUES
-(3, 21, 5, 14, 126000, '2021-08-31 13:48:41', '2021-08-31 13:48:41'),
-(6, 21, 14, 7, 42000, '2021-09-01 03:52:24', '2021-09-01 03:52:24'),
-(7, 18, 15, 7, 49000, '2021-09-01 04:09:00', '2021-09-01 04:09:00'),
-(8, 18, 5, 7, 63000, '2021-09-01 04:09:15', '2021-09-01 04:09:15'),
-(9, 21, 15, 7, 49000, '2021-09-04 03:15:31', '2021-09-04 03:15:31');
+(14, 21, 19, 9, 135000, '2021-09-14 20:45:34', '2021-09-14 20:45:34'),
+(18, 21, 22, 9, 54000, '2021-09-15 13:42:41', '2021-09-15 13:42:41'),
+(19, 23, 19, 5, 75000, '2021-09-15 18:34:17', '2021-09-15 18:34:17'),
+(20, 23, 22, 4, 24000, '2021-09-15 18:35:03', '2021-09-15 18:35:03');
 
 -- --------------------------------------------------------
 
@@ -164,14 +163,25 @@ INSERT INTO `platforms` (`id`, `name`, `created_at`, `updated_at`) VALUES
 --
 
 CREATE TABLE `products` (
-  `product_id` int(11) NOT NULL,
-  `purchase_id` int(11) NOT NULL,
-  `game_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
+  `PurchaseId` int(11) NOT NULL,
+  `GameId` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
   `price` double NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`id`, `PurchaseId`, `GameId`, `quantity`, `price`, `created_at`, `updated_at`) VALUES
+(5, 2, 5, 1, 9000, '2021-09-13 13:43:47', '2021-09-13 13:43:47'),
+(6, 2, 14, 1, 6000, '2021-09-13 13:43:47', '2021-09-13 13:43:47'),
+(7, 2, 15, 1, 7000, '2021-09-13 13:43:47', '2021-09-13 13:43:47'),
+(8, 2, 19, 1, 15000, '2021-09-13 13:43:47', '2021-09-13 13:43:47'),
+(9, 3, 19, 7, 15000, '2021-09-13 22:05:41', '2021-09-13 22:05:41');
 
 -- --------------------------------------------------------
 
@@ -180,13 +190,21 @@ CREATE TABLE `products` (
 --
 
 CREATE TABLE `purchases` (
-  `purchase_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
+  `UserId` int(11) NOT NULL,
   `status` int(11) NOT NULL,
   `total` double NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `purchases`
+--
+
+INSERT INTO `purchases` (`id`, `UserId`, `status`, `total`, `created_at`, `updated_at`) VALUES
+(2, 21, 0, 37000, '2021-09-13 13:43:47', '2021-09-13 13:43:47'),
+(3, 21, 0, 105000, '2021-09-13 22:05:41', '2021-09-13 22:05:41');
 
 -- --------------------------------------------------------
 
@@ -234,7 +252,9 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `password`, `email`, `bday`, `image`, `RoleId`, `created_at`, `updated_at`) VALUES
 (18, 'Adrian', 'Rubado', '$2a$10$NqUSdoT8MDzi4EfBaIx8SeTG8spjCXeEf5AIncAxfyt0/gwUPux22', 'adrianrubado19@gmail.com', '2002-12-30', '/images/Blue_Argentine_Ford_Fairlane.jpg', 1, '2021-08-30 20:05:49', '2021-08-30 20:05:49'),
-(21, 'Roberto', 'Lechuga', '$2a$10$DFkz8v6xNKyQEYwrWpNMjOqlrXQbf9Iy8R1VTipnbezUifyBEdkhu', 'roberto@gmail.com', '2002-12-30', '/images/the-mandalorian-season-2-uhdpaper.com-hd-5.2847.jpg', 2, '2021-08-30 20:34:49', '2021-08-30 20:34:49');
+(21, 'Roberto', 'Lechuga', '$2a$10$DFkz8v6xNKyQEYwrWpNMjOqlrXQbf9Iy8R1VTipnbezUifyBEdkhu', 'roberto@gmail.com', '2002-12-30', '/images/the-mandalorian-season-2-uhdpaper.com-hd-5.2847.jpg', 2, '2021-08-30 20:34:49', '2021-08-30 20:34:49'),
+(22, 'Adrian', 'aaaaaaaaaaaaa', '$2a$10$oA0xWTGDWBmYs8UJPL9u/e/gjrgGPBgC84rsFCYHBUvjVVsfNj1ri', 'roberta@gmail.com', '2002-12-29', '/images/Hitman-3-PS4.jpg', 1, '2021-09-09 22:50:30', '2021-09-09 22:50:30'),
+(23, 'Adrian', 'Rubado', '$2a$10$T255cPNhdXpDyf6UNkcly.zBR5Az0BAIbCNE.VkB.8bGcW68G6xtu', 'robertaa@gmail.com', '2002-12-30', '/images/simbolo-de-moneda-dolar.png', 1, '2021-09-15 18:33:27', '2021-09-15 18:33:27');
 
 --
 -- Indexes for dumped tables
@@ -280,16 +300,16 @@ ALTER TABLE `platforms`
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
-  ADD PRIMARY KEY (`product_id`),
-  ADD KEY `purchase` (`purchase_id`),
-  ADD KEY `game` (`game_id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `purchase` (`PurchaseId`),
+  ADD KEY `game` (`GameId`);
 
 --
 -- Indexes for table `purchases`
 --
 ALTER TABLE `purchases`
-  ADD PRIMARY KEY (`purchase_id`),
-  ADD KEY `user` (`user_id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `user` (`UserId`);
 
 --
 -- Indexes for table `roles`
@@ -313,7 +333,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `favs`
@@ -325,7 +345,7 @@ ALTER TABLE `favs`
 -- AUTO_INCREMENT for table `games`
 --
 ALTER TABLE `games`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `genres`
@@ -343,13 +363,13 @@ ALTER TABLE `platforms`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `purchases`
 --
 ALTER TABLE `purchases`
-  MODIFY `purchase_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -361,7 +381,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- Constraints for dumped tables
@@ -392,13 +412,13 @@ ALTER TABLE `games`
 -- Constraints for table `products`
 --
 ALTER TABLE `products`
-  ADD CONSTRAINT `game` FOREIGN KEY (`game_id`) REFERENCES `games` (`id`);
+  ADD CONSTRAINT `game` FOREIGN KEY (`GameId`) REFERENCES `games` (`id`);
 
 --
 -- Constraints for table `purchases`
 --
 ALTER TABLE `purchases`
-  ADD CONSTRAINT `user` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `user` FOREIGN KEY (`UserId`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `users`
