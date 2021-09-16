@@ -159,7 +159,10 @@ const productsController = {
 
     } , search: async (req, res) => { 
              
-      const games = await db.Game.findAll(  {where: {name:{[Op.like]:`%${req.query.q}%`}}});
+        const games = await db.Game.findAll({     
+            include:[{association:"gameGenre"}],
+            where:  {name:{[Op.like]:`%${req.query.q}%`}}
+            });
       const genres = await db.Genre.findAll(); 
       const consoles = await db.Platform.findAll();
 

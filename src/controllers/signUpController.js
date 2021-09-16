@@ -57,6 +57,11 @@ const signUpController = {
         }
 
 
+    }, newPass : function asyn (req,res) {
+
+
+
+        res.render("newPass")
     }
 }
 

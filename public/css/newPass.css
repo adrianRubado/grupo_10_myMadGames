@@ -1,0 +1,19 @@
+.contenedor-inputs-new-pass {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin:25px auto 25px auto;}
+
+    @media (max-width : 768px) {
+
+    .contenedor-inputs-new-pass {display: flex;
+        flex-direction: column;
+        align-items: center;}
+    
+    }
+
+
+    .new-pass-label{   margin: 3px;}
+    
+    
