@@ -70,7 +70,7 @@ const signUpController = {
             from: "remitente", // sender address
             to: req.body.email, // list of receivers
             subject: "enviado desde nodeMailer", // Subject line
-            html: `<p>Gracias por registrate en mymadgames.</p><br><p>Para verificar tu cuenta cliquea este link :</p><a href=http://localhost:3002/userVerify?token=${token}>http://localhost:3002/userVerify?token=${token}</a>`, // plain text body
+            html: `<p>Gracias por registrate en mymadgames.</p><br><p>Para verificar tu cuenta cliquea este link :</p><a href=http://localhost:3002/user/verify?token=${token}>http://localhost:3002/user/verify?token=${token}</a>`, // plain text body
 
           };
 

@@ -34,6 +34,17 @@ const  userCheckController  ={
         }
 
 
+    },
+
+    verifyAccount : async (req,res) =>{
+        await db.User.update({
+            verify : 2
+        },{
+            where:{
+                email:req.email
+            }})
+
+            res.send('gracias por confirmar la contrasenia')
     }
 
 

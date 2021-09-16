@@ -9,6 +9,7 @@ const multer = require('multer')
 const path = require('path')
 const guestMiddleware = require('../middleware/guestMiddleware')
 const authMiddleware = require('../middleware/authMiddleware')
+const authToken = require('../middleware/authToken')
 
 
 var storage = multer.diskStorage({
@@ -77,6 +78,7 @@ router.post ('/login', [
 
 /* router.get ('/me', signInOutController.profile) */
 
-router.post ('/sign-up/check',guestMiddleware,userCheckController.verifyMail) ; //Corroboramos desde el lado del Front si un Email es repetido
+router.post('/sign-up/check',guestMiddleware,userCheckController.verifyMail) ; //Corroboramos desde el lado del Front si un Email es repetido
+router.get('/verify',authToken,userCheckController.verifyAccount)
 
 module.exports = router
