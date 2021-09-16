@@ -22,6 +22,9 @@ contenedorFormularioSignIn.style.display = 'none'
 
 msgEmail.style.display = "flex"
 
+msgEmail.style.height = "80vh"
+
+
 
 
 

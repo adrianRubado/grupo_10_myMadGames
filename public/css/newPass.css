@@ -1,3 +1,5 @@
+*{box-sizing: border-box;}
+
 .contenedor-inputs-new-pass {
     display: flex;
     flex-direction: row;
@@ -8,19 +10,26 @@
 
     .sent-email { display: none;}
 
-    .msg-email-sent{margin:10% auto;
+    .button-re-pass{ display: flex;
+    flex-direction: row;}
+    .confirm-title-sent { margin-top: 45px;}
+
+    .msg-email-sent{margin:auto;
         display: flex;
       flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 5px;
-    background-color: rgba(253, 253, 253, 0.6);
-    height: 80%;
+  
+    padding: 30px;
+    background-color: rgba(253, 253, 253, 0.713);
+    height: 90%;
     width: 75%;
 
   }
 
-    
+  .sent-email{height: auto; flex-direction: column; padding: 20px;}
+
+
 
    
 
@@ -31,7 +40,7 @@
         align-items: center;}
     
     }
-
+    
 
     .new-pass-label{   margin: 3px;}
     
