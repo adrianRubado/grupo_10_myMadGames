@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 15, 2021 at 08:52 PM
+-- Generation Time: Sep 16, 2021 at 10:42 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -42,8 +42,6 @@ CREATE TABLE `carts` (
 --
 
 INSERT INTO `carts` (`id`, `UserId`, `GameId`, `quantity`, `price`, `created_at`, `updated_at`) VALUES
-(14, 21, 19, 9, 135000, '2021-09-14 20:45:34', '2021-09-14 20:45:34'),
-(18, 21, 22, 9, 54000, '2021-09-15 13:42:41', '2021-09-15 13:42:41'),
 (19, 23, 19, 5, 75000, '2021-09-15 18:34:17', '2021-09-15 18:34:17'),
 (20, 23, 22, 4, 24000, '2021-09-15 18:35:03', '2021-09-15 18:35:03');
 
@@ -181,7 +179,16 @@ INSERT INTO `products` (`id`, `PurchaseId`, `GameId`, `quantity`, `price`, `crea
 (6, 2, 14, 1, 6000, '2021-09-13 13:43:47', '2021-09-13 13:43:47'),
 (7, 2, 15, 1, 7000, '2021-09-13 13:43:47', '2021-09-13 13:43:47'),
 (8, 2, 19, 1, 15000, '2021-09-13 13:43:47', '2021-09-13 13:43:47'),
-(9, 3, 19, 7, 15000, '2021-09-13 22:05:41', '2021-09-13 22:05:41');
+(9, 3, 19, 7, 15000, '2021-09-13 22:05:41', '2021-09-13 22:05:41'),
+(10, 4, 19, 8, 15000, '2021-09-15 23:36:06', '2021-09-15 23:36:06'),
+(11, 4, 22, 10, 6000, '2021-09-15 23:36:06', '2021-09-15 23:36:06'),
+(12, 5, 19, 5, 15000, '2021-09-16 03:43:51', '2021-09-16 03:43:51'),
+(13, 5, 22, 9, 6000, '2021-09-16 03:43:51', '2021-09-16 03:43:51'),
+(14, 6, 19, 3, 15000, '2021-09-16 19:30:21', '2021-09-16 19:30:21'),
+(15, 6, 22, 2, 6000, '2021-09-16 19:30:21', '2021-09-16 19:30:21'),
+(16, 6, 23, 1, 9000, '2021-09-16 19:30:21', '2021-09-16 19:30:21'),
+(17, 7, 19, 9, 15000, '2021-09-16 20:23:44', '2021-09-16 20:23:44'),
+(18, 7, 22, 7, 6000, '2021-09-16 20:23:44', '2021-09-16 20:23:44');
 
 -- --------------------------------------------------------
 
@@ -204,7 +211,10 @@ CREATE TABLE `purchases` (
 
 INSERT INTO `purchases` (`id`, `UserId`, `status`, `total`, `created_at`, `updated_at`) VALUES
 (2, 21, 0, 37000, '2021-09-13 13:43:47', '2021-09-13 13:43:47'),
-(3, 21, 0, 105000, '2021-09-13 22:05:41', '2021-09-13 22:05:41');
+(3, 21, 0, 105000, '2021-09-13 22:05:41', '2021-09-13 22:05:41'),
+(4, 25, 0, 180000, '2021-09-15 23:36:06', '2021-09-15 23:36:06'),
+(5, 21, 0, 129000, '2021-09-16 03:43:51', '2021-09-16 03:43:51'),
+(7, 55, 0, 177000, '2021-09-16 20:23:44', '2021-09-16 20:23:44');
 
 -- --------------------------------------------------------
 
@@ -242,6 +252,7 @@ CREATE TABLE `users` (
   `bday` date NOT NULL,
   `image` varchar(150) DEFAULT NULL,
   `RoleId` int(11) NOT NULL,
+  `verify` tinyint(1) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -250,11 +261,26 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `first_name`, `last_name`, `password`, `email`, `bday`, `image`, `RoleId`, `created_at`, `updated_at`) VALUES
-(18, 'Adrian', 'Rubado', '$2a$10$NqUSdoT8MDzi4EfBaIx8SeTG8spjCXeEf5AIncAxfyt0/gwUPux22', 'adrianrubado19@gmail.com', '2002-12-30', '/images/Blue_Argentine_Ford_Fairlane.jpg', 1, '2021-08-30 20:05:49', '2021-08-30 20:05:49'),
-(21, 'Roberto', 'Lechuga', '$2a$10$DFkz8v6xNKyQEYwrWpNMjOqlrXQbf9Iy8R1VTipnbezUifyBEdkhu', 'roberto@gmail.com', '2002-12-30', '/images/the-mandalorian-season-2-uhdpaper.com-hd-5.2847.jpg', 2, '2021-08-30 20:34:49', '2021-08-30 20:34:49'),
-(22, 'Adrian', 'aaaaaaaaaaaaa', '$2a$10$oA0xWTGDWBmYs8UJPL9u/e/gjrgGPBgC84rsFCYHBUvjVVsfNj1ri', 'roberta@gmail.com', '2002-12-29', '/images/Hitman-3-PS4.jpg', 1, '2021-09-09 22:50:30', '2021-09-09 22:50:30'),
-(23, 'Adrian', 'Rubado', '$2a$10$T255cPNhdXpDyf6UNkcly.zBR5Az0BAIbCNE.VkB.8bGcW68G6xtu', 'robertaa@gmail.com', '2002-12-30', '/images/simbolo-de-moneda-dolar.png', 1, '2021-09-15 18:33:27', '2021-09-15 18:33:27');
+INSERT INTO `users` (`id`, `first_name`, `last_name`, `password`, `email`, `bday`, `image`, `RoleId`, `verify`, `created_at`, `updated_at`) VALUES
+(21, 'Roberto', 'Lechuga', '$2a$10$DFkz8v6xNKyQEYwrWpNMjOqlrXQbf9Iy8R1VTipnbezUifyBEdkhu', 'roberto@gmail.com', '2002-12-30', '/images/the-mandalorian-season-2-uhdpaper.com-hd-5.2847.jpg', 2, 0, '2021-08-30 20:34:49', '2021-08-30 20:34:49'),
+(22, 'Adrian', 'aaaaaaaaaaaaa', '$2a$10$oA0xWTGDWBmYs8UJPL9u/e/gjrgGPBgC84rsFCYHBUvjVVsfNj1ri', 'roberta@gmail.com', '2002-12-29', '/images/Hitman-3-PS4.jpg', 1, 0, '2021-09-09 22:50:30', '2021-09-09 22:50:30'),
+(23, 'Adrian', 'Rubado', '$2a$10$T255cPNhdXpDyf6UNkcly.zBR5Az0BAIbCNE.VkB.8bGcW68G6xtu', 'robertaa@gmail.com', '2002-12-30', '/images/simbolo-de-moneda-dolar.png', 1, 0, '2021-09-15 18:33:27', '2021-09-15 18:33:27'),
+(24, 'Adrian', 'Rubado', '$2a$10$.tytYV4WBqvlSf.UxYjsdOTcfti9RZpOuK2fG/a2QosXpQ12h5Yvu', 'robertito@gmail.com', '2002-12-29', '/images/fifa_21_by_hgo0.jpg', 1, 0, '2021-09-15 18:59:28', '2021-09-15 18:59:28'),
+(25, 'Adrian', 'Rubado', '$2a$10$My76nRsxxfMOoKGlm9ZLku0XdA3VdxqkC1dFtG9HPMdw0A7ILS4.a', 'robertoo@gmail.com', '2002-12-30', '/images/44437-the-last-of-us.jpg', 1, 0, '2021-09-15 23:28:33', '2021-09-15 23:28:33'),
+(26, 'Adrian', 'Rubado', '$2a$10$baIqiYgKAVYf0Fei9Oi3AurtDBOVMCuDBVStno8wvG5QOgMvPB7ii', 'robertoOO@gmail.com', '2002-12-29', '/images/mercado-pago.png', 1, 1, '2021-09-16 00:14:47', '2021-09-16 00:14:47'),
+(27, 'Adrian', 'Rubado', '$2a$10$ExDVJwLWaQin0FgsTdEh5.IMfXNdRrBJCgYEf2HReey8.svB/OIS2', 'robertoaa@gmail.coa', '2002-12-29', '/images/fifa-21-1280x720.jpg', 1, 1, '2021-09-16 00:15:50', '2021-09-16 00:15:50'),
+(28, 'holii', 'holiii2', '$2a$10$7Z9djuF6qkVLsXrs7en/tOVArB1G8.Kwe7RpRQzq3qNb2h0h6YTKC', 'robertoa@gmail.com', '2002-12-29', '/images/Hitman-3-PS4.jpg', 1, 1, '2021-09-16 13:24:30', '2021-09-16 13:24:30'),
+(29, 'aaaaaa', 'aaaaaaaaaa1', '$2a$10$oj0nmMKGUZcyVtXSb6tXCe8W/xCT2LzYok2tKqjJ9XD7m5H41pZdK', 'robertoaaa@gmail.com', '2002-12-29', '/images/dollar-icon-png-3556.png', 1, 1, '2021-09-16 13:27:05', '2021-09-16 13:27:05'),
+(30, 'aaaaaa', 'peeeeee', '$2a$10$y3NkeRihyp9NsJMQvHgRwevTusWDHxmF7dN7irg.eEg4K52erdFBK', 'robertoooooo@gmail.como', '2002-12-29', '/images/fc.jpg', 1, 1, '2021-09-16 13:30:09', '2021-09-16 13:30:09'),
+(31, 'add', 'peeeeee', '$2a$10$TSc7oWf51VYemKMlc.dGfuzK4/aE1pMHdAOwMF9Tr53/4cnrOlQnG', 'robertaaaa@gmail.com', '2002-12-30', '/images/mercado-pago.png', 1, 1, '2021-09-16 13:32:30', '2021-09-16 13:32:30'),
+(32, 'aaaaaa', 'peeeeee', '$2a$10$QIWwvKNAg.4R/JuGnqen2.koGtRJnhPKRYYZX51.FKwNkVTRlNSYS', 'mauriii@gmail.com', '2002-12-30', '/images/mercado-pago.png', 1, 1, '2021-09-16 13:37:23', '2021-09-16 13:37:23'),
+(33, 'aaaaaa', 'peeeeee', '$2a$10$WMHdW2vJnVlhEvnjIR4KeepjwcJNANXwQ7lGNJ.v4cbInFtDYKjVK', 'milei@gmail.com', '2002-12-31', '/images/dollar-icon-png-3556.png', 1, 1, '2021-09-16 13:44:14', '2021-09-16 13:44:14'),
+(34, 'Adrian', 'peeeee', '$2a$10$kOysFnXDPV6VD8CZ/h9t5OnzI2j3ecgpm895XVCggYaJQ0avbUiMa', 'robertita@gmail.co', '2002-12-30', '/images/mercado-pago.png', 1, 1, '2021-09-16 14:07:12', '2021-09-16 14:07:12'),
+(35, 'aaaaaa', 'peeeee', '$2a$10$tXjIBhZ7IUnO2X..6S.h4.mMCVpuF0MuiijgVKWeS4PxHJ0fTp0Ga', 'larreta@gmail.com', '2002-12-30', '/images/mercado-pago.png', 1, 1, '2021-09-16 14:15:26', '2021-09-16 14:15:26'),
+(36, 'aaaaaa', 'peeeee', '$2a$10$oudJZVvRn2ci8OJcV4jXlerUuU2avaybqzdcvax5YGu2no7ZUdvkq', 'robertoaaaaaaa@gmail.com', '2002-12-29', '/images/dollar-icon-png-3556.png', 1, 1, '2021-09-16 14:17:31', '2021-09-16 14:17:31'),
+(37, 'Adrian', 'Rubado', '$2a$10$0T/rXYtHCZNFBikfzDOgBOyD9NkN7Ap3B5E4FtJfsgwlHactjFK7i', 'robertota@gmail.com', '2002-12-30', '/images/dollar-icon-png-3556.png', 1, 1, '2021-09-16 14:37:20', '2021-09-16 14:37:20'),
+(55, 'Adrian', 'Rubado', '$2a$10$VG8r.sqM.7K/H5SsfqU/VerPi5jixVQUhMdCAfA9.WhpFzaP4eQMW', 'adrianrubado19@gmail.com', '2002-12-30', '/images/dollar-icon-png-3556.png', 1, 2, '2021-09-16 20:11:33', '2021-09-16 20:11:33'),
+(56, 'Adrian', 'Rubado', '$2a$10$R2It/WylYkl9Xi/rfSc3S.tuCsQ1pn5Bi7CDef2cHjIKcGxkv/A3m', 'digitalhouse1234@gmail.com', '2002-12-30', '/images/dollar-icon-png-3556.png', 1, 1, '2021-09-16 20:16:36', '2021-09-16 20:16:36');
 
 --
 -- Indexes for dumped tables
@@ -333,7 +359,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `favs`
@@ -363,13 +389,13 @@ ALTER TABLE `platforms`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `purchases`
 --
 ALTER TABLE `purchases`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -381,7 +407,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
 
 --
 -- Constraints for dumped tables

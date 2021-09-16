@@ -63,8 +63,15 @@
             </li>
             <% } %>
             <li>
+
               <a href="/product-cart">
               <i class="fas fa-shopping-cart"></i>
+              <% if (locals.logged) { %>
+                <div class = 'carritoCounter'></div>
+
+
+              <% } %>
+
             </a>
 
             </li>
@@ -79,5 +86,12 @@
         </ul>
       </nav>
     </div>
+    <% if (locals.logged) { %>
+      <input type = 'hidden' class = 'usuario' value = <%= locals.user.id %>>
+
+    <% } %>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/validations/burgerCart.js"></script>
 
 </header>
