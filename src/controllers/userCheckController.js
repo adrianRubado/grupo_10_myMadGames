@@ -3,13 +3,13 @@ const db = require('../../database/models') ;
 
 
 const  userCheckController  ={
-    
-    
-    verify: async(req,res) =>{
-        
-      
-        
-       
+
+
+    verifyMail: async(req,res) =>{
+
+
+
+
         try {
             const email =  req.body.data.email;
             console.log(email)
@@ -21,22 +21,21 @@ const  userCheckController  ={
            })
            if (user) {
                res.json ({error: true })
-   
+
            }
            res.json ({error: false })
 
-           
-            
+
+
         } catch (error) {
             console.log (error.message)
-            
-            
+
+
         }
-        
+
 
     }
 
-   
+
 }
-module.exports = userCheckController 
- 
+module.exports = userCheckController

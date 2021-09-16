@@ -47,8 +47,8 @@ router.post ('/sign-up',upload.single('image'),[
   check('lastName').not().isEmpty().withMessage ('Debes completar el apellido'),
   check('lastName').isLength({min :2}).withMessage ('El apellido debe contener minimo 2 caracteres'),
 
- 
-  
+
+
 
   check('password').not().isEmpty().withMessage ('Debes completar la password') ,
   check("password").isLength({min : 8}).withMessage ('La contraseña debe poseer al menos 8 caracteres'),
@@ -77,6 +77,6 @@ router.post ('/login', [
 
 /* router.get ('/me', signInOutController.profile) */
 
-router.post ('/sign-up/check',guestMiddleware,userCheckController.verify) ; //Corroboramos desde el lado del Front si un Email es repetido
+router.post ('/sign-up/check',guestMiddleware,userCheckController.verifyMail) ; //Corroboramos desde el lado del Front si un Email es repetido
 
 module.exports = router
