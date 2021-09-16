@@ -3,6 +3,9 @@ const path = require ('path');
 const {check,validationResult} = require('express-validator');
 const db = require('../../database/models')
 const bcrypt= require ('bcryptjs');
+const jwt = require('jsonwebtoken');
+
+
 
 
 
@@ -45,9 +48,15 @@ const signUpController = {
                email: req.body.email,
                bday: req.body.bday,
                image: "/images/" + req.file.originalname,
-               RoleId: '1'
+               verify : 1,
+               RoleId: 1
 
            })
+
+
+
+
+
 
          return res.redirect('/user/login/')
 
