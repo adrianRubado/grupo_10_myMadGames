@@ -14,7 +14,7 @@ window.addEventListener('load', function () {
     const buttom =document.querySelector('botonSignUp')
 
     formsSignIn.addEventListener('submit', async function (e){
-        e.preventDefault();
+       /*  e.preventDefault(); */
 
 
 
