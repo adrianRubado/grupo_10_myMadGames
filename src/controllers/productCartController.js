@@ -7,7 +7,7 @@ const db = require('../../database/models')
     carrito: async(req,res) => {
         const cart = await db.Cart.findAll({
             where: {
-                UserId : req.session.user.id,
+                UserId : req.session.user.id
 
             }
 
@@ -29,6 +29,14 @@ const db = require('../../database/models')
 
             }
 
+            return res.render('product-cart',viewData)
+        }else{
+
+            const viewData = {
+                cart : cart,
+                games : []
+
+            }
             return res.render('product-cart',viewData)
         }
 
@@ -67,6 +75,29 @@ const db = require('../../database/models')
     }
 
     res.redirect(`/products/${parseInt(itemToAdd[1])}`)
+    },
+
+    update : async (req,res) =>{
+        const {gameId,price,quantity,userId} = req.body.data
+
+       try {
+        await db.Cart.update({
+            UserId : userId,
+            GameId : gameId,
+            quantity : quantity,
+            price : price
+
+        },{
+            where:{
+                UserId :userId,
+                GameId : gameId
+            }})
+        res.status(200).json('cart updated')
+       } catch (error) {
+        res.status(500).send('Server Error')
+       }
+
+
     }
 }
 

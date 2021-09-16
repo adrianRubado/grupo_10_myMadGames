@@ -1,71 +1,61 @@
 
-window.addEventListener('load',function(){
+window.addEventListener('load', function () {
 
 
     //Primero capturamos el formulario a trabajar
-    
-    let formsSignIn =document.querySelectorAll('formularioSignIn');
-    
-    
-                                                                         //Definimos un array con los errores a reflejar
-    
-    
-    let errors =[] ;
-    
-    formsSignIn.addEventListener('submit', async function(e){
-        
-    
-        const email = document.querySelector ('.inputEmail');
-        const password = document.querySelector('.inputPassword'); 
-        
-                                                                           
 
-    //Email 
-    
-        if(email.value == '') {
-            errors.push ('El Email está vacío');
-        }
-          var exp = /\w+@\w+\.+[a-z]/ ;                                          //Aca son las expresiones regulares
-        if(exp.test (email.value)) {
-            errors.push ('El email es invalido') ;
-        }
-    
-        
-        if (email) 
-    
-     
-    
-    
-     //Contraseña
-        if(password.value == '') {
-            errors.push('La contraseña está vacía') ;
-        }
-        
-    
-   
-        
-        if(errors.length > 0) {
-    
-            e.preventDefault() ;                                                   //En caso de que haya errores, rechazamos la peticion por dafult del Submit
-            let errorsList = document.querySelector ('.errors-signin')
-            for (let i = 0 ; i < errors.length ;i++) {                                
-                errorsList.innerHTML +='<li>' + errors[i] + '</li>' ;              //Recorremos el array de errores ppara hacer un listado de ellos en el ul de errors-signup
-                
+    let formsSignIn = document.querySelector('#formularioSignIn');
+
+    //CONTADOR
+    let count =0;
+
+    const email = document.querySelector('#email');
+    const password = document.querySelector('#password');
+    const buttom =document.querySelector('botonSignUp')
+
+    formsSignIn.addEventListener('submit', async function (e){
+        e.preventDefault();
+
+
+
+
+
+
+
+
+            const emailValue = email.value.trim();
+            const passwordValue = password.value.trim();
+
+
+
+
+
+             if(emailValue===''){
+             'El email esta sin completar'
+             }
+             if(passwordValue===''){
+                 'La contraseña es obligatoria'
+
+             }
+
+             try {
+                const data = {
+                    email: email.value
+                  }
+                const res = await axios.post('http://localhost:3002/user/sign-up/check', {data});
+                const emailrepeat = (res.data.error);
+
+                if (!emailrepeat){
+                    'Invalid credentials'
+                }
+
+            } catch (error) {
+                console.log(error.message)
+
             }
-            errorsList.style.color ('red') ;                                       //Definimos el color rojo
-    
-        }
-        
-    
-    })
-    
-    })
 
 
 
 
-
-
-
-
-
+        })
+})

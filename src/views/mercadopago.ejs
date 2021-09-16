@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('./partials/head')  %>
+
+<body class = <%=color %>  >
+  <%- include('./partials/header') %>
+
+        <p><%= message %> </p>
+
+
+        <%- include ('./partials/footer.ejs') %>
+
+        <script >
+            setTimeout(function(){
+            window.location.href = 'http://localhost:3002';
+         }, 5000);
+        </script>
+</body>
+
+</html>
