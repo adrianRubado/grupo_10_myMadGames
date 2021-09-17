@@ -1,85 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
+<%- include ('./partials/head') %>
 
 
     <body>
-        <%- include ('./partials/head') %>
+
         <%- include('./partials/header') %>
-        
-            <div class="box-edit-game">
-                <div class="meta-edit-game">
 
-                <form method="POST" action="/products/<%=game.id %>/edit?_method=PUT">
-                        <input type="text" name="id" value=<%=game.id %> >
-                        <input type="text" name="image" value=<%=game.image %> >
-                        <input type="text" name="category" value=<%=game.category %> >
-                    </div>
-                    <div class="portada-edit-game">
-                        <div class="face-edit-game">
-                    
-            
-                    <div class="titulo-edit-game">
-                        <input class="titulo-edit-game" type="text" name="name" value=<%=game.name %>>
-                    </div>
-                        <div class="imagen-edit-game">
-                            <img class="imagen-edit-game" src=<%=game.image %>>
-                            </div>
-                        </div>
-                    </div>
-                            <div class="descripcion-edit-game">
-                               <label for=""class="description-edit-game"><i class="fas fa-dollar-sign"><input type="text" name="price"
-                                            value=<%=game.price %> ></i> </label>
-                               <label for="" class="description-edit-game"><i class="fas fa-percent"><input type="text" name="discount" placeholder="Descuento"
-                                            value=<%=game.discount %>></i></label>
-                                           
-                            </div>
-                            <div><p class="p-edit-game">*En caso de no tener dejar vacio</p></div>
+            <main>
+                <h1> Editar <%= game.name %>
+                </h1>
 
-                        
+                <form class="form-edit-game">
+                    <div class="content-image"> <img src="<%= game.image %>"> </div>
 
-                        <div class="descripcion-referencial-edit-game">
-                            <h5>Descripcion</h5>
-                            <textarea class="textarea-edit-game" name="description" rows="10" cols="50"><%= game.description %></textarea>
-                        </div>
 
-                   
-                    <div class="descripcion-referencial-editt-game">
+                    <div class="content-game-descript"> <label for="name">
+                 <input type="text" name="name" value="<%= game.name %> "> </label>
+      
+                 <label for="price"> <input type="text" name="price" value="<%= game.price %> "> </label>
+                 <label for="genre"><input type="text" name="genre" value="<%= game.gameGenre.name %> "> </label>
 
-                        <h5>Requisitos</h5>
-                    </div>
-                    <div class="requisitos-video-edit-game">
+                 <%genres.forEach(element => {%> <li> <input type="radio"   class="genreToCheck"><%= element.name %></input></li>
+    <% }) %>
 
-                        <textarea class="textarea-editt-game" name="requirements" rows="10" cols="50">
-                <%= game.requirements %>
-        
-            </textarea>
-            <p class="p-edit-game">*En caso de no tener dejar vacio</p>
-                        <div class="embebido-edit-game"> 
-                            Link del trailer:
-                            <input class="link-edit-game" type="text" name="link" value=<%=game.link %>>
+                  
+                  
+                 <label for="name"><input type="text" name="name" value="<%= game.gamePlatform.name %> "> </label> 
 
-                        </div>
+                 <%platforms.forEach(element => {%> <li> <input type="radio"   class="genreToCheck"><%= element.name %></input></li>
+                 <% }) %>
 
-                    </div>
-                    <p class="p-edit-game">Recordar que el link debe ser embebido</p>
 
-                    <button type="submit" id="botones-formularios-edit-game">Actualizar juego</button>
-                </form>
                 </div>
 
 
-                    <div class="commented">
 
-                        <i class="far fa-user-circle iconcomented"></i>
-
-                    </div>
-
-
-                
-           
-
+                    </form>
+ 
+                    </main>
 
             <!-- Site footer -->
             <%- include ('./partials/footer.ejs') %>

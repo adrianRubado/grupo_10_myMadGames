@@ -13,7 +13,7 @@ const productsController = {
     detail:async(req, res) => {
         const id = req.params.id
 
-        const detail =  await db.Game.findByPk(id) ;
+        const detail =  await db.Game.findByPk(id);
 
 
 
@@ -34,9 +34,18 @@ const productsController = {
     },
     edit:async(req, res) => {
         const id = req.params.id
-        const detail =  await db.Game.findByPk(id) ;
+  
+        const detail =  await db.Game.findByPk(id,
+             { include:[{association:"gameGenre"}, {association:"gamePlatform"}]}) ;
+
+        const platforms = await db.Platform.findAll();
+
+
+        const genres = await db.Genre.findAll();
         const viewData = {
-            game: detail
+            game: detail,
+            genres: genres,
+            platforms: platforms
         }
 
        return  res.render('editGame', viewData);
@@ -50,7 +59,7 @@ const productsController = {
             platform: req.body.price,
             description: req.body.description,
             link: req.body.link,
-            image: req.body.image,
+            image: req.file.originalname,
             requirements: req.body.requirements,
             genre: req.body.category
         },{
@@ -60,9 +69,7 @@ const productsController = {
         )
 
 
-
-
-       return  res.redirect("/products/" + id)
+        return  res.redirect("/products/" + id)
 
 
     },
