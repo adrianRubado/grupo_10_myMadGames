@@ -95,11 +95,11 @@ const signUpController = {
         }
 
 
-    }, newPass : function asyn (req,res) {
+    }, newPassMail : function asyn (req,res) {
 
 
 
-        res.render("newPass")
+        res.render("newPassMail")
     }
 }
 
