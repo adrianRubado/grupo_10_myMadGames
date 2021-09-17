@@ -355,6 +355,15 @@ footer{
     text-align: left;
 }
 
+.header-dark{
+  background-color: rgb(127, 11, 151);
+}
+
+
+.search-dark{
+  color: black;
+}
+
 
 
 .miBody{
