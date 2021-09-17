@@ -44,7 +44,7 @@ const  userCheckController  ={
                 email:req.email
             }})
 
-            res.send('gracias por confirmar la contrasenia')
+            res.render('confirmedAccount')
     }
 
 

@@ -87,25 +87,26 @@ const signUpController = {
         }
 
 
-    }, newPassMail : function asyn (req,res) {
+    }, newPassMail : async function  (req,res) {
 
 
 
         res.render("newPassMail")
-    }, 
-    newPassGetForm: function asyn(req,res) { 
+    },
+    newPassGetForm: async function (req,res) {
 
 
        res.render("newPass")
-         
+
     },
 
-    welcome: (req,res) => {  
+    welcome: (req,res) => {
 
-         
-         viewData = { 
+
+         viewData = {
              user : req.session.welcome
          }
+         req.session.destroy()
 
 
         res.render("welcome" , viewData)
