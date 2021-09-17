@@ -19,15 +19,16 @@ if (currentTheme == "dark") {
 
 toggle.addEventListener("click", function () {
   if (toggle.checked) {
-    document.body.classList.toggle("miBody2");
+    document.body.classList.add("miBody2");
 
     articles.forEach(a =>{
-        a.classList.toggle('miBody')
+        a.classList.toggle('miBody2')
     })
     var theme = document.body.classList.contains("miBody2")
       ? "dark"
       : "light";
   } else {
+    document.body.classList.remove("miBody");
     document.body.classList.remove("miBody2");
     var theme = 'light'
 
