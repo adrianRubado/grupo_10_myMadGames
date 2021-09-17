@@ -1,23 +1,26 @@
 window.addEventListener("load", () => {      
 
 const submitBtton = document.querySelector("#submit-new-pass");
-
 const allInputsConteiner = document.querySelectorAll(".contenedor-inputs-new-pass");
-
 const contenedorFormularioSignIn = document.querySelector(".contenedorFormularioSignIn")
-
 const formNewPass = document.querySelector("#formNewPass");
-
 const main = document.querySelector("#mainSignIn")
-
 const checkEmailInput = document.querySelector("#confirmEmailToChangePass");
 const msgEmail = document.querySelector(".sent-email");
 
-const link = document.querySelector(".linkToRpass");
+const linkJoystic = document.querySelector("#linkToRpass"); 
+const joysticConfirmMail = document.querySelector("#joysConfirmPass")
+const inputConfirmMail = document.querySelector("#confirmChecked")
 
-console.log("hpla")
+linkJoystic.addEventListener("click", (e) => {
 
-link.addEventListener("click", (event) =>{event.preventDefault() } )
+    if(inputConfirmMail.checked != true) { e.preventDefault()}
+    
+
+ 
+ 
+
+ })
 
 
 
