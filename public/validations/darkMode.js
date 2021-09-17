@@ -1,58 +1,36 @@
-window.addEventListener('load', async function (e) {
+const toggle = document.querySelector(".toggle");
+const articles = document.querySelectorAll('article')
 
 
+const currentTheme = localStorage.getItem("theme");
+if (currentTheme == "dark") {
+  document.body.classList.toggle("miBody");
+  toggle.checked = true
 
-
-    const toggle = document.querySelector('.toggle')
-    const articles = document.querySelectorAll('article')
-
-    document.body.classList.toggle(localStorage.getItem('theme'))
-    articles.forEach(a =>{
-        a.classList.toggle(localStorage.getItem('theme'))
-    })
-
-
-        let boolean = this.localStorage.getItem('checked') === 'true'
-        toggle.checked = boolean
-        toggle.addEventListener('click',function(e){
-
-
-
-       if(toggle.checked){
-
-        const dark = document.body
-        dark.classList.toggle('miBody')
-        articles.forEach(a =>{
-            a.classList.toggle('miBody')
-        })
-        localStorage.setItem('theme','miBody')
-        localStorage.setItem('checked',toggle.checked)
-       }
-
-       else
-       if(toggle.checked == false){
-        localStorage.setItem('theme','naranja')
-        localStorage.setItem('checked',toggle.checked)
-        const dark = document.body
-        dark.classList.toggle('miBody')
-        articles.forEach(a =>{
-            a.classList.toggle('miBody')
-        })
-       }
-
-
-
-
-
-    })
-
-
-
-
-
-
-
-
-
-
+  articles.forEach(a =>{
+    a.classList.toggle('miBody')
 })
+
+
+} else if (currentTheme == "light") {
+  document.body.classList.toggle("naranja");
+  toggle.checked = false
+}
+
+toggle.addEventListener("click", function () {
+  if (toggle.checked) {
+    document.body.classList.toggle("miBody2");
+
+    articles.forEach(a =>{
+        a.classList.toggle('miBody')
+    })
+    var theme = document.body.classList.contains("miBody2")
+      ? "dark"
+      : "light";
+  } else {
+    document.body.classList.toggle("miBody");
+    var theme = 'light'
+
+  }
+  localStorage.setItem("theme", theme);
+});

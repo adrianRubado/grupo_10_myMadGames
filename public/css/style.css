@@ -30,6 +30,10 @@ header{
   max-height: 15vh;
 }
 
+.dolarBlanco{
+  display: none;
+}
+
 
 
 .pictures{
@@ -354,22 +358,143 @@ footer{
 
 
 .miBody{
-  transition: color 500ms, background-color 500ms;
   background: black
 
+}
+
+.miBody .buttomtotal-chart {
+  background: black
+
+}
+
+
+.miBody .juegosChart{
+  background: black;
+  color: white;
+
+}
+
+
+.miBody .page-chart{
+  background: black;
+  color: white;
+
+}
+
+
+.miBody .botonSignIn{
+
+  color: white;
+}
+
+
+.miBody article{
+  background-color: black;
+  color: white;
 }
 
 .miBody p{
   color: white;
 }
-.miBody h3{
+
+.miBody li{
   color: white;
 }
 
 
-.miBody h4{
+.miBody h1 {
   color: white;
 }
+
+.miBody h2 {
+  color: white;
+}
+
+.miBody h3 {
+  color: white;
+}
+
+.miBody h4 {
+  color: white;
+}
+
+.miBody span{
+  color: white;
+}
+
+
+
+.miBody2{
+
+  transition: color 300ms, background-color 300ms;
+  background: black
+}
+
+.miBody2 .botonSignIn{
+  transition: color 300ms, background-color 300ms;
+  color: white;
+}
+
+
+
+.miBody2 article{
+  transition: color 300ms, background-color 300ms;
+  background-color: black;
+  color: white;
+}
+
+.miBody2 p{
+  transition: color 300ms, background-color 300ms;
+  color: white;
+}
+
+.miBody2 li{
+  transition: color 300ms, background-color 300ms;
+  color: white;
+}
+
+
+.miBody2 h1 {
+  color: white;
+}
+
+.miBody2 h2 {
+  color: white;
+}
+
+.miBody2 h3 {
+  color: white;
+}
+
+.miBody2 h4 {
+  color: white;
+}
+
+.miBody2 span{
+  color: white;
+}
+
+
+.miBody2 .buttomtotal-chart {
+  background: black
+
+}
+
+
+.miBody2 .juegosChart{
+  background: black;
+  color: white;
+
+}
+
+
+.miBody2 .page-chart{
+  background: black;
+  color: white;
+
+}
+
+
 
  /* body{
     font-family: 'Roboto', sans-serif;
