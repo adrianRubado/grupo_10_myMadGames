@@ -163,30 +163,24 @@ const productsController = {
 
 
 
-<<<<<<< HEAD
-    } , search: async (req, res) => {
+    } ,
+    search: async (req, res) => {
 
-      const games = await db.Game.findAll();
-      const genres = await db.Genre.findAll();
-=======
-    } , search: async (req, res) => { 
-             
-        const games = await db.Game.findAll({     
+        const games = await db.Game.findAll({
             include:[{association:"gameGenre"}],
             where:  {name:{[Op.like]:`%${req.query.q}%`}}
             });
-      const genres = await db.Genre.findAll(); 
->>>>>>> matias-dev
+      const genres = await db.Genre.findAll();
       const consoles = await db.Platform.findAll();
 
       viewData = { games : games,
                    genres: genres,
                 platform: consoles};
-         res.render("search", viewData)    
+         res.render("search", viewData)
 
-    } 
+    }
 
-    
+
 
 }
 

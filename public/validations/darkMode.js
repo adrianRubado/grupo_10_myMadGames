@@ -3,13 +3,12 @@ const articles = document.querySelectorAll('article')
 
 const header = document.querySelector('header')
 
-const search = document.getElementById('custom-search-input')
-
+const search = document.forms
 const currentTheme = localStorage.getItem("theme");
 if (currentTheme == "dark") {
   document.body.classList.toggle("miBody");
   header.classList.toggle('header-dark')
-  search.classList.toggle('header-dark')
+  console.log(search.custom)
 
   toggle.checked = true
 
