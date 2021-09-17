@@ -12,13 +12,14 @@ window.addEventListener('load', async function (e) {
     })
 
 
-
-        toggle.checked = this.localStorage.getItem('checked')
+        let boolean = this.localStorage.getItem('checked') === 'true'
+        toggle.checked = boolean
         toggle.addEventListener('click',function(e){
 
 
 
        if(toggle.checked){
+
         const dark = document.body
         dark.classList.toggle('miBody')
         articles.forEach(a =>{
