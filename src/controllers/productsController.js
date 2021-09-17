@@ -20,6 +20,12 @@ const productsController = {
             game: detail
         }
 
+        if(req.session && req.session.user){
+            return res.render('products', viewData);
+        }else{
+            return res.render('productsNotLogged', viewData);
+        }
+
        return res.render('products', viewData);
     },
 
@@ -156,13 +162,13 @@ const productsController = {
 
 
 
-    } , search: async (req, res) => { 
-             
+    } , search: async (req, res) => {
+
       const games = await db.Game.findAll();
-      const genres = await db.Genre.findAll(); 
+      const genres = await db.Genre.findAll();
       const consoles = await db.Platform.findAll();
 
-      viewData = { games : games, 
+      viewData = { games : games,
                    genres: genres,
                 platform: consoles};
          res.render("search" , viewData)

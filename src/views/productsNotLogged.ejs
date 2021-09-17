@@ -16,14 +16,7 @@
                 <div class="contenedor-info">
                     <img class="image" src =<%= game.image  %>   ;>
                     <div class="social">
-                        <form method="POST" action="/products/favorites">
-                            <li>
 
-                              <button type="submit" class="far fa-heart" name = 'fav' value =<%=[locals.user.id,game.id]%> ></button>
-
-                            </a>
-                            </li>
-                          </form>
                         <i class="fas fa-comment"></i>
                         <i class="fas fa-share-alt"></i>
                     </div>
@@ -55,21 +48,7 @@
         <div class="iconos">
             <i class="fas fa-dollar-sign"><span class="tip"><%= game.price  %> </span></i>
             <i class="fas fa-percent"><span class="tip">Comprar <br> - 1 + </span></i>
-            <i class="fas fa-cart-plus chart"><form method="POST" action="/product-cart/"></form>
-                <li>
 
-
-                        <button type="submit" name = 'add' value = <%=[locals.user.id,game.id,7,game.price]%> >Agregar al carrito</button>
-
-
-
-
-
-
-
-
-                </li>
-              </form></i>
         </div>
             <div class="cuadro">
                 <div>

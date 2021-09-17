@@ -777,6 +777,12 @@ form.example input[type=text] {
 
 
 
+.ham{
+  display: block;
+}
+
+
+
 
 
 
@@ -784,6 +790,15 @@ form.example input[type=text] {
 
 @media (min-width:768px){
 
+
+  .ham{
+
+    display: none;
+  }
+
+  .altaNavePa{
+    display : none
+  }
   .contenedorProductosSeccion{ display: flex;
     flex-direction: row;
   flex-wrap: wrap;
