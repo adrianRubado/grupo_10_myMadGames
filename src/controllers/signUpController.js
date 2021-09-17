@@ -100,6 +100,12 @@ const signUpController = {
 
 
         res.render("newPassMail")
+    }, 
+    newPassGetForm: function asyn(req,res) { 
+
+
+       res.render("newPass")
+         
     }
 }
 

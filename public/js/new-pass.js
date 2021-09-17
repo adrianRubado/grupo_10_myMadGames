@@ -14,7 +14,8 @@ const inputConfirmMail = document.querySelector("#confirmChecked")
 
 linkJoystic.addEventListener("click", (e) => {
 
-    if(inputConfirmMail.checked != true) { e.preventDefault()}
+    if(inputConfirmMail.checked != true) {  alert("Debes tildar si confirmaste la contraseña"); e.preventDefault()}
+    
     
 
  

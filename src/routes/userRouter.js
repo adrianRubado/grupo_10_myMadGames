@@ -37,7 +37,8 @@ var storage = multer.diskStorage({
 })
 
 router.get ('/sign-up',guestMiddleware, signUpController.signUp) ;
-router.get("/newPassMail", signUpController.newPassMail)
+router.get("/newPassMail", signUpController.newPassMail);
+router.get("/newPass", signUpController.newPassGetForm );
 
  //EXPRESION REGULAR
 var expre =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/   ;
