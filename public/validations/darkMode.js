@@ -28,7 +28,7 @@ toggle.addEventListener("click", function () {
       ? "dark"
       : "light";
   } else {
-    document.body.classList.toggle("miBody");
+    document.body.classList.remove("miBody2");
     var theme = 'light'
 
   }

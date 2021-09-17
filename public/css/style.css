@@ -393,6 +393,31 @@ footer{
   color: white;
 }
 
+.miBody .purchase-item{
+  background-color: black;
+  color: white;
+}
+
+.miBody .item-detail{
+  background-color: black;
+  color: white;
+}
+
+.miBody .side-panel{
+  background-color: black;
+  color: white;
+}
+
+.miBody .side-details{
+  background-color: black;
+  color: white;
+}
+
+.miBody .purchase{
+  background-color: black;
+  color: white;
+}
+
 .miBody p{
   color: white;
 }
@@ -492,6 +517,31 @@ footer{
   background: black;
   color: white;
 
+}
+
+.miBody2 .purchase-item{
+  background-color: black;
+  color: white;
+}
+
+.miBody2 .item-detail{
+  background-color: black;
+  color: white;
+}
+
+.miBody2 .side-panel{
+  background-color: black;
+  color: white;
+}
+
+.miBody2 .side-details{
+  background-color: black;
+  color: white;
+}
+
+.miBody2 .purchase{
+  background-color: black;
+  color: white;
 }
 
 
