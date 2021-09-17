@@ -354,7 +354,9 @@ footer{
 
 
 .miBody{
-  background-color: black;
+  transition: color 500ms, background-color 500ms;
+  background: black
+
 }
 
 .miBody p{
