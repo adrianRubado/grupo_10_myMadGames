@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  
+
+<head>
+
+    <%- include('./partials/head.ejs') %>
+
+
+</head>
+<body>  <%- include('./partials/header.ejs') %>
+    <main id="mainSignIn">
+
+        
+     
+
+        <div class="contenedorFormularioSignIn">
+                <div class="contenedorTitulosSignIn">
+        
+                  <h1> New Password </h1>
+                  <p>Por favor ingresa su nueva contraseña</p>
+                  <br>
+        
+                </div>
+        
+        <div class="contenedor-inputs-new-pass">
+        
+                  <form action="/user/login" method="POST" id="formNewPass">
+                    <% if (locals.errors) { %>
+        
+                      <div class = 'textWarning'>
+                       <%= errors.message %>
+                      </div>
+                     <% } %>
+
+            </div>
+           
+                    <div class="contenedor-inputs-new-pass"> 
+                   
+        
+                      <label for="newPass" class="new-pass-label"> New Password </label>
+                  
+        
+                      <input type="password" id="newPass" name="newPass" placeholder="New Password" class="input-new-password"> </input>
+                    </div>
+                   
+                    <div class="contenedorInputSignIn">
+        
+                      <label for="password"> Re-entry Password </label>
+        
+                      <input type="password" id="password" name="password" placeholder="Contraseña" class="input-new-password"> </input>
+                     
+        
+                    </div>
+                    
+        
+                                 <div class="contenedorBotonSubSignIn">  <button type="submit" id="submit-new-pass" class="botonSignIn" >  <img src="/images/logo1.png" width="45px" height="45px"/></button>
+        
+                   <div class="contRecordameSignIn"> <input type="checkbox"  name="persist" > <label for="recordame" class="recordameLabel"><p>Recordame</p> </label></div>
+                  </div>
+                   
+                    <div>
+                      <ul class="errors-signin"></ul>
+                    </div>
+                
+                </div>
+            </form>
+              </main>
+        
+              <%- include('./partials/footer.ejs') %>
+
+              <script src="/js/new-pass.js"></script>
+    
+</body>
+</html>
