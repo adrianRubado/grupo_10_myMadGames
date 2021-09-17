@@ -1,0 +1,181 @@
+
+
+.purchase{
+    background-color: rgb(224, 224, 224);
+    display: flex;
+    justify-content: space-between;
+    justify-content: auto;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .payment{
+    display: flex;
+  }
+
+.opciones{
+  text-align: left;
+}
+
+
+
+.iconitoDeUbicacion{
+ margin-right: 100%;
+}
+
+
+
+  .cuando-llega{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .purchase-item{
+    justify-content: auto;
+}
+
+.resumen-container{
+    display: flex;
+    justify-content: space-between;
+  }
+
+.purchase-image{
+    padding-top: 8px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+
+  .resumen{
+    font-style: italic;
+    margin-top: 15%;
+    text-align: center;
+    border-bottom: 1px solid grey
+  }
+
+
+
+
+
+@media (min-width:768px){
+
+.purchase{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-content: auto;
+  }
+
+
+
+  .item-detail{
+
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+
+
+  }
+
+  .purchase-game-detail{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    margin-left: 32%;
+  }
+
+  .purchase-game-detail h5{
+    text-align: center;
+  }
+
+  .item-purchase{
+    width: 52vw;
+    max-width: 1676px;
+    margin-left: 10%;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    justify-content: auto;
+  }
+
+  .side-details{
+    background-color: white;
+
+  }
+
+  .side-panel{
+
+    width: 25%;
+    max-width: 1600px;
+    height: 50vh;
+
+    margin-right: 10%;
+    background-color: white;
+    margin-top: 19%;
+  }
+
+  .llega{
+    font-size: medium;
+    padding-top: 15px;
+    text-align: left;
+    font-weight: 700;
+
+  }
+
+
+
+  .envio{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .free{
+    font-size: medium;
+    font-weight: 700;
+    color: rgb(4, 167, 4);
+  }
+
+
+
+  .resumen{
+    font-style: italic;
+    margin-top: 15%;
+    text-align: center;
+  }
+
+  .resumen-detalle{
+    font-weight: 400;
+    margin-left: 10%;
+  }
+  .resumen-container{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .fondi{
+    border-top: 1px solid grey;
+  }
+
+  .total-purchase{
+    margin-right: 5%;
+  }
+
+}
+
+.envioo{
+  background-color: rgb(224, 224, 224);
+  border: none;
+  box-shadow: none;
+}
+
+.azul{
+  color: rgb(79, 79, 245);
+  font-weight: 700;
+}
+
+
+.panel2{
+  margin-top: 2%;
+}
+

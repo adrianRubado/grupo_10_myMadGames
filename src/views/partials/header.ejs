@@ -10,10 +10,17 @@
         <div class="input-group col-md-12">
           <input type="text" class="  search-query form-control" placeholder="Search" />
           <span class="input-group-btn">
-            <button class="btn btn-danger" type="button">
+            <button class="btn btn-danger" type="submit">
               <span class=" glyphicon glyphicon-search"></span>
             </button>
           </span>
+          <button class="ham">
+            <!-- X and menu icon SVGs from material icons https://material.io/resources/icons/ -->
+            <span class="menuIcon material-icons">
+              menu
+            </span>
+
+          </button>
         </div>
       </div>
 
@@ -22,6 +29,13 @@
         <i class="fas fa-ellipsis-v"></i>
       </div>
 
+
+      <ul class="menu">
+        <li><a class="menuLink" href="#">Home</a></li>
+        <li><a class="menuLink" href="#">Profile</a></li>
+        <li><a class="menuLink" href="#">About</a></li>
+        <li><a class="menuLink" href="#">Contacts</a></li>
+      </ul>
 
       <nav class="mainNavbar">
 
@@ -52,6 +66,7 @@
             <i class="far fa-question-circle"></i>
           </a>
           </li>
+
         <% } %>
 
           <% if (locals.image) { %>
@@ -62,10 +77,26 @@
             </li>
             <% } %>
             <li>
+
               <a href="/product-cart">
               <i class="fas fa-shopping-cart"></i>
+              <% if (locals.logged) { %>
+                <div class = 'carritoCounter'></div>
+
+
+              <% } %>
+
             </a>
 
+            </li>
+
+
+            <li>
+              <label class="switch">
+
+              <input type="checkbox"  class="toggle">
+              <span class="slider round"></span>
+              </label>
             </li>
 
 
@@ -78,5 +109,40 @@
         </ul>
       </nav>
     </div>
+    <% if (locals.logged) { %>
+      <input type = 'hidden' class = 'usuario' value = <%= locals.user.id %>>
+
+    <% } %>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/validations/burgerCart.js"></script>
+    <script>
+      var menu = document.querySelector(".menu")
+var ham = document.querySelector(".ham")
+var xIcon = document.querySelector(".xIcon")
+var menuIcon = document.querySelector(".menuIcon")
+
+ham.addEventListener("click", toggleMenu)
+
+function toggleMenu() {
+  if (menu.classList.contains("showMenu")) {
+    menu.classList.remove("showMenu");
+    xIcon.style.display = "none";
+    menuIcon.style.display = "block";
+  } else {
+    menu.classList.add("showMenu");
+    xIcon.style.display = "block";
+    menuIcon.style.display = "none";
+  }
+}
+
+var menuLinks = document.querySelectorAll(".menuLink")
+
+menuLinks.forEach(
+  function (menuLink) {
+    menuLink.addEventListener("click", toggleMenu)
+  }
+)
+    </script>
 
 </header>

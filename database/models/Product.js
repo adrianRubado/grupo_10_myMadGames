@@ -2,12 +2,12 @@
 module.exports = (sequelize, DataTypes) => {
 
     let cols = {
-        product_id: {
+        id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
             primaryKey: true
         },
-        purchase_id: {
+        PurchaseId: {
             type: DataTypes.INTEGER,
             allowNull: false,
           //  references: {
@@ -16,7 +16,7 @@ module.exports = (sequelize, DataTypes) => {
            // }
 
         },
-        game_id: {
+        GameId: {
             type: DataTypes.INTEGER,
             allowNull: false,
           //  references: {

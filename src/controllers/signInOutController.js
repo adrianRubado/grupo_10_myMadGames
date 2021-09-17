@@ -40,9 +40,11 @@ const signInController = {
                         res.cookie('persistSession', user.email, { maxAge: (1000 * 60) * 20 })
                     }
 
+                    if(user.verify == 2){
+                        req.session.user = user;
+                        return res.redirect('/')
+                    }
 
-                    req.session.user = user;
-                    return res.redirect('/')
                 }
 
 

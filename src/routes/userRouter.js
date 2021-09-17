@@ -2,12 +2,14 @@ const express = require ('express') ;
 const router = express.Router () ;
 const signUpController = require ('../controllers/signUpController') ;
 const signInOutController = require ('../controllers/signInOutController') ;
-const profileController = require('../controllers/profileController')
+const profileController = require('../controllers/profileController');
+const userCheckController = require ('../controllers/userCheckController') ;
 const {check}= require ('express-validator') ;
 const multer = require('multer')
 const path = require('path')
 const guestMiddleware = require('../middleware/guestMiddleware')
 const authMiddleware = require('../middleware/authMiddleware')
+const authToken = require('../middleware/authToken')
 
 
 var storage = multer.diskStorage({
@@ -36,6 +38,9 @@ var storage = multer.diskStorage({
 
 router.get ('/sign-up',guestMiddleware, signUpController.signUp) ;
 
+ //EXPRESION REGULAR
+var expre =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/   ;
+
 router.post ('/sign-up',upload.single('image'),[
   check('firstName').not().isEmpty().withMessage ('Debes completar el Nombre') ,
   check('firstName').isLength({min :2}).withMessage ('El nombre debe contener minimo 2 caracteres'),
@@ -43,9 +48,11 @@ router.post ('/sign-up',upload.single('image'),[
   check('lastName').not().isEmpty().withMessage ('Debes completar el apellido'),
   check('lastName').isLength({min :2}).withMessage ('El apellido debe contener minimo 2 caracteres'),
 
-  check('password').not().isEmpty().withMessage ('Debes completar la password') ,
-  check("password").matches(/^(?=.\d)(?=.[a-z])(?=.*[A-Z])[0-9a-zA-Z]{8,}$/, "i"),
 
+
+
+  check('password').not().isEmpty().withMessage ('Debes completar la password') ,
+  check("password").isLength({min : 8}).withMessage ('La contraseña debe poseer al menos 8 caracteres'),
   check('email').not().isEmpty().withMessage ('Debes completar el email'),
   check('email').isEmail(),
 
@@ -70,5 +77,8 @@ router.post ('/login', [
  router.get('/profile',authMiddleware,profileController.profile)
 
 /* router.get ('/me', signInOutController.profile) */
+
+router.post('/sign-up/check',guestMiddleware,userCheckController.verifyMail) ; //Corroboramos desde el lado del Front si un Email es repetido
+router.get('/verify',authToken,userCheckController.verifyAccount)
 
 module.exports = router

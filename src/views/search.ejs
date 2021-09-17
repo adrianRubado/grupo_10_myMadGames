@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include ('./partials/head')  %>
+
+<body class="body-search">
+  <%- include('./partials/header') %>
+  <script src = '/validations/darkMode.js'></script>
+<div class="main-search">
+
+<div class="filter_navbar">
+
+  <h2 class="filterTitle">Filtrar Juegos</h2>
+
+
+  <div class="price_Filter">
+    <label for="priceRange"> Price</label>
+    <input type="range" name="priceRange"> </div>
+    <button class="button_filter">Filtro
+      <i class="fas fa-filter"></i></button>
+<div class="filters-Check-Box">
+
+<ul>
+  <%genres.forEach(element => {%> <li> <input type="checkbox"   class="genreToCheck"><%= element.name %></input></li>
+    <% }) %>
+
+</ul>
+
+<ul>
+
+  <%platform.forEach(element => {%> <li> <input type="checkbox"  class="platformToCheck"><%= element.name %></input></li>
+  <% }) %>
+
+</ul>
+
+
+</div>
+
+
+
+<button type="submit" id="submit" class="botonSignIn" >  <img src="/images/logo1.png" width="45px" height="45px"/> Buscar</button>
+
+
+
+</div>
+<div class="main-Search">
+<h1 id="title-search">My Mad Games</h1>
+<div class="games-conteiner">
+
+
+  <%games.forEach(element => {%>
+
+  <article class="individual-game-container">
+
+
+
+
+
+
+     <div class="image-containe">
+      <a href="/products/<%=element.id%>"> <img src = <%=element.image %>   alt="game" width="160px"  class="image-game-cover"></a>
+</div>
+<div class="cont-price-buttons">
+   <a href="/products/<%=element.id%>"> <h3 class="game-name"> <%= element.name%></h3></a>
+    <h4 class="game-price">$<%= element.price %> </h4>
+
+
+    <!-- <div class="buttons-article-container">
+    <a buy-button-search><i class="fas fa-shopping-cart cart-article-search">Agregar</i> </a><br> <a class="buy-button-search" >Comprar</a>
+  </div> -->
+  </div>
+  </article>
+
+  <% }) %>
+
+
+</div>
+</div>
+</div>
+
+<%- include ('./partials/footer.ejs') %>
+
+<script src ="/js/search-page.js"></script>
+
+</body>
+  </html>
+
+
