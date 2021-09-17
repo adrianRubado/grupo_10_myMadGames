@@ -83,4 +83,7 @@ router.post ('/login', [
 router.post('/sign-up/check',guestMiddleware,userCheckController.verifyMail) ; //Corroboramos desde el lado del Front si un Email es repetido
 router.get('/verify',authToken,userCheckController.verifyAccount)
 
+
+router.get("/welcome", signUpController.welcome)
+
 module.exports = router

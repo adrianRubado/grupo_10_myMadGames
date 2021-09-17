@@ -77,17 +77,9 @@ const signUpController = {
           transporter.sendMail(mailOptions)
           console.log('mail enviado')
 
+                 req.session.welcome = req.body.firstName
 
-
-
-
-
-
-
-
-
-
-         return res.redirect('/user/login/')
+         return res.redirect('/user/welcome')
 
         } catch (error) {
             return res.status(500).json({error : error.message})
@@ -106,7 +98,18 @@ const signUpController = {
 
        res.render("newPass")
          
+    },
+
+    welcome: (req,res) => {  
+
+         
+         viewData = { 
+             user : req.session.welcome
+         }
+
+
+        res.render("welcome" , viewData)
     }
-}
+ }
 
 module.exports = signUpController
