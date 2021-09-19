@@ -8,38 +8,57 @@
 
         <%- include('./partials/header') %>
 
-            <main>
+            <main class="game-edit-cont">
                 <h1> Editar <%= game.name %>
                 </h1>
 
-                <form class="form-edit-game">
-                    <div class="content-image"> <img src="<%= game.image %>"> </div>
+                <form class="form-edit-game" method="POST" action="products/<%=game.id%>/edit?_method=PUT">
+                    <div class="content-image" id="cont-img-edit"> <img id="img-edit-img" src="<%= game.image %>">
+                    </div>
 
 
-                    <div class="content-game-descript"> <label for="name">
-                 <input type="text" name="name" value="<%= game.name %> "> </label>
-      
-                 <label for="price"> <input type="text" name="price" value="<%= game.price %> "> </label>
-                 <label for="genre"><input type="text" name="genre" value="<%= game.gameGenre.name %> "> </label>
+                    <div class="content-game-descript">
+                        <div class="name-price-genre">
+                            <label for="name"></label><input type="text" name="name" value="<%= game.name %>"
+                                id="name-input-edit-game"> </label>
+                            <label for="price"> <input type="text" name="price" value="<%= game.price %> "> </label>
+                            <label for="genre"><input type="text" name="genre" value="<%= game.gameGenre.name %> ">
+                            </label>
 
-                 <%genres.forEach(element => {%> <li> <input type="radio"   class="genreToCheck"><%= element.name %></input></li>
-    <% }) %>
+                        </div>
 
-                  
-                  
-                 <label for="name"><input type="text" name="name" value="<%= game.gamePlatform.name %> "> </label> 
+                        <%genres.forEach(element=> {%> <li> <input type="radio" class="genreToCheck">
+                                <%= element.name %></input>
+                            </li>
+                            <% }) %>
 
-                 <%platforms.forEach(element => {%> <li> <input type="radio"   class="genreToCheck"><%= element.name %></input></li>
-                 <% }) %>
+                                <label for="link"> Link del video <input type="text" name="link" id="link"
+                                        value=" <%=game.link  %> "> </label>
+
+                                <h3>
+                                    <%= game.gamePlatform.name %>
+                                </h3>
+                                <div>
+                                    <%platforms.forEach(element=> {%> <input type="radio" name="<%= element.id %>"
+                                            class="genreToCheck">
+                                        <%= element.name %></input>
+                                            <% }) %>
 
 
-                </div>
+                                                <button type="submit" id="button-edit" class="button">
+                                                    <h6> enviar</h6>
+                                                </button>
+
+                                </div>
+                    </div>
 
 
 
-                    </form>
- 
-                    </main>
+
+
+                </form>
+
+            </main>
 
             <!-- Site footer -->
             <%- include ('./partials/footer.ejs') %>

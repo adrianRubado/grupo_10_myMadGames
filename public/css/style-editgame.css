@@ -1,2 +1,25 @@
 .form-edit-game { display: flex; 
 flex-direction: row;}
+
+
+.game-edit-cont{ margin: auto; 
+box-sizing: border-box;
+padding: 10vmin;
+justify-content: center;}
+
+.content-game-descript{display: flex; flex-direction: column;}
+
+h1{ font-family: "roboto";}
+.name-price-genre { display: flex; flex-direction: row; flex-wrap: wrap;}
+
+
+.name-input-edit-game { font-family: "roboto";}
+
+#button-edit{border-radius: 10px; width: 20vw;}
+
+#img-edit-img {width:75vw ;height:100vh; margin:15px; }
+
+@media(min-width:768px){
+
+    #img-edit-img {width:26vw ;height:60vh; } }
+    
