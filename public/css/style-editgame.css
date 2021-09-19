@@ -23,7 +23,9 @@ justify-content: center;}
 
 .input-edit-game{margin: auto;margin-bottom: 2px; }
 
-#img-edit-img {width:80% ;height:100%; margin:15px; }
+.video-section{display: flex; flex-direction: column; width: auto;}
+
+#img-edit-img {width:70%; height: auto; margin: auto; }
 
 @media(min-width:768px){
 
@@ -37,10 +39,14 @@ justify-content: center;}
 
         .cnt-gnres-edit { display: flex; flex-direction: row; flex-wrap: wrap; font-family: "roboto";}
 
-    #img-edit-img {width:160px } }
+    #img-edit-img {width:160px; height: auto; padding: 15px }
 
-    .cont-img-inputs{display: flex; flex-direction: row;}
+    .cont-img-inputs{display: flex; flex-direction: column;}
 
    .video-section{display: flex; flex-direction: column;}
-   
+
+   .name-price-genre { display: flex; flex-direction: column; align-items: center; justify-content: space-around;}
+
+   .cont-img-name-price { display: flex; flex-direction: row;}
+    }
     

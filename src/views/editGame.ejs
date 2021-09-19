@@ -17,21 +17,24 @@
 
 
                     <div class="content-game-descript">
-                        
+                    
                         <div class="cont-img-inputs">
+                            <div class="cont-img-name-price">
                         <div class="content-image" id="cont-img-edit"> <img id="img-edit-img" src="<%= game.image %>">
                         </div>
-                        <div class="inpts-video">
+                        
                         <div class="name-price-genre">
                             <label for="name" class="label-game-edit">Nombre del Juego</label><input class="input-edit-game" type="text" name="name" value="<%= game.name %>"
                                 id="name-input-edit-game"> </label>
                             <label for="price" class="label-game-edit"> Precio <input class="input-edit-game" type="text" name="price" value="$<%= game.price %> "> </label>
-                        </div>
-
+                        </div></div>
+                        <div class="inpts-video">
                         <label for="link" class="video-section"> Link del video <iframe src="<%= game.link %>"  frameborder="0" height="250px"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen>></iframe> <input type="text" name="link" id="link"
-                            value=" <%=game.link  %> "> </label></div>
+                            value=" <%=game.link  %> "> </label>
+
+                        </div>
 
                         </div>
 
