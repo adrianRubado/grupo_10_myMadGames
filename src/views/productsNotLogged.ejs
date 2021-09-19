@@ -50,7 +50,14 @@
         </div>
         <div class="iconos">
             <i class="fas fa-dollar-sign"><span class="tip"><%= game.price  %> </span></i>
-            <i class="fas fa-percent"><span class="tip">Comprar <br> - 1 + </span></i>
+            
+            <div class="container99">
+                <button class="voton quitar">-</button>
+                <span id="valor">1</span>
+                <button class="voton agregar">+</button>
+                <i class="fas fa-shopping-bag"><span class="tip"></span></i>
+                <h4>Comprar</h4>
+            </div>
 
         </div>
             <div class="cuadro">
@@ -87,6 +94,7 @@
 
     <%- include('./partials/footer.ejs')  %>
 
+    <script src="../js/counter.js"></script>
     <script src = '/validations/darkMode.js'></script>
 </body>
 
