@@ -8,32 +8,46 @@
 
         <%- include('./partials/header') %>
 
-            <main class="game-edit-cont">
-                <h1> Editar <%= game.name %>
+            <main class="game-edit-cont" > 
+                <h1 class="title-edit-game"> Editar <%= game.name %>
                 </h1>
 
                 <form class="form-edit-game" method="POST" action="products/<%=game.id%>/edit?_method=PUT">
-                    <div class="content-image" id="cont-img-edit"> <img id="img-edit-img" src="<%= game.image %>">
-                    </div>
+                  
 
 
                     <div class="content-game-descript">
+                        
+                        <div class="cont-img-inputs">
+                        <div class="content-image" id="cont-img-edit"> <img id="img-edit-img" src="<%= game.image %>">
+                        </div>
+                        <div class="inpts-video">
                         <div class="name-price-genre">
-                            <label for="name"></label><input type="text" name="name" value="<%= game.name %>"
+                            <label for="name" class="label-game-edit">Nombre del Juego</label><input class="input-edit-game" type="text" name="name" value="<%= game.name %>"
                                 id="name-input-edit-game"> </label>
-                            <label for="price"> <input type="text" name="price" value="<%= game.price %> "> </label>
-                            <label for="genre"><input type="text" name="genre" value="<%= game.gameGenre.name %> ">
-                            </label>
+                            <label for="price" class="label-game-edit"> Precio <input class="input-edit-game" type="text" name="price" value="$<%= game.price %> "> </label>
+                        </div>
+
+                        <label for="link" class="video-section"> Link del video <iframe src="<%= game.link %>"  frameborder="0" height="250px"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>></iframe> <input type="text" name="link" id="link"
+                            value=" <%=game.link  %> "> </label></div>
 
                         </div>
 
+                
+                        
+                        
+
+                          <div class="cnt-gnres-edit">  <label for="genre" label-game-edit class="label-game-edit"> Género : <%= game.gameGenre.name %> 
+                         
                         <%genres.forEach(element=> {%> <li> <input type="radio" class="genreToCheck">
                                 <%= element.name %></input>
-                            </li>
-                            <% }) %>
+                            </li> </label>
+                            <% }) %> </div>
 
-                                <label for="link"> Link del video <input type="text" name="link" id="link"
-                                        value=" <%=game.link  %> "> </label>
+                               
+                                   
 
                                 <h3>
                                     <%= game.gamePlatform.name %>
@@ -57,6 +71,7 @@
 
 
                 </form>
+            
 
             </main>
 

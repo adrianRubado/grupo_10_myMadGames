@@ -1,25 +1,46 @@
+*{font-family: "roboto";}
+
+
 .form-edit-game { display: flex; 
-flex-direction: row;}
+    flex-direction: column;}
 
 
 .game-edit-cont{ margin: auto; 
 box-sizing: border-box;
-padding: 10vmin;
+padding: 3vmin;
 justify-content: center;}
 
-.content-game-descript{display: flex; flex-direction: column;}
+.content-game-descript{display: flex; flex-direction: column; border-radius: 6px; justify-content: space-between; padding: 5px; background-color: rgba(85, 151, 175, 0.392); position: relative;}
 
-h1{ font-family: "roboto";}
+.title-edit-game { font-family: "roboto"; margin: auto; text-align: center;}
 .name-price-genre { display: flex; flex-direction: row; flex-wrap: wrap;}
 
 
-.name-input-edit-game { font-family: "roboto";}
+.name-input-edit-game {  font-family: "roboto"; margin: auto; text-align: center;}
 
-#button-edit{border-radius: 10px; width: 20vw;}
+#button-edit{border-radius: 10px; width: 20vw;} 
+.label-game-edit { display: flex; flex-direction: column; }
 
-#img-edit-img {width:75vw ;height:100vh; margin:15px; }
+.input-edit-game{margin: auto;margin-bottom: 2px; }
+
+#img-edit-img {width:80% ;height:100%; margin:15px; }
 
 @media(min-width:768px){
 
-    #img-edit-img {width:26vw ;height:60vh; } }
+ 
+
+    .form-edit-game { display: flex; 
+        flex-direction: row;
+    justify-content: space-between; align-items: center;}
+.title-edit-game{margin-top: 1px; padding-bottom: 5px;}
+        .content-game-descript{margin: auto; justify-content: space-between;}
+
+        .cnt-gnres-edit { display: flex; flex-direction: row; flex-wrap: wrap; font-family: "roboto";}
+
+    #img-edit-img {width:160px } }
+
+    .cont-img-inputs{display: flex; flex-direction: row;}
+
+   .video-section{display: flex; flex-direction: column;}
+   
     
