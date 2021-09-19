@@ -17,3 +17,9 @@ Excelente sprint.
 Sprint 4 :
 
 Bueno como retro para el sprint anterior, creemos que tendriamos que mejorar los tiempos de entrega de las tareas, las cuales nos dividimos . Sumado a un mayor compromiso  y participacion. Debemos reunirnos mas con todos los integrantes y ser mas organizados. Para continuar haciendo, mantener el contacto y mantener la velocidad de trabajo ya que esta misma nos permite la entrega prospera del sprint.  Hacer menos materiales individuales, ya que el beneficio de estos sprints es la resolucion de los mismos para asentar conceptos. Por ultimo debemos dejar de ser desordenados y mejorar nuestro desempeño con la plataforma git, ya que con ello permite una mejora en la sincronizacion en el trabajo.
+
+
+Sprint 6 : 
+En cuanto a la retrospectiva del sprint anterior, tenemos que mejorar el compromiso por parte de cada uno, las tareas las cuales nos dividimos y tiempo de miniEntregas personales. Lo positivo de este sprint, mayor exactitud en los conceptos a trabajar y mejor productividad del tiempo. Correcciones de errores y mejor comunicacion en todo el grupo, sin embargo el desempeño grupal se ve afectado ante la falta de compromiso lo cual puede generar un sprint menos satisfactorio. Finalmente, mas alla de este escenerio cumplimos con los objetivos propuestos por el sprint, tanto obligatorios como opcionales.
+
+Link de Trello :https://trello.com/b/R9h0Bhs2/mymadgames#
