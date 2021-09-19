@@ -5,6 +5,7 @@
 
 <body class="body-search">
   <%- include('./partials/header') %>
+  <script src = '/validations/darkMode.js'></script>
 <div class="main-search">
 
 <div class="filter_navbar">
@@ -60,7 +61,7 @@
       <a href="/products/<%=element.id%>"> <img src = <%=element.image %>   alt="game" width="160px"  class="image-game-cover"></a>
 </div>
 <div class="cont-price-buttons">
-   <a href="/products/<%=element.id%>"> <h3 class="game-name"> <%= element.name%></h3></a>
+   <a href="/products/<%=element.id%>"> <h3 class="game-name"> <%= element.name%> <%= element.gameGenre.name %>  </h3></a>
     <h4 class="game-price">$<%= element.price %> </h4>
 
 

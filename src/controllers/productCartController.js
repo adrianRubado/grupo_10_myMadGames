@@ -1,4 +1,5 @@
 const db = require('../../database/models')
+const sequelize = require('sequelize')
 
 
 
@@ -98,6 +99,21 @@ const db = require('../../database/models')
        }
 
 
+    },
+
+    count : async (req,res) =>{
+        const userId = req.body.data.id
+        const total = await db.Cart.findAll({
+            attributes: [[sequelize.fn('sum', sequelize.col('quantity')), 'count']],
+            group : ['UserId'],
+            raw: true,
+            order: sequelize.literal('count DESC'),
+            where : {
+                UserId : userId
+            }
+          });
+
+          res.json({count : total})
     }
 }
 

@@ -30,6 +30,10 @@ header{
   max-height: 15vh;
 }
 
+.dolarBlanco{
+  display: none;
+}
+
 
 
 .pictures{
@@ -209,8 +213,8 @@ background-color:#ea4c89
 
 }
 .mySlides{
-  width: 100%;
-  height: 10%;
+  width: 100vw;
+  height: 39vh;
 }
 
 .copy-header{
@@ -351,16 +355,213 @@ footer{
     text-align: left;
 }
 
+.header-dark{
+  background-color: rgb(127, 11, 151);
+}
+
+
+.search-dark{
+  color: black;
+}
 
 
 
- body{
+.miBody{
+  background: rgb(37, 37, 37)
+
+}
+
+.miBody .buttomtotal-chart {
+  background: rgb(37, 37, 37)
+
+}
+
+
+.miBody .juegosChart{
+  background: rgb(37, 37, 37);
+  color: white;
+
+}
+
+
+.miBody .page-chart{
+  background: rgb(37, 37, 37);
+  color: white;
+
+}
+
+
+.miBody .botonSignIn{
+
+  color: white;
+}
+
+
+.miBody article{
+  background-color: rgb(37, 37, 37);
+  color: white;
+}
+
+.miBody .purchase-item{
+  background-color: rgb(37, 37, 37);
+  color: white;
+}
+
+.miBody .item-detail{
+  background-color: rgb(37, 37, 37);
+  color: white;
+}
+
+.miBody .side-panel{
+  background-color: rgb(37, 37, 37);
+  color: white;
+}
+
+.miBody .side-details{
+  background-color: rgb(37, 37, 37);
+  color: white;
+}
+
+.miBody .purchase{
+  background-color: rgb(37, 37, 37);
+  color: white;
+}
+
+.miBody p{
+  color: white;
+}
+
+.miBody li{
+  color: white;
+}
+
+
+.miBody h1 {
+  color: white;
+}
+
+.miBody h2 {
+  color: white;
+}
+
+.miBody h3 {
+  color: white;
+}
+
+.miBody h4 {
+  color: white;
+}
+
+.miBody span{
+  color: white;
+}
+
+
+
+.miBody2{
+
+  transition: color 300ms, background-color 300ms;
+  background: rgb(37, 37, 37)
+}
+
+.miBody2 .botonSignIn{
+  transition: color 300ms, background-color 300ms;
+  color: white;
+}
+
+
+
+.miBody2 article{
+  transition: color 300ms, background-color 300ms;
+  background-color: rgb(37, 37, 37);
+  color: white;
+}
+
+.miBody2 p{
+  transition: color 300ms, background-color 300ms;
+  color: white;
+}
+
+.miBody2 li{
+  transition: color 300ms, background-color 300ms;
+  color: white;
+}
+
+
+.miBody2 h1 {
+  color: white;
+}
+
+.miBody2 h2 {
+  color: white;
+}
+
+.miBody2 h3 {
+  color: white;
+}
+
+.miBody2 h4 {
+  color: white;
+}
+
+.miBody2 span{
+  color: white;
+}
+
+
+.miBody2 .buttomtotal-chart {
+  background: rgb(37, 37, 37)
+
+}
+
+
+.miBody2 .juegosChart{
+  background: rgb(37, 37, 37);
+  color: white;
+
+}
+
+
+.miBody2 .page-chart{
+  background: rgb(37, 37, 37);
+  color: white;
+
+}
+
+.miBody2 .purchase-item{
+  background-color: rgb(37, 37, 37);
+  color: white;
+}
+
+.miBody2 .item-detail{
+  background-color: rgb(37, 37, 37);
+  color: white;
+}
+
+.miBody2 .side-panel{
+  background-color: rgb(37, 37, 37);
+  color: white;
+}
+
+.miBody2 .side-details{
+  background-color: rgb(37, 37, 37);
+  color: white;
+}
+
+.miBody2 .purchase{
+  background-color: rgb(37, 37, 37);
+  color: white;
+}
+
+
+
+ /* body{
     font-family: 'Roboto', sans-serif;
     margin: 0;
     margin-top: 0;
     background-color: rgb(214, 214, 214);
     width: 100%;
- }
+ } */
 
 .bodyDetail {
   background-color: rgb(240, 240, 240);
@@ -781,6 +982,12 @@ form.example input[type=text] {
 
 
 
+.ham{
+  display: block;
+}
+
+
+
 
 
 
@@ -788,6 +995,20 @@ form.example input[type=text] {
 
 @media (min-width:768px){
 
+
+  .ham{
+
+    display: none;
+  }
+
+  .mySlides{
+    width: 100vw;
+    height: 74vh;
+  }
+
+  .altaNavePa{
+    display : none
+  }
   .contenedorProductosSeccion{ display: flex;
     flex-direction: row;
   flex-wrap: wrap;
