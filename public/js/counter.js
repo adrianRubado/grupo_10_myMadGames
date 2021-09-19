@@ -18,7 +18,9 @@ botones.forEach(boton => {
                 }
         } 
         else if (estilos.contains('agregar')) {
-            contador++;
+            if (contador < 10){
+                contador++;
+            }
         }
         valor.textContent = contador;
     })
