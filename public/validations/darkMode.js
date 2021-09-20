@@ -15,8 +15,8 @@ if (currentTheme == "dark") {
   document.body.classList.toggle("miBody");
   header.classList.toggle('header-dark')
   console.log(form)
-  searc.style.backgroundColor = 'rgb(' + 127 + ',' + 11 + ',' + 151+ ')';
-  form.style.backgroundColor = 'rgb(' + 127 + ',' + 11 + ',' + 151+ ')';
+  searc.style.backgroundColor = '#8a3b3b' /* 'rgb(' + 127 + ',' + 11 + ',' + 151+ ')'; */
+  form.style.backgroundColor = '#8a3b3b'/* 'rgb(' + 127 + ',' + 11 + ',' + 151+ ')'; */
 
 
   toggle.checked = true
@@ -41,8 +41,8 @@ toggle.addEventListener("click", function () {
     articles.forEach(a =>{
         a.classList.toggle('miBody2')
     })
-    searc.style.backgroundColor = 'rgb(' + 127 + ',' + 11 + ',' + 151+ ')';
-    form.style.backgroundColor = 'rgb(' + 127 + ',' + 11 + ',' + 151+ ')';
+    searc.style.backgroundColor = '#8a3b3b'       /* 'rgb(' + 127 + ',' + 11 + ',' + 151+ ')'; */
+    form.style.backgroundColor = '#8a3b3b'/* 'rgb(' + 127 + ',' + 11 + ',' + 151+ ')'; */
     var theme = document.body.classList.contains("miBody2")
       ? "dark"
       : "light";
