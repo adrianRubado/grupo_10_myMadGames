@@ -212,7 +212,7 @@ article{
     font-weight: bold;
     text-align: left;
     margin-bottom: 15px;
-
+    text-align: center
 }
 
 .nombre input {
@@ -221,7 +221,7 @@ article{
 }
 .iconos{
     color: rgb(44, 40, 40);
-    display: flex;
+   /*  display: flex; */
     justify-content: space-between;
     margin-bottom: 20px;
     height: 15vh;
@@ -243,16 +243,18 @@ article{
     display: flex;
     justify-content: space-around;
     color: rgb(111, 111, 218);
-    height: 50%;
+    
 
 }
 .image{
     margin-bottom: 10px;
     background-color: gray;
     box-shadow: 0px 0px 10px rgb(100,100,100);
-    display:flex;
+    /* display:flex; */
     max-width: 100%;
     vertical-align: middle;
+    text-align: center;
+    justify-content: center;
 
 }
 
@@ -467,6 +469,57 @@ article{
     margin-top:5%
 
 }
+
+.container99 {
+    /* background-color: gray;
+    color: white; */
+    font-weight: bolder;
+    /* border: solid gray 1px; */
+    height: 30px;
+    width: 95%;
+    font-size: 18px;
+}
+
+.quitar {
+    width: 30px;
+    height: 25px;
+    font-weight: bolder;
+    background-color: rgb(233, 164, 164);
+    border: none;
+    border-radius: 5px;
+}
+
+.agregar {
+    width: 30px;
+    height: 25px;
+    font-weight: bolder;
+    background-color: rgb(210, 233, 210);
+    border: none;
+    border-radius: 5px;
+}
+
+.buy-now {
+    width: 100%;
+    background-color: rgb(191, 191, 226);
+    height: 30px;
+    font-weight: bolder;
+}
+
+.add-to-cart {
+    width: 100%;
+    background-color: rgb(221, 172, 205);
+    height: 30px;
+    font-weight: bolder;
+}
+
+.far {
+    font-weight: bolder;
+    border: none;
+    background-color: white;
+    font-size: 18px;
+    color: #3f51b5
+}
+
 @media (min-width: 768px){
     body{
     background-color: rgb(214, 214, 214);
