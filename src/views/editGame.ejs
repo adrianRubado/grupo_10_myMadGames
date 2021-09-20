@@ -8,65 +8,77 @@
 
         <%- include('./partials/header') %>
 
-            <main class="game-edit-cont" > 
+            <main class="game-edit-cont">
                 <h1 class="title-edit-game"> Editar <%= game.name %>
                 </h1>
 
                 <form class="form-edit-game" method="POST" action="products/<%=game.id%>/edit?_method=PUT">
-                  
+
 
 
                     <div class="content-game-descript">
-                    
+
                         <div class="cont-img-inputs">
                             <div class="cont-img-name-price">
-                        <div class="content-image" id="cont-img-edit"> <img id="img-edit-img" src="<%= game.image %>">
-                        </div>
-                        
-                        <div class="name-price-genre">
-                            <label for="name" class="label-game-edit">Nombre del Juego</label><input class="input-edit-game" type="text" name="name" value="<%= game.name %>"
-                                id="name-input-edit-game"> </label>
-                            <label for="price" class="label-game-edit"> Precio <input class="input-edit-game" type="text" name="price" value="$<%= game.price %> "> </label>
-                        </div></div>
-                        <div class="inpts-video">
-                        <label for="link" class="video-section"> Link del video <iframe src="<%= game.link %>"  frameborder="0" height="250px"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>></iframe> <input type="text" name="link" id="link"
-                            value=" <%=game.link  %> "> </label>
 
-                        </div>
-
-                        </div>
-
-                
-                        
-                        
-
-                          <div class="cnt-gnres-edit">  <label for="genre" label-game-edit class="label-game-edit"> Género : <%= game.gameGenre.name %> 
-                         
-                        <%genres.forEach(element=> {%> <li> <input type="radio" class="genreToCheck">
-                                <%= element.name %></input>
-                            </li> </label>
-                            <% }) %> </div>
-
-                               
-                                   
-
-                                <h3>
-                                    <%= game.gamePlatform.name %>
-                                </h3>
-                                <div>
-                                    <%platforms.forEach(element=> {%> <input type="radio" name="<%= element.id %>"
-                                            class="genreToCheck">
-                                        <%= element.name %></input>
-                                            <% }) %>
-
-
-                                                <button type="submit" id="button-edit" class="button">
-                                                    <h6> ACTUALIZAR</h6>
-                                                </button>
-
+                                <div class="content-image" id="cont-img-edit"> <img id="img-edit-img"
+                                        src="<%= game.image %>">
                                 </div>
+
+                                <div class="name-price-genre">
+                                    <label for="name" class="label-game-edit">Nombre del Juego<input
+                                            class="input-edit-game" type="text" name="name" value="<%= game.name %>"
+                                            id="name-input-edit-game"> </label>
+                                            <label for="price" class="label-game-edit"> Precio <input class="input-edit-game"
+                                                type="text" name="price" value="$<%= game.price %> "> </label>
+                                    <label for="description" class="descript-label"> Descripción<textarea
+                                            id="txt-description" class="label-game-edit" type="textarea" value="<%= game.description %> "
+                                            name="description"></textarea> </label>
+                                    
+                                </div>
+                            </div>
+                            <div class="inpts-video">
+                                <label for="link" class="video-section"> Link del video <iframe src="<%= game.link %>"
+                                        frameborder="0" height="250px"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen>></iframe> <input type="text" name="link" id="link"
+                                        value=" <%=game.link  %> "> </label>
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+                        <div class="cnt-gnres-edit"> <label for="genre" label-game-edit class="label-game-edit"> Género
+                                : <%= game.gameGenre.name %></label>
+
+                                    <%genres.forEach(element=> {%> <li> <input type="radio" class="genreToCheck">
+                                            <%= element.name %></input>
+                                        </li> 
+                            <% }) %>
+                        </div>
+
+
+
+
+                        <h3>
+                            <%= game.gamePlatform.name %>
+                        </h3>
+                        <div>
+                            <%platforms.forEach(element=> {%> <input type="radio" name="<%= element.id %>"
+                                    class="genreToCheck">
+                                <%= element.name %></input>
+                                    <% }) %>
+
+
+                                        <button type="submit" id="button-edit" class="button">
+                                            <h6> ACTUALIZAR</h6>
+                                        </button>
+
+                        </div>
                     </div>
 
 
@@ -74,7 +86,7 @@
 
 
                 </form>
-            
+
 
             </main>
 
