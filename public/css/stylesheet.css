@@ -189,6 +189,10 @@ a{
     color: black;
     margin-left: 10px;
     font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    color: rgb(80, 80, 202);
+    font-weight: bolder;
+
 }
 .menu{
     background-color: rgb(80, 80, 202);
@@ -204,9 +208,8 @@ article{
 }
 .nombre{
 
-    font-size: 25px;
+    font-size: 30px;
     font-weight: bold;
-    text-decoration: underline;
     text-align: left;
     margin-bottom: 15px;
 
@@ -249,6 +252,8 @@ article{
     box-shadow: 0px 0px 10px rgb(100,100,100);
     display:flex;
     max-width: 100%;
+    vertical-align: middle;
+
 }
 
 .chart{
