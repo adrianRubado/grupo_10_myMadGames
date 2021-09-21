@@ -44,7 +44,7 @@ router.get('/:id/',productsController.detail )
 
 router.get('/:id/edit',[authMiddleware,adminMiddleware], productsController.edit)
 
-router.put('/:id/edit',upload.single("image"), /*[authMiddleware,adminMiddleware],*/ productsController.update);
+router.put('/:id/edit',upload.single("image"), [authMiddleware,adminMiddleware], productsController.update);
 
 
 router.post('/favorites',authMiddleware,productsController.addFavorite);

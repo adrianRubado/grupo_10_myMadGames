@@ -62,12 +62,12 @@ const productsController = {
        await db.Game.update({
             name: req.body.name,
             price: req.body.price,
-            platform: req.body.price,
+            platform: req.body.platform,
             description: req.body.description,
             link: req.body.link,
             image: req.file.originalname,
             requirements: req.body.requirements,
-            genre: req.body.category
+            genre: req.body.genre
         },{
             where:{
                 id:req.params.id
@@ -75,7 +75,7 @@ const productsController = {
         )
 
 
-        return  res.redirect("/products/" + id)
+        return res.render('index', viewData)
 
 
     },

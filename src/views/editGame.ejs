@@ -55,7 +55,7 @@
                         <div class="cnt-gnres-edit"> <label for="genre" label-game-edit class="label-game-edit"> Género
                                 : <%= game.gameGenre.name %></label>
 
-                                    <%genres.forEach(element=> {%> <li> <input type="radio" class="genreToCheck">
+                                    <%genres.forEach(element=> {%> <li> <input type="radio" class="genreToCheck" name="genre" value="<%=element%>" > 
                                             <%= element.name %></input>
                                         </li> 
                             <% }) %>
@@ -68,7 +68,7 @@
                             <%= game.gamePlatform.name %>
                         </h3>
                         <div>
-                            <%platforms.forEach(element=> {%> <input type="radio" name="<%= element.id %>"
+                            <%platforms.forEach(element=> {%> <input type="radio" name="PLatform" value="<%=element%>"
                                     class="genreToCheck">
                                 <%= element.name %></input>
                                     <% }) %>
