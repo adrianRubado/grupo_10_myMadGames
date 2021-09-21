@@ -11,15 +11,15 @@ const signInForm = document.querySelector('.contenedorFormularioSignIn')
 
 
 
-const currentTheme = localStorage.getItem("theme");
+const currentTheme = localStorage.getItem("theme")
 if (currentTheme == "dark") {
-  document.body.classList.toggle("miBody");
+  document.body.classList.toggle("miBody")
   /* signInForm.classList.toggle("miBody") */
   header.classList.toggle('header-dark')
 
   console.log(form)
   search.style.backgroundColor = '#8a3b3b' /* 'rgb(' + 127 + ',' + 11 + ',' + 151+ ')'; */
-  form.style.backgroundColor = '#8a3b3b'/* 'rgb(' + 127 + ',' + 11 + ',' + 151+ ')'; */
+  form.style.backgroundColor = '#8a3b3b'  /* 'rgb(' + 127 + ',' + 11 + ',' + 151+ ')'; */
 
 
   toggle.checked = true
