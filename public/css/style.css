@@ -38,6 +38,7 @@ header{
 
 .pictures{
   max-height: 80%;
+  height:80%;
 }
 
 .mercadoPago{
@@ -213,8 +214,8 @@ background-color:#ea4c89
 
 }
 .mySlides{
-  width: 100%;
-  height: 10%;
+  width: 100vw;
+  height: 39vh;
 }
 
 .copy-header{
@@ -355,28 +356,37 @@ footer{
     text-align: left;
 }
 
+.header-dark{
+  background-color: #8a3b3b/* rgb(127, 11, 151) */;
+}
+
+
+.search-dark{
+  color: black;
+}
+
 
 
 .miBody{
-  background: black
+  background: rgb(37, 37, 37)
 
 }
 
 .miBody .buttomtotal-chart {
-  background: black
+  background: rgb(37, 37, 37)
 
 }
 
 
 .miBody .juegosChart{
-  background: black;
+  background: rgb(37, 37, 37);
   color: white;
 
 }
 
 
 .miBody .page-chart{
-  background: black;
+  background: rgb(37, 37, 37);
   color: white;
 
 }
@@ -389,32 +399,32 @@ footer{
 
 
 .miBody article{
-  background-color: black;
+  background-color: rgb(37, 37, 37);
   color: white;
 }
 
 .miBody .purchase-item{
-  background-color: black;
+  background-color: rgb(37, 37, 37);
   color: white;
 }
 
 .miBody .item-detail{
-  background-color: black;
+  background-color: rgb(37, 37, 37);
   color: white;
 }
 
 .miBody .side-panel{
-  background-color: black;
+  background-color: rgb(37, 37, 37);
   color: white;
 }
 
 .miBody .side-details{
-  background-color: black;
+  background-color: rgb(37, 37, 37);
   color: white;
 }
 
 .miBody .purchase{
-  background-color: black;
+  background-color: rgb(37, 37, 37);
   color: white;
 }
 
@@ -452,7 +462,7 @@ footer{
 .miBody2{
 
   transition: color 300ms, background-color 300ms;
-  background: black
+  background: rgb(37, 37, 37)
 }
 
 .miBody2 .botonSignIn{
@@ -464,7 +474,7 @@ footer{
 
 .miBody2 article{
   transition: color 300ms, background-color 300ms;
-  background-color: black;
+  background-color: rgb(37, 37, 37);
   color: white;
 }
 
@@ -501,46 +511,46 @@ footer{
 
 
 .miBody2 .buttomtotal-chart {
-  background: black
+  background: rgb(37, 37, 37)
 
 }
 
 
 .miBody2 .juegosChart{
-  background: black;
+  background: rgb(37, 37, 37);
   color: white;
 
 }
 
 
 .miBody2 .page-chart{
-  background: black;
+  background: rgb(37, 37, 37);
   color: white;
 
 }
 
 .miBody2 .purchase-item{
-  background-color: black;
+  background-color: rgb(37, 37, 37);
   color: white;
 }
 
 .miBody2 .item-detail{
-  background-color: black;
+  background-color: rgb(37, 37, 37);
   color: white;
 }
 
 .miBody2 .side-panel{
-  background-color: black;
+  background-color: rgb(37, 37, 37);
   color: white;
 }
 
 .miBody2 .side-details{
-  background-color: black;
+  background-color: rgb(37, 37, 37);
   color: white;
 }
 
 .miBody2 .purchase{
-  background-color: black;
+  background-color: rgb(37, 37, 37);
   color: white;
 }
 
@@ -987,6 +997,11 @@ form.example input[type=text] {
   .ham{
 
     display: none;
+  }
+
+  .mySlides{
+    width: 100vw;
+    height: 74vh;
   }
 
   .altaNavePa{

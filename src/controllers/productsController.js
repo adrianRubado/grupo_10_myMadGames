@@ -4,6 +4,7 @@ const path = require('path');
 const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8')); */
 
 const db = require("../../database/models");
+const Op = db.Sequelize.Op;
 
 
 
@@ -162,18 +163,24 @@ const productsController = {
 
 
 
-    } , search: async (req, res) => {
+    } ,
+    search: async (req, res) => {
 
-      const games = await db.Game.findAll();
+        const games = await db.Game.findAll({
+            include:[{association:"gameGenre"}],
+            where:  {name:{[Op.like]:`%${req.query.q}%`}}
+            });
       const genres = await db.Genre.findAll();
       const consoles = await db.Platform.findAll();
 
       viewData = { games : games,
                    genres: genres,
                 platform: consoles};
-         res.render("search" , viewData)
+         res.render("search", viewData)
 
     }
+
+
 
 }
 

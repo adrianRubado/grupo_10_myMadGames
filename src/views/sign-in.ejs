@@ -6,8 +6,10 @@
   <body>
 
     <%- include('./partials/header.ejs') %>
-
+    <script src = '/validations/darkMode.js'></script>
       <main id="mainSignIn">
+
+
 
 <div class="contenedorFormularioSignIn">
         <div class="contenedorTitulosSignIn">
@@ -46,7 +48,7 @@
 
            <div class="contRecordameSignIn"> <input type="checkbox"  name="persist" > <label for="recordame" class="recordameLabel"><p>Recordame</p> </label></div>
           </div>
-            <a class="forgotPass" href="asdsad">Forgot your password?</a>
+            <a class="forgotPass" href="/user/change-password">Forgot your password?</a>
 
             <div>
               <ul class="errors-signin"></ul>
@@ -59,7 +61,7 @@
       <%- include('./partials/footer.ejs') %>
       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
       <!-- <script src="/validations/signin-scripts.js"></script> -->
-      <script src = '/validations/darkMode.js'></script>
+
   </body>
 
 
