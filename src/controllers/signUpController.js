@@ -1,6 +1,4 @@
-const fs= require('fs') ;
-const path = require ('path');
-const {check,validationResult} = require('express-validator');
+const {validationResult} = require('express-validator');
 const db = require('../../database/models')
 const bcrypt= require ('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -69,7 +67,7 @@ const signUpController = {
           let mailOptions = {
             from: "remitente", // sender address
             to: req.body.email, // list of receivers
-            subject: "enviado desde nodeMailer", // Subject line
+            subject: "Gracias por registrate!!!", // Subject line
             html: `<p>Gracias por registrate en mymadgames.</p><br><p>Para verificar tu cuenta cliquea este link :</p><a href=http://localhost:3002/user/verify?token=${token}>http://localhost:3002/user/verify?token=${token}</a>`, // plain text body
 
           };
@@ -86,17 +84,6 @@ const signUpController = {
 
         }
 
-
-    }, newPassMail : async function  (req,res) {
-
-
-
-        res.render("newPassMail")
-    },
-    newPassGetForm: async function (req,res) {
-
-
-       res.render("newPass")
 
     },
 
