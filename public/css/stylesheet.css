@@ -520,6 +520,18 @@ article{
     color: #3f51b5
 }
 
+.fa-share-alt {
+    font-weight: bolder;
+    border: none;
+    background-color: white;
+    font-size: 18px;
+    color: #3f51b5
+}
+
+.fav-opacity {
+    opacity: 0;
+}
+
 @media (min-width: 768px){
     body{
     background-color: rgb(214, 214, 214);
@@ -622,4 +634,9 @@ article{
     .descripcion h5 {
         margin-top: 0px;
     }
+
+    .fav-opacity {
+        opacity: 1;
+    }
+
 }
