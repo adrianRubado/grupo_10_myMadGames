@@ -38,6 +38,7 @@ header{
 
 .pictures{
   max-height: 80%;
+  height:80%;
 }
 
 .mercadoPago{
@@ -356,7 +357,7 @@ footer{
 }
 
 .header-dark{
-  background-color: rgb(127, 11, 151);
+  background-color: #8a3b3b/* rgb(127, 11, 151) */;
 }
 
 
