@@ -3,6 +3,7 @@ window.addEventListener('load',function(){
     const plus = document.querySelectorAll('.mas')
     const minus = document.querySelectorAll('.menos')
     const trash = document.querySelectorAll('.trash')
+    const star = document.querySelectorAll('.star')
 
 
 
