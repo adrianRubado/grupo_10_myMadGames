@@ -12,6 +12,11 @@
                 <h1 class="title-edit-game"> Editar <%= game.name %>
                 </h1>
 
+                <% if(locals.errors &&errors.name) {%> 
+                      <h3>Tu formulario presentó errores en <%=errors.name  %> </h3>
+
+                        <%  }%> 
+
                 <form class="form-edit-game" method="POST" enctype="multipart/form-data" action="/products/<%=game.id%>/edit?_method=PUT">
 
 

@@ -4,6 +4,7 @@ const path = require('path')
 const multer = require('multer')
 const productsController = require ('../controllers/productsController') ;
 const {check}= require ('express-validator') ;
+const updateGameMiddleware = require("../middleware/check-middleware-update")
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -44,7 +45,7 @@ router.get('/:id/',productsController.detail )
 
 router.get('/:id/edit',[authMiddleware,adminMiddleware], productsController.edit)
 
-router.put('/:id/edit',upload.single("image"), [authMiddleware,adminMiddleware], productsController.update);
+router.put('/:id/edit',upload.single("image"), [updateGameMiddleware, authMiddleware,adminMiddleware], productsController.update);
 
 
 router.post('/favorites',authMiddleware,productsController.addFavorite);

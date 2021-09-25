@@ -1,8 +1,9 @@
+
 const fs = require('fs');
 const path = require('path');
 /* const juegosFilePath = path.join(__dirname, '../database/games.json');
 const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8')); */
-
+const { validationResult } = require('express-validator');
 const db = require("../../database/models");
 const Op = db.Sequelize.Op;
 
@@ -59,6 +60,15 @@ const productsController = {
     update:async (req, res) => {
         const id = req.params.id
 
+        const errors = validationResult(req);
+
+        if (errors.isEmpty()) { 
+
+        } else{ res.send(errors)}
+            
+            
+            //res.render(`/products/${id}/edit`, {errors})} // 
+    
      if(!req.file) { await db.Game.update({
         name: req.body.name,
         price: req.body.price,
@@ -93,9 +103,7 @@ const productsController = {
 
 
         return res.redirect(`/products/${id}`)
-
-
-    },
+             } ,
 
     post: async(req, res) => {
 
