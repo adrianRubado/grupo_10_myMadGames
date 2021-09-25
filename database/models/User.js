@@ -16,6 +16,8 @@ module.exports = (sequelize, dataTypes) => {
                               allowNull:false },
                  image:{type:dataTypes.STRING,
                         defaultValue: null},
+                 verify:{type:dataTypes.BOOLEAN,
+                            defaultValue: 1},
 
                 RoleId:{type:dataTypes.INTEGER,
                   //  model: Role,

@@ -1,0 +1,123 @@
+* { box-sizing: border-box;}
+
+
+.filter_navbar { display: flex;
+    flex-direction: row;
+    background-color: rgb(214, 214, 214) ;
+
+ justify-content: center;}
+
+    li {list-style: none;
+    margin: 5px;}
+
+    .filterTitle { margin: 1px auto 1px 5px;}
+
+    .games-conteiner { display: flex;
+     flex-direction: column;
+
+    padding: 5px;}
+
+    .game-name { box-sizing: border-box; font-weight: bolder; font-size: 17px; color: rgba(89, 89, 90, 0.96); }
+
+    .game-price { font-weight: bolder; color: cornflowerblue;}
+
+
+
+   .image-containe { padding: 0px auto;
+    border-radius: 50%;
+}
+   
+
+
+
+    .cont-buy-buttons { display: flex;
+                      flex-direction: row;}
+    .buy-button-search { font-size: 16px;
+                        color: blue;
+                        margin: auto;
+
+                       font-style: italic;}
+
+                       .buttons-article-container{ display: flex;
+                     flex-direction: row;
+                     margin: auto;
+                    justify-content: center;}
+
+                       .cart-article-search { font-size: 16px;}
+
+    .image-game-cover { margin: 15px 0px;
+        border: 8px ridge  rgb(238, 238, 225);
+height: 200px;
+box-sizing: border-box;
+    border-radius: 10px;}
+
+
+    .individual-game-container{ margin: none;  background-color:rgba(253, 253, 253, 0.008) }
+
+
+
+
+    .filters-Check-Box { display: none;}
+    .main-search{ display: flex; flex-direction: column;}
+
+
+
+@media (min-width:768px){
+
+    #title-search { font-family: cursive; display: block; text-align: center;
+    margin: 45px auto;
+}
+
+
+    .filters-Check-Box { display: flex; flex-direction: row; align-items: center; box-sizing: content-box; flex-wrap: wrap;}
+
+.main-search { display: flex;
+
+ flex-direction: row;
+ ;}
+    .button_filter {display: none; }
+
+    .price_Filter { display: flex;
+    flex-direction: column;
+    padding: 5px 15px 5px 15px ;
+
+width: auto;}
+
+.games-conteiner { display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 5%;
+                    margin: 0px auto;
+                    padding-top: 10px;
+
+                    flex-wrap: wrap;
+
+                      }
+.individual-game-container { width: 20%;
+    box-sizing: border-box;
+    display: flex;
+    border-color: transparent;
+    flex-direction: column;
+    padding: 3px;
+  margin: 25px;
+}
+
+
+.game-description{display: flex;
+                    height: 80%;
+                border-radius: 2px;
+                background-color: rgba(11, 80, 255, 0.344);
+               ;}
+
+    .filter_navbar { display: flex;
+     flex-direction: column;
+     justify-content: start;
+     padding: 30px;
+     background-color: #2195f354;
+
+
+    width: 20vw;}
+
+
+}

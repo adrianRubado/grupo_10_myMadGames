@@ -14,60 +14,45 @@ window.addEventListener('load', function () {
     const message = document.querySelector ('small');
 
     formsSignIn.addEventListener('submit', async function (e){
-      
-        
+       /*  e.preventDefault(); */
+
+
+
+
+
+
+
 
             const emailValue = email.value.trim();
             const passwordValue = password.value.trim();
 
 
-            control ();
-            console.log(count)
 
-            if (count > 0) {
-                
-                 e.preventDefault();
-                 
+
+
+             if(emailValue===''){
+             'El email esta sin completar'
+             }
+             if(passwordValue===''){
+                 'La contraseña es obligatoria'
+
              }
 
+             try {
+                const data = {
+                    email: email.value
+                  }
+                const res = await axios.post('http://localhost:3002/user/sign-up/check', {data});
+                const emailrepeat = (res.data.error);
 
+                if (!emailrepeat){
+                    'Invalid credentials'
+                }
 
-
-
-             async  function control(){ if(emailValue===''){
-                count ++;
-               message.classList.remove ('show-errors')
-                message.classList.add ('show-errors')
-            message.innerHTML ='Credenciales Invalidas'
-            }
-            if(passwordValue===''){
-               count ++;
-               message.classList.remove ('show-errors')
-                message.classList.add ('show-errors')
-               message.innerHTML ='Credenciales Invalidas'
+            } catch (error) {
+                console.log(error.message)
 
             }
-
-            try {
-               const data = {
-                   email: email.value
-                 }
-               const res = await axios.post('http://localhost:3002/user/sign-up/check', {data});
-               const emailrepeat = (res.data.error);
-
-               if (!emailrepeat){
-                   count ++;
-                   message.classList.remove ('show-errors')
-                   message.classList.add ('show-errors')
-                  message.innerHTML ='Credenciales Invalidas'
-               }
-
-           } catch (error) {
-               console.log(error.message)
-
-           }} 
-            
-          
 
 
 

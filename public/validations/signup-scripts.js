@@ -27,51 +27,51 @@ window.addEventListener('load', function () {
 
 
     formsSignup.addEventListener('submit',  function (e){
-        
-       
+
+
 
         control();
-        
+
         console.log(count) ;
         if (count > 0) {
-            e.preventDefault();    
+            e.preventDefault();
         }
-    
+
 
         async function control()   {
-            
+
             const firstNameValue = firstName.value.trim();
             const lastNameValue = lastName.value.trim();
             const passwordValue = password.value.trim();
             const emailValue = email.value.trim();
             const fileImageValue = fileImage.value.trim();
             const bdayValue = birthDay.value;
-    
+
             function setErrorsFor(input, msg) {
                  count +=1
                 const formular = input.parentElement;
                 const small = formular.querySelector('small');
-                
-        
+
+
                 small.innerText = msg ;
-        
-                
+
+
                 formular.classList.remove('success');
                 formular.classList.add ('error');
             }
-        
+
             function setSuccesFor(input) {
                 const formular = input.parentElement;
-                
+
                 formular.classList.remove('error');
                 formular.classList.add('success') ;
 
-        
-        
+
+
             }
             if (firstNameValue === ''){
                 setErrorsFor(firstName, "El nombre esta sin completar")
-                 
+
              }else if(firstNameValue.length < 2){
                  setErrorsFor(firstName, "El  nombre debe ser mas largo")
              }else{
@@ -83,7 +83,7 @@ window.addEventListener('load', function () {
 
              if (lastNameValue === ''){
                 setErrorsFor(lastName, "El Apellido esta sin completar")
-                 
+
              }else if(lastNameValue.length < 2){
                  setErrorsFor(lastName, "El  Apellido debe ser mas largo")
              }else{
@@ -96,13 +96,13 @@ window.addEventListener('load', function () {
              if(emailValue===''){
                  setErrorsFor (email, 'El email esta sin completar')
 
-             
+
 
              }else{
                  setSuccesFor(email) ;
              }
 
-             
+
 
 
 
@@ -110,7 +110,7 @@ window.addEventListener('load', function () {
              if(passwordValue===''){
                  setErrorsFor(password, 'La contraseña esta sin completar')
              }else if (passwordValue.length < 7) {
-                 setErrorsFor (password, 'La contraseña debe ser mas larga') 
+                 setErrorsFor (password, 'La contraseña debe ser mas larga')
              }else {
                  setSuccesFor(password)
              }
@@ -131,10 +131,10 @@ window.addEventListener('load', function () {
                     small.innerHTML ='Este email ya se encuentra en uso';
                     small.style.visibility='visible'
                     small.style.color ='red'
-                    
-                    
-   
-   
+
+
+
+
                 }else{
                     let div =email.parentElement;
                     div.querySelector('.form-controle');
@@ -143,33 +143,33 @@ window.addEventListener('load', function () {
                     let small = email.parentElement.querySelector('small');
                     small.innerHTML ='';
                     small.style.visibility = 'hidden' ;
-                    
-                    
-                    
-                    
+
+
+
+
                 }
-                
+
             } catch (error) {
                 console.log(error.message)
-                
+
             }
 
-            
 
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
         }
-        
+
 
     })
 
         email.addEventListener('change', async function (e) {
-            
-            
+
+
             try {
                 const data = {
                     email: email.value
@@ -187,10 +187,10 @@ window.addEventListener('load', function () {
                     small.innerHTML ='Este email ya se encuentra en uso';
                     small.style.visibility='visible'
                     small.style.color ='red'
-                    
-                    
-   
-   
+
+
+
+
                 }else{
                     let div =email.parentElement;
                     div.querySelector('.form-controle');
@@ -199,25 +199,25 @@ window.addEventListener('load', function () {
                     let small = email.parentElement.querySelector('small');
                     small.innerHTML ='';
                     small.style.visibility = 'hidden' ;
-                    
-                    
-                    
-                    
+
+
+
+
                 }
-                
+
             } catch (error) {
                 console.log(error.message)
-                
+
             }
 
-           
+
 
         })
-        
-        
 
-        
-        
+
+
+
+
 
 
     })
@@ -225,8 +225,8 @@ window.addEventListener('load', function () {
 
 
 
-    
-    
+
+
 
 
 

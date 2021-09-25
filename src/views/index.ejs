@@ -3,8 +3,9 @@
 
 <%- include ('./partials/head')  %>
 
-<body>
+<body >
   <%- include('./partials/header') %>
+  <script src = '/validations/darkMode.js'></script>
 
 
   <div class="slideShow">
@@ -18,13 +19,7 @@
 
 
   <h4 class='estrenos'>Últimos estrenos</h4>
-  <div class="filter">
 
-    <button class="boton">Filtro
-      <i class="fas fa-filter"></i>
-
-
-  </div>
 
 
   <div class='main'>
@@ -58,7 +53,8 @@
         <article>
           <a href="/products/<%= element.id %>"  >
             <img src = <%=element.image %>   alt="hola" width="220px" class="pictures">
-            <h4 class = 'descrip'><%= element.name  %> </h4>
+            <h3 class="game-name"> <%= element.name%></h3>
+            <h4 class="game-price">$<%= element.price %> </h4>
           </a>
         </article>
 
@@ -70,8 +66,18 @@
   <br>
   <br>
   <br>
-  <h3 class = 'mp'><b>Elegi pagar y recibir el pedido sin moverte de tu casa</b></h3>
+  <h3 class = 'abonar'><b>Elegi pagar y recibir el pedido sin moverte de tu casa</b></h3>
+
   <div class ='mercadoPago'>
+    <br>
+    <p class = 'abonar'>PODES ABONAR EN EFECTIVO O CON MERCADO PAGO</p>
+    <div class = 'mercadoPagoDetalle'>
+
+      <img src = '/images/clipart2152003.png'   alt="hola" class="dolar">
+      <img src = '/images/mercado-pago.png'   alt="hola" class = 'mp'>
+
+    </div>
+
 
   </div>
 
@@ -115,6 +121,8 @@
       setTimeout(carousel, 5000); // Change image every 5 seconds
     }
   </script>
+
+
 
 
 </body>

@@ -26,7 +26,7 @@ height: 25px;
 border-radius: 10px;
 border: 2px dashed blue;
 margin:auto;
-background-color: black;
+/* background-color: black; */
 }
 
 .imagenCaja{
@@ -103,7 +103,7 @@ margin-right: 5px;}
 
 .descripcion { display: flex;
 flex-direction: column;
-text-align: center;}
+text-align: left;}
 
 .contdescripcion { display: flex;
 flex-direction: row;

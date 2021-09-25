@@ -4,6 +4,8 @@
 }
 
 
+
+
   .copy-header{
     display: none;
   }
@@ -262,11 +264,11 @@ height: 15%;}
 
   }
 
-  .contenedorInputsSignInuno { 
-    display: flex; 
+  .contenedorInputsSignInuno {
+    display: flex;
     flex-direction: column;
-     flex-wrap: wrap; 
-     justify-content: space-between; 
+     flex-wrap: wrap;
+     justify-content: space-between;
      width: 70%;}
 
                .formularioSignUp { margin:auto;
@@ -277,7 +279,7 @@ height: 15%;}
             box-sizing: border-box;
             padding: 5%;
             background-color: rgba(253, 253, 253, 0.6);
-            height: 75%;
+            height: 100%;
             width: 75%;}
 
             .formularySignup{
@@ -286,7 +288,7 @@ height: 15%;}
               align-items: center;
               width: 20vw;
             }
-            
+
             .form-controle{
               margin-bottom: 10px;
               padding-bottom: 20px;                  /* ESTO CAMBIA EN FUNCION A LOS ERRORES */
@@ -298,14 +300,14 @@ height: 15%;}
             }
             .form-controle  input{
               border: 2px  solid  rgb(45, 90, 236);
-              
+
               display: block;
               width: 100%;
             }                                                                     /* Aca son las implementaciones js */
             .form-controle.success input {
               border:  2px solid #2ecc71;
             }
-            .form-controle.error input {                           
+            .form-controle.error input {
               border:  2px solid #e7412e;
             }
             .form-controle.success i.fa-check-circle {
@@ -331,15 +333,8 @@ height: 15%;}
               visibility: visible;
 
             }
-            
-            .show-errors{
-              color: #e7412e;
-              padding: 10px;
-              margin-bottom: 5px;
-              position: relative;
-    bottom: 15px;
-            
-            }
+
+
 
 #mainSignIn { height: 100vh;
                 width: 100%;

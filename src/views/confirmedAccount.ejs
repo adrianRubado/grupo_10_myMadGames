@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<head>
+
+    <%- include('./partials/head.ejs') %>
+
+
+</head>
+<body>  <%- include('./partials/header.ejs') %>
+    <main id="mainSignIn">
+
+
+
+
+        <div class="contenedorFormularioSignIn">
+                <div class="contenedorTitulosSignIn">
+
+                  <h1> Bienvenido!  </h1>
+
+
+
+
+                  </p>
+                  <br>
+
+                </div>
+
+            </div>
+
+
+              </main>
+
+              <%- include('./partials/footer.ejs') %>
+
+              <script src="/js/new-pass.js"></script>
+              <script >
+                setTimeout(function(){
+                window.location.href = 'http://localhost:3002/user/login';
+             }, 5000);
+            </script>
+
+</body>
+</html>
