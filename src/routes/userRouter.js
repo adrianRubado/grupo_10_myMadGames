@@ -37,8 +37,7 @@ var storage = multer.diskStorage({
 })
 
 router.get ('/sign-up',guestMiddleware, signUpController.signUp) ;
-router.get("/newPassMail", signUpController.newPassMail);
-router.get("/newPass", signUpController.newPassGetForm );
+
 
  //EXPRESION REGULAR
 var expre =/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/   ;
@@ -81,9 +80,20 @@ router.post ('/login', [
 /* router.get ('/me', signInOutController.profile) */
 
 router.post('/sign-up/check',guestMiddleware,userCheckController.verifyMail) ; //Corroboramos desde el lado del Front si un Email es repetido
-router.get('/verify',authToken,userCheckController.verifyAccount)
+
 
 
 router.get("/welcome", signUpController.welcome)
+router.get('/verify',authToken,userCheckController.verifyAccount)
+
+
+/* router.get('/change-password',userCheckController.changePass) */
+
+router.get("/change-password", userCheckController.newPassGetForm );
+router.post('/change-password',userCheckController.checkMailPassword)
+router.get("/newPassMail", userCheckController.newPassMail);
+router.get('/reset-password',authToken,userCheckController.resetPassword)
+router.post('/reset-password',userCheckController.changePassword)
+
 
 module.exports = router

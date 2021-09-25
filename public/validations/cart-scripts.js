@@ -2,9 +2,8 @@ window.addEventListener('load',function(){
 
     const plus = document.querySelectorAll('.mas')
     const minus = document.querySelectorAll('.menos')
-    const number = document.querySelectorAll('.number')
-    const price = document.querySelectorAll('.price')
-
+    const trash = document.querySelectorAll('.trash')
+    const star = document.querySelectorAll('.star')
 
 
 
@@ -64,7 +63,7 @@ window.addEventListener('load',function(){
 
 
 
-
+            location.reload()
 
 
           });
@@ -103,8 +102,28 @@ window.addEventListener('load',function(){
                     event.path[pos].children[6].innerHTML = parseInt(event.path[pos].children[6].innerHTML) - parseInt(unitPrice)
 
                 }
+                location.reload()
 
           });
+    })
+
+    trash.forEach(t =>{
+        t.addEventListener('click',async function(event){
+
+            let pos = event.path.map(function(e) { return e.className; }).indexOf('juegosChart');
+            const gameId = parseInt(event.path[pos].children[1].innerHTML)
+            const userId = parseInt(document.querySelector('.userId').innerHTML)
+
+
+            const res = await axios.delete(`http://localhost:3002/product-cart/delete-game?userId=${userId}&&gameId=${gameId}`);
+
+            console.log(res.data)
+
+            location.reload()
+
+
+
+        })
     })
 
 
