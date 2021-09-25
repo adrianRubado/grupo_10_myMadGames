@@ -12,7 +12,7 @@
                 <h1 class="title-edit-game"> Editar <%= game.name %>
                 </h1>
 
-                <form class="form-edit-game" method="POST" action="products/<%=game.id%>/edit?_method=PUT">
+                <form class="form-edit-game" method="POST" enctype="multipart/form-data" action="/products/<%=game.id%>/edit?_method=PUT">
 
 
 
@@ -26,11 +26,17 @@
                                 </div>
 
                                 <div class="name-price-genre">
+
                                     <label for="name" class="label-game-edit">Nombre del Juego<input
                                             class="input-edit-game" type="text" name="name" value="<%= game.name %>"
-                                            id="name-input-edit-game"> </label>
+                                            id="name-input-edit-game">  </label>
+
+
                                             <label for="price" class="label-game-edit"> Precio <input class="input-edit-game"
-                                                type="text" name="price" value="$<%= game.price %> "> </label>
+                                                type="text" name="price" value="<%= game.price %> "> </label>
+
+
+                                                <input type="file" id="botonCoverPhoto" name="image" accept=".jpg, .png" value="<%= game.image %>">
                                     <label for="description" class="descript-label"> Descripción<textarea
                                             id="txt-description" class="label-game-edit" type="textarea" value="<%= game.description %> "
                                             name="description"></textarea> </label>
@@ -44,6 +50,8 @@
                                         allowfullscreen>></iframe> <input type="text" name="link" id="link"
                                         value=" <%=game.link  %> "> </label>
 
+                                        
+
                             </div>
 
                         </div>
@@ -55,7 +63,7 @@
                         <div class="cnt-gnres-edit"> <label for="genre" label-game-edit class="label-game-edit"> Género
                                 : <%= game.gameGenre.name %></label>
 
-                                    <%genres.forEach(element=> {%> <li> <input type="radio" class="genreToCheck" name="genre" value="<%=element%>" > 
+                                    <%genres.forEach(element=> {%> <li> <input type="radio" class="genreToCheck" name="genre" value="<%=element.id%>" > 
                                             <%= element.name %></input>
                                         </li> 
                             <% }) %>
@@ -68,7 +76,7 @@
                             <%= game.gamePlatform.name %>
                         </h3>
                         <div>
-                            <%platforms.forEach(element=> {%> <input type="radio" name="PLatform" value="<%=element%>"
+                            <%platforms.forEach(element=> {%> <input type="radio" name="platform" value="<%=element.id%>"
                                     class="genreToCheck">
                                 <%= element.name %></input>
                                     <% }) %>

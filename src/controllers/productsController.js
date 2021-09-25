@@ -59,23 +59,40 @@ const productsController = {
     update:async (req, res) => {
         const id = req.params.id
 
+     if(!req.file) { await db.Game.update({
+        name: req.body.name,
+        price: req.body.price,
+        platform: req.body.platform,
+        description: req.body.description,  
+        link: req.body.link,                                                // en caso de no actualizar la imagen
+        requirements: req.body.requirements,
+        genre: req.body.genre
+    },{
+        where:{
+            id:req.params.id
+        }}
+    )
+        
+     }else {
+        
+
        await db.Game.update({
             name: req.body.name,
             price: req.body.price,
-            platform: req.body.platform,
+            platform: req.body.platform,          
             description: req.body.description,
-            link: req.body.link,
-            image: req.file.originalname,
+            link: req.body.link,  
+            image: "/images/" + req.file.originalname,   // en caso de que la imagen cambie
             requirements: req.body.requirements,
             genre: req.body.genre
         },{
             where:{
                 id:req.params.id
             }}
-        )
+        )}
 
 
-        return res.render('index', viewData)
+        return res.redirect(`/products/${id}`)
 
 
     },
