@@ -5,6 +5,8 @@ let contador = 1;
 
 const valor = document.querySelector('#valor');
 
+const qty = document.querySelector('input[name="qty"]');
+
 const botones = document.querySelectorAll('.voton');
 
 botones.forEach(boton => {
@@ -23,6 +25,7 @@ botones.forEach(boton => {
             }
         }
         valor.textContent = contador;
+        qty.value = contador;
     })
 })
 })

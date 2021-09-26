@@ -253,7 +253,7 @@ article{
     /* display:flex; */
     /* display: flex; */
     max-width: 90%;
-    max-height: 80%;
+    /* max-height: 80%; */
     vertical-align: middle;
     text-align: center;
     justify-content: center;
@@ -505,6 +505,7 @@ article{
     background-color: rgb(191, 191, 226);
     height: 30px;
     font-weight: bolder;
+    border-radius: 10px;
 }
 
 .add-to-cart {
@@ -512,6 +513,7 @@ article{
     background-color: rgb(221, 172, 205);
     height: 30px;
     font-weight: bolder;
+    border-radius: 10px;
 }
 
 .far {

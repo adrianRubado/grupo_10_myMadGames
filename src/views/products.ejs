@@ -34,13 +34,17 @@
                         </div>
                         <form  method="POST" action="/product-cart/">
                             <li>
-                                <button class=buy-now type="submit" name='add' value=<%=[locals.user.id,game.id,1,game.price]%> >Comprar Ahora <!-- <i
+                                <input type="hidden" value="<%=[locals.user.id]%>" name="user">
+                                <input type="hidden" value="<%=[game.id]%>" name="game">
+                                <input type="hidden" value="1" name="qty">
+                                <input type="hidden" value="<%=[game.price]%>" name="price">
+                                <button class="add-to-cart" type="submit" name='add' value=<%=[locals.user.id,game.id,1,game.price]%> >Agregar al carrito <!-- <i
                                         class="fas fa-shopping-bag"><span class="tip"></span></i> --> </button>
                             </li>
                         </form></i>
                         <form  method="POST" action="/product-cart/">
                             <li>
-                                <button class=add-to-cart type="submit" name='add' value=<%=[locals.user.id,game.id,1,game.price]%> >Agregar al carrito <!-- <i
+                                <button class="buy-now" type="submit" name='add' value=<%=[locals.user.id,game.id,1,game.price]%> >Comprar Ahora <!-- <i
                                         class="fas fa-cart-plus chart"></i> --> </button>
                             </li>
                         </form></i>
@@ -101,15 +105,15 @@
 
         <% } %>
 
-            <div class="cuadro">
+           <!--  <div class="cuadro">
                 <div>
-                    <!-- Requisitos -->
+                    Requisitos
                 </div>
                 <div class="caracteristicas">
                     <%= game.requirements %>
                 </div>
 
-            </div>
+            </div> -->
 
 
         </article>

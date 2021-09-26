@@ -3,7 +3,7 @@
 
   <%- include('./partials/head.ejs')  %>
 
-<body>
+<body class="bodyDetail">
   <%- include('./partials/header.ejs')  %>
 
 
@@ -18,49 +18,82 @@
             <div class="cont-padre">
                 <div class="contenedor-info">
                     <img class="image" src =<%= game.image  %>   ;>
-                    <div class="social">
-
-                        <i class="fas fa-comment"></i>
-                        <i class="fas fa-share-alt"></i>
+                    <br>
+                    <span class="tip"><i class="fas fa-dollar-sign"><%= game.price  %> </span></i>
+                    
+                    <div class="iconos">
+                        <!-- <i class="fas fa-dollar-sign"><span class="tip"><%= game.price  %> </span></i> -->
+                        
+                        
+                        
+                        <div class="container99">
+                            Cantidad
+                            <button class="voton quitar">-</button>
+                            <span id="valor">1</span>
+                            <button class="voton agregar">+</button>
+                            
+                            
+                        </div>
+                <li>        
+                <button class="add-to-cart"><a href= "/user/login" > Agregar al carrito</a></button>
+                </li>
+                <li>
+                <button class="buy-now"><a href= "/user/login" > Comprar Ahora </a></button>
+                </li>
                     </div>
-                </div>
+                </div>    
                 <div class="descripcion">
                     <h5>Descripcion</h5>
                 <p class = "pContainerDescriptionGame">
                   <%= game.description %>
                 </p>
-                <% if (locals.user && locals.user.RoleId == 2) { %>
-                    <div class="icons">
-                        <a href= "/products/<%=game.id %>/edit " class="button">
-                             Editar
-                        </a>
-                        <form class="editForm" method="POST" action="/products/<%=game.id %>/delete?_method=DELETE" >
-                        <a href="/products/<%=game.id  %>/delete ">
-                            <button class="button button2" type="submit">Eliminar</button>
-                        </a>
-                        </form>
-                        </div>
 
-                <% } %>
+                <div class="social">
+                    
+                        <li>
+
+                          <button class="far fa-heart" ><a href= "/user/login" > <span class='fav-opacity'> Marcar como favorito</a></span></button>
+
+                        
+                        </li>
+                      
+                    <!-- <i class="fas fa-comment"></i> -->
+                    
+                        <li>
+
+                          <button class="far fa-share-alt" > <a href= "/user/login" > <i class="fas fa-share-alt"></i> <span class='fav-opacity'>  Compartir</a></span></button>
+
+                        
+                        </li>
+                      
+
+
+                    <!-- <i class="fas fa-share-alt"><span class='fav-opacity'> Compartir</span> </i> -->
+                </div>
+
+                
 
 
 
 
                 </div>
         </div>
-        <div class="iconos">
-            <i class="fas fa-dollar-sign"><span class="tip"><%= game.price  %> </span></i>
-            
-            <div class="container99">
-                <button class="voton quitar">-</button>
-                <span id="valor">1</span>
-                <button class="voton agregar">+</button>
-                <i class="fas fa-shopping-bag"><span class="tip"></span></i>
-                <h4>Comprar</h4>
-            </div>
 
-        </div>
-            <div class="cuadro">
+        <% if (locals.user && locals.user.RoleId == 2) { %>
+            <div class="icons">
+                <a href= "/products/<%=game.id %>/edit " class="button">
+                     Editar
+                </a>
+                <form class="editForm" method="POST" action="/products/<%=game.id %>/delete?_method=DELETE" >
+                <a href="/products/<%=game.id  %>/delete ">
+                    <button class="button button2" type="submit">Eliminar</button>
+                </a>
+                </form>
+                </div>
+
+        <% } %>
+
+           <!--  <div class="cuadro">
                 <div>
                     Requisitos
                 </div>
@@ -68,7 +101,7 @@
                     <%= game.requirements %>
                 </div>
 
-            </div>
+            </div> -->
 
 
         </article>
@@ -94,7 +127,7 @@
 
     <%- include('./partials/footer.ejs')  %>
 
-    <script src="../js/counter.js"></script>
+<script src="../js/counter.js"></script>
     <script src = '/validations/darkMode.js'></script>
 </body>
 
