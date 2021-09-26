@@ -1,0 +1,58 @@
+.myPurchase{
+    display: flex;
+    justify-content: space-around;
+    border-radius: 10px;
+    border: rgb(153, 146, 146) 1.5px solid;
+    margin: 10px;
+    padding:10px
+}
+.myPurchaseBox{
+    flex-direction: row;
+    width: auto;
+}
+.boxMother{
+justify-content: flex-start;
+display: flex;
+height: 6vh;
+border-bottom: 1px solid gray;
+}
+.titleMypurchase{
+    font-size: x-large;
+    width: 20vw;
+}
+.myPurchaseGameBox{
+    width: 15vw;
+    border: 1.5px solid coral;
+    border-radius: 10px;
+    height: 30vh;
+    margin:auto;
+    margin-top: 10px;
+}
+.descriptionMypurchase{
+    font-size: large;
+    width: 35vw;
+   
+}
+.buttonBox{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 10vw;
+    height: 15vh;
+    
+    
+}
+.buttonsmyPurchase{
+    height: 7vh;
+    border-radius: 15px;
+    border: 0.3px solid gray;
+    background: #4353adc5;
+    font-size: large;
+    box-shadow: 0px 0px 5px 0px gray;
+    
+  
+}
+.buttonsmyPurchase:hover{
+    background-color:whitesmoke;
+
+}

@@ -15,6 +15,7 @@ const purchaseRouter = require('./src/routes/purchaseRouter')
 const mercadoPagoRouter = require('./src/routes/mercadoPagoRouter')
 const persistSessionMiddleware = require('./src/middleware/persistSessionMiddleware')
 const logged = require('./src/middleware/loggedMiddleware')
+const myPurchaseRouter = require ('./src/routes/myPurchaseRouter')
 
 
 
@@ -65,6 +66,7 @@ app.use('/product-cart',pcRouter)
 app.use('/user',userRouter)
 app.use('/purchase-detail',purchaseRouter)
 app.use('/mp',mercadoPagoRouter)
+app.use ('/myPurchases',myPurchaseRouter)
 
 
 app.use((req, res, next) => next(createError(404)));
