@@ -10,6 +10,7 @@ const session = require('express-session')
 const indexRouter = require('./src/routes/indexRouter')
 const productRouter = require('./src/routes/productsRouter')
 const pcRouter = require('./src/routes/productCartRouter')
+const favRouter = require('./src/routes/favRouter')
 const userRouter = require('./src/routes/userRouter')
 const purchaseRouter = require('./src/routes/purchaseRouter')
 const mercadoPagoRouter = require('./src/routes/mercadoPagoRouter')
@@ -65,6 +66,6 @@ app.use('/product-cart',pcRouter)
 app.use('/user',userRouter)
 app.use('/purchase-detail',purchaseRouter)
 app.use('/mp',mercadoPagoRouter)
-
+app.use('/favorites',favRouter)
 
 app.use((req, res, next) => next(createError(404)));

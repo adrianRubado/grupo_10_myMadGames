@@ -10,10 +10,10 @@ const Op = db.Sequelize.Op;
 
 const productsController = {
 
-    detail:async(req, res) => {
+    detail: async (req, res) => {
         const id = req.params.id
 
-        const detail =  await db.Game.findByPk(id) ;
+        const detail = await db.Game.findByPk(id);
 
 
 
@@ -21,36 +21,36 @@ const productsController = {
             game: detail
         }
 
-        if(req.session && req.session.user){
+        if (req.session && req.session.user) {
             return res.render('products', viewData);
-        }else{
+        } else {
             return res.render('productsNotLogged', viewData);
         }
 
-       return res.render('products', viewData);
+        return res.render('products', viewData);
     },
 
     create: async (req, res) => {
         const genres = db.Genre.findAll()
         const viewData = {
-            genres : genres
+            genres: genres
         }
 
-        res.render('createGame',viewData);
+        res.render('createGame', viewData);
     },
-    edit:async(req, res) => {
+    edit: async (req, res) => {
         const id = req.params.id
-        const detail =  await db.Game.findByPk(id) ;
+        const detail = await db.Game.findByPk(id);
         const viewData = {
             game: detail
         }
 
-       return  res.render('editGame', viewData);
+        return res.render('editGame', viewData);
     },
-    update:async (req, res) => {
+    update: async (req, res) => {
         const id = req.params.id
 
-       await db.Game.update({
+        await db.Game.update({
             name: req.body.name,
             price: req.body.price,
             platform: req.body.price,
@@ -59,21 +59,22 @@ const productsController = {
             image: req.body.image,
             requirements: req.body.requirements,
             genre: req.body.category
-        },{
-            where:{
-                id:req.params.id
-            }}
+        }, {
+            where: {
+                id: req.params.id
+            }
+        }
         )
 
 
 
 
-       return  res.redirect("/products/" + id)
+        return res.redirect("/products/" + id)
 
 
     },
 
-    post: async(req, res) => {
+    post: async (req, res) => {
 
         const genre = await db.Genre.findOne({
             where: {
@@ -95,23 +96,23 @@ const productsController = {
             PlatformId: platform.id,
             description: req.body.description,
             link: req.body.link,
-            category : 2,
+            category: 2,
             image: "/images/" + req.file.originalname,
             requirements: req.body.requirements,
             GenreId: genre.id
         })
-      const games = await db.Game.findAll()
-      const genres = await db.Genre.findAll()
+        const games = await db.Game.findAll()
+        const genres = await db.Genre.findAll()
         const viewData = {
             games: games,
-            genres : genres
+            genres: genres
         }
 
         return res.render('index', viewData)
     },
 
-    get:async(req, res) => {
-       const games= await db.Game.findAll()
+    get: async (req, res) => {
+        const games = await db.Game.findAll()
 
 
         return res.json(games)
@@ -121,62 +122,36 @@ const productsController = {
 
     delete: async (req, res) => {
         await db.Game.destroy({
-         where:{
-             id:req.params.id
-         }
+            where: {
+                id: req.params.id
+            }
         })
         const updatedGames = await db.Game.findAll()
         const genres = await db.Genre.findAll()
 
         const viewData = {
             games: updatedGames,
-            genres : genres
+            genres: genres
         }
 
-       return res.render('index', viewData)
+        return res.render('index', viewData)
     },
 
-    addFavorite : async (req,res) => {
-        const itemToAdd = req.body.fav.split(',')
-        const alreadyExists = await db.Fav.findOne({
-            where: {
-                UserId: parseInt(itemToAdd[0]),
-                GameId : parseInt(itemToAdd[1])
-            }
-
-        })
-        console.log(alreadyExists)
-
-        if(alreadyExists) {
-            await alreadyExists.destroy()
-            res.redirect(`/products/${parseInt(itemToAdd[1])}`)
-
-        }else{
-            await db.Fav.create({
-                UserId: parseInt(itemToAdd[0]),
-                GameId: parseInt(itemToAdd[1]),
-
-
-            })
-            res.redirect(`/products/${parseInt(itemToAdd[1])}`)
-        }
-
-
-
-    } ,
     search: async (req, res) => {
 
         const games = await db.Game.findAll({
-            include:[{association:"gameGenre"}],
-            where:  {name:{[Op.like]:`%${req.query.q}%`}}
-            });
-      const genres = await db.Genre.findAll();
-      const consoles = await db.Platform.findAll();
+            include: [{ association: "gameGenre" }],
+            where: { name: { [Op.like]: `%${req.query.q}%` } }
+        });
+        const genres = await db.Genre.findAll();
+        const consoles = await db.Platform.findAll();
 
-      viewData = { games : games,
-                   genres: genres,
-                platform: consoles};
-         res.render("search", viewData)
+        viewData = {
+            games: games,
+            genres: genres,
+            platform: consoles
+        };
+        res.render("search", viewData)
 
     }
 

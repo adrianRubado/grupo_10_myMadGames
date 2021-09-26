@@ -41,7 +41,6 @@ router.get("/search/" , productsController.search)
 router.get('/:id/',productsController.detail )
 router.get('/:id/edit',[authMiddleware,adminMiddleware], productsController.edit)
 router.put('/:id/edit',[authMiddleware,adminMiddleware] ,productsController.update)
-router.post('/favorites',authMiddleware,productsController.addFavorite)
 router.post('/',upload.single('image'),[
   check('name').not().isEmpty().withMessage ('Debes completar el Nombre del juego'),
   check('name').isLength({min :5}).withMessage ('El nombre debe contener minimo 5 caracteres'),
