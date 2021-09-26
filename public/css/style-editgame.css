@@ -4,6 +4,8 @@
 .form-edit-game { display: flex; 
     flex-direction: column;}
 
+    .errors-container { display:none;}
+
 
 .game-edit-cont{ margin: auto; 
 box-sizing: border-box;
@@ -27,6 +29,8 @@ justify-content: center;}
 
 #img-edit-img {width:40%; height: auto; margin: auto; }
 
+.platforms-radio-cont { display: flex; flex-direction: column; margin: auto;}
+
 
 
 @media(min-width:768px){
@@ -43,11 +47,25 @@ justify-content: center;}
 
     #img-edit-img {width:260px; height: auto; padding: 15px }
 
+    .content-game-descript{padding: 20px; width: 55vw;}
+
+    .label-game-edit-genre {display: block; }
+
+    .label-game-edit-genr { margin-top: 15px;}
+
+    .radios-genres { display: flex; flex-direction: row; margin-top: 25px; align-items: center; justify-content: center;}
+
     .cont-img-inputs{display: flex; flex-direction: column;}
 
    .video-section{display: flex; flex-direction: column;}
 
    #txt-description { width: 100%; height: 100px; margin: auto;}
+
+   #button-edit { margin: auto;}
+   
+   #radio-plat { margin: 10px; text-align: center; align-items: center;}
+
+   .platforms-radio-cont{margin: auto; display: flex; flex-direction: row; justify-content: space-between;}
 
    .name-price-genre { display: flex; flex-direction: column; align-items: center; justify-content: space-around; width: 100%;}
 

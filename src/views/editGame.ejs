@@ -12,10 +12,11 @@
                 <h1 class="title-edit-game"> Editar <%= game.name %>
                 </h1>
 
-                <% if(locals.errors &&errors.name) {%> 
-                      <h3>Tu formulario presentó errores en <%=errors.name  %> </h3>
+                            <div class="errors-container"> 
 
-                        <%  }%> 
+                            <ul class=".errors-js">       </ul>
+
+                            </div>
 
                 <form class="form-edit-game" method="POST" enctype="multipart/form-data" action="/products/<%=game.id%>/edit?_method=PUT">
 
@@ -40,11 +41,11 @@
                                             <label for="price" class="label-game-edit"> Precio <input class="input-edit-game"
                                                 type="text" name="price" value="<%= game.price %> "> </label>
 
-
-                                                <input type="file" id="botonCoverPhoto" name="image" accept=".jpg, .png" value="<%= game.image %>">
+                                                  <label for="image">Cambiar imagen
+                                                <input type="file" id="botonCoverPhoto" name="image" accept=".jpg, .png" value="<%= game.image %>"></label>
                                     <label for="description" class="descript-label"> Descripción<textarea
                                             id="txt-description" class="label-game-edit" type="textarea" value="<%= game.description %> "
-                                            name="description"></textarea> </label>
+                                            name="description"><%= game.description %></textarea> </label>
                                     
                                 </div>
                             </div>
@@ -65,14 +66,22 @@
 
 
 
-                        <div class="cnt-gnres-edit"> <label for="genre" label-game-edit class="label-game-edit"> Género
-                                : <%= game.gameGenre.name %></label>
+                        <div class="cnt-gnres-edit"> <label for="genre"  class="label-game-edit-genre"> Género
+                                : <%= game.gameGenre.name %></label> </div>
+                                
+                                   <div class="radios-genres">
+                                    <%genres.forEach(element=> {%> <li> <input type="radio" class="genreToCheck" name="genre"
+                                          
+                                        <% if (element.name == game.gameGenre.name) {%> checked
+                                    
+                                            <%    }  %> 
 
-                                    <%genres.forEach(element=> {%> <li> <input type="radio" class="genreToCheck" name="genre" value="<%=element.id%>" > 
+
+                                         value="<%=element.id%>" > 
                                             <%= element.name %></input>
                                         </li> 
-                            <% }) %>
-                        </div>
+                            <% }) %></div>
+                        
 
 
 
@@ -80,11 +89,17 @@
                         <h3>
                             <%= game.gamePlatform.name %>
                         </h3>
-                        <div>
-                            <%platforms.forEach(element=> {%> <input type="radio" name="platform" value="<%=element.id%>"
+                        <div class="radios-genres">
+                            <%platforms.forEach(element=> {%> <li><input type="radio" id="radio-plat" 
+                                
+                                <% if (element.name == game.gamePlatform.name) {%> checked
+                                    
+                               <%    }  %> 
+                                
+                                name="platform" value="<%=element.id%>"
                                     class="genreToCheck">
-                                <%= element.name %></input>
-                                    <% }) %>
+                                <%= element.name %></input></li>
+                                    <% }) %> </div>
 
 
                                         <button type="submit" id="button-edit" class="button">
@@ -109,7 +124,7 @@
 
 
 
-
+<script src="/validations/editGameVal.js"> </script>
     </body>
 
 </html>
