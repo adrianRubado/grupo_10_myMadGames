@@ -1,6 +1,6 @@
 require('dotenv').config()
 const express = require("express");
-const methodOverride = require ('method-override');
+const methodOverride = require('method-override');
 const createError = require('http-errors');
 const app = express() //Requerimos modulo de express para levantar nuestro servidor
 const path = require ('path');

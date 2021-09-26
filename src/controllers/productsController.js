@@ -1,8 +1,9 @@
+
 const fs = require('fs');
 const path = require('path');
 /* const juegosFilePath = path.join(__dirname, '../database/games.json');
 const juegos = JSON.parse (fs.readFileSync(juegosFilePath, 'utf-8')); */
-
+const { validationResult } = require('express-validator');
 const db = require("../../database/models");
 const Op = db.Sequelize.Op;
 
@@ -13,7 +14,7 @@ const productsController = {
     detail:async(req, res) => {
         const id = req.params.id
 
-        const detail =  await db.Game.findByPk(id) ;
+        const detail =  await db.Game.findByPk(id);
 
 
 
@@ -40,9 +41,18 @@ const productsController = {
     },
     edit:async(req, res) => {
         const id = req.params.id
-        const detail =  await db.Game.findByPk(id) ;
+  
+        const detail =  await db.Game.findByPk(id,
+             { include:[{association:"gameGenre"}, {association:"gamePlatform"}]}) ;
+
+        const platforms = await db.Platform.findAll();
+
+
+        const genres = await db.Genre.findAll();
         const viewData = {
-            game: detail
+            game: detail,
+            genres: genres,
+            platforms: platforms
         }
 
        return  res.render('editGame', viewData);
@@ -50,28 +60,50 @@ const productsController = {
     update:async (req, res) => {
         const id = req.params.id
 
+        const errors = validationResult(req);
+
+        if (errors.isEmpty()) { 
+
+        } else{ res.send(errors)}
+            
+            
+            //res.render(`/products/${id}/edit`, {errors})} // 
+    
+     if(!req.file) { await db.Game.update({
+        name: req.body.name,
+        price: req.body.price,
+        platform: req.body.platform,
+        description: req.body.description,  
+        link: req.body.link,                                                // en caso de no actualizar la imagen
+        requirements: req.body.requirements,
+        genre: req.body.genre
+    },{
+        where:{
+            id:req.params.id
+        }}
+    )
+        
+     }else {
+        
+
        await db.Game.update({
             name: req.body.name,
             price: req.body.price,
-            platform: req.body.price,
+            platform: req.body.platform,          
             description: req.body.description,
-            link: req.body.link,
-            image: req.body.image,
+            link: req.body.link,  
+            image: "/images/" + req.file.originalname,   // en caso de que la imagen cambie
             requirements: req.body.requirements,
-            genre: req.body.category
+            genre: req.body.genre
         },{
             where:{
                 id:req.params.id
             }}
-        )
+        )}
 
 
-
-
-       return  res.redirect("/products/" + id)
-
-
-    },
+        return res.redirect(`/products/${id}`)
+             } ,
 
     post: async(req, res) => {
 
