@@ -41,7 +41,7 @@ module.exports = (sequelize, DataTypes) => {
     Product.associate = function(models){
         Product.belongsTo(models.Purchase,{
             as:'purchase',
-            foreignKey:'purchase_id'
+            foreignKey:'purchaseId'
         })
 
 

@@ -5,29 +5,44 @@
     <%- include('./partials/header') %>
     <script src = '/validations/darkMode.js'></script>
     <main>
-        <article>
+        <article class="myArticlePurchase">
             <div class="myPurchase">
                 <div class="myPurchaseBox">
 
                     <div class="boxMother">
-                        <div>Fecha de compra</div>
-                    <div class="titleMypurchase">Ttulo De la compra</div>
+                        <h2 class="titleMypurchase">Fecha de compra</h2>
+                    <h1 class="titleMypurchase">Ttulo De la compra</h1>
                     
                 </div>
-                    <div class="myPurchaseGameBox">juego</div>
+                    <div><img src="/images/Hitman-3-PS4.jpg" alt="hola" width="220px" class="pictures"></div>
+            </div>
+            <div>
+                <h3 class="descriptionMypurchase">Descripcion de la compra </h3>
+                <div class="subDescriptionMypurchase">
+                <p>Cantidad :</p>
+                <p>Total :</p>
+                <p>Fecha de Entrega :</p>
+            </div>
             </div>
 
-            <div class="descriptionMypurchase">Descripcion del juego</div>
+                
+       
             <div class="buttonBox">           
             <button class="buttonsmyPurchase">Ver Compra</button>
             <button class="buttonsmyPurchase">Volver a comprar</button>
         </div> 
         </div>
         </article>
+        <article></article>
 
 
     </main>
     <script src = '/validations/darkMode.js'></script>
+    <br>
+    <br>
+    <br>
+    <br>
+    <%- include ('./partials/footer.ejs') %>
 </body>
-<%- include ('./partials/footer.ejs') %>
+
 </html>

@@ -4,11 +4,44 @@ const db = require("../../database/models");
 const Op = db.Sequelize.Op;
 
 const   myPurchaseController ={
-    view :  (req,res)=> {
-        res.render ('myPurchases')
+    view :  async(req,res)=> {
 
-      
+        const purchases =await db.User.findOne({
+            where: {
+                id :req.session.user.id
+            },
+            include:[{association :'purchases'}]
+        })
+        console.log(purchases);
+     /*    const games=[];
+        for (let i = 0; i < purchases.length; i++) {
+            for (let index = 0; index < purchases[i]; index++) {
+                const element = array[index];
+                
+            }
+            const game =
+             await db.Game.findOne ({
+
+
+            })
+            
+        }
+
+
+
+
+           const viewdata = {
+            game:game
+        
+        } */
+        
+        
+
+
+
+        res.render ('myPurchases');
         } 
+        
     
 
 
