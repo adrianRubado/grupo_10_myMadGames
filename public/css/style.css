@@ -11,7 +11,23 @@ header{
     padding: 15px;
 
 
+
+
+
 }
+
+
+.fa-heart-o {
+  color: red;
+  cursor: pointer;
+}
+
+.fa-heart {
+  color: red;
+  cursor: pointer;
+}
+
+
 
 .abonar{
   margin-left: 10px;
@@ -634,6 +650,7 @@ footer{
   .Main-topNavbar{
     display: flex;
     justify-content: space-between;
+
   }
 
 

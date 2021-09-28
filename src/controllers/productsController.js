@@ -41,7 +41,7 @@ const productsController = {
     },
     edit:async(req, res) => {
         const id = req.params.id
-  
+
         const detail =  await db.Game.findByPk(id,
              { include:[{association:"gameGenre"}, {association:"gamePlatform"}]}) ;
 
@@ -62,18 +62,18 @@ const productsController = {
 
         const errors = validationResult(req);
 
-        if (errors.isEmpty()) { 
+        if (errors.isEmpty()) {
 
         } else{ res.send(errors)}
-            
-            
-            //res.render(`/products/${id}/edit`, {errors})} // 
-    
+
+
+            //res.render(`/products/${id}/edit`, {errors})} //
+
      if(!req.file) { await db.Game.update({
         name: req.body.name,
         price: req.body.price,
         platform: req.body.platform,
-        description: req.body.description,  
+        description: req.body.description,
         link: req.body.link,                                                // en caso de no actualizar la imagen
         requirements: req.body.requirements,
         genre: req.body.genre
@@ -82,16 +82,16 @@ const productsController = {
             id:req.params.id
         }}
     )
-        
+
      }else {
-        
+
 
        await db.Game.update({
             name: req.body.name,
             price: req.body.price,
-            platform: req.body.platform,          
+            platform: req.body.platform,
             description: req.body.description,
-            link: req.body.link,  
+            link: req.body.link,
             image: "/images/" + req.file.originalname,   // en caso de que la imagen cambie
             requirements: req.body.requirements,
             genre: req.body.genre
@@ -196,6 +196,34 @@ const productsController = {
 
 
     } ,
+
+
+    cartFavorite : async(req,res) =>{
+        try {
+            const data = req.body.data
+        if(data.ops == 'add'){
+            await db.Fav.create({
+                UserId: data.userId,
+                GameId: data.gameId
+            })
+        }
+
+        if(data.ops == 'delete'){
+            await db.Fav.destroy({
+                where :{
+                    UserId: data.userId,
+                    GameId: data.gameId
+                }
+            })
+        }
+        res.json({message : 'operation successful'})
+        } catch (error) {
+            res.json({error : error.message})
+        }
+
+
+
+    },
     search: async (req, res) => {
 
         const games = await db.Game.findAll({

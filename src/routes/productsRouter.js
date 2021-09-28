@@ -49,6 +49,7 @@ router.put('/:id/edit',upload.single("image"), [updateGameMiddleware, authMiddle
 
 
 router.post('/favorites',authMiddleware,productsController.addFavorite);
+router.post('/cart-favorites',authMiddleware,productsController.cartFavorite)
 router.post('/',upload.single('image'),[
   check('name').not().isEmpty().withMessage ('Debes completar el Nombre del juego'),
   check('name').isLength({min :5}).withMessage ('El nombre debe contener minimo 5 caracteres'),

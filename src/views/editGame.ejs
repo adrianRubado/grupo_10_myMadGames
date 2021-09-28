@@ -8,11 +8,12 @@
 
         <%- include('./partials/header') %>
 
+        <script src = '/validations/darkMode.js'></script>
             <main class="game-edit-cont">
                 <h1 class="title-edit-game"> Editar <%= game.name %>
                 </h1>
 
-                            <div class="errors-container"> 
+                            <div class="errors-container">
 
                             <ul class=".errors-js">       </ul>
 
@@ -46,7 +47,7 @@
                                     <label for="description" class="descript-label"> Descripción<textarea
                                             id="txt-description" class="label-game-edit" type="textarea" value="<%= game.description %> "
                                             name="description"><%= game.description %></textarea> </label>
-                                    
+
                                 </div>
                             </div>
                             <div class="inpts-video">
@@ -56,7 +57,7 @@
                                         allowfullscreen>></iframe> <input type="text" name="link" id="link"
                                         value=" <%=game.link  %> "> </label>
 
-                                        
+
 
                             </div>
 
@@ -68,20 +69,20 @@
 
                         <div class="cnt-gnres-edit"> <label for="genre"  class="label-game-edit-genre"> Género
                                 : <%= game.gameGenre.name %></label> </div>
-                                
+
                                    <div class="radios-genres">
                                     <%genres.forEach(element=> {%> <li> <input type="radio" class="genreToCheck" name="genre"
-                                          
+
                                         <% if (element.name == game.gameGenre.name) {%> checked
-                                    
-                                            <%    }  %> 
+
+                                            <%    }  %>
 
 
-                                         value="<%=element.id%>" > 
+                                         value="<%=element.id%>" >
                                             <%= element.name %></input>
-                                        </li> 
+                                        </li>
                             <% }) %></div>
-                        
+
 
 
 
@@ -90,12 +91,12 @@
                             <%= game.gamePlatform.name %>
                         </h3>
                         <div class="radios-genres">
-                            <%platforms.forEach(element=> {%> <li><input type="radio" id="radio-plat" 
-                                
+                            <%platforms.forEach(element=> {%> <li><input type="radio" id="radio-plat"
+
                                 <% if (element.name == game.gamePlatform.name) {%> checked
-                                    
-                               <%    }  %> 
-                                
+
+                               <%    }  %>
+
                                 name="platform" value="<%=element.id%>"
                                     class="genreToCheck">
                                 <%= element.name %></input></li>

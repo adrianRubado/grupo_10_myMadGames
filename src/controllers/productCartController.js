@@ -14,6 +14,7 @@ const sequelize = require('sequelize')
 
         })
         const games = []
+        const favorites = []
         if(cart.length>=1){
             for(let i = 0; i < cart.length;i++){
                 let g = await db.Game.findOne({
@@ -23,10 +24,25 @@ const sequelize = require('sequelize')
                 })
 
                 games.push(g)
+                let fav = await db.Fav.findOne({
+                    where : {
+                    UserId : req.session.user.id,
+                    GameId : g.id
+                }
+                })
+
+                if(fav){
+                    favorites.push(true)
+                }else{
+                    favorites.push(false)
+                }
+
             }
+
             const viewData = {
                 cart : cart,
-                games : games
+                games : games,
+                favorites : favorites
 
             }
 
