@@ -1,51 +1,63 @@
 window.addEventListener('load', function(){
 
-   console.log("hola ma")
+    let formEdit = document.querySelector("form.form-edit-game")
+    let nameInput = document.querySelector("#name-input-edit-game")   
+    let priceInput = document.querySelector("#price-input-edit")
+    let genreInput = document.querySelector(".genreToCheck")
+    let platformInput = document.querySelector("#radio-plat")
+    let videoInput =  document.querySelector("#link") 
 
-   const name = document.querySelector('#name-input-edit-game');
-   const price = document.querySelector('#price-edit');
-   const platforms = document.querySelector('#platforms-edit');
-   const description = document.querySelector('#txt-description-edit');
-   const link = document.querySelector('#video-link-edit');
-   const image = document.querySelector('#input-image-edit');
-   const genre = document.querySelector('#genre-edit');
-   const  formUpdate = document.querySelector('#editGameForm') ;
-    
-    
-    let errors = [] ;
-    formUpdate.addEventListener ('submit',  function(e) {
-         
-        e.preventDefault();
-     
-        if(name.value == ''){
-            errors.push ('El juego debe tener un nombre')}   
-        if(description.value.length < 20) {
-            errors.push ('La descripcion debe poseer al menos 20 caracteres') }
-    
-        if(platforms.value == undefined){
-            errors.push ('El juego debe tener una plataforma asociada')}
 
-        if(link.value ==''){
-                errors.push ('Te falto añadir una URL de Video')}
-    
-        if(genre.value == undefined){
-                    errors.push ('El juego debe tener un género')}
-    
-        if(price.value ==''){
-                        errors.push('El juego debe tener un precio')}
-    
-             if(errors.length > 0) {                                                  
-                            const errorUl = document.querySelector(".errors-js")
-                            const errorConteiner = document.querySelectorAll(".errors-container")
-                            errorConteiner.style.displayFlex = "column"
-                      
 
-                            for (let i = 0 ; i < errors.length ;i++) {                                
-                                errorsList.innerHTML +='<li>' + errors[i] + '</li>' ; } ;  
-    }else{e.submit()}
+  
     
-         
-    })
+    formEdit.addEventListener("submit", function(e) {  
+        let errors = [];
+        if(nameInput.value == ""){ 
+            errors.push("El juego debe tener un nombre")
+        }
+
+        if(priceInput.value == "" ){
+            errors.push("El juego debe tener un precio")
+        }
+
+        
+        if(priceInput.value <= 0 ){
+            errors.push("El precio debe ser mayor a $0")
+        }
+
+        if(priceInput.value.includes("$")) {
+
+            errors.push("No debes agregar el simbolo $ en el precio")
+        }
+
+        if(videoInput.value.includes("embed") == false ) {
+            errors.push("El video debe ser de tipo embebido")
+        }
+
+         if(genreInput.value == undefined) { 
+             errors.push("El juego debe pertenecer a un género"); 
+         }
+         if(platformInput.value == undefined) { 
+             errors.push("EL juego debe pertener a una plataforma")
+         }
+
+
+        if(errors.length > 0 ) {
+            e.preventDefault() ;
+
+            let msgErrors = document.querySelector();
+
+            msgErrors.style.display = "flex";
+
+            
+
+            for (let i = 0; i < errors.length; i++) {
+                const element = array[i];
+                
+            }
+        }
+    } )
     
     })
     
