@@ -7,10 +7,11 @@ const   myPurchaseController ={
     view :  async(req,res)=> {
 
         const purchases =await db.User.findOne({
+            include:[{association :'userCart'}],
             where: {
                 id :req.session.user.id
-            },
-            include:[{association :'purchases'}]
+            }
+            
         })
         console.log(purchases);
      /*    const games=[];

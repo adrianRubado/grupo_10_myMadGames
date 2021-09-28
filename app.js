@@ -16,6 +16,7 @@ const mercadoPagoRouter = require('./src/routes/mercadoPagoRouter')
 const persistSessionMiddleware = require('./src/middleware/persistSessionMiddleware')
 const logged = require('./src/middleware/loggedMiddleware')
 const myPurchaseRouter = require ('./src/routes/myPurchaseRouter')
+const apiRouter = require('./src/api/apiRouter')
 
 
 
@@ -67,6 +68,7 @@ app.use('/user',userRouter)
 app.use('/purchase-detail',purchaseRouter)
 app.use('/mp',mercadoPagoRouter)
 app.use ('/myPurchases',myPurchaseRouter)
+app.use ('/api',apiRouter)
 
 
 app.use((req, res, next) => next(createError(404)));
