@@ -8,9 +8,6 @@ window.addEventListener('load', function(){
     let videoInput =  document.querySelector("#link") 
 
 
-
-  
-    
     formEdit.addEventListener("submit", function(e) {  
         let errors = [];
         if(nameInput.value == ""){ 
