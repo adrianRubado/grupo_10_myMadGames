@@ -7,8 +7,17 @@ const { where } = require('sequelize');
 const apiController ={
     users :async(req,res) =>{
        const users = await db.User.findAll()
+        const count = await users.length
        
-       return res.json (users)
+       
+       const usersName = await users.map (usuario => usuario.first_name);
+       
+       console.log(usersName);
+        
+        const data = {count,users}
+       
+       
+       return res.json (data)
 
     },
     user : async(req,res) => {
