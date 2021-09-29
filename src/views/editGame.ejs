@@ -12,15 +12,16 @@
                 <h1 class="title-edit-game"> Editar <%= game.name %>
                 </h1>
 
-                            <div class="errors-container"> 
+                <div class="errors-container">
 
-                            <ul class=".errors-js">       </ul>
+                    <ul class="errors-js">       </ul>
+                
+                 </div>
+                
 
-                            </div>
-
+              
                 <form class="form-edit-game" method="POST" enctype="multipart/form-data" action="/products/<%=game.id%>/edit?_method=PUT">
-
-
+           
 
                     <div class="content-game-descript">
 
@@ -30,6 +31,12 @@
                                 <div class="content-image" id="cont-img-edit"> <img id="img-edit-img"
                                         src="<%= game.image %>">
                                 </div>
+                                <div class="errors-container">
+
+                                    <ul class="errors-js">       </ul>
+                                
+                                 </div>
+                                
 
                                 <div class="name-price-genre">
 
@@ -66,8 +73,8 @@
 
 
 
-                        <div class="cnt-gnres-edit"> <label for="genre"  class="label-game-edit-genre"> Género
-                                : <%= game.gameGenre.name %></label> </div>
+                        <div class="cnt-gnres-edit"> <label for="genre"  class="label-game-edit-genre"> <h4 id="titulo-genero">Género
+                                : <%= game.gameGenre.name %> </h4></label> </div>
                                 
                                    <div class="radios-genres">
                                     <%genres.forEach(element=> {%> <li> <input type="radio" class="genreToCheck" name="genre"

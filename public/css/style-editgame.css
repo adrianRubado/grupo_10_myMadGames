@@ -4,12 +4,14 @@
 .form-edit-game { display: flex; 
     flex-direction: column;}
 
-    .errors-container { display:none;}
+    .errors-container { display:none; }
 
 
 .game-edit-cont{ margin: auto; 
 box-sizing: border-box;
 padding: 3vmin;
+display: flex;
+flex-direction: column;
 justify-content: center;}
 
 .content-game-descript{display: flex; flex-direction: column; border-radius: 6px; justify-content: space-between; padding: 5px; background-color: rgba(85, 151, 175, 0.392); position: relative;}
@@ -35,7 +37,7 @@ justify-content: center;}
 
 @media(min-width:768px){
 
- 
+ .errors-container{margin: auto; width: 40%; background-color: rgba(255, 2, 61, 0.756); color: rgb(0, 0, 0); font-size: 15px; display: none; flex-direction: row; border-radius: 14px;}
 
     .form-edit-game { display: flex; 
         flex-direction: row;
