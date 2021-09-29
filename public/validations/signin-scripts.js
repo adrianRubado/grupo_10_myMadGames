@@ -13,8 +13,44 @@ window.addEventListener('load', function () {
     const buttom =document.querySelector('.botonSignUp');
     const message = document.querySelector ('small');
 
-    formsSignIn.addEventListener('submit', async function (e){
-       /*  e.preventDefault(); */
+    formsSignIn.addEventListener('submit',  function (e){
+        let count = 0;
+        
+       
+       control();
+
+       console.log(count) ;
+       if (count > 0) {
+           e.preventDefault();
+       }
+       async function control()   {
+        const emailValue = email.value.trim();
+        const passwordValue = password.value.trim();
+
+
+
+        function setErrorsFor(input, msg) {
+             count +=1
+            const formular = input.parentElement;
+            
+
+
+            message.innerText = msg ;
+
+
+            formular.classList.remove('success');
+            formular.classList.add ('error');
+        }
+
+        function setSuccesFor(input) {
+            const formular = input.parentElement;
+
+            formular.classList.remove('error');
+            
+
+
+
+        }
 
 
 
@@ -22,20 +58,26 @@ window.addEventListener('load', function () {
 
 
 
-
-            const emailValue = email.value.trim();
-            const passwordValue = password.value.trim();
+            
 
 
 
 
 
              if(emailValue===''){
-             'El email esta sin completar'
-             }
-             if(passwordValue===''){
-                 'La contraseña es obligatoria'
 
+             setErrorsFor(email,'Credenciales Invalidas')
+             }else{
+                 setSuccesFor(email)
+
+             }
+
+
+             if(passwordValue===''){
+                 setErrorsFor(password,'Credenciales Invalidas')
+
+             }else  {
+                 setSuccesFor(password)
              }
 
              try {
@@ -46,7 +88,9 @@ window.addEventListener('load', function () {
                 const emailrepeat = (res.data.error);
 
                 if (!emailrepeat){
-                    'Invalid credentials'
+                    message.innerHTML ='Credenciales Invalidas'
+                    message.style.visibility='visible'
+                    message.style.color ='red'
                 }
 
             } catch (error) {
@@ -57,5 +101,5 @@ window.addEventListener('load', function () {
 
 
 
-        })
+        }})
 })
