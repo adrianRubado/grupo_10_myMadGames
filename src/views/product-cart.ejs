@@ -52,7 +52,12 @@
                   <%=games[i].name %>
                 </div>
 
-                <i class="far fa-star"></i>
+                <% if (favorites[i]) { %>
+                  <span class = 'coranzonn' ><i class="fa fa-heart" aria-hidden="true" ></i> </span>
+
+                <% } else { %>
+                  <span class = 'coranzonn' ><i class="fa fa-heart-o" aria-hidden="true" ></i> </span>
+                  <% } %>
                 <button class = 'trash'>
                   <i class="fas fa-trash"></i>
                 </button>

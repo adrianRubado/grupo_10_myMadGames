@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 16, 2021 at 10:42 PM
+-- Generation Time: Sep 19, 2021 at 06:29 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -213,8 +213,7 @@ INSERT INTO `purchases` (`id`, `UserId`, `status`, `total`, `created_at`, `updat
 (2, 21, 0, 37000, '2021-09-13 13:43:47', '2021-09-13 13:43:47'),
 (3, 21, 0, 105000, '2021-09-13 22:05:41', '2021-09-13 22:05:41'),
 (4, 25, 0, 180000, '2021-09-15 23:36:06', '2021-09-15 23:36:06'),
-(5, 21, 0, 129000, '2021-09-16 03:43:51', '2021-09-16 03:43:51'),
-(7, 55, 0, 177000, '2021-09-16 20:23:44', '2021-09-16 20:23:44');
+(5, 21, 0, 129000, '2021-09-16 03:43:51', '2021-09-16 03:43:51');
 
 -- --------------------------------------------------------
 
@@ -279,8 +278,8 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `password`, `email`, `bday
 (35, 'aaaaaa', 'peeeee', '$2a$10$tXjIBhZ7IUnO2X..6S.h4.mMCVpuF0MuiijgVKWeS4PxHJ0fTp0Ga', 'larreta@gmail.com', '2002-12-30', '/images/mercado-pago.png', 1, 1, '2021-09-16 14:15:26', '2021-09-16 14:15:26'),
 (36, 'aaaaaa', 'peeeee', '$2a$10$oudJZVvRn2ci8OJcV4jXlerUuU2avaybqzdcvax5YGu2no7ZUdvkq', 'robertoaaaaaaa@gmail.com', '2002-12-29', '/images/dollar-icon-png-3556.png', 1, 1, '2021-09-16 14:17:31', '2021-09-16 14:17:31'),
 (37, 'Adrian', 'Rubado', '$2a$10$0T/rXYtHCZNFBikfzDOgBOyD9NkN7Ap3B5E4FtJfsgwlHactjFK7i', 'robertota@gmail.com', '2002-12-30', '/images/dollar-icon-png-3556.png', 1, 1, '2021-09-16 14:37:20', '2021-09-16 14:37:20'),
-(55, 'Adrian', 'Rubado', '$2a$10$VG8r.sqM.7K/H5SsfqU/VerPi5jixVQUhMdCAfA9.WhpFzaP4eQMW', 'adrianrubado19@gmail.com', '2002-12-30', '/images/dollar-icon-png-3556.png', 1, 2, '2021-09-16 20:11:33', '2021-09-16 20:11:33'),
-(56, 'Adrian', 'Rubado', '$2a$10$R2It/WylYkl9Xi/rfSc3S.tuCsQ1pn5Bi7CDef2cHjIKcGxkv/A3m', 'digitalhouse1234@gmail.com', '2002-12-30', '/images/dollar-icon-png-3556.png', 1, 1, '2021-09-16 20:16:36', '2021-09-16 20:16:36');
+(56, 'Adrian', 'Rubado', '$2a$10$R2It/WylYkl9Xi/rfSc3S.tuCsQ1pn5Bi7CDef2cHjIKcGxkv/A3m', 'digitalhouse1234@gmail.com', '2002-12-30', '/images/dollar-icon-png-3556.png', 1, 1, '2021-09-16 20:16:36', '2021-09-16 20:16:36'),
+(61, 'Adrian', 'Rubado', '$2a$10$lL1UNcRqT.1tQmJP85ZKyez0CrFhvrTDmspNuIu5YHDMiCSJFMK/e', 'adrianrubado19@gmail.com', '2002-12-29', '/images/mercado-pago.png', 1, 2, '2021-09-18 01:42:43', '2021-09-18 01:42:43');
 
 --
 -- Indexes for dumped tables
@@ -359,7 +358,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `favs`
@@ -407,7 +406,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 
 --
 -- Constraints for dumped tables
