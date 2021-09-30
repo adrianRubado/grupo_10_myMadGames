@@ -11,7 +11,23 @@ header{
     padding: 15px;
 
 
+
+
+
 }
+
+
+.fa-heart-o {
+  color: red;
+  cursor: pointer;
+}
+
+.fa-heart {
+  color: red;
+  cursor: pointer;
+}
+
+
 
 .abonar{
   margin-left: 10px;
@@ -560,10 +576,13 @@ footer{
     font-family: 'Roboto', sans-serif;
     margin: 0;
     margin-top: 0;
-    background-color: rgb(240, 239, 239);
-
+    background-color: rgb(214, 214, 214);
     width: 100%;
  } */
+
+.bodyDetail {
+  background-color: rgb(240, 240, 240);
+}
 
  .price {
      font-size: 18px;
@@ -634,6 +653,7 @@ footer{
   .Main-topNavbar{
     display: flex;
     justify-content: space-between;
+
   }
 
 
