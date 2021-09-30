@@ -45,10 +45,7 @@ justify-content: center;}
 
 @media(min-width:768px){
 
-<<<<<<< HEAD
-=======
  .errors-container{margin: auto; width: 40%; background-color: rgba(255, 2, 61, 0.756); color: rgb(0, 0, 0); font-size: 15px; display: none; flex-direction: row; border-radius: 14px;}
->>>>>>> matias-dev
 
 
     .form-edit-game { display: flex;
@@ -63,8 +60,8 @@ justify-content: center;}
 
     .content-game-descript{padding: 20px; width: 55vw;}
 
-    
-   
+
+
     #generosCajaCreate { display: flex; flex-direction: row;}
     .label-game-edit-genre {display: block; }
 
@@ -77,12 +74,9 @@ justify-content: center;}
    .video-section{display: flex; flex-direction: column;}
 
    #txt-description { width: 80%; height: 100px; margin: auto;}
-   
+
 
    #button-edit { margin: auto;}
-<<<<<<< HEAD
-
-=======
    .generosTitulo { margin: auto; text-align: center; margin: 10px;}
 
    .generosCaja { display: flex; flex-direction: row; width: 70%; margin: auto; }
@@ -90,9 +84,8 @@ justify-content: center;}
 
 
    .generos{width: auto; padding: 5px; display: flex; flex-direction: row; margin: auto;}
-   
-   
->>>>>>> matias-dev
+
+
    #radio-plat { margin: 10px; text-align: center; align-items: center;}
 
    .platforms-radio-cont{margin: auto; display: flex; flex-direction: row; justify-content: space-between;}
