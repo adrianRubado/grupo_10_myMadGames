@@ -5,35 +5,41 @@
     <%- include('./partials/header') %>
     <script src = '/validations/darkMode.js'></script>
     <main>
-        <article class="myArticlePurchase">
-            <div class="myPurchase">
-                <div class="myPurchaseBox">
-
-                    <div class="boxMother">
-                        <h2 class="titleMypurchase">Fecha de compra</h2>
-                    <h1 class="titleMypurchase">Ttulo De la compra</h1>
-                    
+        <% if(games) {%>
+             <% games.forEach(game => { %>
+                <article class="myArticlePurchase">
+                    <div class="myPurchase">
+                        <div class="myPurchaseBox">
+        
+                            <div class="boxMother">
+                                <h2 class="titleMypurchase">Fecha de compra</h2>
+                            <h1 class="titleMypurchase"><%= game.game.name %> </h1>
+                            
+                        </div>
+                            <div><img src=<%= game.game.image %>  alt="hola" width="220px" class="pictures"></div>
+                    </div>
+                    <div>
+                        <h3 class="descriptionMypurchase">Descripcion de la compra </h3>
+                        <div class="subDescriptionMypurchase">
+                        <p>Cantidad : <%= game.quantity %> </p>
+                        <p>Total : <%= game.total%> </p>
+                        <p>Numero de transaccion :<%= game.purchaseId %> </p>
+                    </div>
+                    </div>
+        
+                        
+               
+                    <div class="buttonBox">           
+                    <a href= "/products/<%=game.game.id%>"><button class="buttonsmyPurchase">Ver Compra</button></a>
+                    <a href="/"><button class="buttonsmyPurchase"href = "/">Volver a comprar</button></a>
+                </div> 
                 </div>
-                    <div><img src="/images/Hitman-3-PS4.jpg" alt="hola" width="220px" class="pictures"></div>
-            </div>
-            <div>
-                <h3 class="descriptionMypurchase">Descripcion de la compra </h3>
-                <div class="subDescriptionMypurchase">
-                <p>Cantidad :</p>
-                <p>Total :</p>
-                <p>Fecha de Entrega :</p>
-            </div>
-            </div>
-
-                
+                </article>
+              
+             <% }) %>
+        
+        <%}%>
        
-            <div class="buttonBox">           
-            <button class="buttonsmyPurchase">Ver Compra</button>
-            <button class="buttonsmyPurchase">Volver a comprar</button>
-        </div> 
-        </div>
-        </article>
-        <article></article>
 
 
     </main>

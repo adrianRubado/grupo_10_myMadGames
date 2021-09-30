@@ -1,21 +1,22 @@
 const fs = require('fs');
 const path = require('path');
 const db = require("../../database/models");
-const game = require('../../database/models/game');
+
 const Op = db.Sequelize.Op;
 
 const   myPurchaseController ={
     view :  async(req,res)=> {
 
-        const purchases =await db.User.findOne({
+        const purchases =await db.Purchase.findAll({
            
             where: {
-                id :req.session.user.id
+                UserId :req.session.user.id
             }
             
         })
+        
         if (purchases) {
-            console.log(purchases);
+          
             let games=[];
             for (let i = 0; i < purchases.length; i++) {
                 let products = await db.Product.findAll({
@@ -23,43 +24,47 @@ const   myPurchaseController ={
                         PurchaseId : purchases[i].id
                     }
                 }) 
+                
                 for (let index = 0; index < products.length; index++) {
                     let game = {
 
-                        game:await db.Game.finOne ({
+                        game:await db.Game.findOne ({
                             where : {
                                 id : products[index].GameId
                             }
                         }),
                         quantity: products[index].quantity,
                         price:products[index].price,
-                        total:products[index].quantity * products[index].price
+                        total:products[index].quantity * products[index].price,
+                        purchaseId : products [index].PurchaseId
                     }
+                   
                     
                     games.push (game)
                     
                 }
             
         }
-        const viewdata = {
+        const viewData = {
             games:games
             
         }
+        console.log(games);
+        res.render ('myPurchases',viewData);
     
     
     
     }else{
-        const viewdata ={
+        const viewData ={
             games:false
         }
+        res.render ('myPurchases',viewData);
 
         }
-        const viewdata = {
-            game:game
         
-        }
-        console.log(viewdata);
-        res.render ('myPurchases',viewdata);
+        
+        
+        
       
      
             }
