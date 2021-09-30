@@ -4,12 +4,14 @@
 .form-edit-game { display: flex;
     flex-direction: column;}
 
-    .errors-container { display:none;}
+    .errors-container { display:none; }
 
 
 .game-edit-cont{ margin: auto;
 box-sizing: border-box;
 padding: 3vmin;
+display: flex;
+flex-direction: column;
 justify-content: center;}
 
 .content-game-descript{display: flex; flex-direction: column; border-radius: 6px; justify-content: space-between; padding: 5px; background-color: rgba(85, 151, 175, 0.392); position: relative;}
@@ -31,10 +33,22 @@ justify-content: center;}
 
 .platforms-radio-cont { display: flex; flex-direction: column; margin: auto;}
 
+.generosCaja{ display: flex; flex-direction: row; }
+
+.inputCreateTextreqos { width: 80%;}
+#generosCajaCreate { display: flex; flex-direction: column;}
+
+.generosdea2{display: flex; flex-direction: column;}
+.generosTitulo { margin: auto; text-align: center; margin: 10px;}
+
 
 
 @media(min-width:768px){
 
+<<<<<<< HEAD
+=======
+ .errors-container{margin: auto; width: 40%; background-color: rgba(255, 2, 61, 0.756); color: rgb(0, 0, 0); font-size: 15px; display: none; flex-direction: row; border-radius: 14px;}
+>>>>>>> matias-dev
 
 
     .form-edit-game { display: flex;
@@ -49,6 +63,9 @@ justify-content: center;}
 
     .content-game-descript{padding: 20px; width: 55vw;}
 
+    
+   
+    #generosCajaCreate { display: flex; flex-direction: row;}
     .label-game-edit-genre {display: block; }
 
     .label-game-edit-genr { margin-top: 15px;}
@@ -59,10 +76,23 @@ justify-content: center;}
 
    .video-section{display: flex; flex-direction: column;}
 
-   #txt-description { width: 100%; height: 100px; margin: auto;}
+   #txt-description { width: 80%; height: 100px; margin: auto;}
+   
 
    #button-edit { margin: auto;}
+<<<<<<< HEAD
 
+=======
+   .generosTitulo { margin: auto; text-align: center; margin: 10px;}
+
+   .generosCaja { display: flex; flex-direction: row; width: 70%; margin: auto; }
+
+
+
+   .generos{width: auto; padding: 5px; display: flex; flex-direction: row; margin: auto;}
+   
+   
+>>>>>>> matias-dev
    #radio-plat { margin: 10px; text-align: center; align-items: center;}
 
    .platforms-radio-cont{margin: auto; display: flex; flex-direction: row; justify-content: space-between;}

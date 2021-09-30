@@ -1,51 +1,108 @@
 window.addEventListener('load', function(){
 
-   console.log("hola ma")
+    let formEdit = document.querySelector("form.form-edit-game")
+    let nameInput = document.querySelector("#name-input-edit-game")   
+    let priceInput = document.querySelector("#price-input-edit")
+    let genreInput = document.querySelector(".genreToCheck")
+    let platformInput = document.querySelector("#radio-plat")
+    let videoInput =  document.querySelector("#link") 
 
-   const name = document.querySelector('#name-input-edit-game');
-   const price = document.querySelector('#price-edit');
-   const platforms = document.querySelector('#platforms-edit');
-   const description = document.querySelector('#txt-description-edit');
-   const link = document.querySelector('#video-link-edit');
-   const image = document.querySelector('#input-image-edit');
-   const genre = document.querySelector('#genre-edit');
-   const  formUpdate = document.querySelector('#editGameForm') ;
+
+    formEdit.addEventListener("submit", function(e) {  
+        let errors = [];
+        if(nameInput.value == ""){ 
+            errors.push("El juego debe tener un nombre")
+             
+                 nameInput.style.border = "4px solid red"
+                  nameInput.addEventListener("keyup", function(e) { 
+                      if(nameInput.value.length >= 3) { 
+
+                        nameInput.style.border = "6px solid #2ae42a"
+
+
+                      }
+                  
+
+                  } )
+
+        }
+
+        if(priceInput.value == "" ){
+            errors.push("El juego debe tener un precio")
+
+            if(priceInput.value <= 1 ){
+                errors.push("El precio debe ser mayor a $9")
+                priceInput.style.border = "4px solid red"
+                 priceInput.addEventListener("keyup", function(e) { 
+                   if(priceInput.value.length > 1) { 
+    
+                     priceInput.style.border = "6px solid #2ae42a"
+    
+                   }
     
     
-    let errors = [] ;
-    formUpdate.addEventListener ('submit',  function(e) {
+    
+                   })
+    
+    
+            }
+        }
          
-        e.preventDefault();
-     
-        if(name.value == ''){
-            errors.push ('El juego debe tener un nombre')}   
-        if(description.value.length < 20) {
-            errors.push ('La descripcion debe poseer al menos 20 caracteres') }
-    
-        if(platforms.value == undefined){
-            errors.push ('El juego debe tener una plataforma asociada')}
-
-        if(link.value ==''){
-                errors.push ('Te falto añadir una URL de Video')}
-    
-        if(genre.value == undefined){
-                    errors.push ('El juego debe tener un género')}
-    
-        if(price.value ==''){
-                        errors.push('El juego debe tener un precio')}
-    
-             if(errors.length > 0) {                                                  
-                            const errorUl = document.querySelector(".errors-js")
-                            const errorConteiner = document.querySelectorAll(".errors-container")
-                            errorConteiner.style.displayFlex = "column"
-                      
-
-                            for (let i = 0 ; i < errors.length ;i++) {                                
-                                errorsList.innerHTML +='<li>' + errors[i] + '</li>' ; } ;  
-    }else{e.submit()}
-    
          
-    })
+  
+
+        if(priceInput.value.includes("$")) {
+
+            errors.push("No debes agregar el simbolo $ en el precio")
+        }
+
+        if(videoInput.value.includes("embed") == false ) {
+            errors.push("El video debe ser de tipo embebido")
+              videoInput.style.border = "4px solid red";
+
+
+              videoInput.addEventListener( "blur", e => { 
+ 
+                   if (videoInput.value.includes("embed") == true) 
+                       {    videoInput.style.border = "4px solid #2ae42a"}else { 
+                        videoInput.style.border = "4px solid red"
+
+                       }
+ 
+              })
+              
+         
+        }
+
+         if(genreInput.value == undefined) { 
+             errors.push("El juego debe pertenecer a un género"); 
+         }
+         if(platformInput.value == undefined) { 
+             errors.push("EL juego debe pertener a una plataforma")
+         }
+
+
+        if(errors.length > 0 ) {
+            e.preventDefault() ;
+
+            alert("revisa los errores para poder continuar")
+
+           let msgErrors = document.querySelector('.errors-container')
+            let ulErrors = document.querySelector(".errors-js")
+
+            msgErrors.style.display = "flex";
+            ulErrors.style.alignIntems = "center"
+            
+            errors.forEach(  error => { ulErrors.innerHTML += "<li>" + error + "<li>"  }  );
+
+
+        }
+    } )
+
+    console.log(genreInput.value)
+
+
+
     
     })
     
