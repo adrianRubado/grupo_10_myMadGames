@@ -32,7 +32,7 @@ app.use(express.static('public'))//Establecemos como carpeta estatica
 app.use (morgan('dev')) ;
 
  // middleware para persistir session a traves de toda la app
-app.use(persistSessionMiddleware)
+//app.use(persistSessionMiddleware)
 app.use(logged)
 
 

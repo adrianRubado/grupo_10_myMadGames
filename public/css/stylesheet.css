@@ -457,11 +457,15 @@ article{
 .container2{
     padding: 15px;
     text-align: left;
+    margin: auto;
+    text-align: center;
 }
 
 .container3{
     padding: 15px;
     text-align: left;
+    margin: auto;
+    text-align: center;
 }
 
 .tienda{
@@ -471,7 +475,9 @@ article{
     border-radius: 5px;
     background-color: #3f51b5;
     max-width: 60%;
-    margin-top:5%
+    margin-top:5%;
+    margin: auto;
+    text-align: center;
 
 }
 

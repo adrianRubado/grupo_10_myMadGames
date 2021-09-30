@@ -7,18 +7,21 @@ flex-wrap: wrap;
 padding: 5px;
 margin: auto;
 width: 100%;}
+
+#formularioCreateGame { border-radius: 15px; background-color: rgba(45, 45, 234, 0.639); width: 50vw; margin:auto}
+
 .signupGame{ padding: auto;
 margin: auto;
 width: 80vw;}
 
-.signup-general { display: flex; flex-direction: column; width:97%; background-image: url("../images/posible.png");}
+.signup-general { display: flex; flex-direction: column; width:97%; } /*background-image: url("../images/backgCreate.jpg"); width: auto; background-size: contain ; background-position-x: center;} /*background-image: url("../images/backgCreate.jpg")*/
 .inputCreateText {
     margin: auto;
     color: white;
 height: 30px;}
 #name{ border-radius: 10px;
         }
-#descripLetra { color:white;}
+#descripLetra { color:rgb(0, 0, 0); text-align: center; margin: auto;}
 
 #botonCoverPhoto {
 width: 130px;
@@ -41,11 +44,11 @@ margin-left: 50px;}
     justify-content: center;
 margin: auto;}
 
-.generosTitulo{ color: white;}
+.generosTitulo{ color: rgb(12, 7, 7);}
 #tituloCreate{ margin: 3x auto 3px auto;
     text-align: center
   ;
-color:white;}
+color:rgb(0, 0, 0);}
 
 
 input{text-align: center;
@@ -55,13 +58,13 @@ width:500px;
 margin: 5px auto 5px auto; }
 
 
-#descripcion{ width: 250px;
+#descripcion{ width: 100%;
 height: 100px;
 text-align:initial;
 margin: auto;
 margin-top: 0px;}
 
-#opciones1 { display: flex; color: white;
+#opciones1 { display: flex; color: rgb(0, 0, 0);
 flex-direction: column;}
 #opciones2 {display: flex;
 flex-direction: column;}
@@ -77,10 +80,10 @@ width: 100vw ;}
 padding: 3px;
 margin-bottom: 2px;}
 
-.plataformas { border: 2px solid blue;
+.plataformas { border: 5px solid rgb(0, 0, 0);
 padding: 13px;
 border-radius: 10px 25px 0px 35px;
-color: white;}
+color: rgb(0, 0, 0);}
 
 .cajareq { display: flex;
 flex-direction: column;
@@ -90,7 +93,7 @@ text-align: center;}
 
 .inputCreateTextreq { width: 50%;
  height: 75px;
- color: white;
+ color: rgb(0, 0, 0);
 margin: auto;
 text-align: start;}
 
@@ -103,6 +106,7 @@ margin-right: 5px;}
 
 .descripcion { display: flex;
 flex-direction: column;
+width: 33%;
 text-align: left;}
 
 .contdescripcion { display: flex;
@@ -114,16 +118,16 @@ margin: 5px 0px 5px 0px;}
 .videoURL { display: flex;
     flex-direction: column;}
 
-    .nomypre {color: white;}
+    .nomypre {color: rgb(0, 0, 0);}
 
     .inputCreateText{ color:black}
 
-    .reqText { color:white;}
+    .reqText { color:rgb(0, 0, 0);}
 
     #requisitos { color: black;}
 
-    .labelVideo { color: white;}
-    .labelCoverFo { color: white;}
+    .labelVideo { color: rgb(0, 0, 0);}
+    .labelCoverFo { color: rgb(0, 0, 0);}
 
 
 .general { display: flex;
@@ -137,15 +141,16 @@ justify-content: center;
 .generosCaja { display: flex;
 flex-direction: column;
 text-align: center;
+width: 100%;
 justify-content: center;
 align-items: center;
-color: white;}
+color: rgb(0, 0, 0);}
 
 .generosdea2 { display: flex;
 flex-direction: column;
 margin: 2px 10px 2px 10px;
 justify-content: center;
-color: white;
+color: rgb(0, 0, 0);
 }
 
 
@@ -153,18 +158,22 @@ color: white;
 .generos {display: flex;
 flex-direction: row;}
 
-.botonJuego { border-radius: 8px;
+.botonJuego { border-radius: 10px ;
 
-                height: 50px;
-                width: 150px;
-             background: blue;
+                height: 25px50px;
+                width: 100px;
+
+             background: rgba(9, 27, 228, 0.9);
              color: white;
             font-size: 17px;}
 
-            .botonJuego:hover { background: chartreuse; color: black;
+            .botonJuego:hover { background: rgba(208, 239, 58, 0.633); color: black;
                 margin: auto;}
 
-            @media (max-width : 768px) {
+                
+                .generosCaja { width: 80%; align-items: center; text-align: center; display: flex; flex-direction: column;}
+
+            @media (max-width : 881px) {
 
                 .nomypre { display: flex; flex-direction: column;}
                 .videoyfoto { display: flex;
@@ -178,11 +187,20 @@ flex-direction: row;}
                     flex-direction: column;
                     margin-right: 5px;}
 
+                    .descripcion { display: flex; flex-direction: column; width:100%;margin: auto; align-items: center; justify-items: center; text-align: center;}
+
+                     #descripLetra { text-align: center; margin: auto;}
                     .contdescripcion { display: flex;
                     flex-direction: column;
                     align-items: center;
-                    justify-content: center;
+                    width: 100%;
                     margin: 5px 0px 5px 0px;}
+
+                    #descripcion{ width: 100%;
+                        height: auto;
+                        text-align:initial;
+                        margin: auto;
+                        margin-top: 3px;}
 
                     .plataformas { border: 2px solid black;
                         padding: 13px;
@@ -195,5 +213,14 @@ flex-direction: row;}
                             margin: auto;
                             justify-content: center;
                         margin-bottom: 5px;
+                    
                         }
+
+                        .cajareq { width: 100%;}
+
+                        .inputCreateTextreq {width: 70%;}
+
+                        .generosCaja {margin: auto; flex-direction: column;}
+
+                        #formularioCreateGame { border-radius: 15px; background-color: rgba(45, 45, 234, 0.639); width: 80vw; margin:auto}
             }
