@@ -6,7 +6,7 @@
 
     .errors-container { display:none; }
 
-
+#txt-description { width: 90%; height: 200px; margin: auto;}
 .game-edit-cont{ margin: auto;
 box-sizing: border-box;
 padding: 3vmin;
@@ -22,7 +22,7 @@ justify-content: center;}
 
 .name-input-edit-game {  font-family: "roboto"; margin: auto; text-align: center;}
 
-#button-edit{border-radius: 10px; width: 20vw;}
+#button-edit{border-radius: 10px; width: 100px;}
 .label-game-edit { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 3px; }
 
 .input-edit-game{margin: auto;margin-bottom: 2px; width: 60%;}
