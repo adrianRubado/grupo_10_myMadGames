@@ -14,19 +14,25 @@ const buyNowController = {
             price: req.body.price
         }
 
+        req.session.directBuy = directBuy;
+
         return res.render('direct-purchase', directBuy)
     },
 
     paymentNow: async(req,res) => {
-        
-        const game = await db.Game.findByPk(req.body.game)
      
-        const paymentDirect = {
-            user: req.session.user,
-            game: game,
-            qty: req.body.qty,
-            price: req.body.price
-        }
+        const paymentDirect = req.session.directBuy;
+
+        const detailBuy = [
+                {     
+                    title : paymentDirect.game.name,
+                    unit_price : paymentDirect.game.price,
+                    quantity : parseInt(paymentDirect.qty),
+                    id : paymentDirect.game.id,
+                }
+        ]
+
+        req.session.detailBuy = detailBuy;
 
         res.render('payment-direct', paymentDirect)
     },
@@ -39,7 +45,7 @@ const buyNowController = {
         }
 
         if(payment === 'Efe'){
-            res.send('sape')
+            res.send('Compra en efectivo momentáneamente suspendida. Por favor utilice MercadoPago')
         }},
 
     checkoutDirect :  (req,res) =>{
@@ -50,7 +56,7 @@ const buyNowController = {
              });
    
              let preference = {
-               items: req.session.purchaseDetail,
+               items: req.session.detailBuy,
                    // ...
                    "back_urls": {
                          "success": "http://localhost:3002/mp/success",
