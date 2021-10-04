@@ -17,23 +17,30 @@ justify-content: center;}
 .content-game-descript{display: flex; flex-direction: column; border-radius: 6px; justify-content: space-between; padding: 5px; background-color: rgba(85, 151, 175, 0.392); position: relative;}
 
 .title-edit-game { font-family: "roboto"; margin: auto; text-align: center;}
-.name-price-genre { display: flex; flex-direction: row; flex-wrap: wrap;}
+.name-price-genre { display: flex; flex-direction: column; flex-wrap: wrap; padding: 2px;}
 
 
 .name-input-edit-game {  font-family: "roboto"; margin: auto; text-align: center;}
 
 #button-edit{border-radius: 10px; width: 20vw;}
-.label-game-edit { display: flex; flex-direction: column; }
+.label-game-edit { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 3px; }
 
-.input-edit-game{margin: auto;margin-bottom: 2px; }
+.input-edit-game{margin: auto;margin-bottom: 2px; width: 60%;}
 
 .video-section{display: flex; flex-direction: column; width: auto;}
 
-#img-edit-img {width:40%; height: auto; margin: auto; }
+#img-edit-img {width:40%; height: auto; margin: auto;  display: flex; padding-bottom: 5px;}
 
 .platforms-radio-cont { display: flex; flex-direction: column; margin: auto;}
 
 .generosCaja{ display: flex; flex-direction: row; }
+
+.cnt-gnres-edit { margin: auto;}
+.radios-genres { display: flex; flex-direction: row; flex-wrap: wrap; margin: auto;}
+
+.platformEdit-title { margin: auto;}
+
+.radios-genres { display: flex; flex-direction: row; flex-wrap: wrap; margin: auto;}
 
 .inputCreateTextreqos { width: 80%;}
 #generosCajaCreate { display: flex; flex-direction: column;}
@@ -41,13 +48,15 @@ justify-content: center;}
 .generosdea2{display: flex; flex-direction: column;}
 .generosTitulo { margin: auto; text-align: center; margin: 10px;}
 
+.descript-label{width: 100%; display: flex; flex-direction: column; text-align: center;}
 
+#button-edit { margin: auto; text-align: center;}
 
 @media(min-width:768px){
 
  .errors-container{margin: auto; width: 40%; background-color: rgba(255, 2, 61, 0.756); color: rgb(0, 0, 0); font-size: 15px; display: none; flex-direction: row; border-radius: 14px;}
 
-
+#button-edit { margin: auto; text-align: center;}
     .form-edit-game { display: flex;
         flex-direction: row;
     justify-content: space-between; align-items: center;}
@@ -56,11 +65,11 @@ justify-content: center;}
 
         .cnt-gnres-edit { display: flex; flex-direction: row; flex-wrap: wrap; font-family: "roboto";}
 
-    #img-edit-img {width:260px; height: auto; padding: 15px }
+    #img-edit-img {width:260px; height: auto; padding: 15px;margin: auto; }
 
     .content-game-descript{padding: 20px; width: 55vw;}
 
-
+    .label-game-edit { display: flex; flex-direction: column; width: 75%; }
 
     #generosCajaCreate { display: flex; flex-direction: row;}
     .label-game-edit-genre {display: block; }
@@ -93,6 +102,6 @@ justify-content: center;}
    .name-price-genre { display: flex; flex-direction: column; align-items: center; justify-content: space-around; width: 100%;}
 
    .cont-img-name-price { display: flex; flex-direction: row;}
-.descript-label{width: 100%;}
+.descript-label{width: 100%; display: flex; flex-direction: column;}
 
     }
