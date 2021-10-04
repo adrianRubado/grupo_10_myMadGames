@@ -17,7 +17,7 @@ const persistSessionMiddleware = require('./src/middleware/persistSessionMiddlew
 const logged = require('./src/middleware/loggedMiddleware')
 const myPurchaseRouter = require ('./src/routes/myPurchaseRouter')
 const apiRouter = require('./src/api/apiRouter')
-
+const buyNowRouter = require ('./src/routes/buyNowRouter')
 
 
 app.set ("view engine", "ejs") ; //Establecimos como template engine ejs
@@ -69,6 +69,6 @@ app.use('/purchase-detail',purchaseRouter)
 app.use('/mp',mercadoPagoRouter)
 app.use ('/myPurchases',myPurchaseRouter)
 app.use ('/api',apiRouter)
-
+app.use ('/buy-now', buyNowRouter)
 
 app.use((req, res, next) => next(createError(404)));

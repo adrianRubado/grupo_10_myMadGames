@@ -38,13 +38,17 @@
                                 <input type="hidden" value="<%=[game.id]%>" name="game">
                                 <input type="hidden" value="1" name="qty">
                                 <input type="hidden" value="<%=[game.price]%>" name="price">
-                                <button class="add-to-cart" type="submit" name='add' value=<%=[locals.user.id,game.id,1,game.price]%> >Agregar al carrito <!-- <i
+                                <button class="add-to-cart" type="submit" name='add'  >Agregar al carrito <!-- <i
                                         class="fas fa-shopping-bag"><span class="tip"></span></i> --> </button>
                             </li>
                         </form></i>
-                        <form  method="POST" action="/product-cart/">
+                        <form  method="POST" action="/buy-now/">
                             <li>
-                                <button class="buy-now" type="submit" name='add' value=<%=[locals.user.id,game.id,1,game.price]%> >Comprar Ahora <!-- <i
+                                <input type="hidden" value="<%=[locals.user.id]%>" name="user">
+                                <input type="hidden" value="<%=[game.id]%>" name="game">
+                                <input type="hidden" value="1" name="qtyB">
+                                <input type="hidden" value="<%=[game.price]%>" name="price">
+                                <button class="buy-now" type="submit" name='buy'  >Comprar Ahora <!-- <i
                                         class="fas fa-cart-plus chart"></i> --> </button>
                             </li>
                         </form></i>
@@ -130,10 +134,10 @@
         </div>
 
 
-        <div class="commented">
+        <!-- <div class="commented">
             <i class="far fa-user-circle iconcomented"></i>
 
-        </div>
+        </div> -->
 
     </section>
 
