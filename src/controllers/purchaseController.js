@@ -117,7 +117,7 @@ const purchaseController = {
         }
 
         if(payment === 'Efe'){
-            res.send('sape')
+            res.send('Compra en efectivo momentáneamente suspendida. Por favor utilice MercadoPago')
         }
 
 
