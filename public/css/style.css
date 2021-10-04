@@ -17,6 +17,20 @@ header{
 }
 
 
+.games-genre{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gameG{
+  border-radius: 40px;
+  width: 77vw;
+
+}
+
+
 .fa-heart-o {
   color: red;
   cursor: pointer;
@@ -72,8 +86,8 @@ header{
 .mp{
   margin-top: 5%;
   text-align: center;
-  width: 20vw;
-  margin-left: 42%;
+  width: 40vw;
+  margin-left: 33%;
 }
 
 .descrip {font-size: 16px;
@@ -1017,6 +1031,16 @@ form.example input[type=text] {
   .ham{
 
     display: none;
+    justify-content: flex-start;
+  }
+
+  .games-genre{
+    flex-direction: row;
+
+  }
+
+  .gameG{
+    width: 25vw;
   }
 
   .mySlides{

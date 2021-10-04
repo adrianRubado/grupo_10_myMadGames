@@ -37,6 +37,7 @@ var storage = multer.diskStorage({
 router.get('/',authMiddleware,productsController.get)
 router.get ('/create',[authMiddleware,adminMiddleware], productsController.create)
 router.get("/search/" , productsController.search)
+router.get("/searchGenre",productsController.searchGenre)
 
 
 router.get('/:id/',productsController.detail )
