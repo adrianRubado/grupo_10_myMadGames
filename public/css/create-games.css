@@ -106,7 +106,7 @@ margin-right: 5px;}
 
 .descripcion { display: flex;
 flex-direction: column;
-width: 33%;
+/* width: 33%; */
 text-align: left;}
 
 .contdescripcion { display: flex;
@@ -187,7 +187,7 @@ flex-direction: row;}
                     flex-direction: column;
                     margin-right: 5px;}
 
-                    .descripcion { display: flex; flex-direction: column; width:100%;margin: auto; align-items: center; justify-items: center; text-align: center;}
+                    .descripcion { display: flex; flex-direction: column; width:100%;/* margin: auto; */ align-items: center; justify-items: center; /* text-align: center; */}
 
                      #descripLetra { text-align: center; margin: auto;}
                     .contdescripcion { display: flex;

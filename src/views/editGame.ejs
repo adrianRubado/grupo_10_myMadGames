@@ -49,7 +49,7 @@
                                             <label for="price" class="label-game-edit"> Precio <input class="input-edit-game"
                                                 type="text" id="price-input-edit" name="price" value="<%= game.price %> "> </label>
 
-                                                  <label for="image">Cambiar imagen
+                                                  <label for="image" class="label-game-edit">Cambiar imagen
                                                 <input type="file" id="botonCoverPhoto" name="image" accept=".jpg, .png" value="<%= game.image %>"></label>
                                     <label for="description" class="descript-label"> Descripción<textarea
                                             id="txt-description" class="label-game-edit" type="textarea" value="<%= game.description %> "
@@ -94,7 +94,7 @@
 
 
 
-                        <h3>
+                        <h3 class="platformEdit-title">
                             <%= game.gamePlatform.name %>
                         </h3>
                         <div class="radios-genres">

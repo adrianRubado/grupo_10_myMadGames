@@ -238,6 +238,19 @@ const productsController = {
                 platform: consoles};
          res.render("search", viewData)
 
+    },
+    searchGenre: async (req,res) =>{
+        const id = req.query
+        const games = await db.Game.findAll({
+            include:[{association:"gameGenre"}],
+            where:  {GenreId:id.genre}
+            });
+        const genres = await db.Genre.findAll()
+        const consoles = await db.Platform.findAll()
+        viewData = { games : games,
+            genres: genres,
+         platform: consoles};
+        res.render("search", viewData)
     }
 
 
