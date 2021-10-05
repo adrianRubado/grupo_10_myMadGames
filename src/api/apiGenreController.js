@@ -7,22 +7,32 @@ const apiGenreController = {
 
    genres :  async (req,res) => { 
 
-    const genres =  await db.Genre.findAll()
+    const genres =  await db.Genre.findAll();
 
+    const genre = [ ]
+
+
+    genres.forEach(element => { 
+        
+        genre.push({id: element.id,
+            name:element.name, 
+            detail: "http://localhost:3002/api/genres/"+element.id})
+    
+    });
+
+    
     
 
 
     const data = await{ count: genres.length, 
-                        genres : genres,
+                        genres : genre,
                         }
 
     res.json(data);
 
    }, 
    gamesByGenre : async (req,res) => { 
-
-           
-          const genre = await db.Genre.findByPk(req.params.id);
+  const genre = await db.Genre.findByPk(req.params.id);
     const gamesByGenre = await db.Game.findAll({include:[{association:"gameGenre"},{association:"gamePlatform"}],  where:{
         GenreId:req.params.id
     }}) ;
@@ -46,7 +56,7 @@ const apiGenreController = {
 
      const count = gamesByGenre.length;
 
-    const  data =  await { 
+    const  data =  { 
         name : genre.name,
         count : count,
                 
