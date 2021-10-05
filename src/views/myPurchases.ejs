@@ -16,9 +16,10 @@
                             <h1 class="titleMypurchase"><%= game.game.name %> </h1>
                             
                         </div>
-                            <div><img src=<%= game.game.image %>  alt="hola" width="220px" class="pictures"></div>
+                            <div>
+                                <a href="/products/<%=game.game.id%>"><img src=<%= game.game.image %>  alt="hola" width="220px" class="pictures"></a></div>
                     </div>
-                    <div>
+                    <div class="descriptionBox">
                         <h3 class="descriptionMypurchase">Descripcion de la compra </h3>
                         <div class="subDescriptionMypurchase">
                         <p>Cantidad : <%= game.quantity %> </p>
