@@ -1,6 +1,5 @@
 const db = require ('../../database/models');
 const sequelize = require ('sequelize') ;
-const { game } = require('./apiProductController');
 const Op = db.Sequelize.Op;
 
 
@@ -41,14 +40,9 @@ const apiGenreController = {
                             description: element.description,
                             requirements: element.requirements,
                             link: element.link,
-                        detail: "localhost:3002/api/products/"+element.id })
+                        detail: "http://localhost:3002/api/products/"+element.id })
                 
             });
-
-         
-
-
-
 
      const count = gamesByGenre.length;
 
