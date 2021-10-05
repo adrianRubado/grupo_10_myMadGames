@@ -77,6 +77,8 @@ box-sizing: border-box;
  ;}
     .button_filter {display: none; }
 
+    .not-search { margin-left: 50px; text-align: center; margin-top: 50px;}
+
     .price_Filter { display: flex;
     flex-direction: column;
     padding: 5px 15px 5px 15px ;
