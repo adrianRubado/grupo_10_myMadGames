@@ -58,7 +58,7 @@ box-sizing: border-box;
 
 
     .filters-Check-Box { display: none;}
-    .main-search{ display: flex; flex-direction: column;}
+    .main-search{ display: flex; flex-direction: column; width: auto;}
 
 
 

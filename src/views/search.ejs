@@ -47,7 +47,12 @@
 
 <div class="games-conteiner">
 
-
+         
+           <% if (games.length <=0 ) { %>
+            <h2> Tu búsqueda no coincide con ningún resultado</h2>
+            
+           <% } %>
+  
   <%games.forEach(element => {%>
 
   <article class="individual-game-container">
