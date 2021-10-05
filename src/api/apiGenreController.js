@@ -1,5 +1,6 @@
 const db = require ('../../database/models');
 const sequelize = require ('sequelize') ;
+const { game } = require('./apiProductController');
 const Op = db.Sequelize.Op;
 
 
@@ -9,26 +10,53 @@ const apiGenreController = {
 
     const genres =  await db.Genre.findAll()
 
+    
+
 
     const data = await{ count: genres.length, 
-                        genres : genres }
+                        genres : genres,
+                        }
 
     res.json(data);
 
    }, 
    gamesByGenre : async (req,res) => { 
 
-
-         const genre = await db.Genre.findByPk(req.params.id);
-    const gamesByGenre = await db.Game.findAll({include:[{association:"gameGenre"}],  where:{
+           
+          const genre = await db.Genre.findByPk(req.params.id);
+    const gamesByGenre = await db.Game.findAll({include:[{association:"gameGenre"},{association:"gamePlatform"}],  where:{
         GenreId:req.params.id
-    }})
+    }}) ;
+    const games = []
+            
+            gamesByGenre.forEach(element => {
+
+            games.push( {
+                          id: element.id, 
+                          name: element.name,
+                           image: element.image,
+                            price: element.price,
+                             genre: element.gameGenre.name,
+                            platform: element.gamePlatform.name,
+                            description: element.description,
+                            requirements: element.requirements,
+                            link: element.link,
+                        detail: "localhost:3002/api/products/"+element.id })
+                
+            });
+
+         
+
+
+
+
+     const count = gamesByGenre.length;
 
     const  data =  await { 
         name : genre.name,
-        count : gamesByGenre.length,
+        count : count,
                 
-                   games :gamesByGenre}
+                   games :games}
 
    res.json(data) 
 
