@@ -18,11 +18,15 @@ const apiGenreController = {
    }, 
    gamesByGenre : async (req,res) => { 
 
-    const gamesByGenre = await db.Genre.findAll({include:[{association:"gamesByGenre"}],  where:{
-        id:req.params.id
+
+         const genre = await db.Genre.findByPk(req.params.id);
+    const gamesByGenre = await db.Game.findAll({include:[{association:"gameGenre"}],  where:{
+        GenreId:req.params.id
     }})
 
-    const  data =  await { count : gamesByGenre,
+    const  data =  await { 
+        name : genre.name,
+        count : gamesByGenre.length,
                 
                    games :gamesByGenre}
 
