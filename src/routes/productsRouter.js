@@ -4,6 +4,7 @@ const path = require('path')
 const multer = require('multer')
 const productsController = require ('../controllers/productsController') ;
 const {check}= require ('express-validator') ;
+const updateGameMiddleware = require("../middleware/check-middleware-update")
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -36,12 +37,20 @@ var storage = multer.diskStorage({
 router.get('/',authMiddleware,productsController.get)
 router.get ('/create',[authMiddleware,adminMiddleware], productsController.create)
 router.get("/search/" , productsController.search)
+router.get("/searchGenre",productsController.searchGenre)
 
 
 router.get('/:id/',productsController.detail )
+
+
+
 router.get('/:id/edit',[authMiddleware,adminMiddleware], productsController.edit)
-router.put('/:id/edit',[authMiddleware,adminMiddleware] ,productsController.update)
-router.post('/favorites',authMiddleware,productsController.addFavorite)
+
+router.put('/:id/edit',upload.single("image"), [updateGameMiddleware, authMiddleware,adminMiddleware], productsController.update);
+
+
+router.post('/favorites',authMiddleware,productsController.addFavorite);
+router.post('/cart-favorites',authMiddleware,productsController.cartFavorite)
 router.post('/',upload.single('image'),[
   check('name').not().isEmpty().withMessage ('Debes completar el Nombre del juego'),
   check('name').isLength({min :5}).withMessage ('El nombre debe contener minimo 5 caracteres'),

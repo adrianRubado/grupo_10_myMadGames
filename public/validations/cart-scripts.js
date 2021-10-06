@@ -3,8 +3,51 @@ window.addEventListener('load',function(){
     const plus = document.querySelectorAll('.mas')
     const minus = document.querySelectorAll('.menos')
     const trash = document.querySelectorAll('.trash')
+    const heart = document.querySelectorAll('.coranzonn')
 
 
+
+
+    heart.forEach(async (h)=>{
+
+        h.addEventListener('click',async function(event){
+            let pos = event.path.map(function(e) { return e.className; }).indexOf('juegosChart');
+            const gameId = parseInt(event.path[pos].children[1].innerHTML)
+            const userId = parseInt(document.querySelector('.userId').innerHTML)
+
+
+
+
+
+
+
+
+           if(h.children[0].classList.value == 'fa fa-heart-o') {
+            const data = {
+                userId : userId,
+                gameId : gameId,
+                ops : 'add'
+            }
+            const res = await axios.post('http://localhost:3002/products/cart-favorites', {data});
+            h.innerHTML = '<i class="fa fa-heart" aria-hidden="true" >'
+            console.log(res)
+           }else{
+            const data = {
+                userId : userId,
+                gameId : gameId,
+                ops : 'delete'
+            }
+            const res = await axios.post('http://localhost:3002/products/cart-favorites', {data});
+            h.innerHTML = '<i class="fa fa-heart-o" aria-hidden="true" >'
+            console.log(res)
+           }
+
+
+
+
+
+        })
+    })
 
 
 

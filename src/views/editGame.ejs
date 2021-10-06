@@ -1,85 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
+<%- include ('./partials/head') %>
 
 
     <body>
-        <%- include ('./partials/head') %>
+
         <%- include('./partials/header') %>
-        
-            <div class="box-edit-game">
-                <div class="meta-edit-game">
 
-                <form method="POST" action="/products/<%=game.id %>/edit?_method=PUT">
-                        <input type="text" name="id" value=<%=game.id %> >
-                        <input type="text" name="image" value=<%=game.image %> >
-                        <input type="text" name="category" value=<%=game.category %> >
-                    </div>
-                    <div class="portada-edit-game">
-                        <div class="face-edit-game">
-                    
-            
-                    <div class="titulo-edit-game">
-                        <input class="titulo-edit-game" type="text" name="name" value=<%=game.name %>>
-                    </div>
-                        <div class="imagen-edit-game">
-                            <img class="imagen-edit-game" src=<%=game.image %>>
+        <script src = '/validations/darkMode.js'></script>
+            <main class="game-edit-cont">
+                <h1 class="title-edit-game"> Editar <%= game.name %>
+                </h1>
+
+                <div class="errors-container">
+
+                    <ul class="errors-js">       </ul>
+
+                 </div>
+
+
+
+                <form class="form-edit-game" method="POST" enctype="multipart/form-data" action="/products/<%=game.id%>/edit?_method=PUT">
+
+
+                    <div class="content-game-descript">
+
+                        <div class="cont-img-inputs">
+                            <div class="cont-img-name-price">
+
+                                <div class="content-image" id="cont-img-edit"> <img id="img-edit-img"
+                                        src="<%= game.image %>">
+                                </div>
+                                <div class="errors-container">
+
+                                    <ul class="errors-js">       </ul>
+
+                                 </div>
+
+
+                                <div class="name-price-genre">
+
+                                    <label for="name" class="label-game-edit">Nombre del Juego<input
+                                            class="input-edit-game" type="text" name="name" value="<%= game.name %>"
+                                            id="name-input-edit-game">  </label>
+
+
+                                            <label for="price" class="label-game-edit"> Precio <input class="input-edit-game"
+                                                type="text" id="price-input-edit" name="price" value="<%= game.price %> "> </label>
+
+                                                  <label for="image" class="label-game-edit">Cambiar imagen
+                                                <input type="file" id="botonCoverPhoto" name="image" accept=".jpg, .png" value="<%= game.image %>"></label>
+                                    <label for="description" class="descript-label"> Descripción<textarea
+                                            id="txt-description" class="label-game-edit" type="textarea" value="<%= game.description %> "
+                                            name="description"><%= game.description %></textarea> </label>
+
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                            <div class="descripcion-edit-game">
-                               <label for=""class="description-edit-game"><i class="fas fa-dollar-sign"><input type="text" name="price"
-                                            value=<%=game.price %> ></i> </label>
-                               <label for="" class="description-edit-game"><i class="fas fa-percent"><input type="text" name="discount" placeholder="Descuento"
-                                            value=<%=game.discount %>></i></label>
-                                           
+                            <div class="inpts-video">
+                                <label for="link" class="video-section"> Link del video <iframe src="<%= game.link %>"
+                                        frameborder="0" height="250px"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowfullscreen>></iframe> <input type="text" name="link" id="link"
+                                        value=" <%=game.link  %> "> </label>
+
+
+
                             </div>
-                            <div><p class="p-edit-game">*En caso de no tener dejar vacio</p></div>
-
-                        
-
-                        <div class="descripcion-referencial-edit-game">
-                            <h5>Descripcion</h5>
-                            <textarea class="textarea-edit-game" name="description" rows="10" cols="50"><%= game.description %></textarea>
-                        </div>
-
-                   
-                    <div class="descripcion-referencial-editt-game">
-
-                        <h5>Requisitos</h5>
-                    </div>
-                    <div class="requisitos-video-edit-game">
-
-                        <textarea class="textarea-editt-game" name="requirements" rows="10" cols="50">
-                <%= game.requirements %>
-        
-            </textarea>
-            <p class="p-edit-game">*En caso de no tener dejar vacio</p>
-                        <div class="embebido-edit-game"> 
-                            Link del trailer:
-                            <input class="link-edit-game" type="text" name="link" value=<%=game.link %>>
 
                         </div>
 
-                    </div>
-                    <p class="p-edit-game">Recordar que el link debe ser embebido</p>
 
-                    <button type="submit" id="botones-formularios-edit-game">Actualizar juego</button>
+
+
+
+                        <div class="cnt-gnres-edit"> <label for="genre"  class="label-game-edit-genre"> <h4 id="titulo-genero">Género
+                                : <%= game.gameGenre.name %> </h4></label> </div>
+
+                                   <div class="radios-genres">
+                                    <%genres.forEach(element=> {%> <li> <input type="radio" class="genreToCheck" name="genre"
+
+                                        <% if (element.name == game.gameGenre.name) {%> checked
+
+                                            <%    }  %>
+
+
+                                         value="<%=element.id%>" >
+                                            <%= element.name %></input>
+                                        </li>
+                            <% }) %></div>
+
+
+
+
+
+                        <h3 class="platformEdit-title">
+                            <%= game.gamePlatform.name %>
+                        </h3>
+                        <div class="radios-genres">
+                            <%platforms.forEach(element=> {%> <li><input type="radio" id="radio-plat"
+
+                                <% if (element.name == game.gamePlatform.name) {%> checked
+
+                               <%    }  %>
+
+                                name="platform" value="<%=element.id%>"
+                                    class="genreToCheck">
+                                <%= element.name %></input></li>
+                                    <% }) %> </div>
+
+
+                                        <button type="submit" id="button-edit" class="button">
+                                            <h6> ACTUALIZAR</h6>
+                                        </button>
+
+                        </div>
+                    </div>
+
+
+
+
+
                 </form>
-                </div>
 
 
-                    <div class="commented">
-
-                        <i class="far fa-user-circle iconcomented"></i>
-
-                    </div>
-
-
-                
-           
-
+            </main>
 
             <!-- Site footer -->
             <%- include ('./partials/footer.ejs') %>
@@ -87,7 +132,7 @@
 
 
 
-
+<script src="/validations/editGameVal.js"> </script>
     </body>
 
 </html>

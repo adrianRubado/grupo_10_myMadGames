@@ -1,6 +1,6 @@
 require('dotenv').config()
 const express = require("express");
-const methodOverride = require ('method-override');
+const methodOverride = require('method-override');
 const createError = require('http-errors');
 const app = express() //Requerimos modulo de express para levantar nuestro servidor
 const path = require ('path');
@@ -15,7 +15,9 @@ const purchaseRouter = require('./src/routes/purchaseRouter')
 const mercadoPagoRouter = require('./src/routes/mercadoPagoRouter')
 const persistSessionMiddleware = require('./src/middleware/persistSessionMiddleware')
 const logged = require('./src/middleware/loggedMiddleware')
-
+const myPurchaseRouter = require ('./src/routes/myPurchaseRouter')
+const apiRouter = require('./src/api/apiRouter')
+const buyNowRouter = require ('./src/routes/buyNowRouter')
 
 
 app.set ("view engine", "ejs") ; //Establecimos como template engine ejs
@@ -30,7 +32,7 @@ app.use(express.static('public'))//Establecemos como carpeta estatica
 app.use (morgan('dev')) ;
 
  // middleware para persistir session a traves de toda la app
-app.use(persistSessionMiddleware)
+//app.use(persistSessionMiddleware)
 app.use(logged)
 
 
@@ -65,6 +67,8 @@ app.use('/product-cart',pcRouter)
 app.use('/user',userRouter)
 app.use('/purchase-detail',purchaseRouter)
 app.use('/mp',mercadoPagoRouter)
-
+app.use ('/myPurchases',myPurchaseRouter)
+app.use ('/api',apiRouter)
+app.use ('/buy-now', buyNowRouter)
 
 app.use((req, res, next) => next(createError(404)));

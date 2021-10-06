@@ -50,7 +50,7 @@
 
     <section class='container'>
       <% games.filter(g => g.category == 2).forEach(element => { %>
-        <article>
+        <article style="border: 0ch;">
           <a href="/products/<%= element.id %>"  >
             <img src = <%=element.image %>   alt="hola" width="220px" class="pictures">
             <h3 class="game-name"> <%= element.name%></h3>
@@ -90,14 +90,43 @@
 
   <section class='container'>
     <% games.filter(g => g.category == 1).forEach(element => { %>
-      <article>
+      <article style="border: 0ch;">
         <a href="/products/<%= element.id %>"  >
           <img src = <%=element.image %>   alt="hola" width="220px" class="pictures">
-          <h4 class = 'descrip'><%= element.name  %> </h4>
+          <h3 class = 'descrip'><%= element.name  %> </h3>
+          <h4 class="game-price">$<%= element.price %> </h4>
         </a>
       </article>
 
     <% }) %>
+  </section>
+  <br>
+  <br>
+  <br>
+  <section class = 'games-genre'>
+
+      <a href="/products/searchGenre?genre=6">
+        <img src = '/images/best-raching-games-forza-horizon-4-review-header.jpg' alt = 'hola' class = 'gameG'>
+        <h4 align = 'center'>Racing</h4>
+
+      </a>
+
+
+
+      <a href="/products/searchGenre?genre=2">
+        <img src = '/images/1659296.jpg' alt = 'hola' class = 'gameG'>
+        <h4 align = 'center'>Accion</h4>
+
+      </a>
+
+
+
+      <a href="/products/searchGenre?genre=8">
+        <img src = '/images/Crash-Bandicoot-Work-Page.png' alt = 'hola'  class = 'gameG'>
+        <h4 align = 'center'>Arcade</h4>
+
+      </a>
+
   </section>
 
   <!-- Site footer -->
