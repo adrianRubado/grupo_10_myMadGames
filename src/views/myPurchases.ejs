@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include ('./partials/head') %>
+<body>
+    <%- include('./partials/header') %>
+    <script src = '/validations/darkMode.js'></script>
+    <main>
+        <% if(games) {%>
+             <% games.forEach(game => { %>
+                <article class="myArticlePurchase">
+                    <div class="myPurchase">
+                        <div class="myPurchaseBox">
+        
+                            <div class="boxMother">
+                                <h2 class="titleMypurchase">Fecha de compra</h2>
+                            <h1 class="titleMypurchase"><%= game.game.name %> </h1>
+                            
+                        </div>
+                            <div>
+                                <a href="/products/<%=game.game.id%>"><img src=<%= game.game.image %>  alt="hola" width="220px" class="pictures"></a></div>
+                    </div>
+                    <div class="descriptionBox">
+                        <h3 class="descriptionMypurchase">Descripcion de la compra </h3>
+                        <div class="subDescriptionMypurchase">
+                        <p>Cantidad : <%= game.quantity %> </p>
+                        <p>Total : <%= game.total%> </p>
+                        <p>Numero de transaccion :<%= game.purchaseId %> </p>
+                    </div>
+                    </div>
+        
+                        
+               
+                    <div class="buttonBox">           
+                    <a href= "/products/<%=game.game.id%>"><button class="buttonsmyPurchase">Ver Compra</button></a>
+                    <a href="/"><button class="buttonsmyPurchase"href = "/">Volver a comprar</button></a>
+                </div> 
+                </div>
+                </article>
+              
+             <% }) %>
+        
+        <%}%>
+       
+
+
+    </main>
+    <script src = '/validations/darkMode.js'></script>
+    <br>
+    <br>
+    <br>
+    <br>
+    <%- include ('./partials/footer.ejs') %>
+</body>
+
+</html>

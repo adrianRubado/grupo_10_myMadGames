@@ -29,7 +29,7 @@ let cols = {
         Purchase.associate=function (models) {
           Purchase.belongsTo(models.User,{
             as:'user',
-            foreignKey:'user_id'
+            foreignKey:'UserId'
           })
           Purchase.hasMany(models.Product,{
             as:'Products'

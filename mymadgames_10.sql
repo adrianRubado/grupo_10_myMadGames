@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 21, 2021 at 11:05 PM
+-- Generation Time: Sep 19, 2021 at 06:29 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.8
 
@@ -279,7 +279,7 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `password`, `email`, `bday
 (36, 'aaaaaa', 'peeeee', '$2a$10$oudJZVvRn2ci8OJcV4jXlerUuU2avaybqzdcvax5YGu2no7ZUdvkq', 'robertoaaaaaaa@gmail.com', '2002-12-29', '/images/dollar-icon-png-3556.png', 1, 1, '2021-09-16 14:17:31', '2021-09-16 14:17:31'),
 (37, 'Adrian', 'Rubado', '$2a$10$0T/rXYtHCZNFBikfzDOgBOyD9NkN7Ap3B5E4FtJfsgwlHactjFK7i', 'robertota@gmail.com', '2002-12-30', '/images/dollar-icon-png-3556.png', 1, 1, '2021-09-16 14:37:20', '2021-09-16 14:37:20'),
 (56, 'Adrian', 'Rubado', '$2a$10$R2It/WylYkl9Xi/rfSc3S.tuCsQ1pn5Bi7CDef2cHjIKcGxkv/A3m', 'digitalhouse1234@gmail.com', '2002-12-30', '/images/dollar-icon-png-3556.png', 1, 1, '2021-09-16 20:16:36', '2021-09-16 20:16:36'),
-(61, 'Adrian', 'Rubado', '$2a$10$6X2emYzcBGeVQ3aY9LLCF.6rFA79bn2tAYKu0NnxCCxc9y6kvSZau', 'adrianrubado19@gmail.com', '2002-12-29', '/images/mercado-pago.png', 1, 2, '2021-09-18 01:42:43', '2021-09-18 01:42:43');
+(61, 'Adrian', 'Rubado', '$2a$10$lL1UNcRqT.1tQmJP85ZKyez0CrFhvrTDmspNuIu5YHDMiCSJFMK/e', 'adrianrubado19@gmail.com', '2002-12-29', '/images/mercado-pago.png', 1, 2, '2021-09-18 01:42:43', '2021-09-18 01:42:43');
 
 --
 -- Indexes for dumped tables
@@ -358,7 +358,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `carts`
 --
 ALTER TABLE `carts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `favs`

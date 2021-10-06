@@ -12,6 +12,9 @@
 
 
 
+
+
+
   .form-search { display: flex; flex-direction: row; justify-content: center; align-items: center;}
 .carritoCounter{
     padding-top: 25%;
@@ -23,7 +26,7 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    background-color: rgb(240, 239, 239);
+    background-color: rgb(214, 214, 214);
     margin: 0;
     margin-top: 0;
 }
@@ -189,6 +192,10 @@ a{
     color: black;
     margin-left: 10px;
     font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    color: rgb(80, 80, 202);
+    font-weight: bolder;
+
 }
 .menu{
     background-color: rgb(80, 80, 202);
@@ -204,12 +211,11 @@ article{
 }
 .nombre{
 
-    font-size: 25px;
+    font-size: 30px;
     font-weight: bold;
-    text-decoration: underline;
     text-align: left;
     margin-bottom: 15px;
-
+    text-align: center
 }
 
 .nombre input {
@@ -218,7 +224,7 @@ article{
 }
 .iconos{
     color: rgb(44, 40, 40);
-    display: flex;
+   /*  display: flex; */
     justify-content: space-between;
     margin-bottom: 20px;
     height: 15vh;
@@ -240,16 +246,21 @@ article{
     display: flex;
     justify-content: space-around;
     color: rgb(111, 111, 218);
-    height: 50%;
+    
 
 }
 .image{
     margin-bottom: 10px;
     background-color: gray;
     box-shadow: 0px 0px 10px rgb(100,100,100);
-    display:flex;
+    /* display:flex; */
+    /* display: flex; */
     max-width: 90%;
-    max-height: 80%;
+    /* max-height: 80%; */
+    vertical-align: middle;
+    text-align: center;
+    justify-content: center;
+
 }
 
 .chart{
@@ -446,11 +457,15 @@ article{
 .container2{
     padding: 15px;
     text-align: left;
+    margin: auto;
+    text-align: center;
 }
 
 .container3{
     padding: 15px;
     text-align: left;
+    margin: auto;
+    text-align: center;
 }
 
 .tienda{
@@ -460,12 +475,79 @@ article{
     border-radius: 5px;
     background-color: #3f51b5;
     max-width: 60%;
-    margin-top:5%
+    margin-top:5%;
+    margin: auto;
+    text-align: center;
 
 }
+
+.container99 {
+    /* background-color: gray;
+    color: white; */
+    font-weight: bolder;
+    /* border: solid gray 1px; */
+    height: 30px;
+    width: 95%;
+    font-size: 18px;
+}
+
+.quitar {
+    width: 30px;
+    height: 25px;
+    font-weight: bolder;
+    background-color: rgb(233, 164, 164);
+    border: none;
+    border-radius: 5px;
+}
+
+.agregar {
+    width: 30px;
+    height: 25px;
+    font-weight: bolder;
+    background-color: rgb(210, 233, 210);
+    border: none;
+    border-radius: 5px;
+}
+
+.buy-now {
+    width: 100%;
+    background-color: rgb(191, 191, 226);
+    height: 30px;
+    font-weight: bolder;
+    border-radius: 10px;
+}
+
+.add-to-cart {
+    width: 100%;
+    background-color: rgb(221, 172, 205);
+    height: 30px;
+    font-weight: bolder;
+    border-radius: 10px;
+}
+
+.far {
+    font-weight: bolder;
+    border: none;
+    background-color: white;
+    font-size: 18px;
+    color: #3f51b5
+}
+
+.fa-share-alt {
+    font-weight: bolder;
+    border: none;
+    background-color: white;
+    font-size: 18px;
+    color: #3f51b5
+}
+
+.fav-opacity {
+    opacity: 0;
+}
+
 @media (min-width: 768px){
     body{
-    background-color: rgb(208, 216, 208);
+    background-color: rgb(214, 214, 214);
     }
 
     .navigation{
@@ -565,4 +647,9 @@ article{
     .descripcion h5 {
         margin-top: 0px;
     }
+
+    .fav-opacity {
+        opacity: 1;
+    }
+
 }

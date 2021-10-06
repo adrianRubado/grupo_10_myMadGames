@@ -14,6 +14,7 @@ const sequelize = require('sequelize')
 
         })
         const games = []
+        const favorites = []
         if(cart.length>=1){
             for(let i = 0; i < cart.length;i++){
                 let g = await db.Game.findOne({
@@ -23,10 +24,25 @@ const sequelize = require('sequelize')
                 })
 
                 games.push(g)
+                let fav = await db.Fav.findOne({
+                    where : {
+                    UserId : req.session.user.id,
+                    GameId : g.id
+                }
+                })
+
+                if(fav){
+                    favorites.push(true)
+                }else{
+                    favorites.push(false)
+                }
+
             }
+
             const viewData = {
                 cart : cart,
-                games : games
+                games : games,
+                favorites : favorites
 
             }
 
@@ -45,7 +61,40 @@ const sequelize = require('sequelize')
 
     },
     addItem : async (req,res) =>{
-        const itemToAdd = req.body.add.split(',')
+        const alreadyExists = await db.Cart.findOne({
+            where: {
+                UserId: parseInt(req.body.user),
+                GameId : parseInt(req.body.game)
+            }
+
+        })
+
+        if(alreadyExists){
+            await db.Cart.update({
+                quantity: alreadyExists.quantity + parseInt(req.body.qty),
+                price: alreadyExists.price + (parseInt(req.body.price) * parseInt(req.body.qty))
+
+            },{
+                where:{
+                    id:alreadyExists.id
+                }})
+        }else{
+
+        await db.Cart.create({
+            UserId: parseInt(req.body.user),
+            GameId: parseInt(req.body.game),
+            quantity: parseInt(req.body.qty),
+            price: parseInt(req.body.price * parseInt(req.body.qty))
+
+        })
+
+    }
+
+    res.redirect(`/products/${parseInt(req.body.game)}`)
+
+
+
+/*         const itemToAdd = req.body.add.split(',')
 
         const alreadyExists = await db.Cart.findOne({
             where: {
@@ -54,7 +103,7 @@ const sequelize = require('sequelize')
             }
 
         })
-
+ 
         if(alreadyExists){
             await db.Cart.update({
                 quantity: alreadyExists.quantity + parseInt(itemToAdd[2]),
@@ -73,9 +122,7 @@ const sequelize = require('sequelize')
             price: parseInt(itemToAdd[3] * parseInt(itemToAdd[2]))
 
         })
-    }
-
-    res.redirect(`/products/${parseInt(itemToAdd[1])}`)
+        */
     },
 
     update : async (req,res) =>{

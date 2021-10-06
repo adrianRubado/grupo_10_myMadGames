@@ -1,168 +1,107 @@
-.meta-edit-game{
-    display: none;
-}
-.titulo-edit-game{
-
-    height: 5vh;
-    display: flex;
-  justify-content: center;
+*{font-family: "roboto";}
 
 
+.form-edit-game { display: flex;
+    flex-direction: column;}
 
-}
-input {
-    border: 2px solid #3f51b5;
-}
-.p-edit-game{
-    color: rebeccapurple;
-    padding: 2px;
-}
-.textarea-edit-game{
-    border: 2px solid #3f51b5;
-    width: 100%;
-    margin: auto;
+    .errors-container { display:none; }
 
-}
-.textarea-editt-game{
+#txt-description { width: 90%; height: 200px; margin: auto;}
+.game-edit-cont{ margin: auto;
+box-sizing: border-box;
+padding: 3vmin;
+display: flex;
+flex-direction: column;
+justify-content: center;}
 
-    border: 2px solid #3f51b5;
-    width:100%;
-    margin: auto;
-}
-.embebido-edit-game{
-    display: flex;
-    flex-direction: column;
-    font-size: large;
-    font-weight: bold;
+.content-game-descript{display: flex; flex-direction: column; border-radius: 6px; justify-content: space-between; padding: 5px; background-color: rgba(85, 151, 175, 0.392); position: relative;}
 
-}
-.embebido-edit-game input{
-    padding: 5px;
-    margin:5px;
-}
-.box-edit-game{
-    display: flex;
-    flex-direction: column;
-    margin: 5px;
-}
-.portada-edit-game{
-    display: flex;
-    justify-content: center;
+.title-edit-game { font-family: "roboto"; margin: auto; text-align: center;}
+.name-price-genre { display: flex; flex-direction: column; flex-wrap: wrap; padding: 2px;}
 
 
-}
-.face-edit-game{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.imagen-edit-game{
-    margin-top: 10px;
-    margin-bottom: 10px;
-    width:80vw;
+.name-input-edit-game {  font-family: "roboto"; margin: auto; text-align: center;}
 
-}
-.descripcion-edit-game{
-    height: 10vh;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    }
-    .descripcion-referencial-editt-game{
-        padding: 10px;
+#button-edit{border-radius: 10px; width: 100px;}
+.label-game-edit { display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 3px; }
 
-    }
-    .descripcion-referencial-editt-game h5{
-        padding: 5px;
-        font-weight: bold;
-        font-size: large;
+.input-edit-game{margin: auto;margin-bottom: 2px; width: 60%;}
 
-    }
+.video-section{display: flex; flex-direction: column; width: auto;}
 
-.descripcion-referencial-edit-game{
+#img-edit-img {width:40%; height: auto; margin: auto;  display: flex; padding-bottom: 5px;}
 
-    padding: 10px;
+.platforms-radio-cont { display: flex; flex-direction: column; margin: auto;}
 
-}
-.descripcion-referencial-edit-game h5 {
-    padding: 5px;
-    font-weight: bold;
-    font-size: large;
+.generosCaja{ display: flex; flex-direction: row; }
 
-}
-#botones-formularios-edit-game{
-    height: 10vh;
-    border-radius: 5px;
-    border: 2px #3f51b5 solid;
+.cnt-gnres-edit { margin: auto;}
+.radios-genres { display: flex; flex-direction: row; flex-wrap: wrap; margin: auto;}
 
-}
-#botones-formularios-edit-game:hover{
-    border: none;
-    background: #3f51b5;
+.platformEdit-title { margin: auto;}
 
-}
-@media (min-width: 768px) {
-    .titulo-edit-game{
-        justify-content: flex-start;
-        width: 20vw;
-    }
-    .imagen-edit-game{
-        justify-content: flex-start;
-        width: 35vw;
-        height: 30vh;
+.radios-genres { display: flex; flex-direction: row; flex-wrap: wrap; margin: auto;}
 
+.inputCreateTextreqos { width: 80%;}
+#generosCajaCreate { display: flex; flex-direction: column;}
 
-    box-shadow: 0px 0px 10px rgb(100 100 100);;
-    }
-    .portada-edit-game{
-        justify-content: flex-start;
-        margin-left: 20px;
-    }
-    .descripcion-edit-game{
+.generosdea2{display: flex; flex-direction: column;}
+.generosTitulo { margin: auto; text-align: center; margin: 10px;}
+
+.descript-label{width: 100%; display: flex; flex-direction: column; text-align: center;}
+
+#button-edit { margin: auto; text-align: center;}
+
+@media(min-width:768px){
+
+ .errors-container{margin: auto; width: 40%; background-color: rgba(255, 2, 61, 0.756); color: rgb(0, 0, 0); font-size: 15px; display: none; flex-direction: row; border-radius: 14px;}
+
+#button-edit { margin: auto; text-align: center;}
+    .form-edit-game { display: flex;
         flex-direction: row;
-       width: 50vw;
-       flex-wrap: wrap;
+    justify-content: space-between; align-items: center;}
+.title-edit-game{margin-top: 1px; padding-bottom: 5px;}
+        .content-game-descript{margin: auto; justify-content: space-between;}
+
+        .cnt-gnres-edit { display: flex; flex-direction: row; flex-wrap: wrap; font-family: "roboto";}
+
+    #img-edit-img {width:260px; height: auto; padding: 15px;margin: auto; }
+
+    .content-game-descript{padding: 20px; width: 55vw;}
+
+    .label-game-edit { display: flex; flex-direction: column; width: 75%; }
+
+    #generosCajaCreate { display: flex; flex-direction: row;}
+    .label-game-edit-genre {display: block; }
+
+    .label-game-edit-genr { margin-top: 15px;}
+
+    .radios-genres { display: flex; flex-direction: row; margin-top: 25px; align-items: center; justify-content: center;}
+
+    .cont-img-inputs{display: flex; flex-direction: column;}
+
+   .video-section{display: flex; flex-direction: column;}
+
+   #txt-description { width: 80%; height: 100px; margin: auto;}
+
+
+   #button-edit { margin: auto;}
+   .generosTitulo { margin: auto; text-align: center; margin: 10px;}
+
+   .generosCaja { display: flex; flex-direction: row; width: 70%; margin: auto; }
+
+
+
+   .generos{width: auto; padding: 5px; display: flex; flex-direction: row; margin: auto;}
+
+
+   #radio-plat { margin: 10px; text-align: center; align-items: center;}
+
+   .platforms-radio-cont{margin: auto; display: flex; flex-direction: row; justify-content: space-between;}
+
+   .name-price-genre { display: flex; flex-direction: column; align-items: center; justify-content: space-around; width: 100%;}
+
+   .cont-img-name-price { display: flex; flex-direction: row;}
+.descript-label{width: 100%; display: flex; flex-direction: column;}
 
     }
-    .descripcion-edit-game label {
-
-        align-items: center;
-        display: flex;
-        width: 25vw;
-        justify-content: space-between;
-
-
-    }
-    .descripcion-edit-game input{
-        height: 7vh;
-        width:15vw ;
-
-
-    }
-    .textarea-edit-game{
-        justify-content: flex-end;
-        left: 50vw;
-    }
-    .descripcion-referencial-edit-game h5{
-        position: absolute;
-        bottom: 630px;
-        left: 50vw;
-
-    }
-    .link-edit-game{
-        height:30vh ;
-        width: 40vw;
-    }
-
-    .requisitos-video-edit-game {
-        display: flex;
-        justify-content: space-around;
-    }
-    .p-edit-game{
-        min-width: 28vw;
-    }
-
-
-}
-
