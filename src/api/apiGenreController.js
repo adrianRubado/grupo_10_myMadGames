@@ -7,7 +7,7 @@ const apiGenreController = {
 
    genres :  async (req,res) => { 
 
-    const genres =  await db.Genre.findAll();
+    const genres =  await db.Genre.findAll({include:[{association:"gamesByGenre"}]});
 
     const genre = [ ]
 
@@ -16,7 +16,8 @@ const apiGenreController = {
         
         genre.push({id: element.id,
             name:element.name, 
-            detail: "http://localhost:3002/api/genres/"+element.id})
+            detail: "http://localhost:3002/api/genres/"+element.id,
+            games: element.gamesByGenre})
     
     });
 
