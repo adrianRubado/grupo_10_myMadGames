@@ -5,7 +5,7 @@ const multer = require('multer')
 const productsController = require ('../controllers/productsController') ;
 const {check}= require ('express-validator') ;
 const updateGameMiddleware = require("../middleware/check-middleware-update")
-
+const favController = require('../controllers/favController');
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, path.join(__dirname,'../../public/images'))
@@ -48,8 +48,8 @@ router.get('/:id/edit',[authMiddleware,adminMiddleware], productsController.edit
 
 router.put('/:id/edit',upload.single("image"), [updateGameMiddleware, authMiddleware,adminMiddleware], productsController.update);
 
-
-router.post('/favorites',authMiddleware,productsController.addFavorite);
+//router.get('/favorites',favController.view);
+//router.post('/favorites',favController.addFavorite);
 router.post('/cart-favorites',authMiddleware,productsController.cartFavorite)
 router.post('/',upload.single('image'),[
   check('name').not().isEmpty().withMessage ('Debes completar el Nombre del juego'),

@@ -71,5 +71,6 @@ app.use('/mp',mercadoPagoRouter)
 app.use ('/myPurchases',myPurchaseRouter)
 app.use ('/api',apiRouter)
 app.use ('/buy-now', buyNowRouter)
+app.use('/favorites',favRouter);
 
 app.use((req, res, next) => next(createError(404)));

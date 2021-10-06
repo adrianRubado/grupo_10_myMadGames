@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
                 };
 
     let config = {tableName: "Favs",timestamps : false}
-
+    
     const Fav = sequelize.define("Fav", cols, config);
     return Fav;
 }
