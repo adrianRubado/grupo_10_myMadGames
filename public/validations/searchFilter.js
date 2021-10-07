@@ -33,6 +33,10 @@ window.addEventListener('load', async function () {
 
         }
         let res = await axios.post('http://localhost:3002/products/filter', {data});
+
+        if(res.data.length == 0){
+            gamesContainer.innerHTML = '<h2 color = white margin =auto text-align = center>No se encontraron resultados para esta busqueda</h2>'
+        }else{
         gamesContainer.innerHTML = ''
         res.data.forEach(g =>{
             gamesContainer.innerHTML +=  `<article class="individual-game-container">
@@ -55,7 +59,9 @@ window.addEventListener('load', async function () {
          </div> -->
          </div>
          </article>`
+
         })
+    }
 
 
 

@@ -46,37 +46,44 @@
 
 <div class="games-conteiner">
 
+  <% if (games.length) { %>
+    <%games.forEach(element => {%>
 
-  <%games.forEach(element => {%>
-
-  <article class="individual-game-container">
-
-
+      <article class="individual-game-container">
 
 
 
 
-     <div class="image-containe">
-      <a href="/products/<%=element.id%>"> <img src = <%=element.image %>   alt="game" width="160px"  class="image-game-cover"></a>
+
+
+         <div class="image-containe">
+          <a href="/products/<%=element.id%>"> <img src = <%=element.image %>   alt="game" width="160px"  class="image-game-cover"></a>
+    </div>
+    <div class="cont-price-buttons">
+       <a href="/products/<%=element.id%>"> <h3 class="game-name"> <%= element.name%>   </h3></a>
+        <h4 class="game-price">$<%= element.price %> </h4>
+
+
+        <!-- <div class="buttons-article-container">
+        <a buy-button-search><i class="fas fa-shopping-cart cart-article-search">Agregar</i> </a><br> <a class="buy-button-search" >Comprar</a>
+      </div> -->
+      </div>
+      </article>
+
+      <% }) %>
+
+
+
+  <% } else{ %>
+
+
+    <h2 color = white margin =auto text-align = center>No se encontraron resultados para esta busqueda</h2>
+
+  <% } %>
+
 </div>
-<div class="cont-price-buttons">
-   <a href="/products/<%=element.id%>"> <h3 class="game-name"> <%= element.name%>   </h3></a>
-    <h4 class="game-price">$<%= element.price %> </h4>
-
-
-    <!-- <div class="buttons-article-container">
-    <a buy-button-search><i class="fas fa-shopping-cart cart-article-search">Agregar</i> </a><br> <a class="buy-button-search" >Comprar</a>
-  </div> -->
-  </div>
-  </article>
-
-  <% }) %>
-
-
 </div>
 </div>
-</div>
-
 <%- include ('./partials/footer.ejs') %>
 
 <!-- <script src ="/js/search-page.js"></script> -->
