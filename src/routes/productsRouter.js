@@ -5,6 +5,9 @@ const multer = require('multer')
 const productsController = require ('../controllers/productsController') ;
 const {check}= require ('express-validator') ;
 const updateGameMiddleware = require("../middleware/check-middleware-update")
+const authMiddleware = require('../middleware/authMiddleware')
+  const adminMiddleware = require('../middleware/adminMiddleware')
+
 
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -29,9 +32,7 @@ var storage = multer.diskStorage({
         fileSize: 1024 * 1024
     }
 })
-  const authMiddleware = require('../middleware/authMiddleware')
-  const adminMiddleware = require('../middleware/adminMiddleware')
-
+  
 
 
 router.get('/',authMiddleware,productsController.get)
@@ -60,6 +61,7 @@ router.post('/',upload.single('image'),[
 
 
 ], productsController.post)
+
 router.delete('/:id/delete', [authMiddleware,adminMiddleware], productsController.delete)
 
 module.exports = router
