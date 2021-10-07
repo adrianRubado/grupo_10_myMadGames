@@ -73,6 +73,7 @@ const purchaseController = {
                     title : g.name,
                     unit_price : g.price,
                     quantity : cart[i].quantity,
+                    picture_url : g.image,
                     id : g.id
 
                 }
@@ -134,6 +135,15 @@ const purchaseController = {
 
           });
 
+          const purchaseDetail = req.session.purchaseDetail.map((pd)=>{
+              return{
+                title : pd.name,
+                unit_price : pd.price,
+                quantity : pd.quantity,
+                picture_url : pd.image,
+              }
+          })
+
           let preference = {
             items: req.session.purchaseDetail,
                 // ...
@@ -142,7 +152,7 @@ const purchaseController = {
                       "failure": "http://localhost:3002/mp/failure",
                       "pending": "http://localhost:3002/mp/pending"
                   },
-                  "auto_return": "approved",
+                  "auto_return": "all",
                 // ...
 
           };

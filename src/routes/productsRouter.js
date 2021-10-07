@@ -64,4 +64,7 @@ router.post('/',upload.single('image'),[
 
 router.delete('/:id/delete', [authMiddleware,adminMiddleware], productsController.delete)
 
+
+router.post('/filter',productsController.filter)
+
 module.exports = router
