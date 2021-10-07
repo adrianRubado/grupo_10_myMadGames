@@ -14,21 +14,20 @@
 
 
   <div class="price_Filter">
-    <label for="priceRange"> Price</label>
-    <input type="range" name="priceRange"> </div>
+     </div>
     <button class="button_filter">Filtro
       <i class="fas fa-filter"></i></button>
 <div class="filters-Check-Box">
 
 <ul>
-  <%genres.forEach(element => {%> <li> <input type="checkbox"   class="genreToCheck"><%= element.name %></input></li>
+  <%genres.forEach(element => {%> <li> <input type="checkbox" value = <%= element.id %>    class="genreToCheck"><%= element.name %></input></li>
     <% }) %>
 
 </ul>
 
 <ul>
 
-  <%platform.forEach(element => {%> <li> <input type="checkbox"  class="platformToCheck"><%= element.name %></input></li>
+  <%platform.forEach(element => {%> <li> <input type="checkbox" value = <%= element.id %>   class="platformToCheck"><%= element.name %></input></li>
   <% }) %>
 
 </ul>
@@ -80,7 +79,9 @@
 
 <%- include ('./partials/footer.ejs') %>
 
-<script src ="/js/search-page.js"></script>
+<!-- <script src ="/js/search-page.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src ="/validations/searchFilter.js"></script>
 
 </body>
   </html>
