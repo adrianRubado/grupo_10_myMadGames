@@ -398,12 +398,14 @@ footer{
 
 
 .miBody{
-  background: rgb(37, 37, 37)
+  background: rgb(37, 37, 37);
+  background-color: rgb(37, 37, 37);
 
 }
 
 .miBody .buttomtotal-chart {
-  background: rgb(37, 37, 37)
+  background: rgb(37, 37, 37);
+  background-color: rgb(37, 37, 37);
 
 }
 
@@ -484,7 +486,7 @@ footer{
 }
 
 .miBody span{
-  color: white;
+ color : white
 }
 
 
@@ -595,7 +597,7 @@ footer{
  } */
 
 .bodyDetail {
-  background-color: rgb(240, 240, 240);
+
 }
 
  .price {

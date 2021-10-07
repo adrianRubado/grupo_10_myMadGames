@@ -12,6 +12,8 @@ const signInForm = document.querySelector('.contenedorFormularioSignIn')
 
 
 
+
+
 const currentTheme = localStorage.getItem("theme")
 if (currentTheme == "dark") {
   document.body.classList.toggle("miBody")
@@ -22,6 +24,8 @@ if (currentTheme == "dark") {
   console.log(form)
   search.style.backgroundColor = '#8a3b3b' /* 'rgb(' + 127 + ',' + 11 + ',' + 151+ ')'; */
   form.style.backgroundColor = '#8a3b3b'  /* 'rgb(' + 127 + ',' + 11 + ',' + 151+ ')'; */
+
+
 
 
   toggle.checked = true
@@ -44,6 +48,7 @@ toggle.addEventListener("click", function () {
     document.body.classList.add("miBody2");
     /* signInForm.classList.toggle('miBody2') */
     header.classList.add('header-dark')
+
 
     articles.forEach(a =>{
         a.classList.toggle('miBody2')

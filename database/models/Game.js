@@ -23,11 +23,11 @@ module.exports = (sequelize, DataTypes) => {
 
                                 },
 
-                 release_year: {type: DataTypes.INTEGER },
+              /*   release_year: {type: DataTypes.INTEGER },/*
                  /* created_at: { type: DataTypes.DATE },
                  updated_at: { type: DataTypes.DATE }, */
                  description: { type: DataTypes.STRING },
-                 requirements: { type: DataTypes.STRING },
+               /*  requirements: { type: DataTypes.STRING },*/
                  link: { type: DataTypes.STRING },
                  category : {type : DataTypes.INTEGER}
                 };
