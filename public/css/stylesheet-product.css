@@ -10,21 +10,43 @@ header{
 
 }
 
-.mas{
-  margin-bottom: 10px;
+.fa.fa-heart-o:before {
+  content: "\f004";
   color: black;
-  background-color: rgb(209, 209, 8) ;
+  font-size:  18px;
 }
+.trash{
+background: none;
+border: none;
+font-size: 18px;
 
+}
+.mas{
+border: none;
+background: none;
+font-size: 15px;
+}
 .menos{
-  margin-bottom: 10px;
-  color: white;
-  background-color: red;
-}
+background:none ;
+border:none;
+color: black;
 
-.number{
-  font-weight: 600;
+
+font-size: 15px;
+
 }
+.number{
+font-size: 18px;
+font-weight: bolder;
+color:#EC6EAD ;
+}
+.pricess{
+  font-size: 18px;
+  color: black;
+  
+  }
+
+
 
 .gameId{
   display : none
@@ -39,9 +61,9 @@ header{
 
 .cantidadCart{
   padding-top: 15px;
-  border: 1px solid grey;
+  border: none;
   display: flex;
-  width: 15%;
+  width: 20vw;
   justify-content: space-evenly;
 }
 
@@ -66,8 +88,12 @@ header{
   height: 50px;
 }
 .encabezado-chart{
-  display: none;
+  display: flex;
+  justify-content: space-around;
+  font-size: large;
+
 }
+
 
 
 .Main-topNavbar{
@@ -239,17 +265,29 @@ background-color:#ea4c89
 
 
 
+.portada-chart{
+  width: 20vw;
+  padding: 5px;
+  
+
+
+}
 .juegosChart{
-  padding: 15px;
+min-height: 20vh;
+  margin: 15px;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-bottom: solid 1px gray;
-}
-.portada-chart{
-  width: 23%;
-  padding: 0px;
+  background: #3494E6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #EC6EAD, #3494E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #EC6EAD, #3494E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+
+  box-shadow: 3px 15px 80px -7px rgba(38,64,169,0.75);
+  -webkit-box-shadow: 3px 15px 80px -7px rgba(38,64,169,0.75);
+  -moz-box-shadow: 3px 15px 80px -7px rgba(38,64,169,0.75);
+  opacity: 0.90;
+  border-radius: 10px;
 
 }
 .buttomtotal-chart{
@@ -293,6 +331,18 @@ background-color:#ea4c89
   align-items: center;
   padding-left: 15px;
 }
+.productBody{
+  margin: none;
+  
+  background-image:url('/images/backgroundImages.jpg');
+  background-size: cover;
+  background-position:center ;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  
+
+}
 
 .button2 {background-color: #f44336; /* Green */}
 
@@ -301,15 +351,24 @@ background-color:#ea4c89
 }
 
     @media(min-width:768px){
+      
       .encabezado-chart{
         margin-left: 9%;
-        width: 39%;
+        width: 45vw;
         padding-top: 10px;
+        
 
         display: flex;
         justify-content: space-between;
 
         align-items: center;
+      }
+      .cantidadCart{
+        padding-top: 15px;
+        border: none;
+        display: flex;
+        width: 15%;
+        justify-content: space-evenly;
       }
       .logo{
         justify-content: flex-start;
@@ -317,8 +376,16 @@ background-color:#ea4c89
 
 
      }
-    .page-chart{
-        background-color:#ebebeb;
+    .productBody{
+      margin: none;
+      
+      background-image:url('/images/backgroundImages.jpg');
+      background-size: cover;
+      background-position:center ;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+
+      
 
     }
     .Main-topNavbar{
@@ -360,31 +427,84 @@ background-color:#ea4c89
   }
 
     .portada-chart{
-        width: 360px;
-        padding: 20px;
+        width: 20vw;
+        
 
 
     }
     .juegosChart{
+      width: auto;
         margin: 15px;
         display: flex;
         justify-content: space-around;
         align-items: center;
+        background: #3494E6;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #EC6EAD, #3494E6);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #EC6EAD, #3494E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+        box-shadow: 3px 15px 80px -7px rgba(38,64,169,0.75);
+        -webkit-box-shadow: 3px 15px 80px -7px rgba(38,64,169,0.75);
+        -moz-box-shadow: 3px 15px 80px -7px rgba(38,64,169,0.75);
+        opacity: 0.90;
+        border-radius: 10px;
 
     }
     .descripcion-chart{
         display: flex;
+        font-size: 20px;
+        font-weight: bold;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
     }
     .encabezado-chart{
-        margin-left: 9%;
+        margin-left: 1%;
         width: 39%;
         padding-top: 10px;
+        font-size: 18px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        color: #428bca;
 
         display: flex;
         justify-content: space-between;
 
         align-items: center;
     }
+    .fa.fa-heart-o:before {
+      content: "\f004";
+      color: black;
+      font-size:  25px;
+  }
+  .trash{
+    background: none;
+    border: none;
+    font-size: 25px;
+
+  }
+  .mas{
+    border: none;
+    background: none;
+    font-size: 20px;
+  }
+  .menos{
+    background:none ;
+    border:none;
+    color: black;
+    
+    
+    font-size: 20px;
+  
+  }
+  .number{
+    font-size: 25px;
+    font-weight: bolder;
+    color:#EC6EAD ;
+  }
+  .pricess{
+    font-size: 30px;
+    font-weight: bold;
+
+  }
 
 
 
