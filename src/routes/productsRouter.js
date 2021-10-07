@@ -7,6 +7,7 @@ const {check}= require ('express-validator') ;
 const updateGameMiddleware = require("../middleware/check-middleware-update")
 const authMiddleware = require('../middleware/authMiddleware')
   const adminMiddleware = require('../middleware/adminMiddleware')
+  const createValidation = require("../middleware/check-middleware-createProduct")
 
 
 var storage = multer.diskStorage({
@@ -52,15 +53,7 @@ router.put('/:id/edit',upload.single("image"), [updateGameMiddleware, authMiddle
 
 router.post('/favorites',authMiddleware,productsController.addFavorite);
 router.post('/cart-favorites',authMiddleware,productsController.cartFavorite)
-router.post('/',upload.single('image'),[
-  check('name').not().isEmpty().withMessage ('Debes completar el Nombre del juego'),
-  check('name').isLength({min :5}).withMessage ('El nombre debe contener minimo 5 caracteres'),
-
-  check('description').isLength({min :20}).withMessage ('El nombre debe contener minimo 5 caracteres'),
-
-
-
-], productsController.post)
+router.post('/',upload.single('image'),createValidation, productsController.post)
 
 router.delete('/:id/delete', [authMiddleware,adminMiddleware], productsController.delete)
 
