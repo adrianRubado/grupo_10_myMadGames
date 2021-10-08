@@ -97,6 +97,8 @@ text-align: center;}
 margin: auto;
 text-align: start;}
 
+.errors-container { display:none; }
+
 textarea { border-radius: 10px;
 border:2px solid grey;}
 
