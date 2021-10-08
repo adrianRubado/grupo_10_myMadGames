@@ -46,7 +46,7 @@
   <% if (games.length <=0 ) { %>
     <h2 class="not-search"> No se encontraron juegos</h2>
     
-   <% } %>
+   <% } else {%> <h2 class="search-found">Los resultados para tu búsqueda son:</h2> <% } %> 
 <div class="games-conteiner">
 
   <% if (games.length) { %>
