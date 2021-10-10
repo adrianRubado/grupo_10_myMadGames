@@ -80,7 +80,7 @@ router.post ('/login', [
 /* router.get ('/me', signInOutController.profile) */
 
 router.post('/sign-up/check',guestMiddleware,userCheckController.verifyMail) ; //Corroboramos desde el lado del Front si un Email es repetido
-
+router.post('/sign-in/check',guestMiddleware,userCheckController.verifyLogin);
 
 
 router.get("/welcome", signUpController.welcome)

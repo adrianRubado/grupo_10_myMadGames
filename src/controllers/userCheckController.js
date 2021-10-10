@@ -3,6 +3,7 @@ const db = require('../../database/models') ;
 const nodeMailer = require('nodemailer')
 const jwt = require('jsonwebtoken');
 const bcrypt= require ('bcryptjs');
+const { logout } = require('./signInOutController');
 const  userCheckController  ={
 
 
@@ -13,7 +14,9 @@ const  userCheckController  ={
 
         try {
             const email =  req.body.data.email;
-            console.log(email)
+            
+            
+           
             const user = await db.User.findOne ({
 
             where:{
@@ -21,10 +24,13 @@ const  userCheckController  ={
             }
            })
            if (user) {
-               res.json ({error: true })
+             
+             
+               res.json ({error: true,
+             })
 
            }
-           res.json ({error: false })
+           res.json ({error: false})
 
 
 
@@ -35,6 +41,31 @@ const  userCheckController  ={
         }
 
 
+    },
+    verifyLogin : async (req,res)=>{
+    try {
+       const user= await db.User.findOne({
+            where: {email: req.body.data.email}
+        })
+        if (user) {
+            const passwordUser = user.password;
+           const checkPassword = bcrypt.compareSync(req.body.data.password,passwordUser)
+           if (checkPassword) {
+            res.json({log:true})
+           }else{
+               res.json({log:false})
+           }
+            
+            
+        }else{
+            res.json({log:false})
+        }
+        
+    } catch (error) {
+        console.log(error.message);
+        
+    }
+        
     },
 
     verifyAccount : async (req,res) =>{
