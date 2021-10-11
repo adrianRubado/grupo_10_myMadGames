@@ -44,31 +44,24 @@
 
         <ul>
 
-          <li>
-            <a href="/products/create">
-              <i class="fas fa-plus" data-toggle="tooltip" data-placement="top" title="create game"></i></i>
-            </a>
-          </li>
-          <form method="post" action="/user/logout">
-          <li>
-            <a href="/user/logout">
-            <button type="submit" class="far fa-star"></button>
 
-          </a>
-          </li>
+          <form method="post" action="/user/logout">
+
         </form>
         <% if (!locals.logged) { %>
           <li>
             <a href="/user/sign-up">
-            <i class="fas fa-user"></i>
+            <i>Crea tu cuenta</i>
           </a>
 
           </li>
           <li>
             <a href="/user/login">
-            <i class="far fa-question-circle"></i>
+            <i>Ingresa</i>
           </a>
           </li>
+
+
 
         <% } %>
 
@@ -77,6 +70,18 @@
               <a href="/user/profile">
               <img src= <%= locals.image  %> class = 'roundImage'    alt="" width = 30px>
             </a>
+            </li>
+            <li>
+              <a href="/user/logout">
+              <button type="submit" class="far fa-star"></button>
+
+            </a>
+            </li>
+
+            <li>
+              <a href="/products/create">
+                <i class="fas fa-plus" data-toggle="tooltip" data-placement="top" title="create game"></i></i>
+              </a>
             </li>
             <% } %>
             <li>
