@@ -1,14 +1,14 @@
 window.addEventListener('load', function(){
 
-    let formEdit = document.querySelector("form.form-edit-game")
-    let nameInput = document.querySelector("#name-input-edit-game")   
-    let priceInput = document.querySelector("#price-input-edit")
-    let genreInput = document.querySelector(".genreToCheck")
-    let platformInput = document.querySelector("#radio-plat")
+    let formEdit = document.querySelector("form")   
+    let priceInput = document.querySelector("#price")
+    let genreInput = document.querySelector("#genre")
+    let platformInput = document.querySelector("#radio")
     let videoInput =  document.querySelector("#link") 
  
+  
 
-   
+    console.log("pepe")
 
 
 
