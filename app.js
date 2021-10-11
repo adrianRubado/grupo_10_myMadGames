@@ -19,6 +19,7 @@ const logged = require('./src/middleware/loggedMiddleware')
 const myPurchaseRouter = require ('./src/routes/myPurchaseRouter')
 const apiRouter = require('./src/api/apiRouter')
 const buyNowRouter = require ('./src/routes/buyNowRouter')
+const cors = require('cors')
 
 
 app.set ("view engine", "ejs") ; //Establecimos como template engine ejs
@@ -35,6 +36,13 @@ app.use (morgan('dev')) ;
  // middleware para persistir session a traves de toda la app
 //app.use(persistSessionMiddleware)
 app.use(logged)
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "http://localhost:3000"); // update to match the domain you will make the request from
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+  });
+
+ /*  app.use(cors) */
 
 
 app.listen(3002,()=>{

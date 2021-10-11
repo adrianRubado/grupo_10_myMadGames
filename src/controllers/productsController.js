@@ -107,6 +107,12 @@ const productsController = {
 
     post: async (req, res) => {
 
+        const errors = validationResult(req);
+
+        if (errors.isEmpty()) {
+
+        } else{ res.status(422).send(errors)}
+
         const genre = await db.Genre.findOne({
             where: {
                 name: req.body.genre
@@ -253,6 +259,54 @@ const productsController = {
             genres: genres,
          platform: consoles};
         res.render("search", viewData)
+    },
+
+
+    filter : async (req,res) =>{
+        let genres = req.body.data.genres
+        let platforms = req.body.data.platforms
+        let games
+
+
+        if(genres.length == 0 && platforms.length == 0) {
+            games = await db.Game.findAll()
+
+        }
+
+        if(genres.length == 0 && platforms.length !=0){
+            games = await db.Game.findAll({
+                where : {
+                    platformId : platforms
+                }
+            })
+        }
+
+
+        if(genres.length != 0 && platforms.length ==0){
+            games = await db.Game.findAll({
+                where : {
+                    GenreId : genres
+                }
+            })
+        }
+
+
+        if(genres.length != 0 && platforms.length != 0) {
+            games = await db.Game.findAll({
+                where : {
+                    GenreId : genres,
+                    PlatformId : platforms
+
+                }
+            })
+        }
+
+
+
+
+        res.status(200).json(games)
+
+
     }
 
 

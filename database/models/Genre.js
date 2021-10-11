@@ -16,7 +16,8 @@ module.exports = (sequelize, DataTypes) => {
 
     Genre.associate = (models)=>{
         Genre.hasMany(models.Game,{
-            as : 'gamesByGenre',
+            foreignKey: 'GenreId',
+            as : 'gamesByGenre'
         })
     }
     return Genre;

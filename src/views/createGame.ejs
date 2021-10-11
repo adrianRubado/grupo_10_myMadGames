@@ -15,11 +15,17 @@
 
     <h2 id="tituloCreate">Alta de juego</h2>
 
-    <form class="signup" id="formularioCreateGame" action="/products" enctype="multipart/form-data" method="POST">
+    <div class="errors-container">
+
+        <ul class="errors-js">       </ul>
+
+     </div>
+
+    <form class="createGame" id="formularioCreateGame" action="/products" enctype="multipart/form-data" method="POST">
 
            <div class="general">
                <div class="nomypre">
-           <label for="name">Título</label> <input type="text" id="name" class="inputCreateText"  name="name" placeholder="God of War Digital PS4">
+           <label for="name">Título</label> <input type="text" class="inputCreateText"  name="name" placeholder="God of War Digital PS4" value=" ">
 
           <label for="price">Precio </label> <input type="text" id="price" class="inputCreateText" name="price" placeholder="AR$2500">
         </div>
@@ -28,20 +34,20 @@
            <div class="contdescripcion">
             <div class="plataformas">
               <div class="opciones1"> 
-                        <input type="radio" name="platform" value="PC"  >PC
+                        <input type="radio" name="platform" id="platform"value="PC"  >PC
               
               
-                    <input type="radio" name="platform" value="PS" > PS
+                    <input type="radio" name="platform" id="platform"value="PS" > PS
                
                 
-                    <input type="radio" name="platform" value="XBOX" > XBOX
+                    <input type="radio" name="platform" id="platform"value="XBOX" > XBOX
                 </div>
                <div class="opciones2">
               
-                    <input type="radio" name="platform" value="MULTIPLATFORM" > MULTIPLATFORM
+                    <input type="radio" name="platform" id="platform"value="MULTIPLATFORM" > MULTIPLATFORM
                
             
-                    <input type="radio" name="platform" value="OTRO" > OTRO
+                    <input type="radio" name="platform" id="platform"value="OTRO" > OTRO
                 </div>
 
             </div>
@@ -71,34 +77,34 @@
              
                 <div class="generosdea2">
             <label>
-                <input type="radio" name="genre" value="Horror" >Horror
+                <input type="radio" name="genre" id="genre" value="Horror" >Horror
             </label>
             <label>
-                <input type="radio" name="genre" value="Accion">Accion
+                <input type="radio" name="genre"  id="genre"value="Accion">Accion
             </label>
         </div>
         <div class="generosdea2">
             <label>
-                <input type="radio" class="radioin" name="genre" value="Deportes">Deportes
+                <input type="radio" class="radioin" name="genre" id="genre" value="Deportes">Deportes
             </label>
         
        
             <label>
-                <input type="radio" name="genre" value="Casual" >Casual
+                <input type="radio" name="genre" id="genre" value="Casual" >Casual
             </label></div>
             <div class="generosdea2">
             <label>
-                <input type="radio" name="genre" value="Board">Board
+                <input type="radio" name="genre" id="genre" value="Board">Board
             </label>
             <label>
-                <input type="radio" name="genre" value="Carrera">Carrera
+                <input type="radio" name="genre" id="genre" value="Carrera">Carrera
             </label>
         </div>  <div class="generosdea2">
             <label>
-                <input type="radio" name="genre" value="Lucha">Lucha
+                <input type="radio" name="genre" id="genre" value="Lucha">Lucha
             </label>
             <label>
-                <input type="radio" name="genre" value="Arcade">Arcade
+                <input type="radio" name="genre" id="genre" value="Arcade">Arcade
             </label></div>
         
         </div>
@@ -122,7 +128,7 @@
 <%- include ('./partials/footer.ejs') %>
 
 
-<script src="../validations/createGame-scripts.js"></script>
+<script src="/createValidation.js"></script>
 </body>
 
 </html>

@@ -58,7 +58,7 @@ box-sizing: border-box;
 
 
     .filters-Check-Box { display: none;}
-    .main-search{ display: flex; flex-direction: column;}
+    .main-search{ display: flex; flex-direction: column; width: auto;}
 
 
 
@@ -76,6 +76,8 @@ box-sizing: border-box;
  flex-direction: row;
  ;}
     .button_filter {display: none; }
+
+    .not-search { margin-left: 50px; text-align: center; margin-top: 50px;}
 
     .price_Filter { display: flex;
     flex-direction: column;
