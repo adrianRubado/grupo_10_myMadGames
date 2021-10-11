@@ -63,6 +63,7 @@ router.post ('/sign-up',upload.single('image'),[
 
 
 router.get ('/login',guestMiddleware, signInOutController.signIn) ;
+router.post('/sign-in/check',guestMiddleware,userCheckController.verifyLogin);
 router.post ('/login', [
     check('email').not().isEmpty().withMessage ('Debes completar el email'),
     check('email', 'Please include a valid email').isEmail(),
@@ -80,7 +81,7 @@ router.post ('/login', [
 /* router.get ('/me', signInOutController.profile) */
 
 router.post('/sign-up/check',guestMiddleware,userCheckController.verifyMail) ; //Corroboramos desde el lado del Front si un Email es repetido
-router.post('/sign-in/check',guestMiddleware,userCheckController.verifyLogin);
+
 
 
 router.get("/welcome", signUpController.welcome)

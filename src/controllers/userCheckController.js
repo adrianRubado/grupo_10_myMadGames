@@ -49,19 +49,25 @@ const  userCheckController  ={
         })
         if (user) {
             const passwordUser = user.password;
-           const checkPassword = bcrypt.compareSync(req.body.data.password,passwordUser)
+           const checkPassword = await  bcrypt.compareSync(req.body.data.password,passwordUser)
            if (checkPassword) {
-            res.json({log:true})
+           
+           if(user.verify == 2){
+            return res.redirect ('/')
+            
+
            }else{
-               res.json({log:false})
+              return res.json({log:false})
            }
             
             
         }else{
-            res.json({log:false})
+           return res.json({log:false})
+           
         }
         
-    } catch (error) {
+    }
+ } catch (error) {
         console.log(error.message);
         
     }

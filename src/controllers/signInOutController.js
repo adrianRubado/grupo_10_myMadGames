@@ -35,6 +35,7 @@ const signInController = {
                 const password = user.password;
 
                 const ismatch = bcrypt.compareSync(req.body.password, password)
+                
                 if (ismatch) {
                     if (req.body.persist) {
                         res.cookie('persistSession', user.email, { maxAge: (1000 * 60) * 20 })
@@ -50,10 +51,11 @@ const signInController = {
 
 
             }
-            return res.render('sign-in', { errors: { message: 'Invalid Credentials' } })
+            return res.status(400).json ({errors: 'Credenciales Invalidas'})
+           
 
         } catch (err) {
-            res.status(500).json({ errors: 'Server error' })
+            res.status(500).json({ errors: 'Credenciales Invalidas' })
         }
 
 
