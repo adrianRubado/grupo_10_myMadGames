@@ -296,6 +296,17 @@ background-color:#ea4c89
 
 .button2 {background-color: #f44336; /* Green */}
 
+
+.button998 {
+  background-color: green;
+  width: 150px;
+}
+
+.button999 {
+  background-color: #f44336;
+  width: 150px;
+}
+
 .descripcion-chart{
      display: none;
 }
