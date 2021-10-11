@@ -97,7 +97,7 @@ window.addEventListener('load', function(){
 
             msgErrors.style.display = "flex";
             ulErrors.style.alignIntems = "center"
-            
+            ulErrors.innerHTML = ""
             errors.forEach(  error => { ulErrors.innerHTML += "<li>" + error + "<li>"  }  );
 
 

@@ -97,7 +97,7 @@ console.log(formCreateGame)
     
                 msgErrors.style.display = "flex";
                 ulErrors.style.alignIntems = "center"
-                
+                ulErrors.innerHTML = ""
                 errors.forEach(  error => { ulErrors.innerHTML += "<li>" + error + "<li>"  }  );
     
     
