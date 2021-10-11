@@ -43,7 +43,10 @@
 
 </div>
 <div class="main-Search">
-
+  <% if (games.length <=0 ) { %>
+    <h2 class="not-search"> No se encontraron juegos</h2>
+    
+   <% } %>
 <div class="games-conteiner">
 
   <% if (games.length) { %>

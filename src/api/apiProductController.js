@@ -23,14 +23,14 @@ const apiProductController = {
     let data ={
         count : count,
         games:array
-    } 
-
-
-
-        res.json (data)
     }
-    , 
-    game:async(req,res )=>{ 
+
+
+
+       return res.status(200).send(JSON.stringify(data))
+    }
+    ,
+    game:async(req,res )=>{
         const game = await db.Game.findOne ({
             where :{
                 id :req.params.id
@@ -39,7 +39,7 @@ const apiProductController = {
             exclude: [ 'platformId']
         }
     })
-        res.json (game)    
+        res.json (game)
 
     }
 }

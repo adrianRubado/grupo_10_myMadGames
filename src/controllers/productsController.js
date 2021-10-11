@@ -107,6 +107,12 @@ const productsController = {
 
     post: async(req, res) => {
 
+        const errors = validationResult(req);
+
+        if (errors.isEmpty()) {
+
+        } else{ res.status(422).send(errors)}
+
         const genre = await db.Genre.findOne({
             where: {
                 name: req.body.genre
