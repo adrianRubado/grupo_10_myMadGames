@@ -48,8 +48,8 @@ router.get('/:id/edit',[authMiddleware,adminMiddleware], productsController.edit
 
 router.put('/:id/edit',upload.single("image"), [updateGameMiddleware, authMiddleware,adminMiddleware], productsController.update);
 
-//router.get('/favorites',favController.view);
-//router.post('/favorites',favController.addFavorite);
+router.get('/favorites',authMiddleware,favController.view);
+router.post('/favorites',authMiddleware,productsController.addFavorite);
 router.post('/cart-favorites',authMiddleware,productsController.cartFavorite)
 router.post('/',upload.single('image'),[
   check('name').not().isEmpty().withMessage ('Debes completar el Nombre del juego'),

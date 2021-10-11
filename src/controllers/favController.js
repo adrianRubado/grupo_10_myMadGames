@@ -2,11 +2,27 @@ const db = require("../../database/models");
 const sequelize = require('sequelize');
 const favController = {
     view: async (req, res) => {
-        //const favorites = await db.Game.findAll();
-        /* const viewData = {
-            games: favorites
-        } */
-        res.redirect('/');
+        let games = [];
+        const favorites = await db.Fav.findAll({
+            where: {
+                UserId: req.session.user.id,
+            }
+        });
+        favorites.forEach(async (f) => {
+            let g = await db.Game.findAll({
+                where: {
+                    id: f.dataValues.GameId
+                }
+            });
+            games.push(g.dataValues);
+            console.log(games);
+        });
+        
+        const viewData = {
+            favorites: games
+        }
+        
+        res.render('favorites', viewData);
     },
     addFavorite: async (req, res) => {
         const itemToAdd = req.body.Fav.split(',')

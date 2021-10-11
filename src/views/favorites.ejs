@@ -7,8 +7,11 @@
   <body>
     <%- include('./partials/header.ejs') %>
     <script src = '/validations/darkMode.js'></script>
+    
     <section>
-        
+        <% favorites.forEach(element => { %>
+          <div><%= element.name%> </div>
+        <% }) %>
     </section>
 
 

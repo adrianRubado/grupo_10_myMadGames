@@ -18,7 +18,18 @@ module.exports = (sequelize, DataTypes) => {
                 };
 
     let config = {tableName: "Favs",timestamps : false}
-    
+
     const Fav = sequelize.define("Fav", cols, config);
+    Fav.associate = (models)=>{
+        Fav.belongsTo(models.User, {
+          as: 'user',
+          foreignKey: 'UserId'
+        });
+        Fav.belongsTo(models.Game, {
+          as: 'game',
+          foreignKey: 'GameId'
+        });
+  
+    }
     return Fav;
 }

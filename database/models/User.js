@@ -33,9 +33,15 @@ module.exports = (sequelize, dataTypes) => {
 
 
                 User.associate = (models)=>{
-                    User.belongsToMany(models.Game,{
+                User.belongsToMany(models.Game,{
                         as : 'userCart',
                         through : 'Carts',
+                        foreignKey : 'user_id',
+                        otherKey : 'game_id'
+                    }),
+                User.belongsToMany(models.Fav,{
+                        as : 'userFavs',
+                        through : 'Favs',
                         foreignKey : 'user_id',
                         otherKey : 'game_id'
                     }),
