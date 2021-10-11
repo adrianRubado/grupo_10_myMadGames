@@ -45,9 +45,9 @@
         <ul>
 
 
-          <form method="post" action="/user/logout">
 
-        </form>
+
+
         <% if (!locals.logged) { %>
           <li>
             <a href="/user/sign-up">
@@ -68,35 +68,60 @@
           <% if (locals.image) { %>
             <li>
               <a href="/user/profile">
-              <img src= <%= locals.image  %> class = 'roundImage'    alt="" width = 30px>
-            </a>
-            </li>
-            <li>
-              <a href="/user/logout">
-              <button type="submit" class="far fa-star"></button>
+              <img src= <%= locals.image %> class = 'roundImage'    alt="" width = 30px>
+              <i><%= locals.user.first_name %> </i>
 
-            </a>
             </li>
 
-            <li>
-              <a href="/products/create">
-                <i class="fas fa-plus" data-toggle="tooltip" data-placement="top" title="create game"></i></i>
-              </a>
-            </li>
-            <% } %>
+
+          <li>
+            <a href="/myPurchases">
+            <i>Mis compras</i>
+          </a>
+          </li>
+
+          <li>
+            <a href="/myPurchases">
+            <i class = 'fas fa-star'></i>
+          </a>
+          </li>
+
+
+
             <li>
 
               <a href="/product-cart">
               <i class="fas fa-shopping-cart"></i>
+
               <% if (locals.logged) { %>
                 <div class = 'carritoCounter'></div>
+
+              </a>
+
+            </li>
+            <!-- <form method="post" action="/user/logout">
+              <li>
+                <a href="/user/logout">
+                <button  type="submit">salir</button>
+
+              </a>
+              </li>
+            </form> -->
+            <% } %>
+
+            <!-- <% if (locals.user.RoleId == 2) { %>
+              <li>
+                <a href="/products/create">
+                  <i class="fas fa-plus" data-toggle="tooltip" data-placement="top" title="create game"></i></i>
+                </a>
+              </li>
+            <% } %> -->
+
 
 
               <% } %>
 
-            </a>
 
-            </li>
 
 
             <li>
