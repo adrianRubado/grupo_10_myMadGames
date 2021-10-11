@@ -464,7 +464,7 @@ article{
 .container3{
     padding: 15px;
     text-align: left;
-    margin: auto;
+    /* margin: auto; */
     text-align: center;
 }
 
@@ -478,8 +478,25 @@ article{
     margin-top:5%;
     margin: auto;
     text-align: center;
+}
+
+.actionsUser{
+
+    padding:1px;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    max-width: 72%;
+    margin-top:5%;
+    margin: auto;
+    text-align: center;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: column
 
 }
+
 
 .container99 {
     /* background-color: gray;
@@ -555,6 +572,13 @@ article{
         display: none;
     }
 
+    .actionsUser{
+        display: flex;
+        flex-wrap: nowrap;
+        /* flex-direction: column; */
+
+
+    }
 
 
     .Main-topNavbar{
@@ -616,6 +640,7 @@ article{
 
     .container2{
         width: 30%;
+        text-align: left;
     }
 
     .container3{
@@ -624,6 +649,8 @@ article{
 
     .tienda{
         max-width: 70%;
+/*         display: flex;
+        flex-wrap: nowrap; */
     }
 
     .cont-padre {
@@ -638,7 +665,7 @@ article{
     }
 
     .image{
-        width:100%
+        max-width:90%
     }
 
     .descripcion {

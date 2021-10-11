@@ -346,6 +346,17 @@ background: linear-gradient(to right, #EC6EAD, #3494E6); /* W3C, IE 10+/ Edge, F
 
 .button2 {background-color: #f44336; /* Green */}
 
+
+.button998 {
+  background-color: green;
+  width: 150px;
+}
+
+.button999 {
+  background-color: #f44336;
+  width: 150px;
+}
+
 .descripcion-chart{
      display: none;
 }
