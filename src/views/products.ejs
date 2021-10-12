@@ -74,14 +74,42 @@
                         </li>
                       </form>
                     <!-- <i class="fas fa-comment"></i> -->
-                    <form method="POST" action="/products/favorites">
+                    
                         <li>
 
-                          <button type="submit" class="fas fa-share-alt" name = 'fav' value =<%=[locals.user.id,game.id]%> ><span class='fav-opacity'> Compartir</span></button>
+                          <button class="obtenerURL fas fa-share-alt" onclick="copy_Share_Button();"><span class='fav-opacity'> Compartir</span></button>
+                            
+                          <script>
 
-                        </a>
+                            function copy_Share_Button() {
+                        
+                                //----< copy_Share_Button() >----
+                        
+                                var sURL = window.location.href;
+                        
+                                sTemp = "<input id=\"copy_to_Clipboard\" value=\"" + sURL + "\" />"
+                        
+                                $("body").append(sTemp);
+                        
+                                $("#copy_to_Clipboard").select();
+                        
+                                document.execCommand("copy");
+                        
+                                $("#copy_to_Clipboard").remove();        
+                                
+                                alert("¡Enlace de este juego copiado al portapapeles y listo para compartir!")
+
+                                //----</ copy_Share_Button() >----
+                        
+                            }
+                        
+                            //
+                        
+                        </script>
+
+
                         </li>
-                      </form>
+                      
 
 
                     <!-- <i class="fas fa-share-alt"><span class='fav-opacity'> Compartir</span> </i> -->

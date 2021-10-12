@@ -9,6 +9,8 @@ const qty = document.querySelector('input[name="qty"]');
 const qtyB = document.querySelector('input[name="qtyB"]');
 const botones = document.querySelectorAll('.voton');
 
+const share = document.querySelector(".obtenerURL");
+
 botones.forEach(boton => {
     boton.addEventListener('click', function (e){
         
@@ -29,4 +31,38 @@ botones.forEach(boton => {
         qtyB.value = contador;
     })
 })
+
+
+
+
+/* share.addEventlistener('click', function (){
+    
+    console.log("HELLO WORLD");
+
+    var sURL = window.location.href;
+        sTemp = "<input id=\"copy_to_Clipboard\" value=\"" + sURL + "\" />"
+        $("body").append(sTemp);
+        $("#copy_to_Clipboard").select();
+        document.execCommand("copy");
+        $("#copy_to_Clipboard").remove();  
+}) */
+
+
+/* var URLactual = window.location.href;
+document.execCommand("copy")
+alert(URLactual); */
+
+/* var url = window.location.href
+function Alerta (){
+    alert(url)
+    document.execCommand("copy")
+}
+Alerta() */
+
+
+/* var url = window.location.href */
+
+
+
+console.log(share)
 })
