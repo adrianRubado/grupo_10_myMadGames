@@ -60,6 +60,7 @@ box-sizing: border-box;
 
 
     .filters-Check-Box { display: none;}
+    .check-filters{display: flex; flex-direction: row; flex-wrap: wrap;}
     .main-search{ display: flex; flex-direction: column; width: auto;}
 
 
@@ -70,7 +71,7 @@ box-sizing: border-box;
     margin: 45px auto;
 }
 
-
+.check-filters { display: flex; flex-direction: column;}
     .filters-Check-Box { display: flex; flex-direction: column;  box-sizing: content-box; flex-wrap: wrap;}
 
 .main-search { display: flex;

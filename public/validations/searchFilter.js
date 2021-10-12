@@ -1,9 +1,30 @@
 window.addEventListener('load', async function () {
     let genreChecks = document.querySelectorAll('.genreToCheck')
-    let filterButton = document.querySelector('.butttonSearch')
+    let filterButton = document.querySelector('.filterBoton')
     let platformChecks = document.querySelectorAll('.platformToCheck')
     let gamesContainer = document.querySelector('.games-conteiner')
+let inputsCheckFilter = document.querySelector(".filters-Check-Box")
+let filterTitle = document.querySelector(".filterTitle")
+    let buttonFilterMobile = document.querySelector(".button_filter")
 
+
+    buttonFilterMobile.addEventListener("click",function (e){ 
+
+        inputsCheckFilter.style.display = "block"
+    filterTitle.style.display = "none";
+
+    filterButton.addEventListener("click", function (e) { 
+        inputsCheckFilter.style.display = "none"
+        filterTitle.style.display = "flex";
+    
+
+
+    })
+
+       
+      
+
+    })
 
 
 
