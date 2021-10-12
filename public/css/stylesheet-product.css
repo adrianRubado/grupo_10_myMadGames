@@ -300,11 +300,13 @@ background-color:#ea4c89
 .button998 {
   background-color: green;
   width: 150px;
+  padding-left: 30px;
 }
 
 .button999 {
   background-color: #f44336;
   width: 150px;
+  padding-left: 60px;
 }
 
 .descripcion-chart{

@@ -25,30 +25,31 @@
                 </div>
 
                 <div class="container3">
-                    <a href="../myPurchases"><h3>Mis Compras</h3></a> <br>
+                    <a href="../myPurchases"><h3>Mis Compras</h3></a> 
+                    <br>
                     <h4><i class="fas fa-shopping-cart"></i> ¡Seguí comprando! <br></h4>
+                    <br>
                     <div class="tienda">
-                        <h4><a href= "../products/search?q=">Ir a la Tienda</a></h4>
+                        <h4><a style="text-decoration:none; color:white" href= "../products/search?q=">Ir a la Tienda</a></h4>
                     </div>
                     <br>
                     
                     <div class="actionsUser">
+                      
+                        <!-- <button class="button button999" type="submit">Borrar cuenta</button> -->
+                        <% if (locals.user && locals.user.RoleId == 2) { %>
+                        <a style="text-decoration:none" href="/products/create"><button class="button button998" type="submit">Cargar juego</button></a>
+                        <% } %>
 
                         <form method="post" action="/user/logout">
                             <li>
-                              <a href="/user/logout">
+                              <a style="text-decoration:none" href="/user/logout">
                                 <button class="button button999" type="submit">Salir</button>
               
                             </a>
                             </li>
-                          </form>
+                          </form>    
 
-
-                        
-                        <!-- <button class="button button999" type="submit">Borrar cuenta</button> -->
-                        <% if (locals.user && locals.user.RoleId == 2) { %>
-                        <a href="/products/create"><button class="button button998" type="submit">Cargar juego</button></a>
-                        <% } %>
                     </div>
 
 
