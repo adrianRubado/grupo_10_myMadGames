@@ -19,13 +19,13 @@
       <i class="fas fa-filter"></i></button>
 <div class="filters-Check-Box">
 
-<ul>
+<ul class="check-filters"> 
   <%genres.forEach(element => {%> <li> <input type="checkbox" value = <%= element.id %>    class="genreToCheck"><%= element.name %></input></li>
     <% }) %>
 
 </ul>
 
-<ul>
+<ul class="check-filters"> 
 
   <%platform.forEach(element => {%> <li> <input type="checkbox" value = <%= element.id %>   class="platformToCheck"><%= element.name %></input></li>
   <% }) %>

@@ -1,6 +1,6 @@
 window.addEventListener('load', async function () {
     let genreChecks = document.querySelectorAll('.genreToCheck')
-    let filterButton = document.querySelector('.botonSignIn')
+    let filterButton = document.querySelector('.butttonSearch')
     let platformChecks = document.querySelectorAll('.platformToCheck')
     let gamesContainer = document.querySelector('.games-conteiner')
 
