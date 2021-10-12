@@ -4,14 +4,38 @@
 
 <%- include('./partials/head.ejs') %>
 
-  <body>
+  <body class="bodyFav">
     <%- include('./partials/header.ejs') %>
     <script src = '/validations/darkMode.js'></script>
     
-    <section>
-        <% favorites.forEach(element => { %>
-          <div><%= element.name%> </div>
-        <% }) %>
+    <section class = "sectionFav">
+      <article class = "articleFavContainer">
+        <div class ="containerNombreEImagen">
+          <div class="nombrediv">Battlefield 2042</div>
+          <div class = "containerimage"><img src="/images/bf2042.jpg" alt="bf2042" width="100"></div>
+        </div>
+        <br>
+        <div class="preciodiv">$6000</div>
+        <br>
+        <div class = "buttonContainer">
+        <button type="submit" class="eliminategame">Eliminar</button>
+        </div>
+        <br>
+      </article>
+      <article class = "articleFavContainer">
+        <div class ="containerNombreEImagen">
+          <div class="nombrediv">The Ascent</div>
+          <div class = "containerimage"><img src="/images/The_Witcher_3_Portada.png" alt="thewitcher3" width="100"></div>
+        </div>
+        <br>
+        <div class="preciodiv">$6000</div>
+        <br>
+        <div class = "buttonContainer">
+        <button type="submit" class="eliminategame">Eliminar</button>
+        </div>
+        <br>
+      </article>
+      
     </section>
 
 
