@@ -206,13 +206,16 @@ height: 15%;}
 
 
 
-#mainSignUp { height: 100vh;
+#mainSignUp { /* height: 200vh; */
   width: 100vw;
  display: flex;
   flex-direction: column;
   background-image: url("/images/blue.jpg")
   ;
-  background-size: 100%;}
+  background-size: 100%;
+  padding-top:10vh;
+  padding-bottom:10vh
+}
 
   .contenedorTitulosSignUp {display: flex;
   flex-direction: column; align-items: center;}
@@ -250,13 +253,13 @@ height: 15%;}
 
         .botonSignUp {  margin-top:5px;
           height: 35px;
-        width: 50px;
+        /* width: 50px; */
  margin-bottom: 15px;
  margin: auto;
  background-color: transparent;
   border-color: transparent;
   transition: all  1.5s;
-
+  display: flex
 }
 
   .botonSignUp:hover{
@@ -279,7 +282,7 @@ height: 15%;}
             box-sizing: border-box;
             padding: 5%;
             background-color: rgba(253, 253, 253, 0.6);
-            height: 100%;
+            /* height: 75%; */
             width: 75%;}
 
             .formularySignup{
@@ -449,11 +452,13 @@ margin: 30px auto 3px auto;}
   .contenedorInputSignIn {display: flex;
   flex-direction: column;
   align-items: center;}
-  .formularioSignUp {height: 100%;
-  width: 100%;
-justify-content: center;
+  .formularioSignUp {/* height: 90%; */
+  /* width: 100%; */
+/* justify-content: center; */
 align-items: center;
-text-align: center;}
+text-align: center;
+width: 75%
+}
   .generosIn { width: 100%;
   }
   .labelSignUp {display: flex;
