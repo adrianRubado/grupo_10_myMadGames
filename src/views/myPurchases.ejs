@@ -10,13 +10,13 @@
                 <article class="myArticlePurchase">
                     <div class="myPurchase">
                         <div class="myPurchaseBox">
-        
+
                             <div class="boxMother">
                                 <h2 class="titleMypurchase">Fecha de compra</h2>
                             <h1 class="titleMypurchase"><%= game.game.name %> </h1>
-                            
+
                         </div>
-                            <div><img src=<%= game.game.image %>  alt="hola" width="220px" class="pictures"></div>
+                            <div><img src=<%= game.game.image %>  alt="hola" width="220px" class="picturess"></div>
                     </div>
                     <div>
                         <h3 class="descriptionMypurchase">Descripcion de la compra </h3>
@@ -26,20 +26,20 @@
                         <p>Numero de transaccion :<%= game.purchaseId %> </p>
                     </div>
                     </div>
-        
-                        
-               
-                    <div class="buttonBox">           
+
+
+
+                    <div class="buttonBox">
                     <a href= "/products/<%=game.game.id%>"><button class="buttonsmyPurchase">Ver Compra</button></a>
                     <a href="/"><button class="buttonsmyPurchase"href = "/">Volver a comprar</button></a>
-                </div> 
+                </div>
                 </div>
                 </article>
-              
+
              <% }) %>
-        
+
         <%}%>
-       
+
 
 
     </main>

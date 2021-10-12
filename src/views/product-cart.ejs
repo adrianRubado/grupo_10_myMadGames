@@ -4,16 +4,17 @@
 
 <%- include('./partials/head.ejs') %>
 
-  <body>
+
     <%- include('./partials/header.ejs') %>
     <script src = '/validations/darkMode.js'></script>
-      <section class="page-chart">
-        <div class="encabezado-chart">
-          Compra
+
+      <section class="productBody">
+        <div class="encabezado-chart product-cart-links">
 
 
-          <a>Favoritos <i class="fas fa-star"></i></a>
-          <a href="./myPurchases">Mis Compras <i class= "fas fa-shopping-cart"></i></a>
+
+          <a class ='product-cart-links'>Favoritos <i class="fas fa-star"></i></a>
+          <a class = 'product-cart-links' href="./myPurchases">Mis Compras <i class= "fas fa-shopping-cart"></i></a>
         </div>
 
         <% if (cart.length==0 ) { %>
@@ -76,7 +77,7 @@
 
                 </div>
                 $
-                <div class='price'>
+                <div class='pricess'>
                   <%=cart[i].price %>
                 </div>
 
@@ -84,7 +85,8 @@
               </div>
 
               <% } %>
-
+              <br>
+              <br>
                 <div class="buttomtotal-chart otroColor">
                   <a href='/purchase-detail'>
                     <button>Continuar Compra</button>
