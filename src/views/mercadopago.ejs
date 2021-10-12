@@ -3,12 +3,13 @@
 
 <%- include ('./partials/head')  %>
 
-<body class = <%=color %>  >
+<body class = <%=color %> id='body-mp' >
   <%- include('./partials/header') %>
 
+  <main id='main-mp'>
         <p><%= message %> </p>
 
-
+  </main>
         <%- include ('./partials/footer.ejs') %>
 
         <script >
