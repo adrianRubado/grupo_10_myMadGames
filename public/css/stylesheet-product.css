@@ -42,7 +42,7 @@ color:#EC6EAD ;
 }
 .pricess{
   font-size: 18px;
-  color: black;
+  color: white;
 
   }
 
@@ -509,7 +509,7 @@ background: linear-gradient(to right, #EC6EAD, #3494E6); /* W3C, IE 10+/ Edge, F
   .number{
     font-size: 25px;
     font-weight: bolder;
-    color:#EC6EAD ;
+    color:white ;
   }
   .pricess{
     font-size: 30px;

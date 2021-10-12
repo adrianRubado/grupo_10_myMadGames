@@ -50,14 +50,14 @@
 
         <% if (!locals.logged) { %>
           <li>
-            <a href="/user/sign-up">
-            <i>Crea tu cuenta</i>
+            <a class = 'navbarlinksNuevos' href="/user/sign-up">
+            <i >Crea tu cuenta</i>
           </a>
 
           </li>
           <li>
-            <a href="/user/login">
-            <i>Ingresa</i>
+            <a class = 'navbarlinksNuevos' href="/user/login">
+            <i >Ingresa</i>
           </a>
           </li>
 
@@ -67,7 +67,7 @@
 
           <% if (locals.image) { %>
             <li>
-              <a href="/user/profile">
+              <a class = 'navbarlinksNuevos'href="/user/profile">
               <img src= <%= locals.image %> class = 'roundImage'    alt="" width = 30px>
               <i><%= locals.user.first_name %> </i>
 
@@ -75,13 +75,13 @@
 
 
           <li>
-            <a href="/myPurchases">
+            <a class = 'navbarlinksNuevos' href="/myPurchases">
             <i>Mis compras</i>
           </a>
           </li>
 
           <li>
-            <a href="/myPurchases">
+            <a class = 'navbarlinksNuevos' href="/myPurchases">
             <i class = 'fas fa-star'></i>
           </a>
           </li>
@@ -90,7 +90,7 @@
 
             <li>
 
-              <a href="/product-cart">
+              <a class = 'navbarlinksNuevos' href="/product-cart">
               <i class="fas fa-shopping-cart"></i>
 
               <% if (locals.logged) { %>

@@ -16,6 +16,18 @@ header{
 
 }
 
+.navbarlinksNuevos  :hover {
+  color: white;
+}
+
+.product-cart-links {
+  color: black
+}
+
+.product-cart-links :hover {
+  color: white;
+}
+
 
 .games-genre{
   display: flex;
