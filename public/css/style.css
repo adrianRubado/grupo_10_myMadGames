@@ -608,8 +608,8 @@ footer{
     width: 100%;
  } */
 
-.bodyDetail {
-
+.bodyDetailProd {
+  background-color:rgb(214, 214, 214);
 }
 
  .price {
