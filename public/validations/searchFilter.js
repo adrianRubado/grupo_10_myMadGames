@@ -8,23 +8,27 @@ let filterTitle = document.querySelector(".filterTitle")
     let buttonFilterMobile = document.querySelector(".button_filter")
 
 
+
+
+    
+{
     buttonFilterMobile.addEventListener("click",function (e){ 
 
         inputsCheckFilter.style.display = "block"
     filterTitle.style.display = "none";
 
     filterButton.addEventListener("click", function (e) { 
-        inputsCheckFilter.style.display = "none"
-        filterTitle.style.display = "flex";
+        filterTitle.style.display = "flex"
     
-
-
     })
 
        
       
 
-    })
+    })}
+
+
+    
 
 
 
