@@ -2,6 +2,12 @@ body{
     height: 100%;
 }
 
+#main-mp{
+    height: 50vh;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
 .successs{
 
     background-color: rgb(85, 182, 85);
@@ -17,8 +23,8 @@ body{
 }
 
 
-.success p {
-    font-size: xx-large;
+.successs p {
+    font-size: large;
     font-weight: 700;
     color: white;
     text-align: center;
