@@ -16,6 +16,10 @@ header{
 
 }
 
+.formuu {
+  background-color: transparent;
+}
+
 .navbarlinksNuevos  :hover {
   color: white;
 }

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<html lang="en">
+
+<%- include('./partials/head.ejs') %>
+
+  <body class="bodyFav">
+    <%- include('./partials/header.ejs') %>
+    <script src = '/validations/darkMode.js'></script>
+
+    <section class = "sectionFav">
+        <% games.forEach(g => { %>
+            <article class = "articleFavContainer">
+                <div class ="containerNombreEImagen">
+                  <div class="nombrediv"><%= g.name%> </div>
+                  <div class = "containerimage"><img src= <%= g.image %> alt=<%= g.name%> width="100"></div>
+                </div>
+                <br>
+                <div class="preciodiv"><%= g.price%></div>
+                <br>
+                <div class = "buttonContainer">
+                <button type="submit"  class="eliminategame">Eliminar</button>
+                </div>
+                <br>
+              </article>
+        <% }) %>
+
+
+    </section>
+
+
+
+      <%- include('./partials/footer.ejs') %>
+
+
+
+       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="/validations/cart-scripts.js"></script>
+        <script src = '/validations/darkMode.js'></script>
+        <script src = '/validations/favScripts.js'></script>
+
+
+  </body>
+
+</html>

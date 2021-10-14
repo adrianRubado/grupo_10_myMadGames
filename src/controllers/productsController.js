@@ -18,8 +18,10 @@ const productsController = {
 
 
 
+
         const viewData = {
             game: detail
+
         }
 
         if(req.session && req.session.user){
