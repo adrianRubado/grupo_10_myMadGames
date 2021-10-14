@@ -72,11 +72,11 @@ const productsController = {
      if(!req.file) { await db.Game.update({
         name: req.body.name,
         price: req.body.price,
-        platform: req.body.platform,
+        PlatformId: req.body.platform,
         description: req.body.description,
         link: req.body.link,                                                // en caso de no actualizar la imagen
         requirements: req.body.requirements,
-        genre: req.body.genre
+        GenreId: req.body.genre
     },{
         where:{
             id:req.params.id
@@ -89,12 +89,12 @@ const productsController = {
        await db.Game.update({
             name: req.body.name,
             price: req.body.price,
-            platform: req.body.platform,
+            PlatformId: req.body.platform,
             description: req.body.description,
             link: req.body.link,
             image: "/images/" + req.file.originalname,   // en caso de que la imagen cambie
             requirements: req.body.requirements,
-            genre: req.body.genre
+            GenreId: req.body.genre
         },{
             where:{
                 id:req.params.id
