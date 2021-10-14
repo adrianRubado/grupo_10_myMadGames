@@ -15,7 +15,7 @@ const productsController = {
         const id = req.params.id
 
         const detail =  await db.Game.findByPk(id);
-        
+
         if(req.session && req.session.user){
 
         let fav = await db.Fav.findOne({
@@ -34,16 +34,11 @@ const productsController = {
 
 
         const viewData = {
-<<<<<<< HEAD
-            game: detail
-
-=======
             game: detail,
             flag: flag
->>>>>>> miguel-dev
         }
 
-        
+
             return res.render('products', viewData);
         }else{
 
