@@ -507,6 +507,7 @@ article{
     height: 30px;
     width: 95%;
     font-size: 18px;
+    margin-left: 2%;
 }
 
 .quitar {
@@ -582,7 +583,7 @@ article{
 
 .sectionContainer{
      margin: 25px;
-     background-color: #fff;
+     background-color: transparent;
      margin-bottom: 25px;
 }
 

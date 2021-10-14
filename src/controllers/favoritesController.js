@@ -2,8 +2,20 @@ const db = require('../../database/models')
 
 
 const favoritesController = {
-    getFavorites : (req,res) =>{
-        res.render('favorites')
+    deleteFavorite : async(req,res) =>{
+        try{
+
+            await db.Fav.destroy({
+                where : {
+                    UserId : req.session.user.id,
+                    GameId : req.body.gameId
+                }
+            })
+            res.status(200).json({message : 'fav deleted'})
+
+        }catch(error){
+            console.log(error.message)
+        }
     },
 
     myFavorites : async (req,res) =>{

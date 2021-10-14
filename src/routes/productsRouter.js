@@ -33,7 +33,7 @@ var storage = multer.diskStorage({
         fileSize: 1024 * 1024
     }
 })
-  
+
 
 
 router.get('/',authMiddleware,productsController.get)
@@ -52,6 +52,7 @@ router.put('/:id/edit',upload.single("image"), [updateGameMiddleware, authMiddle
 
 
 router.post('/favorites',authMiddleware,productsController.addFavorite);
+
 router.post('/cart-favorites',authMiddleware,productsController.cartFavorite)
 router.post('/',upload.single('image'),createValidation, productsController.post)
 

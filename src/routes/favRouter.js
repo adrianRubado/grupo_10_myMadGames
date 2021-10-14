@@ -10,7 +10,7 @@ router.use(cookieParser()) */
 
 
 router.get ('/',authMiddleware,favController.myFavorites) ;
-router.get('/myFavs',authMiddleware,favController.getFavorites)
+router.delete('/delete',authMiddleware,favController.deleteFavorite)
 
 
 module.exports = router
