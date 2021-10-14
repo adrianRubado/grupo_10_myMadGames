@@ -15,18 +15,42 @@ const productsController = {
         const id = req.params.id
 
         const detail =  await db.Game.findByPk(id);
+        
+        if(req.session && req.session.user){
 
+        let fav = await db.Fav.findOne({
+            where :{
+                UserId : req.session.user.id,
+                GameId : detail.id
+            }
+        })
+
+        var flag = false
+
+        if(fav){
+            flag = true
+        }
 
 
 
         const viewData = {
+<<<<<<< HEAD
             game: detail
 
+=======
+            game: detail,
+            flag: flag
+>>>>>>> miguel-dev
         }
 
-        if(req.session && req.session.user){
+        
             return res.render('products', viewData);
         }else{
+
+            const viewData = {
+                game: detail,
+            }
+
             return res.render('productsNotLogged', viewData);
         }
 

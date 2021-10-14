@@ -3,7 +3,7 @@
 
   <%- include('./partials/head.ejs')  %>
 
-<body class="bodyDetail">
+<body class="bodyDetailProd">
   <%- include('./partials/header.ejs')  %>
 
   <script src = '/validations/darkMode.js'></script>
@@ -67,9 +67,19 @@
                 <div class="social">
                     <form method="POST" action="/products/favorites">
                         <li>
+                            <% if (flag) { %>
+                                
+                          <button type="submit" class="jart fas fa-heart formu99" name = 'fav' value =<%=[locals.user.id,game.id]%> ><span class='fav-opacity formu99'> Quitar de Favoritos</span></button>
 
+                          <% } else { %>
+
+<<<<<<< HEAD
                           <button type="submit" class="far fa-heart formuu" name = 'fav' value =<%=[locals.user.id,game.id]%> > <span class='fav-opacity formuu'>Marcar como favorito</span></button>
+=======
+                          <button type="submit" class="jart far fa-heart formu99" name = 'fav' value =<%=[locals.user.id,game.id]%> ><span class='fav-opacity formu99'> Agregar a Favoritos</span></button>
+>>>>>>> miguel-dev
 
+                            <% } %>
                         </a>
                         </li>
                       </form>
@@ -77,8 +87,13 @@
 
                         <li>
 
+<<<<<<< HEAD
                           <button class="obtenerURL fas fa-share-alt formuu" onclick="copy_Share_Button();"><span class='fav-opacity formuu'> Compartir</span></button>
 
+=======
+                          <button class="obtenerURL fas fa-share-alt formu99" onclick="copy_Share_Button();"><span class='fav-opacity formu99'> Compartir</span></button>
+                            
+>>>>>>> miguel-dev
                           <script>
 
                             function copy_Share_Button() {
