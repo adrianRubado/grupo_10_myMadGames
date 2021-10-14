@@ -8,6 +8,8 @@ const search = document.querySelector('.form-control')
 const form = document.querySelector('#custom-search-input')
 const signInForm = document.querySelector('.contenedorFormularioSignIn')
 
+const lunaa = document.querySelector('.lunaa')
+
 
 
 
@@ -22,6 +24,7 @@ if (currentTheme == "dark") {
   document.body.classList.toggle("miBody")
   /* signInForm.classList.toggle("miBody") */
   header.classList.toggle('header-dark')
+  lunaa.style.color = 'yellow'
 
 
 
@@ -48,6 +51,7 @@ if (currentTheme == "dark") {
   search.style.backgroundColor = '#3f51b5';
   form.style.backgroundColor = '#3f51b5';
   toggle.checked = false
+  lunaa.style.color = 'white'
 }
 
 toggle.addEventListener("click", function () {
@@ -60,6 +64,7 @@ toggle.addEventListener("click", function () {
     articles.forEach(a =>{
         a.classList.toggle('miBody2')
     })
+    lunaa.style.color = 'yellow'
     search.style.backgroundColor = '#8a3b3b'       /* 'rgb(' + 127 + ',' + 11 + ',' + 151+ ')'; */
     form.style.backgroundColor = '#8a3b3b'/* 'rgb(' + 127 + ',' + 11 + ',' + 151+ ')'; */
     var theme = document.body.classList.contains("miBody2")
@@ -73,6 +78,7 @@ toggle.addEventListener("click", function () {
     header.classList.remove('header-dark')
     search.style.backgroundColor = '#3f51b5';
     form.style.backgroundColor = '#3f51b5';
+    lunaa.style.color = 'white'
     var theme = 'light'
 
   }
