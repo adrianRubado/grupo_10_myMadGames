@@ -16,6 +16,15 @@ header{
 
 }
 
+.losLinks{
+  margin-right: 50px;
+}
+
+
+.hamburguesa {
+  margin-left: 5px;
+}
+
 
 
 
@@ -304,7 +313,7 @@ header p{
     background-color: #3f51b5;
     color:white;
     /* IE7-8 doesn't have border-radius, so don't indent the padding */
-
+    margin-right: 8px;
     margin-bottom: 0;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
