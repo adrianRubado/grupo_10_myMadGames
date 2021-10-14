@@ -34,6 +34,7 @@ console.log(formCreateGame)
     
             if(inputPriceGame.value == "" ){
                 errors.push("El juego debe tener un precio")
+                inputPriceGame.style.border = "4px solid red"
     
                 if(inputPriceGame.value <= 1 ){
                     errors.push("El precio debe ser mayor a $9")
@@ -59,6 +60,7 @@ console.log(formCreateGame)
             if(inputPriceGame.value.includes("$")) {
     
                 errors.push("No debes agregar el simbolo $ en el precio")
+                inputPriceGame.style.border = "4px solid red"
             }
     
             if(inputLinkGame.value.includes("embed") == false ) {
