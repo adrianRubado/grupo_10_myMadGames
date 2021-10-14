@@ -81,7 +81,7 @@ router.post ('/login', [
 
 router.post('/sign-up/check',guestMiddleware,userCheckController.verifyMail) ; //Corroboramos desde el lado del Front si un Email es repetido
 
-
+router.post('/sign-in/check',guestMiddleware,userCheckController.verifyLogin) ;
 
 router.get("/welcome", signUpController.welcome)
 router.get('/verify',authToken,userCheckController.verifyAccount)
@@ -89,9 +89,9 @@ router.get('/verify',authToken,userCheckController.verifyAccount)
 
 /* router.get('/change-password',userCheckController.changePass) */
 
-router.get("/change-password", userCheckController.newPassGetForm );
+router.get("/change-password", userCheckController.newPassMail );
 router.post('/change-password',userCheckController.checkMailPassword)
-router.get("/newPassMail", userCheckController.newPassMail);
+router.get("/newPassMail", userCheckController.newPassGetForm);
 router.get('/reset-password',authToken,userCheckController.resetPassword)
 router.post('/reset-password',userCheckController.changePassword)
 

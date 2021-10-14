@@ -18,7 +18,7 @@ const logged = require('./src/middleware/loggedMiddleware')
 const myPurchaseRouter = require ('./src/routes/myPurchaseRouter')
 const apiRouter = require('./src/api/apiRouter')
 const buyNowRouter = require ('./src/routes/buyNowRouter')
-const cors = require('cors')
+const favRouter = require('./src/routes/favRouter')
 
 
 app.set ("view engine", "ejs") ; //Establecimos como template engine ejs
@@ -50,23 +50,6 @@ app.listen(3002,()=>{
 
 
 
-/*
-
-
-app.use('/carrito', (req,res)=>{
-    res.sendFile(__dirname + '/views/product-cart.html')
-})
-app.get('/sign-in',(req,res)=>{
-    res.sendFile(__dirname + '/views/sign-in.html');
-})
-
-app.get('/sign-up',(req,res)=>{
-    res.sendFile(__dirname + '/views/sign-up.html');
-})
-
-app.get('/detail',(req,res)=>{
-    res.sendFile(__dirname + '/src/views/detail.ejs');
-}) */
 
 
 app.use('/',indexRouter)
@@ -78,5 +61,6 @@ app.use('/mp',mercadoPagoRouter)
 app.use ('/myPurchases',myPurchaseRouter)
 app.use ('/api',apiRouter)
 app.use ('/buy-now', buyNowRouter)
+app.use('/favorites',favRouter)
 
 app.use((req, res, next) => next(createError(404)));

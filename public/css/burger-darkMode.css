@@ -1,5 +1,5 @@
 .ham {
-    position: fixed;
+    position: absolute;
     margin-left: 65%;
     /* keep the hamburger button above everything */
     z-index: 100;

@@ -3,7 +3,7 @@
 
   <%- include('./partials/head.ejs')  %>
 
-<body class="bodyDetail">
+<body class="bodyDetailProd">
   <%- include('./partials/header.ejs')  %>
 
 
@@ -20,28 +20,28 @@
                     <img class="image" src =<%= game.image  %>   ;>
                     <br>
                     <span class="tip"><i class="fas fa-dollar-sign"><%= game.price  %> </span></i>
-                    
+
                     <div class="iconos">
                         <!-- <i class="fas fa-dollar-sign"><span class="tip"><%= game.price  %> </span></i> -->
-                        
-                        
-                        
+
+
+                        <h4>Cantidad</h4>
                         <div class="container99">
-                            Cantidad
+
                             <button class="voton quitar">-</button>
                             <span id="valor">1</span>
                             <button class="voton agregar">+</button>
-                            
-                            
+
+
                         </div>
-                <li>        
+                <li>
                     <a href= "/user/login" ><button class="add-to-cart"> Agregar al carrito</button></a>
                 </li>
                 <li>
                     <a href= "/user/login" ><button class="buy-now"> Comprar Ahora </button></a>
                 </li>
                     </div>
-                </div>    
+                </div>
                 <div class="descripcion">
                     <h5>Descripcion</h5>
                 <p class = "pContainerDescriptionGame">
@@ -49,57 +49,56 @@
                 </p>
 
                 <div class="social">
-                    
+
                         <li>
 
-                          <button class="far fa-heart" ><a href= "/user/login" > <span class='fav-opacity'> Marcar como favorito</a></span></button>
+                          <button class="far fa-heart formu99" ><a href= "/user/login" > <span class='fav-opacity formu99'> Agregar a Favoritos</a></span></button>
 
-                        
                         </li>
-                      
+
                     <!-- <i class="fas fa-comment"></i> -->
-                    
+
                     <li>
 
-                        <button class="obtenerURL fas fa-share-alt" onclick="copy_Share_Button();"><span class='fav-opacity'> Compartir</span></button>
-                          
+                        <button class="obtenerURL fas fa-share-alt formu99" onclick="copy_Share_Button();"><span class='fav-opacity formu99'> Compartir</span></button>
+
                         <script>
 
                           function copy_Share_Button() {
-                      
+
                               //----< copy_Share_Button() >----
-                      
+
                               var sURL = window.location.href;
-                      
+
                               sTemp = "<input id=\"copy_to_Clipboard\" value=\"" + sURL + "\" />"
-                      
+
                               $("body").append(sTemp);
-                      
+
                               $("#copy_to_Clipboard").select();
-                      
+
                               document.execCommand("copy");
-                      
-                              $("#copy_to_Clipboard").remove();        
-                              
+
+                              $("#copy_to_Clipboard").remove();
+
                               alert("¡Enlace de este juego copiado al portapapeles y listo para compartir!")
 
                               //----</ copy_Share_Button() >----
-                      
+
                           }
-                      
+
                           //
-                      
+
                       </script>
 
 
                       </li>
-                      
+
 
 
                     <!-- <i class="fas fa-share-alt"><span class='fav-opacity'> Compartir</span> </i> -->
                 </div>
 
-                
+
 
 
 

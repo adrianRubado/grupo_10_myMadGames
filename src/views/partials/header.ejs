@@ -33,16 +33,44 @@
       </div>
 
 
-      <ul class="menu">
-        <li><a class="menuLink" href="#">Home</a></li>
-        <li><a class="menuLink" href="#">Profile</a></li>
-        <li><a class="menuLink" href="#">About</a></li>
-        <li><a class="menuLink" href="#">Contacts</a></li>
-      </ul>
+      <% if (!locals.logged) { %>
+        <ul class="menu">
+          <li><a class="menuLink" href="/user/sign-up">Crea tu cuenta</a></li>
+          <li><a class="menuLink" href="/user/login">Ingresa</a></li>
+          <!-- <li class = "linksNavSuperior">
+            <label class="switch ">
+
+            <input type="checkbox" unchecked class="toggle">
+            <span class="slider round"></span>
+
+            </label>
+
+          </li>
+          <i class='fas fa-moon lunaa'></i> -->
+        </ul>
+      <% }else { %>
+        <ul class="menu">
+          <li><a class="menuLink" href="/user/profile">Mi Perfil</a></li>
+          <li><a class="menuLink" href="/myPurchases">Mis compras</a></li>
+          <li><a class="menuLink" href="/favorites">Favoritos</a></li>
+          <li><a class="menuLink"  href="/product-cart">Carrito</a></li>
+          <!-- <li class = "linksNavSuperior">
+            <label class="switch ">
+
+            <input type="checkbox" unchecked class="toggle">
+            <span class="slider round"></span>
+
+            </label>
+
+          </li>
+          <i class='fas fa-moon lunaa'></i> -->
+
+        </ul>
+        <% } %>
 
       <nav class="mainNavbar">
 
-        <ul>
+        <ul class ='losLinks'>
 
 
 
@@ -81,7 +109,7 @@
           </li>
 
           <li>
-            <a class = 'navbarlinksNuevos' href="/myPurchases">
+            <a class = 'navbarlinksNuevos' href="/favorites">
             <i class = 'fas fa-star'></i>
           </a>
           </li>
@@ -131,6 +159,7 @@
               <span class="slider round"></span>
               </label>
             </li>
+            <i class='fas fa-moon lunaa'></i>
 
 
 
@@ -140,6 +169,7 @@
 
 
         </ul>
+
       </nav>
     </div>
     <% if (locals.logged) { %>

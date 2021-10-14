@@ -9,7 +9,9 @@ const qty = document.querySelector('input[name="qty"]');
 const qtyB = document.querySelector('input[name="qtyB"]');
 const botones = document.querySelectorAll('.voton');
 
-const share = document.querySelector(".obtenerURL");
+/* const share = document.querySelector(".obtenerURL"); */
+
+const jart = document.querySelector(".jart");
 
 botones.forEach(boton => {
     boton.addEventListener('click', function (e){
@@ -64,5 +66,6 @@ Alerta() */
 
 
 
-console.log(share)
+/* console.log(share) */
+console.log(jart)
 })

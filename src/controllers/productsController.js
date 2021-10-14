@@ -16,15 +16,36 @@ const productsController = {
 
         const detail =  await db.Game.findByPk(id);
 
+        if(req.session && req.session.user){
+
+        let fav = await db.Fav.findOne({
+            where :{
+                UserId : req.session.user.id,
+                GameId : detail.id
+            }
+        })
+
+        var flag = false
+
+        if(fav){
+            flag = true
+        }
+
 
 
         const viewData = {
-            game: detail
+            game: detail,
+            flag: flag
         }
 
-        if(req.session && req.session.user){
+
             return res.render('products', viewData);
         }else{
+
+            const viewData = {
+                game: detail,
+            }
+
             return res.render('productsNotLogged', viewData);
         }
 
@@ -133,7 +154,7 @@ const productsController = {
             PlatformId: platform.id,
             description: req.body.description,
             link: req.body.link,
-            category : 2,
+            category : 4,
             image: "/images/" + req.file.originalname,
             requirements: req.body.requirements,
             GenreId: genre.id
@@ -202,6 +223,8 @@ const productsController = {
 
 
     } ,
+
+
 
 
     cartFavorite : async(req,res) =>{
