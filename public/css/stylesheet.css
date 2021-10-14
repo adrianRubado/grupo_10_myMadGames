@@ -551,10 +551,22 @@ article{
     color: #3f51b5
 }
 
-.fa-share-alt {
+.jart {
     font-weight: bolder;
     border: none;
     background-color: white;
+    font-size: 18px;
+    color: #3f51b5
+}
+
+.formu99 {
+    background-color: transparent;
+}
+
+.fa-share-alt {
+    font-weight: bolder;
+    border: none;
+    /* background-color: white; */
     font-size: 18px;
     color: #3f51b5
 }
