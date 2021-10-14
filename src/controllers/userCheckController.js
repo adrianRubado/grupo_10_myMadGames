@@ -36,7 +36,34 @@ const  userCheckController  ={
 
 
     },
+    verifyLogin: async(req,res)=> {
+        try { const user = await db.User.findOne ({
+            where:{
+                email:req.body.data.email
 
+            }
+
+        })
+        if(user){
+            if(user.verify === 2){
+                const passwordHash = user.password;
+                const checkLog = bcrypt.compareSync (req.body.data.password, passwordHash)
+                if(checkLog){
+                    return res.json({log:true})
+                }else{
+                    return res.json({log:false})
+                }
+            }else{
+                return res.json ({log:false})
+            }
+
+        }else{
+            return res.json ({log:false}) ;
+        }
+    }catch (error) {
+            console.log(error.message);
+        }
+    },
     verifyAccount : async (req,res) =>{
         await db.User.update({
             verify : 2
